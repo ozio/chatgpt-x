@@ -19,11 +19,66 @@ static BOOL JSONSnapshotTree(id value,NSUInteger depth,NSUInteger *visited){
  if([value isKindOfClass:NSNumber.class])return isfinite([value doubleValue]);
  return value==NSNull.null;
 }
+// Launch composes about twenty registry layers. Each layer is a new dictionary built from the
+// previous one, and re-serializing the whole ~1 MB tree for every layer took ~20 s on an
+// iPhone 4 and tripped the launch watchdog. Registry-shaped values ({operations, types}) are
+// therefore frozen by a direct deep copy that reuses subtrees frozen earlier. Frozen nodes are
+// immutable objects created here, so sharing them is safe. Other values keep the JSON round trip.
+static CFMutableDictionaryRef Frozen; // frozen container -> @[JSON length, node count]
+static const void *FrozenRetain(CFAllocatorRef a,const void *v){(void)a;return CFRetain(v);}
+static void FrozenRelease(CFAllocatorRef a,const void *v){(void)a;CFRelease(v);}
+static NSArray *FrozenInfo(id v){
+ if(![v isKindOfClass:NSDictionary.class]&&![v isKindOfClass:NSArray.class])return nil;
+ @synchronized(NSObject.class){return Frozen?[[(id)CFDictionaryGetValue(Frozen,v)retain]autorelease]:nil;}
+}
+static NSUInteger StringJSONLength(NSString *s){
+ NSUInteger n=[s lengthOfBytesUsingEncoding:NSUTF8StringEncoding]+2,count=s.length;unichar buffer[256];
+ for(NSUInteger at=0;at<count;at+=256){NSUInteger take=MIN((NSUInteger)256,count-at);[s getCharacters:buffer range:NSMakeRange(at,take)];
+  for(NSUInteger i=0;i<take;i++){unichar c=buffer[i];if(c=='"'||c=='\\'||c=='/'||c=='\b'||c=='\f'||c=='\n'||c=='\r'||c=='\t')n++;else if(c<0x20)n+=5;}}
+ return n;
+}
+static id Freeze(id v,NSUInteger depth,NSUInteger *visited,unsigned long long *length,NSMutableArray *made){
+ NSArray *info=FrozenInfo(v);
+ if(info){*visited+=[info[1]unsignedIntegerValue];*length+=[info[0]unsignedLongLongValue];return *visited>131072?nil:v;}
+ if(++*visited>131072||depth>32)return nil;
+ if([v isKindOfClass:NSDictionary.class]||[v isKindOfClass:NSArray.class]){
+  BOOL dict=[v isKindOfClass:NSDictionary.class];NSUInteger count=[v count];if(count>(dict?4096:32768))return nil;
+  NSUInteger start=*visited;unsigned long long size=2+(count?count-1:0);
+  id *keys=dict?calloc(count?count:1,sizeof(id)):NULL,*values=calloc(count?count:1,sizeof(id));NSUInteger i=0;id result=nil;BOOL ok=YES;
+  for(id item in v){
+   if(dict){if(![item isKindOfClass:NSString.class]||[item length]>4096){ok=NO;break;}keys[i]=[[item copy]autorelease];size+=StringJSONLength(item)+1;}
+   id child=Freeze(dict?[v objectForKey:item]:item,depth+1,visited,&size,made);if(!child){ok=NO;break;}values[i++]=child;
+  }
+  if(ok)result=dict?[NSDictionary dictionaryWithObjects:values forKeys:keys count:i]:[NSArray arrayWithObjects:values count:i];
+  free(keys);free(values);if(!result)return nil;
+  *length+=size;[made addObject:@[result,@[@(size),@(*visited-start+1)]]];return result;
+ }
+ if([v isKindOfClass:NSString.class]){if([v length]>262144)return nil;*length+=StringJSONLength(v);return[[v copy]autorelease];}
+ if([v isKindOfClass:NSNumber.class]){
+  if(CFGetTypeID((CFTypeRef)v)==CFBooleanGetTypeID()){*length+=[v boolValue]?4:5;return v;}
+  if(!isfinite([v doubleValue]))return nil;*length+=[[v stringValue]length];return v;
+ }
+ if(v==NSNull.null){*length+=4;return v;}
+ return nil;
+}
+static BOOL RegistryShaped(id v){return[v isKindOfClass:NSDictionary.class]&&[v[@"operations"]isKindOfClass:NSArray.class]&&[v[@"types"]isKindOfClass:NSDictionary.class];}
 id OR6APIJSONSnapshot(id value,NSUInteger max){
  @try{
   if(![value isKindOfClass:NSDictionary.class]&&![value isKindOfClass:NSArray.class])return nil;
+  NSArray *info=FrozenInfo(value);
+  if(info)return[info[0]unsignedLongLongValue]<=max?value:nil;
+  if(RegistryShaped(value)){
+   NSUInteger visited=0;unsigned long long length=0;NSMutableArray *made=[NSMutableArray array];
+   id copy=Freeze(value,0,&visited,&length,made);if(!copy||length>max)return nil;
+   @synchronized(NSObject.class){
+    if(!Frozen){CFDictionaryKeyCallBacks k={0,FrozenRetain,FrozenRelease,NULL,NULL,NULL};Frozen=CFDictionaryCreateMutable(NULL,0,&k,&kCFTypeDictionaryValueCallBacks);}
+    for(NSArray *entry in made)CFDictionarySetValue(Frozen,entry[0],entry[1]);
+   }
+   return copy;
+  }
   NSUInteger visited=0;if(!JSONSnapshotTree(value,0,&visited))return nil;
-  NSData*d=[NSJSONSerialization dataWithJSONObject:value options:0 error:NULL];if(!d||d.length>max)return nil;return [NSJSONSerialization JSONObjectWithData:d options:0 error:NULL];
+  NSData*d=[NSJSONSerialization dataWithJSONObject:value options:0 error:NULL];if(!d||d.length>max)return nil;
+  return[NSJSONSerialization JSONObjectWithData:d options:0 error:NULL];
  }@catch(NSException*e){(void)e;return nil;}
 }
 static BOOL IsBool(id v){return[v isKindOfClass:NSNumber.class]&&CFGetTypeID((CFTypeRef)v)==CFBooleanGetTypeID();}
