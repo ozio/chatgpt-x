@@ -1,0 +1,565 @@
+{
+ "schema": 1,
+ "scope": "Product composition admission of API7. candidate_read: source-backed read, run only on an explicit user action, shown as unverified service data; handoff: first-party browser entry page, completed:false; local: on-device only; denied: not granted. live_verified (granted) requires an evidence record {date, reference, scope} from a live check. None of these tiers is live service admission by itself.",
+ "operations": {
+  "archives.list": {
+   "module": "7",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; marker-owned synthetic chat; native production transport and independent server readback. No replay of uncertain mutations."
+   }
+  },
+  "cache.clear": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "cache.status": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "chat.continue": {
+   "module": "7f",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7f/contracts.json"
+  },
+  "chat.sharedLink.delete": {
+   "module": "7f",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; marker-owned synthetic chat; native production transport and independent server readback. No replay of uncertain mutations."
+   }
+  },
+  "clientPreferences.get": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "clientPreferences.language": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "clientPreferences.theme": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "compose.clarifications.get": {
+   "module": "7f",
+   "tier": "candidate_read"
+  },
+  "compose.clarifications.respond": {
+   "module": "7f",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7f/contracts.json"
+  },
+  "composer.editor.get": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "composer.editor.set": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "content.copyCode": {
+   "module": "7",
+   "tier": "local"
+  },
+  "conversations.archive": {
+   "module": "7",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; marker-owned synthetic chat; native production transport and independent server readback. No replay of uncertain mutations."
+   }
+  },
+  "conversations.delete": {
+   "module": "7",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; one DELETE of marker-owned synthetic chat acknowledged, independent native GET404 proved absence. No user chat targeted."
+   }
+  },
+  "conversations.pin": {
+   "module": "7",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; marker-owned synthetic chat; native production transport and independent server readback. No replay of uncertain mutations."
+   }
+  },
+  "conversations.reconcile": {
+   "module": "7",
+   "tier": "candidate_read"
+  },
+  "conversations.rename": {
+   "module": "7",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; marker-owned synthetic chat; native production transport and independent server readback. No replay of uncertain mutations."
+   }
+  },
+  "conversations.unarchive": {
+   "module": "7",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; marker-owned synthetic chat; native production transport and independent server readback. No replay of uncertain mutations."
+   }
+  },
+  "dictation.stream.cancel": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "dictation.stream.start": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "dictation.stream.status": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "dictation.stream.stop": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "dictation.stream.visibility": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "emailDraft.get": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "emailDraft.prepare": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "emailDraft.set": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "images.create": {
+   "module": "7f",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-images-share-20261111.md#images",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; one picture_v2 request in marker-owned synthetic chat; exact operation/user/branch-bound persisted image result and server history. Original PNG downloaded once, decoded with ImageIO and displayed after in-session history reopen without a second download. First-tap repaint acceptance is recorded separately."
+   }
+  },
+  "images.export": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "instructions.update": {
+   "module": "7b",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7b/contracts.json"
+  },
+  "library.attach": {
+   "module": "7c",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7c/contracts.json"
+  },
+  "library.conversationFiles": {
+   "module": "7c",
+   "tier": "candidate_read"
+  },
+  "library.detach": {
+   "module": "7c",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7c/contracts.json"
+  },
+  "library.get": {
+   "module": "7c",
+   "tier": "candidate_read"
+  },
+  "library.list": {
+   "module": "7c",
+   "tier": "candidate_read"
+  },
+  "library.search": {
+   "module": "7c",
+   "tier": "candidate_read"
+  },
+  "memory.get": {
+   "module": "7b",
+   "tier": "candidate_read"
+  },
+  "memory.setEnabled": {
+   "module": "7b",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7b/contracts.json"
+  },
+  "memory.setHistory": {
+   "module": "7b",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7b/contracts.json"
+  },
+  "personalities.list": {
+   "module": "7b",
+   "tier": "candidate_read"
+  },
+  "personality.update": {
+   "module": "7b",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7b/contracts.json"
+  },
+  "personalization.get": {
+   "module": "7b",
+   "tier": "candidate_read"
+  },
+  "pins.list": {
+   "module": "7",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; marker-owned synthetic chat; native production transport and independent server readback. No replay of uncertain mutations."
+   }
+  },
+  "playback.pause": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "playback.rate": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "playback.resume": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "playback.retry": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "playback.start": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "playback.status": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "playback.stop": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "privacy.center": {
+   "module": "7e",
+   "tier": "candidate_read"
+  },
+  "privacy.get": {
+   "module": "7e",
+   "tier": "candidate_read"
+  },
+  "privacy.openCenter": {
+   "module": "7e",
+   "tier": "handoff"
+  },
+  "privacy.reconcile": {
+   "module": "7e",
+   "tier": "candidate_read"
+  },
+  "privacy.requestsHelp": {
+   "module": "7e",
+   "tier": "handoff"
+  },
+  "privacy.training.setMedia": {
+   "module": "7e",
+   "tier": "denied",
+   "reason": "remote mutation or generation; source candidate without live evidence (default-denied); also needs a trusted account/workspace policy that this build cannot observe"
+  },
+  "privacy.training.setText": {
+   "module": "7e",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7e/contracts.json"
+  },
+  "profile.update": {
+   "module": "7b",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7b/contracts.json"
+  },
+  "projects.conversations": {
+   "module": "7d",
+   "tier": "candidate_read"
+  },
+  "projects.filesAdd": {
+   "module": "7d",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7d/contracts.json"
+  },
+  "projects.filesList": {
+   "module": "7d",
+   "tier": "candidate_read"
+  },
+  "projects.filesRemove": {
+   "module": "7d",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7d/contracts.json"
+  },
+  "projects.get": {
+   "module": "7d",
+   "tier": "candidate_read"
+  },
+  "projects.memoryGet": {
+   "module": "7d",
+   "tier": "candidate_read"
+  },
+  "projects.memoryUpdate": {
+   "module": "7d",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7d/contracts.json"
+  },
+  "projects.moveConversation": {
+   "module": "7d",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7d/contracts.json"
+  },
+  "projects.newDraft": {
+   "module": "7d",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7d/contracts.json"
+  },
+  "projects.reconcile": {
+   "module": "7d",
+   "tier": "candidate_read"
+  },
+  "projects.reconcileChat": {
+   "module": "7d",
+   "tier": "candidate_read"
+  },
+  "projects.send": {
+   "module": "7d",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7d/contracts.json"
+  },
+  "routes.resolve": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "safety.ageStatus": {
+   "module": "7e",
+   "tier": "candidate_read"
+  },
+  "safety.ageVerify": {
+   "module": "7e",
+   "tier": "handoff"
+  },
+  "safety.sensitiveContent.set": {
+   "module": "7e",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7e/contracts.json"
+  },
+  "security.emailChange": {
+   "module": "7e",
+   "tier": "handoff"
+  },
+  "security.mfaSetup": {
+   "module": "7e",
+   "tier": "handoff"
+  },
+  "security.passwordChange": {
+   "module": "7e",
+   "tier": "handoff"
+  },
+  "security.policy": {
+   "module": "7e",
+   "tier": "candidate_read"
+  },
+  "security.reauthenticate": {
+   "module": "7e",
+   "tier": "handoff"
+  },
+  "security.recovery": {
+   "module": "7e",
+   "tier": "handoff"
+  },
+  "settings.reconcile": {
+   "module": "7b",
+   "tier": "candidate_read"
+  },
+  "shares.create": {
+   "module": "7",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; marker-owned synthetic chat; native production transport and independent server readback. No replay of uncertain mutations."
+   }
+  },
+  "shares.get": {
+   "module": "7",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#chat-management",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; marker-owned synthetic chat; native production transport and independent server readback. No replay of uncertain mutations."
+   }
+  },
+  "subscription.openPlans": {
+   "module": "7e",
+   "tier": "handoff"
+  },
+  "subscription.plans": {
+   "module": "7e",
+   "tier": "candidate_read"
+  },
+  "tools.actionApproval.get": {
+   "module": "7f",
+   "tier": "candidate_read"
+  },
+  "tools.actionApproval.respond": {
+   "module": "7f",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7f/contracts.json"
+  },
+  "tools.dataAnalysis": {
+   "module": "7f",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7f/contracts.json"
+  },
+  "tools.dataAnalysis.result": {
+   "module": "7f",
+   "tier": "candidate_read"
+  },
+  "tools.deepResearch": {
+   "module": "7f",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7f/contracts.json"
+  },
+  "tools.deepResearch.cancel": {
+   "module": "7f",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7f/contracts.json"
+  },
+  "tools.deepResearch.status": {
+   "module": "7f",
+   "tier": "candidate_read"
+  },
+  "tools.operation.reconcile": {
+   "module": "7f",
+   "tier": "candidate_read"
+  },
+  "tools.study": {
+   "module": "7f",
+   "tier": "live_verified",
+   "evidence": {
+    "date": "2026-11-11",
+    "reference": "docs/native-ui7-server-acceptance-20261111.md#generations",
+    "scope": "Physical iPhone5,2 / iOS6.1.4; existing account; native single tatertot request, persisted guiding question and server user-message system_hints=[tatertot]. Per-message Study hint only; not persistent conversation mode."
+   }
+  },
+  "traits.list": {
+   "module": "7b",
+   "tier": "candidate_read"
+  },
+  "traits.update": {
+   "module": "7b",
+   "tier": "user_action",
+   "reason": "Explicit source-backed user action. Fresh revision/catalog, conversation/challenge, owner/project and ready-file guards apply in the provider; durable no-replay for remote writes. Service acceptance remains unverified.",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority7b/contracts.json"
+  },
+  "translation.configure": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "translation.copy": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "translation.languages": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "translation.share": {
+   "module": "7g",
+   "tier": "local"
+  },
+  "translation.swapLanguages": {
+   "module": "7g",
+   "tier": "local"
+  }
+ },
+ "streaming": {
+  "dictation.streaming": {
+   "tier": "denied",
+   "reason": "opens the microphone and a new WebSocket protocol; needs physical and live admission"
+  }
+ }
+}

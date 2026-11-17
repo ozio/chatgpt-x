@@ -1,0 +1,84 @@
+{
+  "codex.goals": {
+    "operations": [
+      "codex.goals.get",
+      "codex.goals.set",
+      "codex.goals.clear"
+    ],
+    "API": "implemented_for_app_server",
+    "UIReady": true,
+    "UIConnected": true,
+    "liveAcceptance": "unobserved",
+    "UIRoute": "Task → goal strip / More → Goal and budget; New task → Goal and budget",
+    "phoneAcceptance": "fixture_verified"
+  },
+  "codex.approval-policy": {
+    "operations": [
+      "codex.approval-policy.get",
+      "codex.approval-policy.set"
+    ],
+    "API": "implemented_for_app_server",
+    "UIReady": true,
+    "UIConnected": true,
+    "liveAcceptance": "unobserved",
+    "UIRoute": "Task → More → Permissions",
+    "phoneAcceptance": "fixture_verified"
+  },
+  "codex.files": {
+    "operations": [
+      "codex.files.tree",
+      "codex.files.search",
+      "codex.files.preview",
+      "codex.files.reference"
+    ],
+    "API": "implemented_for_app_server",
+    "UIReady": true,
+    "UIConnected": true,
+    "liveAcceptance": "unobserved",
+    "UIRoute": "Task → More → Project files → preview → Mention",
+    "phoneAcceptance": "fixture_verified"
+  },
+  "codex.worktree": {
+    "operations": [
+      "codex.worktree.list",
+      "codex.worktree.status",
+      "codex.worktree.select",
+      "codex.worktree.create",
+      "codex.worktree.reconcile",
+      "codex.worktree.remove",
+      "codex.worktree.handoff"
+    ],
+    "API": "implemented_for_app_server",
+    "UIReady": true,
+    "UIConnected": true,
+    "liveAcceptance": "unobserved",
+    "UIRoute": "New task → Working tree; Task → More → Working tree",
+    "phoneAcceptance": "fixture_verified"
+  },
+  "codex.attachments": {
+    "operations": [
+      "codex.attachments.prepare",
+      "codex.attachments.discard",
+      "codex.attachments.start",
+      "codex.attachments.create"
+    ],
+    "API": "implemented_for_app_server",
+    "UIReady": true,
+    "UIConnected": true,
+    "liveAcceptance": "unobserved",
+    "UIRoute": "New task → Add screenshot; Task → composer + → Photos / Camera",
+    "phoneAcceptance": "fixture_verified"
+  },
+  "codex.subagents": {
+    "operations": [
+      "codex.subagents.list",
+      "codex.subagents.history"
+    ],
+    "API": "implemented_for_app_server",
+    "UIReady": true,
+    "UIConnected": true,
+    "liveAcceptance": "unobserved",
+    "UIRoute": "Task → More → Subagents → History (read only)",
+    "phoneAcceptance": "fixture_verified"
+  }
+}

@@ -1,0 +1,1976 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API6CProject": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "instructions": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 16000
+        },
+        "emoji": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "theme": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "memoryScope": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "canWrite": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "projectId",
+        "name",
+        "instructions",
+        "emoji",
+        "theme",
+        "memoryScope",
+        "canWrite"
+      ],
+      "additionalProperties": false
+    },
+    "API6CNode": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "kind": {
+          "enum": [
+            "file",
+            "directory"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "parentId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 4096
+        },
+        "access": {
+          "enum": [
+            "owned",
+            "shared",
+            "mounted",
+            "unknown"
+          ]
+        },
+        "trashedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "isRoot": {
+          "type": "boolean"
+        },
+        "fileId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "mediaType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1099511627776
+        },
+        "updatedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "artifactType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "canMutate": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "parentId",
+        "access",
+        "trashedAt",
+        "isRoot",
+        "fileId",
+        "mediaType",
+        "bytes",
+        "updatedAt",
+        "artifactType",
+        "canMutate"
+      ],
+      "additionalProperties": false
+    },
+    "API6CView": {
+      "type": "object",
+      "properties": {
+        "layout": {
+          "enum": [
+            "list",
+            "grid"
+          ]
+        },
+        "sort": {
+          "enum": [
+            "server",
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "layout",
+        "sort"
+      ],
+      "additionalProperties": false
+    },
+    "API6CProjects": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6CProject"
+          },
+          "maxItems": 50,
+          "minItems": 0
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "scanned": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 50
+        }
+      },
+      "required": [
+        "items",
+        "nextPageToken",
+        "scanned"
+      ],
+      "additionalProperties": false
+    },
+    "API6CNodes": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6CNode"
+          },
+          "maxItems": 50,
+          "minItems": 0
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "view": {
+          "$ref": "#/types/API6CView"
+        },
+        "sortScope": {
+          "enum": [
+            "page"
+          ]
+        }
+      },
+      "required": [
+        "items",
+        "nextPageToken",
+        "view",
+        "sortScope"
+      ],
+      "additionalProperties": false
+    },
+    "API6CPath": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6CNode"
+          },
+          "maxItems": 64,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6CFavorite": {
+      "type": "object",
+      "properties": {
+        "targetId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "favoriteId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "isFavorited": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "targetId",
+        "favoriteId",
+        "available",
+        "isFavorited"
+      ],
+      "additionalProperties": false
+    },
+    "API6CFavorites": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "favoriteId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "kind": {
+                "enum": [
+                  "file",
+                  "assistant_response",
+                  "place",
+                  "product",
+                  "image",
+                  "other"
+                ]
+              },
+              "node": {
+                "$ref": "#/types/API6CNode"
+              }
+            },
+            "required": [
+              "favoriteId",
+              "kind",
+              "node"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 50,
+          "minItems": 0
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "items",
+        "nextPageToken"
+      ],
+      "additionalProperties": false
+    },
+    "API6CCapabilities": {
+      "type": "object",
+      "properties": {
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "enum": [
+                  "google_drive",
+                  "box",
+                  "dropbox",
+                  "sharepoint",
+                  "onedrive"
+                ]
+              },
+              "state": {
+                "enum": [
+                  "available",
+                  "unavailable",
+                  "unknown"
+                ]
+              }
+            },
+            "required": [
+              "provider",
+              "state"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 5,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "providers"
+      ],
+      "additionalProperties": false
+    },
+    "API6CReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "targetId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "targetId",
+        "kind",
+        "serverAcknowledged",
+        "verified"
+      ],
+      "additionalProperties": false
+    },
+    "API6CAutoContext": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "additionalProperties": false
+    },
+    "API6CSavedEntity": {
+      "type": "object",
+      "properties": {
+        "referenceId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "isSaved": {
+          "type": "boolean"
+        },
+        "libraryFileId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "parentId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "referenceId",
+        "category",
+        "isSaved",
+        "libraryFileId",
+        "parentId"
+      ],
+      "additionalProperties": false
+    },
+    "API6CResponses": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "favoriteId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "libraryFileId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "messageId": {
+                "type": "string",
+                "minLength": 36,
+                "maxLength": 36
+              },
+              "createdAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 64
+              }
+            },
+            "required": [
+              "favoriteId",
+              "libraryFileId",
+              "messageId",
+              "createdAt"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 50,
+          "minItems": 0
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "scanned": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 50
+        }
+      },
+      "required": [
+        "items",
+        "nextPageToken",
+        "scanned"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "projects.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "query": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 256
+          }
+        },
+        "required": [
+          "pageToken",
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CProjects"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/gizmos/snorlax/sidebar",
+        "method": "GET"
+      },
+      "notes": "Source-backed paged catalog; search is a local filter over each actual server page, with opaque continuation and scanned count. No fabricated server query."
+    },
+    {
+      "id": "projects.detail",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "projectId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CProject"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/gizmos/{project_id}",
+        "method": "GET"
+      },
+      "notes": "Fresh bounded project metadata and instructions. Private owner/workspace identity required for writes."
+    },
+    {
+      "id": "projects.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          },
+          "emoji": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 64
+          },
+          "theme": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "projectOnly": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "name",
+          "emoji",
+          "theme",
+          "projectOnly"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/projects",
+        "method": "POST"
+      },
+      "notes": "Source create body; instructions empty initially. Proven project_v2 is sent only when projectOnly is true; otherwise omitted. Unknown create outcomes are never replayed."
+    },
+    {
+      "id": "projects.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          },
+          "emoji": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 64
+          },
+          "theme": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "projectId",
+          "name",
+          "emoji",
+          "theme"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/projects/{project_id}",
+        "method": "PATCH"
+      },
+      "notes": "Preserve fresh instructions; edit exactly selected name/emoji/theme."
+    },
+    {
+      "id": "projects.instructions.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "instructions": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "operationId",
+          "projectId",
+          "instructions"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/projects/{project_id}",
+        "method": "PATCH"
+      },
+      "notes": "Preserve fresh name/emoji/theme; journal contains desired-state digest, not instruction text."
+    },
+    {
+      "id": "projects.delete",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "projectId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/gizmos/{project_id}",
+        "method": "DELETE"
+      },
+      "notes": "Fresh private owner project, explicit UUID, no automatic replay; verify subsequent not-found."
+    },
+    {
+      "id": "library.view.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CView"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "pathTemplate": null,
+        "method": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.view.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "layout": {
+            "enum": [
+              "list",
+              "grid"
+            ]
+          },
+          "sort": {
+            "enum": [
+              "server",
+              "name"
+            ]
+          }
+        },
+        "required": [
+          "layout",
+          "sort"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CView"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "pathTemplate": null,
+        "method": null
+      },
+      "notes": "Context-local API view state, no UI. Name ordering is explicitly per page; server order remains available."
+    },
+    {
+      "id": "library.browse",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "directoryId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "query": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 256
+          },
+          "category": {
+            "enum": [
+              null,
+              "images",
+              "documents",
+              "spreadsheets",
+              "presentations",
+              "pdfs"
+            ]
+          },
+          "source": {
+            "enum": [
+              null,
+              "uploaded",
+              "generated"
+            ]
+          },
+          "includeHidden": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "pageToken",
+          "directoryId",
+          "query",
+          "category",
+          "source",
+          "includeHidden"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CNodes"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/nodes",
+        "method": "GET"
+      },
+      "notes": "Native Library nodes route with source-backed filters, bounded opaque pagination, no web-file substitute."
+    },
+    {
+      "id": "library.folder.path",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "directoryId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "directoryId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CPath"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/directories/path",
+        "method": "GET"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.folder.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "parentId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          }
+        },
+        "required": [
+          "operationId",
+          "parentId",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/directories",
+        "method": "POST"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.node.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "directory"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CNode"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{id}/node or directories/path",
+        "method": "GET"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.node.rename",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "directory"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          }
+        },
+        "required": [
+          "operationId",
+          "id",
+          "kind",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{id} or directories/{id}",
+        "method": "PATCH"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.node.move",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "directory"
+            ]
+          },
+          "parentId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "id",
+          "kind",
+          "parentId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{id}/move or directories/{id}",
+        "method": "PATCH"
+      },
+      "notes": "Fresh target and destination; path-based descendant cycle rejection for folders."
+    },
+    {
+      "id": "library.node.delete",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "directory"
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "id",
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{id} or directories/{id}",
+        "method": "DELETE"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.node.restore",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{id}/restore",
+        "method": "POST"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.node.deleteForever",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{id}?soft_delete=false",
+        "method": "DELETE"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.trash.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CNodes"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library",
+        "method": "POST"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.trash.empty",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/trash",
+        "method": "DELETE"
+      },
+      "notes": "Native file trash only. Validate deleted_count/failed_count and fresh emptiness; partial or unknown outcomes are never replayed."
+    },
+    {
+      "id": "library.responses.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "conversationId",
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CResponses"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/favorites/conversations/{conversation_id}",
+        "method": "GET"
+      },
+      "notes": "Original native source query, limit50/cursor; no saved response content exposed."
+    },
+    {
+      "id": "library.response.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "isSaved": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "messageId",
+          "isSaved"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/saved-chat-messages or files/{library_file_id}?soft_delete=false",
+        "method": "POST/DELETE"
+      },
+      "notes": "Original native typed snapshot save captures the actual server message, not caller content; fresh favorite membership supplies canonical removal ID. UUID journal and readback."
+    },
+    {
+      "id": "library.response.move",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "parentId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "messageId",
+          "parentId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{library_file_id}/move",
+        "method": "PATCH"
+      },
+      "notes": "Fresh canonical saved-response membership before backing file move; source file node readback."
+    },
+    {
+      "id": "library.entity.status",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "referenceId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "referenceId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CSavedEntity"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/chat/frontend/v1/saved-entities/status",
+        "method": "POST"
+      },
+      "notes": "Exact trusted source entity descriptor bound to an opaque context reference; no arbitrary public JSON target."
+    },
+    {
+      "id": "library.entity.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "referenceId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "isSaved": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "referenceId",
+          "isSaved"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/chat/frontend/v1/saved-entities[/remove]",
+        "method": "POST"
+      },
+      "notes": "Source saved entity save/remove, fresh status and readback. Durable plan retains descriptor digest/reference, not entity or response text; uncertain reconcile requires rebinding the same trusted descriptor."
+    },
+    {
+      "id": "library.entity.move",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "referenceId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "parentId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "referenceId",
+          "parentId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{library_file_id}/move",
+        "method": "PATCH"
+      },
+      "notes": "Fresh source saved-entity status supplies actual Library ID. Verify source library_directory_id after moving."
+    },
+    {
+      "id": "library.favorite.status",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CFavorite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/favorites/status",
+        "method": "POST"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.favorite.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "isFavorited": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "id",
+          "isFavorited"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/favorites[/favorite_id]",
+        "method": "POST/DELETE"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.favorites.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              null,
+              "file",
+              "assistant_response",
+              "place",
+              "product",
+              "image",
+              "other"
+            ]
+          }
+        },
+        "required": [
+          "pageToken",
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CFavorites"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/favorites",
+        "method": "GET"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.favoriteFolders.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CNodes"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/nodes",
+        "method": "GET"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.autoContext.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CAutoContext"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/user",
+        "method": "GET"
+      },
+      "notes": "Actual effective source setting, preserving explicit file_library_auto_reference then m3m/sunshine fallback."
+    },
+    {
+      "id": "library.autoContext.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/account_user_setting?feature=file_library_auto_reference&value={enabled}",
+        "method": "PATCH"
+      },
+      "notes": "Trusted source workspace eligibility required; explicit setting is read back, not inferred from global-memory fallback."
+    },
+    {
+      "id": "library.mounted.capabilities",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CCapabilities"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/mounted/capabilities",
+        "method": "GET"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.mounted.roots",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CNodes"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/nodes",
+        "method": "GET"
+      },
+      "notes": ""
+    },
+    {
+      "id": "library.mounted.browse",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "provider": {
+            "enum": [
+              "google_drive",
+              "box",
+              "dropbox",
+              "sharepoint",
+              "onedrive"
+            ]
+          },
+          "directoryId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [
+          "pageToken",
+          "provider",
+          "directoryId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CNodes"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/nodes",
+        "method": "GET"
+      },
+      "notes": "Read-only provider-backed source; fresh mounted capability admission before browse."
+    },
+    {
+      "id": "library.mounted.search",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "enum": [
+              "google_drive",
+              "box",
+              "dropbox",
+              "sharepoint",
+              "onedrive"
+            ]
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        },
+        "required": [
+          "provider",
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CNodes"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/mounted/search",
+        "method": "GET"
+      },
+      "notes": "Read-only exact mounted search, bounded metadata; no materialization or account reconnect."
+    },
+    {
+      "id": "catalog.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6CReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "pathTemplate": null,
+        "method": null
+      },
+      "notes": "Read-only durable reconciliation of known target and desired-state digest. Never repeats an uncertain write."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "projects.list",
+      "title": "Список и поиск проектов",
+      "usefulness": 6,
+      "operations": [
+        "projects.list"
+      ]
+    },
+    {
+      "featureId": "projects.instructions",
+      "title": "Инструкции проекта",
+      "usefulness": 6,
+      "operations": [
+        "projects.detail",
+        "projects.instructions.update"
+      ]
+    },
+    {
+      "featureId": "projects.create",
+      "title": "Создание проекта",
+      "usefulness": 6,
+      "operations": [
+        "projects.create"
+      ]
+    },
+    {
+      "featureId": "projects.edit",
+      "title": "Название и оформление проекта",
+      "usefulness": 6,
+      "operations": [
+        "projects.update",
+        "catalog.reconcile"
+      ]
+    },
+    {
+      "featureId": "projects.delete",
+      "title": "Удаление проекта",
+      "usefulness": 6,
+      "operations": [
+        "projects.delete"
+      ]
+    },
+    {
+      "featureId": "library.filter_sort_layout",
+      "title": "Фильтры и представление библиотеки",
+      "usefulness": 6,
+      "operations": [
+        "library.view.get",
+        "library.view.set",
+        "library.browse"
+      ]
+    },
+    {
+      "featureId": "library.folders",
+      "title": "Создание папок",
+      "usefulness": 6,
+      "operations": [
+        "library.folder.path",
+        "library.folder.create"
+      ]
+    },
+    {
+      "featureId": "library.rename",
+      "title": "Переименование файлов и папок",
+      "usefulness": 6,
+      "operations": [
+        "library.node.get",
+        "library.node.rename"
+      ]
+    },
+    {
+      "featureId": "library.move",
+      "title": "Перемещение материалов",
+      "usefulness": 6,
+      "operations": [
+        "library.node.move"
+      ]
+    },
+    {
+      "featureId": "library.delete",
+      "title": "Корзина библиотеки",
+      "usefulness": 6,
+      "operations": [
+        "library.node.delete",
+        "library.trash.list"
+      ]
+    },
+    {
+      "featureId": "library.restore",
+      "title": "Восстановление из корзины",
+      "usefulness": 6,
+      "operations": [
+        "library.node.restore"
+      ]
+    },
+    {
+      "featureId": "library.delete_forever",
+      "title": "Окончательное удаление и очистка корзины",
+      "usefulness": 6,
+      "operations": [
+        "library.node.deleteForever",
+        "library.trash.empty"
+      ]
+    },
+    {
+      "featureId": "library.favorite",
+      "title": "Сохранение объектов в избранное",
+      "usefulness": 6,
+      "operations": [
+        "library.responses.list",
+        "library.response.set",
+        "library.entity.status",
+        "library.entity.set",
+        "library.favorite.status",
+        "library.favorite.set",
+        "library.favorites.list"
+      ]
+    },
+    {
+      "featureId": "library.favorite_folders",
+      "title": "Папки для избранного",
+      "usefulness": 6,
+      "operations": [
+        "library.response.move",
+        "library.entity.move",
+        "library.favoriteFolders.list",
+        "library.folder.create",
+        "library.node.move"
+      ]
+    },
+    {
+      "featureId": "library.auto_context",
+      "title": "Автоматический поиск в Library",
+      "usefulness": 6,
+      "operations": [
+        "library.autoContext.get",
+        "library.autoContext.update"
+      ]
+    },
+    {
+      "featureId": "library.mounted_sources",
+      "title": "Файлы подключённых хранилищ",
+      "usefulness": 6,
+      "operations": [
+        "library.mounted.capabilities",
+        "library.mounted.roots",
+        "library.mounted.browse",
+        "library.mounted.search"
+      ]
+    }
+  ]
+}

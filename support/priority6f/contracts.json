@@ -1,0 +1,2237 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API6FSettings": {
+      "type": "object",
+      "properties": {
+        "voiceId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "mode": {
+          "enum": [
+            "standard",
+            "advanced",
+            "wingman"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32
+        },
+        "voiceEnabled": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "voiceId",
+        "mode",
+        "language",
+        "voiceEnabled"
+      ],
+      "additionalProperties": false
+    },
+    "API6FVoice": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "description": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        },
+        "accent": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 240
+        },
+        "previewAvailable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "accent",
+        "previewAvailable"
+      ],
+      "additionalProperties": false
+    },
+    "API6FVoices": {
+      "type": "object",
+      "properties": {
+        "catalogId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "mode": {
+          "enum": [
+            "standard",
+            "advanced",
+            "wingman"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32
+        },
+        "selectedVoiceId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6FVoice"
+          },
+          "maxItems": 64
+        }
+      },
+      "required": [
+        "catalogId",
+        "mode",
+        "language",
+        "selectedVoiceId",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6FModes": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "enum": [
+                  "standard",
+                  "advanced",
+                  "wingman"
+                ]
+              },
+              "current": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "id",
+              "current"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6FLanguages": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 32
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 96
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6FPlayback": {
+      "type": "object",
+      "properties": {
+        "voiceId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "assetId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "idle",
+            "playing",
+            "paused",
+            "stopped",
+            "failed"
+          ]
+        },
+        "position": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 180
+        },
+        "duration": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 180
+        },
+        "rate": {
+          "enum": [
+            0.5,
+            1,
+            1.5,
+            2
+          ]
+        }
+      },
+      "required": [
+        "voiceId",
+        "assetId",
+        "state",
+        "position",
+        "duration",
+        "rate"
+      ],
+      "additionalProperties": false
+    },
+    "API6FMutation": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "completed",
+            "uncertain",
+            "rejected"
+          ]
+        },
+        "resourceId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 256
+        },
+        "confirmed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "state",
+        "resourceId",
+        "confirmed"
+      ],
+      "additionalProperties": false
+    },
+    "API6FTranscript": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "uiShown": {
+          "enum": [
+            false
+          ]
+        }
+      },
+      "required": [
+        "sessionId",
+        "conversationId",
+        "visible",
+        "uiShown"
+      ],
+      "additionalProperties": false
+    },
+    "API6FNotice": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 240
+        },
+        "descriptionMarkdown": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 8000
+        },
+        "hint": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 1000
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "switch_to_standard",
+              "upgrade_to_plus",
+              "upgrade_to_pro",
+              "new_chat",
+              "dismiss"
+            ]
+          },
+          "maxItems": 8
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "descriptionMarkdown",
+        "hint",
+        "actions"
+      ],
+      "additionalProperties": false
+    },
+    "API6FUsage": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "observed": {
+          "type": "boolean"
+        },
+        "warning": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 36,
+              "maxLength": 36
+            },
+            "title": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 240
+            },
+            "descriptionMarkdown": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 8000
+            },
+            "hint": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 1000
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "switch_to_standard",
+                  "upgrade_to_plus",
+                  "upgrade_to_pro",
+                  "new_chat",
+                  "dismiss"
+                ]
+              },
+              "maxItems": 8
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "descriptionMarkdown",
+            "hint",
+            "actions"
+          ],
+          "additionalProperties": false
+        },
+        "exceeded": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 36,
+              "maxLength": 36
+            },
+            "title": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 240
+            },
+            "descriptionMarkdown": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 8000
+            },
+            "hint": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 1000
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "switch_to_standard",
+                  "upgrade_to_plus",
+                  "upgrade_to_pro",
+                  "new_chat",
+                  "dismiss"
+                ]
+              },
+              "maxItems": 8
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "descriptionMarkdown",
+            "hint",
+            "actions"
+          ],
+          "additionalProperties": false
+        },
+        "resetsAfter": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 40
+        },
+        "hangUp": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "sessionId",
+        "observed",
+        "warning",
+        "exceeded",
+        "resetsAfter",
+        "hangUp"
+      ],
+      "additionalProperties": false
+    },
+    "API6FModel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "familyId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "familyTitle": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "lane": {
+          "enum": [
+            "auto",
+            "instant",
+            "thinking",
+            "thinking_mini",
+            "pro"
+          ]
+        },
+        "efforts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "enum": [
+                  "zero",
+                  "min",
+                  "standard",
+                  "extended",
+                  "xhigh",
+                  "max",
+                  "ultra"
+                ]
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240
+              }
+            },
+            "required": [
+              "id",
+              "title"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 32
+        },
+        "defaultEffort": {
+          "enum": [
+            null,
+            "zero",
+            "min",
+            "standard",
+            "extended",
+            "xhigh",
+            "max",
+            "ultra"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "familyId",
+        "familyTitle",
+        "lane",
+        "efforts",
+        "defaultEffort"
+      ],
+      "additionalProperties": false
+    },
+    "API6FModels": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6FModel"
+          },
+          "maxItems": 128
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6FSelection": {
+      "type": "object",
+      "properties": {
+        "modelId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "familyId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "lane": {
+          "enum": [
+            "auto",
+            "instant",
+            "thinking",
+            "thinking_mini",
+            "pro"
+          ]
+        },
+        "thinkingEffort": {
+          "enum": [
+            null,
+            "zero",
+            "min",
+            "standard",
+            "extended",
+            "xhigh",
+            "max",
+            "ultra"
+          ]
+        },
+        "temporary": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "modelId",
+        "familyId",
+        "lane",
+        "thinkingEffort",
+        "temporary"
+      ],
+      "additionalProperties": false
+    },
+    "API6FAutoPreference": {
+      "type": "object",
+      "properties": {
+        "prefersAuto": {
+          "type": "boolean"
+        },
+        "scope": {
+          "enum": [
+            "client"
+          ]
+        },
+        "selection": {
+          "$ref": "#/types/API6FSelection"
+        },
+        "eligible": {
+          "type": "boolean"
+        },
+        "applied": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "prefersAuto",
+        "scope",
+        "selection",
+        "eligible",
+        "applied"
+      ],
+      "additionalProperties": false
+    },
+    "API6FDraft": {
+      "type": "object",
+      "properties": {
+        "draftId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "parentMessageId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "modelId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "thinkingEffort": {
+          "enum": [
+            null,
+            "zero",
+            "min",
+            "standard",
+            "extended",
+            "xhigh",
+            "max",
+            "ultra"
+          ]
+        },
+        "temporary": {
+          "type": "boolean"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 16000
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "draftId",
+        "conversationId",
+        "parentMessageId",
+        "modelId",
+        "thinkingEffort",
+        "temporary",
+        "text",
+        "attachments"
+      ],
+      "additionalProperties": false
+    },
+    "API6FGeneration": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "completed",
+            "uncertain",
+            "rejected",
+            "cancelled"
+          ]
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "userMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "assistantMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "persisted": {
+          "type": "boolean"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 262144
+        }
+      },
+      "required": [
+        "operationId",
+        "state",
+        "conversationId",
+        "userMessageId",
+        "assistantMessageId",
+        "persisted",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "API6FAsset": {
+      "type": "object",
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "mediaType": {
+          "enum": [
+            "application/pdf"
+          ]
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8388608
+        },
+        "sha256": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "assetId",
+        "name",
+        "mediaType",
+        "bytes",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "API6FExport": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "asset": {
+          "$ref": "#/types/API6FAsset"
+        },
+        "exportToken": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "completed": {
+          "enum": [
+            true
+          ]
+        }
+      },
+      "required": [
+        "operationId",
+        "asset",
+        "exportToken",
+        "completed"
+      ],
+      "additionalProperties": false
+    },
+    "API6FSearchItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "sourceType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "sourceKey": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        },
+        "snippet": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 8000
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "projectId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 256
+        },
+        "libraryItemId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 256
+        },
+        "pageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 256
+        }
+      },
+      "required": [
+        "id",
+        "sourceType",
+        "sourceKey",
+        "title",
+        "snippet",
+        "conversationId",
+        "projectId",
+        "libraryItemId",
+        "pageId"
+      ],
+      "additionalProperties": false
+    },
+    "API6FSearch": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6FSearchItem"
+          },
+          "maxItems": 100
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "partial": {
+          "type": "boolean"
+        },
+        "sourceStatuses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sourceType": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "sourceKey": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "status": {
+                "enum": [
+                  "ok",
+                  "skipped",
+                  "error"
+                ]
+              },
+              "hasMore": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "sourceType",
+              "sourceKey",
+              "status",
+              "hasMore"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "items",
+        "nextPageToken",
+        "partial",
+        "sourceStatuses"
+      ],
+      "additionalProperties": false
+    },
+    "API6FScan": {
+      "type": "object",
+      "properties": {
+        "draftId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "pageCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16
+        },
+        "state": {
+          "enum": [
+            "unsaved",
+            "transferred",
+            "discarded"
+          ]
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "draftId",
+        "pageCount",
+        "state",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "API6FScanLeave": {
+      "type": "object",
+      "properties": {
+        "draft": {
+          "$ref": "#/types/API6FScan"
+        },
+        "confirmationToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "requiresConfirmation": {
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 240
+        },
+        "message": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 1000
+        }
+      },
+      "required": [
+        "draft",
+        "confirmationToken",
+        "requiresConfirmation",
+        "title",
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "API6FScanDiscard": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "draftId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "discarded": {
+          "type": "boolean"
+        },
+        "pageCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16
+        }
+      },
+      "required": [
+        "operationId",
+        "draftId",
+        "discarded",
+        "pageCount"
+      ],
+      "additionalProperties": false
+    },
+    "API6FState": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "draft",
+            "dispatching",
+            "streaming",
+            "stop_requested",
+            "reconciling",
+            "completed",
+            "rejected",
+            "cancelled",
+            "uncertain"
+          ]
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "userMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "assistantMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "persisted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "state",
+        "conversationId",
+        "userMessageId",
+        "assistantMessageId",
+        "persisted"
+      ],
+      "additionalProperties": false
+    },
+    "API6FMessage": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "messageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 262144
+        },
+        "finished": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "sequence",
+        "conversationId",
+        "messageId",
+        "text",
+        "finished"
+      ],
+      "additionalProperties": false
+    },
+    "API6FStatus": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "phase": {
+          "enum": [
+            "queued",
+            "preparing",
+            "thinking",
+            "searching",
+            "writing",
+            "complete",
+            "interrupted",
+            "failed",
+            "unknown"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 240
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "operationId",
+        "phase",
+        "label",
+        "sequence"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "voice.settings.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FSettings"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/settings/user"
+      }
+    },
+    {
+      "id": "voice.catalog.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "enum": [
+              "standard",
+              "advanced",
+              "wingman"
+            ]
+          },
+          "language": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          }
+        },
+        "required": [
+          "mode",
+          "language"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FVoices"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/settings/voices"
+      }
+    },
+    {
+      "id": "voice.catalog.select",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "catalogId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "voiceId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "catalogId",
+          "voiceId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/settings/account_user_setting"
+      }
+    },
+    {
+      "id": "voice.preview.start",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "catalogId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "voiceId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "catalogId",
+          "voiceId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "{private_exact_catalogue_preview_url}"
+      }
+    },
+    {
+      "id": "voice.preview.stop",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "voice.preview.status",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "voice.modes.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FModes"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/settings/user"
+      }
+    },
+    {
+      "id": "voice.modes.select",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "mode": {
+            "enum": [
+              "standard",
+              "advanced",
+              "wingman"
+            ]
+          },
+          "language": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          }
+        },
+        "required": [
+          "operationId",
+          "mode",
+          "language"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/settings/account_user_setting"
+      }
+    },
+    {
+      "id": "voice.languages.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FLanguages"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "voice.languages.select",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "language": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          }
+        },
+        "required": [
+          "operationId",
+          "language"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/settings/account_user_setting"
+      }
+    },
+    {
+      "id": "voice.transcript.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "sessionId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FTranscript"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "voice.transcript.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "visible": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "sessionId",
+          "visible"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FTranscript"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "voice.usage.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "sessionId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FUsage"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "voice.usage.useStandard",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "sessionId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "noticeId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "sessionId",
+          "noticeId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/settings/account_user_setting"
+      }
+    },
+    {
+      "id": "modelControls.catalog",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "temporary": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "temporary"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FModels"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/models"
+      }
+    },
+    {
+      "id": "modelControls.select",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "versionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "lane": {
+            "enum": [
+              "auto",
+              "instant",
+              "thinking",
+              "thinking_mini",
+              "pro"
+            ]
+          },
+          "thinkingEffort": {
+            "enum": [
+              null,
+              "zero",
+              "min",
+              "standard",
+              "extended",
+              "xhigh",
+              "max",
+              "ultra"
+            ]
+          },
+          "temporary": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "versionId",
+          "lane",
+          "thinkingEffort",
+          "temporary"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FSelection"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "modelControls.autoPreference.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "temporary": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "temporary"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FAutoPreference"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "modelControls.autoPreference.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "prefersAuto": {
+            "type": "boolean"
+          },
+          "temporary": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "prefersAuto",
+          "temporary"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FAutoPreference"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "modelControls.newDraft",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "draftId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "draftId",
+          "parentMessageId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FDraft"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "modelControls.send",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "draftId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "operationId",
+          "draftId",
+          "conversationId",
+          "parentMessageId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FGeneration"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API6FState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API6FMessage"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API6FStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      }
+    },
+    {
+      "id": "research.exportPDF",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "messageId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FExport"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/export_doc/deep_research"
+      }
+    },
+    {
+      "id": "search.global",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          },
+          "filter": {
+            "enum": [
+              "all",
+              "chats",
+              "projects",
+              "images",
+              "documents",
+              "pages"
+            ]
+          },
+          "includeFolders": {
+            "type": "boolean"
+          },
+          "includeSpaces": {
+            "type": "boolean"
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "native",
+                "native_shared"
+              ]
+            },
+            "maxItems": 2
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "query",
+          "filter",
+          "includeFolders",
+          "includeSpaces",
+          "providers",
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FSearch"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/global/search"
+      }
+    },
+    {
+      "id": "scanDraft.status",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "draftId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "draftId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FScan"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "scanDraft.leave",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "draftId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "draftId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FScanLeave"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "scanDraft.keep",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "draftId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "confirmationToken": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "draftId",
+          "confirmationToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FScan"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "scanDraft.discard",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "draftId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "confirmationToken": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "draftId",
+          "confirmationToken",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FScanDiscard"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    },
+    {
+      "id": "configuration.operation.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6FMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "tools.reasoning_effort",
+      "title": "Уровень усилий рассуждения",
+      "usefulness": 6,
+      "operations": [
+        "modelControls.catalog",
+        "modelControls.select",
+        "modelControls.newDraft",
+        "modelControls.send"
+      ]
+    },
+    {
+      "featureId": "tools.research_export",
+      "title": "Загрузка результата исследования",
+      "usefulness": 6,
+      "operations": [
+        "research.exportPDF"
+      ]
+    },
+    {
+      "featureId": "tools.model_version",
+      "title": "Версия модели",
+      "usefulness": 6,
+      "operations": [
+        "modelControls.catalog",
+        "modelControls.select"
+      ]
+    },
+    {
+      "featureId": "tools.model_auto_switch",
+      "title": "Автоматический выбор большей глубины",
+      "usefulness": 6,
+      "operations": [
+        "modelControls.autoPreference.get",
+        "modelControls.autoPreference.set",
+        "modelControls.send"
+      ]
+    },
+    {
+      "featureId": "search.global",
+      "title": "Глобальный поиск по содержимому",
+      "usefulness": 6,
+      "operations": [
+        "search.global"
+      ]
+    },
+    {
+      "featureId": "voice.choose_voice",
+      "title": "Выбор голоса",
+      "usefulness": 6,
+      "operations": [
+        "voice.catalog.list",
+        "voice.catalog.select",
+        "voice.preview.start",
+        "voice.preview.stop",
+        "voice.preview.status"
+      ]
+    },
+    {
+      "featureId": "voice.choose_model",
+      "title": "Выбор голосового режима или модели",
+      "usefulness": 6,
+      "operations": [
+        "voice.modes.list",
+        "voice.modes.select"
+      ]
+    },
+    {
+      "featureId": "voice.language",
+      "title": "Язык голосового разговора",
+      "usefulness": 6,
+      "operations": [
+        "voice.languages.list",
+        "voice.languages.select"
+      ]
+    },
+    {
+      "featureId": "voice.transcript",
+      "title": "Текст голосового разговора",
+      "usefulness": 6,
+      "operations": [
+        "voice.transcript.get",
+        "voice.transcript.set"
+      ]
+    },
+    {
+      "featureId": "voice.usage_limits",
+      "title": "Лимиты Voice и продолжение с базовой моделью",
+      "usefulness": 6,
+      "operations": [
+        "voice.usage.get",
+        "voice.usage.useStandard"
+      ]
+    },
+    {
+      "featureId": "media.scan_discard",
+      "title": "Отмена незавершённого скана",
+      "usefulness": 6,
+      "operations": [
+        "scanDraft.status",
+        "scanDraft.leave",
+        "scanDraft.keep",
+        "scanDraft.discard"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API6EHandoff": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "enum": [
+            "open_browser"
+          ]
+        },
+        "purpose": {
+          "enum": [
+            "phone_login",
+            "email_code_login",
+            "password_reset",
+            "signup",
+            "mfa_push_approval",
+            "mfa_recovery_code"
+          ]
+        },
+        "url": {
+          "enum": [
+            "https://chatgpt.com/auth/login"
+          ]
+        },
+        "requiresUserSelection": {
+          "enum": [
+            true
+          ]
+        },
+        "completed": {
+          "enum": [
+            false
+          ]
+        },
+        "flowStarted": {
+          "enum": [
+            false
+          ]
+        },
+        "sensitiveInputInBrowser": {
+          "enum": [
+            true
+          ]
+        }
+      },
+      "required": [
+        "action",
+        "purpose",
+        "url",
+        "requiresUserSelection",
+        "completed",
+        "flowStarted",
+        "sensitiveInputInBrowser"
+      ],
+      "additionalProperties": false
+    },
+    "API6EDevice": {
+      "type": "object",
+      "properties": {
+        "targetId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "deviceModel": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "platform": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "location": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "regionCode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "lastSignedInAtSeconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 253402300799
+        },
+        "isCurrent": {
+          "type": "boolean"
+        },
+        "isTrusted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "canRevoke": {
+          "type": "boolean"
+        },
+        "kind": {
+          "enum": [
+            "session",
+            "signed_out_trusted",
+            "unavailable"
+          ]
+        },
+        "apps": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 512
+              },
+              "type": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 64
+              },
+              "siteHost": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 253
+              }
+            },
+            "required": [
+              "name",
+              "type",
+              "siteHost"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "targetId",
+        "displayName",
+        "deviceModel",
+        "platform",
+        "location",
+        "city",
+        "regionCode",
+        "country",
+        "lastSignedInAtSeconds",
+        "isCurrent",
+        "isTrusted",
+        "canRevoke",
+        "kind",
+        "apps"
+      ],
+      "additionalProperties": false
+    },
+    "API6ESessions": {
+      "type": "object",
+      "properties": {
+        "catalogId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "items": {
+          "type": "array",
+          "maxItems": 200,
+          "items": {
+            "$ref": "#/types/API6EDevice"
+          }
+        }
+      },
+      "required": [
+        "catalogId",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6EReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "action": {
+          "enum": [
+            "session",
+            "trust",
+            "all"
+          ]
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "affectsCurrentSession": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "action",
+        "serverAcknowledged",
+        "verified",
+        "affectsCurrentSession"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "account.auth.phone",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "BROWSER_HANDOFF",
+        "pathTemplate": "/auth/login"
+      },
+      "notes": "Official entry context for phone login; requiresUserSelection=true, flowStarted=false and completed=false. Browser owns sensitive inputs and any account action. No method-specific deep-link, availability or native auth step is asserted."
+    },
+    {
+      "id": "account.auth.emailCode",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "BROWSER_HANDOFF",
+        "pathTemplate": "/auth/login"
+      },
+      "notes": "Official entry context for email-code login; requiresUserSelection=true, flowStarted=false and completed=false. Browser owns sensitive inputs and any account action. No method-specific deep-link, availability or native auth step is asserted."
+    },
+    {
+      "id": "account.auth.passwordReset",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "BROWSER_HANDOFF",
+        "pathTemplate": "/auth/login"
+      },
+      "notes": "Official entry context for password reset; requiresUserSelection=true, flowStarted=false and completed=false. Browser owns sensitive inputs and any account action. No method-specific deep-link, availability or native auth step is asserted."
+    },
+    {
+      "id": "account.auth.signup",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "BROWSER_HANDOFF",
+        "pathTemplate": "/auth/login"
+      },
+      "notes": "Official entry context for signup; requiresUserSelection=true, flowStarted=false and completed=false. Browser owns sensitive inputs and any account action. No method-specific deep-link, availability or native auth step is asserted."
+    },
+    {
+      "id": "account.auth.mfaPush",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "BROWSER_HANDOFF",
+        "pathTemplate": "/auth/login"
+      },
+      "notes": "Official entry context for MFA push approval; requiresUserSelection=true, flowStarted=false and completed=false. Browser owns sensitive inputs and any account action. No method-specific deep-link, availability or native auth step is asserted."
+    },
+    {
+      "id": "account.auth.recoveryCode",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "BROWSER_HANDOFF",
+        "pathTemplate": "/auth/login"
+      },
+      "notes": "Official entry context for MFA recovery code; requiresUserSelection=true, flowStarted=false and completed=false. Browser owns sensitive inputs and any account action. No method-specific deep-link, availability or native auth step is asserted."
+    },
+    {
+      "id": "account.sessions.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "includeTrustedDevices": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "includeTrustedDevices"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6ESessions"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/accounts/sessions?include_trusted_devices=true"
+      },
+      "notes": "False omits the query flag. Bounded200 devices/32 apps; nullable missing metadata remains unknown. Revocation identifiers stay private; opaque catalogue/target UUIDs expire after5min. No raw client URI, auth token, session ID or device hash becomes public."
+    },
+    {
+      "id": "account.sessions.revoke",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "catalogId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "targetId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "catalogId",
+          "targetId",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6EReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/accounts/{sessions/revoke,trusted_devices/revoke}"
+      },
+      "notes": "Fresh identity-bound list preflight; refuse current/unavailable rows. Active sessions send session_id; signed-out trusted devices satisfying source can_untrust guard send device_id_hash. One attempt, durable sanitized fingerprints, no retries or optimistic success."
+    },
+    {
+      "id": "account.sessions.revokeAll",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "confirmRevokeAllSessions": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "confirmRevokeAllSessions"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6EReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/accounts/logout_all"
+      },
+      "notes": "Includes current device. Fresh owner/account binding, read preflight and one journaled POST. Concrete private network invalidates only the matching old local WebSession after delivering acknowledgement, preserving reentrant replacement login. Propagated global revocation is not claimed verified."
+    },
+    {
+      "id": "account.sessions.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6EReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/accounts/sessions?include_trusted_devices=true"
+      },
+      "notes": "Read-only absence verification for a previously attempted single session or device-trust revocation. Scoped fingerprints survive restart; never replay a write. All-session global revocation cannot be proven from a current list and remains uncertain."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "account.login.phone",
+      "title": "Вход или регистрация по телефону",
+      "usefulness": 6,
+      "operations": [
+        "account.auth.phone"
+      ]
+    },
+    {
+      "featureId": "account.login.email_code",
+      "title": "Вход по одноразовому коду из письма",
+      "usefulness": 6,
+      "operations": [
+        "account.auth.emailCode"
+      ]
+    },
+    {
+      "featureId": "account.login.password_reset",
+      "title": "Восстановление пароля",
+      "usefulness": 6,
+      "operations": [
+        "account.auth.passwordReset"
+      ]
+    },
+    {
+      "featureId": "account.signup",
+      "title": "Создание аккаунта",
+      "usefulness": 6,
+      "operations": [
+        "account.auth.signup"
+      ]
+    },
+    {
+      "featureId": "account.mfa.push_approval",
+      "title": "MFA подтверждением на другом устройстве",
+      "usefulness": 6,
+      "operations": [
+        "account.auth.mfaPush"
+      ]
+    },
+    {
+      "featureId": "account.mfa.recovery_code",
+      "title": "Вход резервным кодом",
+      "usefulness": 6,
+      "operations": [
+        "account.auth.recoveryCode"
+      ]
+    },
+    {
+      "featureId": "account.sessions.list",
+      "title": "Список сеансов и доверенных устройств",
+      "usefulness": 6,
+      "operations": [
+        "account.sessions.list"
+      ]
+    },
+    {
+      "featureId": "account.sessions.revoke",
+      "title": "Удалённый выход выбранного устройства",
+      "usefulness": 6,
+      "operations": [
+        "account.sessions.list",
+        "account.sessions.revoke",
+        "account.sessions.reconcile"
+      ]
+    },
+    {
+      "featureId": "account.sessions.revoke_all",
+      "title": "Выход на всех устройствах",
+      "usefulness": 6,
+      "operations": [
+        "account.sessions.revokeAll",
+        "account.sessions.reconcile"
+      ]
+    }
+  ]
+}

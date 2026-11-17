@@ -1,0 +1,2118 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API6BPlugin": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "description": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 4000
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "installationPolicy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "requiresLocalExecutor": {
+          "type": "boolean"
+        },
+        "installed": {
+          "type": "boolean"
+        },
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "status",
+        "installationPolicy",
+        "requiresLocalExecutor",
+        "installed",
+        "enabled"
+      ],
+      "additionalProperties": false
+    },
+    "API6BPlugins": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6BPlugin"
+          },
+          "maxItems": 128
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "connections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "connectorId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 240
+              },
+              "authStatus": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "privacyControl": {
+                "enum": [
+                  "always_ask",
+                  "ask_before_writes",
+                  "review_important_actions",
+                  "full_access",
+                  null
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "connectorId",
+              "name",
+              "authStatus",
+              "privacyControl"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 128
+        }
+      },
+      "required": [
+        "items",
+        "nextPageToken"
+      ],
+      "additionalProperties": false
+    },
+    "API6BMutation": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "completed",
+            "uncertain",
+            "rejected"
+          ]
+        },
+        "resourceId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 256
+        },
+        "confirmed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "state",
+        "resourceId",
+        "confirmed"
+      ],
+      "additionalProperties": false
+    },
+    "API6BGpt": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "description": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 4000
+        },
+        "starters": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "maxItems": 16
+        },
+        "canChat": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "starters",
+        "canChat"
+      ],
+      "additionalProperties": false
+    },
+    "API6BGpts": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6BGpt"
+          },
+          "maxItems": 128
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        }
+      },
+      "required": [
+        "items",
+        "nextPageToken"
+      ],
+      "additionalProperties": false
+    },
+    "API6BCategories": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240
+              },
+              "gpts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/types/API6BGpt"
+                },
+                "maxItems": 128
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "gpts"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 64
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6BMention": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "description": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 4000
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "API6BMentions": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6BMention"
+          },
+          "maxItems": 128
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6BWorkModels": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 128
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6BHandoff": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "handoffId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "userMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "none",
+            "pending",
+            "accepted",
+            "declined"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 600
+        },
+        "treatment": {
+          "enum": [
+            "files",
+            "spreadsheets",
+            "slides",
+            "documents",
+            "pdfs",
+            "code"
+          ]
+        },
+        "thinkingEffort": {
+          "enum": [
+            "min",
+            "standard",
+            "extended",
+            "xhigh",
+            "max",
+            "ultra",
+            null
+          ]
+        }
+      },
+      "required": [
+        "conversationId",
+        "handoffId",
+        "userMessageId",
+        "state",
+        "reason",
+        "treatment",
+        "thinkingEffort"
+      ],
+      "additionalProperties": false
+    },
+    "API6BGeneration": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "completed",
+            "uncertain",
+            "rejected",
+            "cancelled"
+          ]
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "userMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "assistantMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "persisted": {
+          "type": "boolean"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 262144
+        }
+      },
+      "required": [
+        "operationId",
+        "state",
+        "conversationId",
+        "userMessageId",
+        "assistantMessageId",
+        "persisted",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "API6BWorkHandoffResult": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "completed",
+            "uncertain",
+            "rejected"
+          ]
+        },
+        "converted": {
+          "type": "boolean"
+        },
+        "started": {
+          "type": "boolean"
+        },
+        "conversationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "handoffId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        }
+      },
+      "required": [
+        "operationId",
+        "state",
+        "converted",
+        "started",
+        "conversationId",
+        "handoffId"
+      ],
+      "additionalProperties": false
+    },
+    "API6BGrant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "API6BGrants": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6BGrant"
+          },
+          "maxItems": 128
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6BConnector": {
+      "type": "object",
+      "properties": {
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "authStatus": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 128
+              },
+              "privacyControl": {
+                "enum": [
+                  "always_ask",
+                  "ask_before_writes",
+                  "review_important_actions",
+                  "full_access",
+                  null
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "authStatus",
+              "privacyControl"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 128
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "authStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "syncStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "privacyControl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "adminDisabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "links",
+        "id",
+        "name",
+        "status",
+        "authStatus",
+        "syncStatus",
+        "privacyControl",
+        "adminDisabled"
+      ],
+      "additionalProperties": false
+    },
+    "API6BPermission": {
+      "type": "object",
+      "properties": {
+        "defaultPolicy": {
+          "enum": [
+            "always_ask",
+            "ask_before_writes",
+            "review_important_actions",
+            "full_access",
+            null
+          ]
+        },
+        "usingDefault": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "policy": {
+          "enum": [
+            "always_ask",
+            "ask_before_writes",
+            "review_important_actions",
+            "full_access",
+            null
+          ]
+        }
+      },
+      "required": [
+        "defaultPolicy",
+        "usingDefault",
+        "id",
+        "policy"
+      ],
+      "additionalProperties": false
+    },
+    "API6BGptAction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      },
+      "required": [
+        "id",
+        "domain"
+      ],
+      "additionalProperties": false
+    },
+    "API6BGptActions": {
+      "type": "object",
+      "properties": {
+        "gptId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6BGptAction"
+          },
+          "maxItems": 64
+        },
+        "settingsOpened": {
+          "enum": [
+            false
+          ]
+        }
+      },
+      "required": [
+        "gptId",
+        "items",
+        "settingsOpened"
+      ],
+      "additionalProperties": false
+    },
+    "API6BState": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "draft",
+            "dispatching",
+            "streaming",
+            "stop_requested",
+            "reconciling",
+            "completed",
+            "rejected",
+            "cancelled",
+            "uncertain"
+          ]
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "userMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "assistantMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "persisted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "state",
+        "conversationId",
+        "userMessageId",
+        "assistantMessageId",
+        "persisted"
+      ],
+      "additionalProperties": false
+    },
+    "API6BMessage": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "messageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 262144
+        },
+        "finished": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "sequence",
+        "conversationId",
+        "messageId",
+        "text",
+        "finished"
+      ],
+      "additionalProperties": false
+    },
+    "API6BStatus": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "phase": {
+          "enum": [
+            "queued",
+            "preparing",
+            "thinking",
+            "searching",
+            "writing",
+            "complete",
+            "interrupted",
+            "failed",
+            "unknown"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 240
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "operationId",
+        "phase",
+        "label",
+        "sequence"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "connectors.catalog",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 240
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "query",
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BPlugins"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/ps/plugins/search",
+        "emptyQueryPath": "/backend-api/ps/plugins/home"
+      }
+    },
+    {
+      "id": "connectors.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pluginId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        },
+        "required": [
+          "pluginId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BPlugin"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/ps/plugins/{pluginId}"
+      }
+    },
+    {
+      "id": "connectors.installed",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "includeConnections": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BPlugins"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/ps/plugins/installed"
+      }
+    },
+    {
+      "id": "connectors.install",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "pluginId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "pluginId",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/ps/plugins/{pluginId}/install"
+      }
+    },
+    {
+      "id": "connectors.remove",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "pluginId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "pluginId",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/ps/plugins/{pluginId}/uninstall"
+      }
+    },
+    {
+      "id": "connectors.enable",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "pluginId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "pluginId",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/ps/plugins/{pluginId}/enable"
+      }
+    },
+    {
+      "id": "connectors.disable",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "pluginId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "pluginId",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/ps/plugins/{pluginId}/disable"
+      }
+    },
+    {
+      "id": "connectors.settings.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "connectorId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        },
+        "required": [
+          "connectorId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BConnector"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/aip/connectors/{connectorId}"
+      }
+    },
+    {
+      "id": "connectors.disconnect",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "linkId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "linkId",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/aip/connectors/links/{linkId}"
+      }
+    },
+    {
+      "id": "connectors.permissions.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "linkId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        },
+        "required": [
+          "linkId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BPermission"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/aip/connectors/links/list_accessible"
+      }
+    },
+    {
+      "id": "connectors.permissions.default.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BPermission"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/settings/user"
+      }
+    },
+    {
+      "id": "connectors.permissions.default.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "policy": {
+            "enum": [
+              "always_ask",
+              "ask_before_writes",
+              "review_important_actions"
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "policy"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/settings/account_user_setting"
+      }
+    },
+    {
+      "id": "connectors.permissions.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "linkId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "policy": {
+            "enum": [
+              "always_ask",
+              "ask_before_writes",
+              "review_important_actions",
+              "full_access",
+              null
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "linkId",
+          "policy"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/aip/connectors/links/{linkId}"
+      }
+    },
+    {
+      "id": "composer.mentions.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 240
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMentions"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/system_hints"
+      }
+    },
+    {
+      "id": "composer.mentions.send",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          },
+          "mentions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256
+                },
+                "startIndex": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 16000
+                },
+                "endIndex": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 16000
+                }
+              },
+              "required": [
+                "id",
+                "startIndex",
+                "endIndex"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 16
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "parentMessageId",
+          "modelId",
+          "text",
+          "mentions"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BGeneration"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API6BState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API6BMessage"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API6BStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      }
+    },
+    {
+      "id": "work.models",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BWorkModels"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/tpp/models/"
+      }
+    },
+    {
+      "id": "work.send",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "parentMessageId",
+          "modelId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BGeneration"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API6BState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API6BMessage"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API6BStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      }
+    },
+    {
+      "id": "work.handoff.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversation/{conversationId}"
+      }
+    },
+    {
+      "id": "work.handoff.accept",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "handoffId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "handoffId",
+          "modelId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BWorkHandoffResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API6BState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API6BMessage"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API6BStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/tpp/work-handoff/convert"
+      }
+    },
+    {
+      "id": "work.handoff.decline",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "handoffId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "handoffId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BWorkHandoffResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API6BState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API6BMessage"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API6BStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      }
+    },
+    {
+      "id": "gpts.explore",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BCategories"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/public-api/gizmos/discovery"
+      }
+    },
+    {
+      "id": "gpts.category",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "categoryId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "categoryId",
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BGpts"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/public-api/gizmos/discovery/{categoryId}"
+      }
+    },
+    {
+      "id": "gpts.search",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "query",
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BGpts"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/gizmos/search"
+      }
+    },
+    {
+      "id": "gpts.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gptId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "gptId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BGpt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/gizmos/{gptId}"
+      }
+    },
+    {
+      "id": "gpts.personal",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BGpts"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/public-api/gizmos/discovery/mine"
+      }
+    },
+    {
+      "id": "gpts.send",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          },
+          "gptId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "parentMessageId",
+          "modelId",
+          "text",
+          "gptId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BGeneration"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API6BState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API6BMessage"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API6BStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_recovered",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      }
+    },
+    {
+      "id": "gpts.actions.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gptId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "gptId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BGptActions"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/gizmos/{gptId}"
+      }
+    },
+    {
+      "id": "privacy.appsAccess.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BGrants"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "GET",
+        "pathTemplate": "/backend-api/user_information/grants"
+      }
+    },
+    {
+      "id": "privacy.appsAccess.revoke",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "grantId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "grantId",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_recovered",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/user_information/grants/{grantId}"
+      }
+    },
+    {
+      "id": "connectors.operation.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6BMutation"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      }
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "compose.mentions",
+      "title": "Упоминания приложений и источников",
+      "usefulness": 6,
+      "operations": [
+        "composer.mentions.list",
+        "composer.mentions.send"
+      ]
+    },
+    {
+      "featureId": "tools.apps_catalog",
+      "title": "Каталог приложений и плагинов",
+      "usefulness": 6,
+      "operations": [
+        "connectors.catalog",
+        "connectors.get"
+      ]
+    },
+    {
+      "featureId": "tools.app_install",
+      "title": "Установка и включение приложения",
+      "usefulness": 6,
+      "operations": [
+        "connectors.install",
+        "connectors.enable",
+        "composer.mentions.send"
+      ]
+    },
+    {
+      "featureId": "tools.app_remove",
+      "title": "Удаление подключённого приложения",
+      "usefulness": 6,
+      "operations": [
+        "connectors.remove",
+        "connectors.disable"
+      ]
+    },
+    {
+      "featureId": "tools.connector_disconnect",
+      "title": "Отключение аккаунта сервиса",
+      "usefulness": 6,
+      "operations": [
+        "connectors.disconnect"
+      ]
+    },
+    {
+      "featureId": "tools.connector_settings",
+      "title": "Настройки и состояние синхронизации",
+      "usefulness": 6,
+      "operations": [
+        "connectors.settings.get"
+      ]
+    },
+    {
+      "featureId": "tools.work_mode",
+      "title": "Рабочий режим разговора",
+      "usefulness": 6,
+      "operations": [
+        "work.models",
+        "work.send"
+      ]
+    },
+    {
+      "featureId": "tools.work_handoff",
+      "title": "Продолжение ответа в Work",
+      "usefulness": 6,
+      "operations": [
+        "work.handoff.get",
+        "work.handoff.accept",
+        "work.handoff.decline"
+      ]
+    },
+    {
+      "featureId": "gpts.explore",
+      "title": "Каталог GPT",
+      "usefulness": 6,
+      "operations": [
+        "gpts.explore",
+        "gpts.category"
+      ]
+    },
+    {
+      "featureId": "gpts.search",
+      "title": "Поиск GPT",
+      "usefulness": 6,
+      "operations": [
+        "gpts.search"
+      ]
+    },
+    {
+      "featureId": "gpts.detail",
+      "title": "Карточка GPT",
+      "usefulness": 6,
+      "operations": [
+        "gpts.get",
+        "gpts.send"
+      ]
+    },
+    {
+      "featureId": "gpts.personal",
+      "title": "Свои GPT",
+      "usefulness": 6,
+      "operations": [
+        "gpts.personal"
+      ]
+    },
+    {
+      "featureId": "gpts.action_permissions",
+      "title": "Настройки действий GPT",
+      "usefulness": 6,
+      "operations": [
+        "gpts.actions.get"
+      ]
+    },
+    {
+      "featureId": "privacy.apps_access",
+      "title": "Приложения с доступом к контактной информации",
+      "usefulness": 6,
+      "operations": [
+        "privacy.appsAccess.list",
+        "privacy.appsAccess.revoke"
+      ]
+    },
+    {
+      "featureId": "privacy.apps_permissions",
+      "title": "Разрешения чтения и действий подключённых приложений",
+      "usefulness": 6,
+      "operations": [
+        "connectors.permissions.get",
+        "connectors.permissions.set",
+        "connectors.permissions.default.get",
+        "connectors.permissions.default.set"
+      ]
+    }
+  ]
+}

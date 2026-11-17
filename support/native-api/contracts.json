@@ -1,0 +1,7098 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "f7b55fcf5b80f5334415d97cbcab8d97ac9435596bd9bafa70af55d3c33b46af",
+  "types": {
+    "Identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "OperationId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "Text": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 200000
+    },
+    "Error": {
+      "type": "object",
+      "required": [
+        "domain",
+        "code",
+        "operationId",
+        "retryable",
+        "dispatched"
+      ],
+      "properties": {
+        "domain": {
+          "type": "string",
+          "enum": [
+            "OR6API"
+          ]
+        },
+        "code": {
+          "type": "string",
+          "enum": [
+            "invalid_request",
+            "unknown_operation",
+            "schema_mismatch",
+            "not_implemented",
+            "capability_unavailable",
+            "login_required",
+            "auth_cancelled",
+            "auth_failed",
+            "session_recovery",
+            "owner_mismatch",
+            "cancelled",
+            "timeout",
+            "network",
+            "tls",
+            "rate_limited",
+            "service_challenge",
+            "upstream_error",
+            "unknown_wire_shape",
+            "size_limit",
+            "conflict",
+            "uncertain",
+            "not_found",
+            "expired",
+            "unsupported_media",
+            "permission_denied",
+            "invalid_response",
+            "stale_context",
+            "unavailable",
+            "capability_unverified",
+            "storage_failure",
+            "uncertain_outcome",
+            "not_authenticated",
+            "access_denied",
+            "network_unavailable",
+            "duplicate_operation",
+            "invalid_operation_state"
+          ]
+        },
+        "operationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "dispatched": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SessionSummary": {
+      "type": "object",
+      "required": [
+        "state",
+        "revision",
+        "authenticated",
+        "renewable",
+        "expiresAt",
+        "cleanupPending"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "signed_out",
+            "validating",
+            "authenticated",
+            "recovery_required",
+            "login_required"
+          ]
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "authenticated": {
+          "type": "boolean"
+        },
+        "renewable": {
+          "type": "boolean"
+        },
+        "expiresAt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cleanupPending": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Interaction": {
+      "type": "object",
+      "required": [
+        "interactionId",
+        "provider",
+        "state",
+        "session"
+      ],
+      "properties": {
+        "interactionId": {
+          "$ref": "#/types/Identifier"
+        },
+        "provider": {
+          "type": "string",
+          "enum": [
+            "email",
+            "google"
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "idle",
+            "interactive",
+            "complete",
+            "cancelled",
+            "failed"
+          ]
+        },
+        "session": {
+          "$ref": "#/types/SessionSummary"
+        }
+      },
+      "additionalProperties": false
+    },
+    "HistoryItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "updatedAt",
+        "currentNode",
+        "archived"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/types/Identifier"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        },
+        "updatedAt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "currentNode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "archived": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SearchItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "updatedAt",
+        "archived",
+        "snippet"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/types/Identifier"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        },
+        "updatedAt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "snippet": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 16000
+        }
+      },
+      "additionalProperties": false
+    },
+    "Message": {
+      "type": "object",
+      "required": [
+        "id",
+        "nodeId",
+        "role",
+        "type",
+        "text",
+        "parts",
+        "status",
+        "endTurn",
+        "finished",
+        "createdAt",
+        "model"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/types/Identifier"
+        },
+        "nodeId": {
+          "$ref": "#/types/Identifier"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "user",
+            "assistant"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "text": {
+          "$ref": "#/types/Text"
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/MessagePart"
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "endTurn": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "finished": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false
+    },
+    "Conversation": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "archived",
+        "currentNode",
+        "nodes",
+        "messages"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/types/Identifier"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "currentNode": {
+          "$ref": "#/types/Identifier"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/Node"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/Message"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        }
+      },
+      "additionalProperties": false
+    },
+    "HistoryPage": {
+      "type": "object",
+      "required": [
+        "items",
+        "offset",
+        "limit",
+        "total",
+        "nextToken"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/HistoryItem"
+          },
+          "minItems": 0,
+          "maxItems": 50
+        },
+        "offset": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "nextToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1024
+        }
+      },
+      "additionalProperties": false
+    },
+    "SearchPage": {
+      "type": "object",
+      "required": [
+        "items",
+        "nextToken"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/SearchItem"
+          },
+          "minItems": 0,
+          "maxItems": 50
+        },
+        "nextToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1024
+        }
+      },
+      "additionalProperties": false
+    },
+    "Model": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "capabilities"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/types/Identifier"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "familyId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "modeId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "familyTitle": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "modeTitle": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "efforts": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "defaultEffort": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 64
+        }
+      },
+      "additionalProperties": false
+    },
+    "ModelCatalog": {
+      "type": "object",
+      "required": [
+        "items",
+        "selectedModelId"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/Model"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        },
+        "selectedModelId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false
+    },
+    "Draft": {
+      "type": "object",
+      "required": [
+        "draftId",
+        "conversationId",
+        "parentMessageId",
+        "modelId",
+        "temporary",
+        "text",
+        "attachments"
+      ],
+      "properties": {
+        "draftId": {
+          "$ref": "#/types/Identifier"
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "parentMessageId": {
+          "$ref": "#/types/Identifier"
+        },
+        "modelId": {
+          "$ref": "#/types/Identifier"
+        },
+        "temporary": {
+          "type": "boolean"
+        },
+        "text": {
+          "$ref": "#/types/Text"
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/Identifier"
+          },
+          "minItems": 0,
+          "maxItems": 4
+        },
+        "thinkingEffort": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 64
+        }
+      },
+      "additionalProperties": false
+    },
+    "OperationReceipt": {
+      "type": "object",
+      "required": [
+        "operationId",
+        "state",
+        "conversationId",
+        "userMessageId",
+        "assistantMessageId",
+        "persisted"
+      ],
+      "properties": {
+        "operationId": {
+          "$ref": "#/types/OperationId"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "dispatching",
+            "streaming",
+            "stop_requested",
+            "reconciling",
+            "completed",
+            "rejected",
+            "cancelled",
+            "uncertain"
+          ]
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "userMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "assistantMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "persisted": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MessageSnapshot": {
+      "type": "object",
+      "required": [
+        "operationId",
+        "sequence",
+        "conversationId",
+        "messageId",
+        "text",
+        "finished"
+      ],
+      "properties": {
+        "operationId": {
+          "$ref": "#/types/OperationId"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "messageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "text": {
+          "$ref": "#/types/Text"
+        },
+        "finished": {
+          "type": "boolean"
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/MessagePart"
+          },
+          "maxItems": 1000
+        },
+        "conversationTitle": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      },
+      "additionalProperties": false
+    },
+    "GenerationStatus": {
+      "type": "object",
+      "required": [
+        "operationId",
+        "phase",
+        "label",
+        "sequence"
+      ],
+      "properties": {
+        "operationId": {
+          "$ref": "#/types/OperationId"
+        },
+        "phase": {
+          "type": "string",
+          "enum": [
+            "queued",
+            "preparing",
+            "thinking",
+            "searching",
+            "writing",
+            "complete",
+            "interrupted",
+            "failed",
+            "unknown"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 240
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        }
+      },
+      "additionalProperties": false
+    },
+    "StopReceipt": {
+      "type": "object",
+      "required": [
+        "operationId",
+        "requested",
+        "localConsumptionStopped",
+        "serverStopConfirmed",
+        "persisted"
+      ],
+      "properties": {
+        "operationId": {
+          "$ref": "#/types/OperationId"
+        },
+        "requested": {
+          "type": "boolean"
+        },
+        "localConsumptionStopped": {
+          "type": "boolean"
+        },
+        "serverStopConfirmed": {
+          "type": "boolean"
+        },
+        "persisted": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ContentBlock": {
+      "type": "object",
+      "required": [
+        "kind",
+        "text",
+        "url",
+        "language"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "paragraph",
+            "code",
+            "link",
+            "image",
+            "citation"
+          ]
+        },
+        "text": {
+          "$ref": "#/types/Text"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 4096
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "runs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/ContentRun"
+          },
+          "minItems": 0,
+          "maxItems": 20000
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 6
+        },
+        "copyText": {
+          "$ref": "#/types/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Presentation": {
+      "type": "object",
+      "required": [
+        "messageId",
+        "blocks",
+        "plainText",
+        "format"
+      ],
+      "properties": {
+        "messageId": {
+          "$ref": "#/types/Identifier"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/ContentBlock"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "plainText": {
+          "$ref": "#/types/Text"
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "plain",
+            "markdown"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Selection": {
+      "type": "object",
+      "required": [
+        "messageId",
+        "start",
+        "length",
+        "selectedText"
+      ],
+      "properties": {
+        "messageId": {
+          "$ref": "#/types/Identifier"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 200000
+        },
+        "length": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 200000
+        },
+        "selectedText": {
+          "$ref": "#/types/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Source": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "url",
+        "start",
+        "end"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/types/Identifier"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "start": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "end": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "AccessibleElement": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "hint",
+        "traits",
+        "action"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/types/Identifier"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200000
+        },
+        "hint": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        },
+        "traits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "text",
+              "button",
+              "link",
+              "image",
+              "adjustable",
+              "selected",
+              "disabled"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 7
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "none",
+            "activate",
+            "copy",
+            "open",
+            "remove",
+            "replace"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "VoiceState": {
+      "type": "object",
+      "required": [
+        "sessionId",
+        "state",
+        "microphoneMuted",
+        "outputMuted",
+        "canResume",
+        "sequence"
+      ],
+      "properties": {
+        "sessionId": {
+          "$ref": "#/types/Identifier"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "idle",
+            "connecting",
+            "connected",
+            "interrupted",
+            "reconnecting",
+            "ended",
+            "failed",
+            "unavailable"
+          ]
+        },
+        "microphoneMuted": {
+          "type": "boolean"
+        },
+        "outputMuted": {
+          "type": "boolean"
+        },
+        "canResume": {
+          "type": "boolean"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        }
+      },
+      "additionalProperties": false
+    },
+    "Recording": {
+      "type": "object",
+      "required": [
+        "recordingId",
+        "state",
+        "assetId",
+        "durationMS",
+        "bytes",
+        "mediaType"
+      ],
+      "properties": {
+        "recordingId": {
+          "$ref": "#/types/Identifier"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "idle",
+            "recording",
+            "stopped",
+            "cancelled",
+            "failed"
+          ]
+        },
+        "assetId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "durationMS": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 60000
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8388608
+        },
+        "mediaType": {
+          "type": "string",
+          "enum": [
+            "audio/wav"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Transcript": {
+      "type": "object",
+      "required": [
+        "operationId",
+        "recordingId",
+        "text",
+        "editable",
+        "insertedIntoDraft"
+      ],
+      "properties": {
+        "operationId": {
+          "$ref": "#/types/OperationId"
+        },
+        "recordingId": {
+          "$ref": "#/types/Identifier"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 16000
+        },
+        "editable": {
+          "type": "boolean"
+        },
+        "insertedIntoDraft": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Asset": {
+      "type": "object",
+      "required": [
+        "assetId",
+        "name",
+        "mediaType",
+        "bytes",
+        "sha256",
+        "state",
+        "remoteId"
+      ],
+      "properties": {
+        "assetId": {
+          "$ref": "#/types/Identifier"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "mediaType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8388608
+        },
+        "sha256": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "local",
+            "selected",
+            "uploading",
+            "processing",
+            "ready",
+            "detached",
+            "expired",
+            "unavailable",
+            "failed"
+          ]
+        },
+        "remoteId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false
+    },
+    "AssetLimits": {
+      "type": "object",
+      "required": [
+        "maxBytes",
+        "maxCount",
+        "allowedMediaTypes",
+        "scope",
+        "serverLimitsKnown"
+      ],
+      "properties": {
+        "maxBytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8388608
+        },
+        "maxCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "allowedMediaTypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "scope": {
+          "type": "string",
+          "enum": [
+            "client_policy",
+            "server_observed"
+          ]
+        },
+        "serverLimitsKnown": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AssetStatus": {
+      "type": "object",
+      "required": [
+        "assetId",
+        "state",
+        "available",
+        "expiresAt",
+        "remoteId"
+      ],
+      "properties": {
+        "assetId": {
+          "$ref": "#/types/Identifier"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "local",
+            "uploading",
+            "processing",
+            "ready",
+            "detached",
+            "expired",
+            "unavailable",
+            "failed",
+            "unknown"
+          ]
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "expiresAt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "remoteId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false
+    },
+    "Progress": {
+      "type": "object",
+      "required": [
+        "operationId",
+        "completedBytes",
+        "totalBytes",
+        "phase"
+      ],
+      "properties": {
+        "operationId": {
+          "$ref": "#/types/OperationId"
+        },
+        "completedBytes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8388608
+        },
+        "totalBytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8388608
+        },
+        "phase": {
+          "type": "string",
+          "enum": [
+            "acquiring",
+            "uploading",
+            "processing",
+            "downloading"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Node": {
+      "type": "object",
+      "required": [
+        "id",
+        "parent",
+        "children",
+        "messageId"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/types/Identifier"
+        },
+        "parent": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/Identifier"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "messageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false
+    },
+    "MessagePart": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "text",
+            "citation",
+            "asset",
+            "unsupported",
+            "reasoning",
+            "context"
+          ]
+        },
+        "text": {
+          "$ref": "#/types/Text"
+        },
+        "data": {
+          "type": "object"
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false
+    },
+    "ContentRun": {
+      "type": "object",
+      "required": [
+        "location",
+        "length",
+        "style"
+      ],
+      "properties": {
+        "location": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 200000
+        },
+        "length": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 200000
+        },
+        "style": {
+          "type": "string",
+          "enum": [
+            "bold",
+            "italic",
+            "strike",
+            "code",
+            "link"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "transports": {
+    "local": {
+      "protocol": "in_process",
+      "admitted": true,
+      "description": "Deterministic local DTO/policy operation; no remote request. UI effects require the UIKit adapter."
+    },
+    "interaction": {
+      "protocol": "user_interaction",
+      "admitted": false,
+      "description": "Explicit handoff to existing on-phone WebPort login, picker or recorder; no credential entry API."
+    },
+    "session": {
+      "protocol": "https_json",
+      "admitted": true,
+      "description": "Existing OR6WebSession only, fixed session GET and /me GET; no raw credentials in UI contracts."
+    },
+    "https_json": {
+      "protocol": "https_json",
+      "admitted": false,
+      "description": "Single attempt native JSON read candidate. Host/browser evidence does not admit iOS6 service access."
+    },
+    "https_sse": {
+      "protocol": "https_sse",
+      "admitted": false,
+      "description": "Incremental SSE candidate with original vendor decoding. Security preparation remains unadmitted."
+    },
+    "multipart_upload": {
+      "protocol": "https_multipart",
+      "admitted": false,
+      "description": "Observed host transcription multipart path; native admission and encoder are separate gates."
+    },
+    "asset_pipeline": {
+      "protocol": "https_pipeline",
+      "admitted": false,
+      "description": "Create, authorized signed byte PUT, processing stream and final ready readback; not one invented upload call."
+    },
+    "realtime_unresolved": {
+      "protocol": "unresolved_realtime",
+      "admitted": false,
+      "description": "No selected admitted signaling/media implementation. SDP/WebRTC/LiveKit/datachannel are candidates only."
+    },
+    "https_download": {
+      "protocol": "https_download_pipeline",
+      "admitted": false,
+      "description": "Observed same-origin JSON download authorization followed by a bounded binary HTTPS GET. Binary content is not JSON. Other/future signed origins and redirects remain unadmitted.",
+      "authorizationFormat": "json",
+      "contentFormat": "binary",
+      "maxDecodedBytes": 8388608,
+      "originPolicy": "same_origin_observed_only",
+      "redirects": false
+    }
+  },
+  "operations": [
+    {
+      "id": "auth.begin",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "provider"
+        ],
+        "properties": {
+          "provider": {
+            "type": "string",
+            "enum": [
+              "email",
+              "google"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Interaction"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/Interaction"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "interaction",
+      "wire": {
+        "status": "browser_inherited",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Email/password and MFA were not separately admitted on this exact phone."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "interaction_handoff",
+      "prerequisites": [
+        "explicit_user_login",
+        "webport_enabled_for_interactive_login"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Normal WebPort login receives all email/password/Google/MFA input directly. The provider choice contains no secret.",
+      "examples": {
+        "request": {
+          "provider": "google"
+        },
+        "response": {
+          "interactionId": "fixture-login-1",
+          "provider": "google",
+          "state": "interactive",
+          "session": {
+            "state": "signed_out",
+            "revision": 2,
+            "authenticated": false,
+            "renewable": false,
+            "expiresAt": null,
+            "cleanupPending": false
+          }
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "interactionId": "fixture-login-1",
+              "provider": "google",
+              "state": "interactive",
+              "session": {
+                "state": "signed_out",
+                "revision": 2,
+                "authenticated": false,
+                "renewable": false,
+                "expiresAt": null,
+                "cleanupPending": false
+              }
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "auth.status",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "interactionId"
+        ],
+        "properties": {
+          "interactionId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Interaction"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/Interaction"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Observe coordinator state only; never inspect credential DOM.",
+      "examples": {
+        "request": {
+          "interactionId": "fixture-login-1"
+        },
+        "response": {
+          "interactionId": "fixture-login-1",
+          "provider": "google",
+          "state": "interactive",
+          "session": {
+            "state": "signed_out",
+            "revision": 2,
+            "authenticated": false,
+            "renewable": false,
+            "expiresAt": null,
+            "cleanupPending": false
+          }
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "interactionId": "fixture-login-1",
+              "provider": "google",
+              "state": "interactive",
+              "session": {
+                "state": "signed_out",
+                "revision": 2,
+                "authenticated": false,
+                "renewable": false,
+                "expiresAt": null,
+                "cleanupPending": false
+              }
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "auth.cancel",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "interactionId"
+        ],
+        "properties": {
+          "interactionId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Interaction"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/Interaction"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Invalidates this interaction generation and restores prior accepted session if present.",
+      "examples": {
+        "request": {
+          "interactionId": "fixture-login-1"
+        },
+        "response": {
+          "interactionId": "fixture-login-1",
+          "provider": "google",
+          "state": "cancelled",
+          "session": {
+            "state": "signed_out",
+            "revision": 2,
+            "authenticated": false,
+            "renewable": false,
+            "expiresAt": null,
+            "cleanupPending": false
+          }
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "interactionId": "fixture-login-1",
+              "provider": "google",
+              "state": "cancelled",
+              "session": {
+                "state": "signed_out",
+                "revision": 2,
+                "authenticated": false,
+                "renewable": false,
+                "expiresAt": null,
+                "cleanupPending": false
+              }
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "auth.logout",
+      "requestSchema": {
+        "type": "object",
+        "required": [],
+        "properties": {},
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/SessionSummary"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/SessionSummary"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Durable app-local V3 tombstone precedes owned credential/cookie cleanup. No account-wide revoke.",
+      "examples": {
+        "request": {},
+        "response": {
+          "state": "signed_out",
+          "revision": 2,
+          "authenticated": false,
+          "renewable": false,
+          "expiresAt": null,
+          "cleanupPending": false
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "state": "signed_out",
+              "revision": 2,
+              "authenticated": false,
+              "renewable": false,
+              "expiresAt": null,
+              "cleanupPending": false
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "auth.restore",
+      "requestSchema": {
+        "type": "object",
+        "required": [],
+        "properties": {},
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/SessionSummary"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/SessionSummary"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "session",
+      "wire": {
+        "status": "phone_accepted",
+        "method": "GET",
+        "pathTemplate": "/backend-api/me",
+        "unknowns": [
+          "Natural real-expiry rotation is unobserved."
+        ],
+        "candidates": [],
+        "steps": [
+          {
+            "method": "GET",
+            "pathTemplate": "/api/auth/session",
+            "condition": "Only when expired/401 during restore, or one explicit renew request. At most one session GET; no background retry."
+          },
+          {
+            "method": "GET",
+            "pathTemplate": "/backend-api/me",
+            "condition": "One native validation of usable saved bearer or newly read candidate before owner acceptance. No raw token/owner getter."
+          }
+        ],
+        "recoveredFields": {
+          "sessionResponse": [
+            "accessToken (private authorizer only)",
+            "account (private owner binding only)",
+            "user (private owner validation only)",
+            "expires",
+            "authProvider"
+          ],
+          "meResponse": [
+            "id (private validated owner only)"
+          ]
+        }
+      },
+      "execution": "session_coordinator",
+      "prerequisites": [
+        "accepted_web_session_or_cookie_jar"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Delegates to accepted OR6WebSession with owner binding and atomic V3 storage. Unchanged bearer is a session check, not proof of rotation.",
+      "examples": {
+        "request": {},
+        "response": {
+          "state": "authenticated",
+          "revision": 1,
+          "authenticated": true,
+          "renewable": true,
+          "expiresAt": null,
+          "cleanupPending": false
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "state": "authenticated",
+              "revision": 1,
+              "authenticated": true,
+              "renewable": true,
+              "expiresAt": null,
+              "cleanupPending": false
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "auth.renew",
+      "requestSchema": {
+        "type": "object",
+        "required": [],
+        "properties": {},
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/SessionSummary"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/SessionSummary"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "session",
+      "wire": {
+        "status": "phone_accepted",
+        "method": "GET",
+        "pathTemplate": "/api/auth/session",
+        "unknowns": [
+          "Natural real-expiry rotation is unobserved."
+        ],
+        "candidates": [],
+        "steps": [
+          {
+            "method": "GET",
+            "pathTemplate": "/api/auth/session",
+            "condition": "Only when expired/401 during restore, or one explicit renew request. At most one session GET; no background retry."
+          },
+          {
+            "method": "GET",
+            "pathTemplate": "/backend-api/me",
+            "condition": "One native validation of usable saved bearer or newly read candidate before owner acceptance. No raw token/owner getter."
+          }
+        ],
+        "recoveredFields": {
+          "sessionResponse": [
+            "accessToken (private authorizer only)",
+            "account (private owner binding only)",
+            "user (private owner validation only)",
+            "expires",
+            "authProvider"
+          ],
+          "meResponse": [
+            "id (private validated owner only)"
+          ]
+        }
+      },
+      "execution": "session_coordinator",
+      "prerequisites": [
+        "accepted_web_session_or_cookie_jar"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Delegates to accepted OR6WebSession with owner binding and atomic V3 storage. Unchanged bearer is a session check, not proof of rotation.",
+      "examples": {
+        "request": {},
+        "response": {
+          "state": "authenticated",
+          "revision": 1,
+          "authenticated": true,
+          "renewable": true,
+          "expiresAt": null,
+          "cleanupPending": false
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "state": "authenticated",
+              "revision": 1,
+              "authenticated": true,
+              "renewable": true,
+              "expiresAt": null,
+              "cleanupPending": false
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "history.list",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "pageToken",
+          "limit"
+        ],
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 1024
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/HistoryPage"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_json",
+      "wire": {
+        "status": "host_observed",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversations?offset={offset}&limit={limit}&order=updated",
+        "unknowns": [
+          "Native phone/backend admission for history is not established."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {
+          "response": [
+            "items",
+            "total",
+            "offset",
+            "limit"
+          ],
+          "item": [
+            "id",
+            "title",
+            "update_time",
+            "current_node",
+            "is_archived"
+          ]
+        }
+      },
+      "execution": "native_read_candidate",
+      "prerequisites": [
+        "validated_web_session"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Raw items/id/title/update_time/current_node/is_archived become bounded internal DTOs; unknown raw fields are ignored by a strict decoder. Public pageToken is opaque; only the adapter decodes/encodes the vendor offset. Limit1..50.",
+      "examples": {
+        "request": {
+          "pageToken": null,
+          "limit": 20
+        },
+        "response": {
+          "items": [
+            {
+              "id": "fixture-conversation-1",
+              "title": "Fixture conversation",
+              "currentNode": "fixture-assistant-1",
+              "archived": false,
+              "updatedAt": 1
+            }
+          ],
+          "total": 1,
+          "offset": 0,
+          "limit": 20,
+          "nextToken": null
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "history.get",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "conversationId"
+        ],
+        "properties": {
+          "conversationId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Conversation"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_json",
+      "wire": {
+        "status": "host_observed",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversation/{conversationId}",
+        "unknowns": [
+          "Native phone/backend admission for conversation read is not established."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {
+          "response": [
+            "mapping",
+            "current_node",
+            "conversation_id",
+            "title",
+            "is_archived"
+          ],
+          "message": [
+            "id",
+            "author.role",
+            "content.content_type",
+            "content.parts",
+            "channel",
+            "metadata",
+            "status",
+            "end_turn"
+          ]
+        }
+      },
+      "execution": "native_read_candidate",
+      "prerequisites": [
+        "validated_web_session",
+        "valid_conversation_identifier"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Current branch traversal fails on missing nodes/cycles. Only visible final/null-channel user/assistant text is presented.",
+      "examples": {
+        "request": {
+          "conversationId": "fixture-conversation-1"
+        },
+        "response": {
+          "id": "fixture-conversation-1",
+          "title": "Fixture conversation",
+          "archived": false,
+          "currentNode": "fixture-node-1",
+          "messages": [
+            {
+              "id": "fixture-assistant-1",
+              "role": "assistant",
+              "type": "text",
+              "text": "Fixture answer.",
+              "status": "finished_successfully",
+              "endTurn": true,
+              "finished": true,
+              "createdAt": 1,
+              "model": "fixture-model",
+              "nodeId": "fixture-node-1",
+              "parts": [
+                {
+                  "kind": "text",
+                  "text": "Fixture answer."
+                }
+              ]
+            }
+          ],
+          "nodes": [
+            {
+              "id": "fixture-node-1",
+              "parent": null,
+              "children": [],
+              "messageId": "fixture-assistant-1"
+            }
+          ]
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "history.search",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "query",
+          "pageToken",
+          "limit"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 1024
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/SearchPage"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_json",
+      "wire": {
+        "status": "host_observed",
+        "method": "POST",
+        "pathTemplate": "/backend-api/global/search",
+        "unknowns": [
+          "Native admission and multi-page native orchestration are unverified."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {
+          "request": [
+            "query",
+            "limit",
+            "cursor"
+          ],
+          "response": [
+            "items",
+            "cursor"
+          ],
+          "item": [
+            "source_type",
+            "payload.kind",
+            "payload.conversation_id",
+            "title",
+            "update_time",
+            "snippet"
+          ]
+        }
+      },
+      "execution": "native_read_candidate",
+      "prerequisites": [
+        "validated_web_session"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "POST query/limit/cursor, never GET. Public pageToken is opaque vendor-cursor state, never a URL. Filter conversation payloads, deduplicate and reject cursor cycles. No invented total. Limit1..50.",
+      "examples": {
+        "request": {
+          "query": "fixture",
+          "pageToken": null,
+          "limit": 20
+        },
+        "response": {
+          "items": [
+            {
+              "id": "fixture-conversation-1",
+              "title": "Fixture conversation",
+              "updatedAt": 1,
+              "archived": false,
+              "snippet": "Fixture snippet"
+            }
+          ],
+          "nextToken": null
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "models.list",
+      "requestSchema": {
+        "type": "object",
+        "required": [],
+        "properties": {},
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/ModelCatalog"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_json",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "The observed /backend-api/models path returned HTTP200 in modern-browser Resource Timing; request method and body/response shape were not captured.",
+          "Native catalog admission and account/model capability semantics remain unverified."
+        ],
+        "candidates": [
+          {
+            "transport": "https_json",
+            "method": null,
+            "pathTemplate": "/backend-api/models",
+            "evidence": "docs/support/EVIDENCE.md:125",
+            "admitted": false,
+            "limits": "Passive modern-browser Resource Timing HTTP200 only. Verb, request/response bodies and native/backend admission are unknown."
+          }
+        ],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "validated_web_session",
+        "admitted_model_catalog"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Normal host browser model menu is evidenced. Passive modern-browser Resource Timing also recorded /backend-api/models HTTP200, without its verb or response body. Preserve this unadmitted path candidate; no complete remote catalog contract has been recovered. Do not synthesize availability from static model names.",
+      "examples": {
+        "request": {},
+        "response": {
+          "items": [
+            {
+              "id": "fixture-model",
+              "title": "Fixture model",
+              "capabilities": []
+            }
+          ],
+          "selectedModelId": "fixture-model"
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "models.select",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "modelId"
+        ],
+        "properties": {
+          "modelId": {
+            "$ref": "#/types/Identifier"
+          },
+          "thinkingEffort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "required": [
+          "modelId"
+        ],
+        "properties": {
+          "modelId": {
+            "$ref": "#/types/Identifier"
+          },
+          "thinkingEffort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [
+        "admitted_model_catalog"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Select an exact admitted catalog entry locally; an empty capabilities list means no proven capability. No endpoint or model substitution. Selection alone does not make a model usable remotely.",
+      "examples": {
+        "request": {
+          "modelId": "fixture-model"
+        },
+        "response": {
+          "modelId": "fixture-model"
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "messages.newDraft",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "draftId",
+          "parentMessageId",
+          "modelId",
+          "temporary"
+        ],
+        "properties": {
+          "draftId": {
+            "$ref": "#/types/Identifier"
+          },
+          "parentMessageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "modelId": {
+            "$ref": "#/types/Identifier"
+          },
+          "temporary": {
+            "type": "boolean"
+          },
+          "thinkingEffort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Draft"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Allocates local draft/context only. temporary is intent; backend temporary semantics are unverified.",
+      "examples": {
+        "request": {
+          "draftId": "fixture-draft-1",
+          "parentMessageId": "fixture-parent-1",
+          "modelId": "fixture-model",
+          "temporary": false
+        },
+        "response": {
+          "draftId": "fixture-draft-1",
+          "conversationId": null,
+          "parentMessageId": "fixture-parent-1",
+          "modelId": "fixture-model",
+          "temporary": false,
+          "text": "Fixture question.",
+          "attachments": []
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "messages.send",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "draftId",
+          "text",
+          "modelId",
+          "parentMessageId",
+          "temporary",
+          "attachments"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "draftId": {
+            "$ref": "#/types/Identifier"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200000
+          },
+          "modelId": {
+            "$ref": "#/types/Identifier"
+          },
+          "conversationId": {
+            "$ref": "#/types/Identifier"
+          },
+          "parentMessageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "temporary": {
+            "type": "boolean"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/Identifier"
+            },
+            "minItems": 0,
+            "maxItems": 4
+          },
+          "thinkingEffort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/OperationReceipt"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/OperationReceipt"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/MessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/GenerationStatus"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_sse",
+      "wire": {
+        "status": "host_observed",
+        "method": "POST",
+        "pathTemplate": "/backend-api/f/conversation",
+        "unknowns": [
+          "Native preparation/security requirements and temporary-chat flag are unadmitted.",
+          "Exact attachment request encoding varies with content type and is not admitted."
+        ],
+        "candidates": [],
+        "steps": [
+          {
+            "method": "POST",
+            "pathTemplate": "/backend-api/f/conversation/prepare",
+            "condition": "Observed browser preparation; exact native admission unknown."
+          },
+          {
+            "method": "POST",
+            "pathTemplate": "/backend-api/f/conversation",
+            "condition": "Observed normal browser Send, once after preparation."
+          },
+          {
+            "method": "GET",
+            "pathTemplate": "/backend-api/conversation/{conversationId}",
+            "condition": "Separate persisted identity/readback after stream."
+          }
+        ],
+        "recoveredFields": {
+          "request": [
+            "action=next",
+            "model",
+            "parent_message_id",
+            "conversation_id(optional)",
+            "messages[].id",
+            "messages[].author",
+            "messages[].content.parts",
+            "supported_encodings=[v1]",
+            "client_prepare_state=success"
+          ],
+          "responseEvents": [
+            "delta_encoding",
+            "delta(p/o/v/c)",
+            "message_stream_complete",
+            "[DONE]"
+          ]
+        }
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "validated_web_session",
+        "admitted_model_catalog",
+        "admitted_send_preparation",
+        "durable_operation_journal"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Persist immutable operation identity and dispatch marker before any POST. Observed browser sends use preparation/security machinery; wire endpoint alone does not admit native send. Stream completion is separate from persisted readback.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "draftId": "fixture-draft-1",
+          "text": "Fixture question.",
+          "modelId": "fixture-model",
+          "parentMessageId": "fixture-parent-1",
+          "temporary": false,
+          "attachments": []
+        },
+        "response": {
+          "operationId": "fixture-op-1",
+          "state": "draft",
+          "conversationId": null,
+          "userMessageId": null,
+          "assistantMessageId": null,
+          "persisted": false
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "state": "draft",
+              "conversationId": null,
+              "userMessageId": null,
+              "assistantMessageId": null,
+              "persisted": false
+            }
+          },
+          {
+            "name": "message",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "sequence": 1,
+              "conversationId": null,
+              "messageId": null,
+              "text": "Fixture partial answer.",
+              "finished": false
+            }
+          },
+          {
+            "name": "status",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "phase": "unknown",
+              "label": "",
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "messages.edit",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "conversationId",
+          "messageId",
+          "text",
+          "modelId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "conversationId": {
+            "$ref": "#/types/Identifier"
+          },
+          "messageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200000
+          },
+          "modelId": {
+            "$ref": "#/types/Identifier"
+          },
+          "thinkingEffort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/OperationReceipt"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/OperationReceipt"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/MessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/GenerationStatus"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_sse",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Exact remote method/path/action and response admission remain unknown."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "validated_web_session",
+        "durable_operation_journal",
+        "admitted_mutation_protocol"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "A new explicit branch intent. Exact edit action/body/parent selection is unknown; never silently overwrite local history.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "conversationId": "fixture-conversation-1",
+          "messageId": "fixture-user-1",
+          "text": "Fixture corrected question.",
+          "modelId": "fixture-model"
+        },
+        "response": {
+          "operationId": "fixture-op-1",
+          "state": "draft",
+          "conversationId": null,
+          "userMessageId": null,
+          "assistantMessageId": null,
+          "persisted": false
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "state": "draft",
+              "conversationId": null,
+              "userMessageId": null,
+              "assistantMessageId": null,
+              "persisted": false
+            }
+          },
+          {
+            "name": "message",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "sequence": 1,
+              "conversationId": null,
+              "messageId": null,
+              "text": "Fixture partial answer.",
+              "finished": false
+            }
+          },
+          {
+            "name": "status",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "phase": "unknown",
+              "label": "",
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "messages.regenerate",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "conversationId",
+          "assistantMessageId",
+          "modelId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "conversationId": {
+            "$ref": "#/types/Identifier"
+          },
+          "assistantMessageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "modelId": {
+            "$ref": "#/types/Identifier"
+          },
+          "thinkingEffort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/OperationReceipt"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/OperationReceipt"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/MessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/GenerationStatus"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_sse",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Exact remote method/path/action and response admission remain unknown."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "validated_web_session",
+        "durable_operation_journal",
+        "admitted_mutation_protocol"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "A new explicit answer variant; selected model and parent identity must be validated.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "conversationId": "fixture-conversation-1",
+          "assistantMessageId": "fixture-assistant-1",
+          "modelId": "fixture-model"
+        },
+        "response": {
+          "operationId": "fixture-op-1",
+          "state": "draft",
+          "conversationId": null,
+          "userMessageId": null,
+          "assistantMessageId": null,
+          "persisted": false
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "state": "draft",
+              "conversationId": null,
+              "userMessageId": null,
+              "assistantMessageId": null,
+              "persisted": false
+            }
+          },
+          {
+            "name": "message",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "sequence": 1,
+              "conversationId": null,
+              "messageId": null,
+              "text": "Fixture partial answer.",
+              "finished": false
+            }
+          },
+          {
+            "name": "status",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "phase": "unknown",
+              "label": "",
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "messages.retry",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "previousOperationId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "previousOperationId": {
+            "$ref": "#/types/OperationId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/OperationReceipt"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/OperationReceipt"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/MessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/GenerationStatus"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_sse",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Exact remote method/path/action and response admission remain unknown."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "explicit_user_retry",
+        "previous_rejected_with_confirmed_no_dispatch",
+        "validated_web_session",
+        "durable_operation_journal",
+        "admitted_mutation_protocol"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Explicit fresh-ID retry only when previous durable local record is rejected with confirmed no-dispatch. Uncertain dispatch requires reconciliation, never resend. No mode may bypass this gate.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-2",
+          "previousOperationId": "fixture-op-1"
+        },
+        "response": {
+          "operationId": "fixture-op-2",
+          "state": "draft",
+          "conversationId": null,
+          "userMessageId": null,
+          "assistantMessageId": null,
+          "persisted": false
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "operationId": "fixture-op-2",
+              "state": "draft",
+              "conversationId": null,
+              "userMessageId": null,
+              "assistantMessageId": null,
+              "persisted": false
+            }
+          },
+          {
+            "name": "message",
+            "payload": {
+              "operationId": "fixture-op-2",
+              "sequence": 1,
+              "conversationId": null,
+              "messageId": null,
+              "text": "Fixture partial answer.",
+              "finished": false
+            }
+          },
+          {
+            "name": "status",
+            "payload": {
+              "operationId": "fixture-op-2",
+              "phase": "unknown",
+              "label": "",
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-2",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-2",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "messages.stop",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/StopReceipt"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_json",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Remote server-stop method/path/body and acknowledgment remain unknown."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "active_generation",
+        "admitted_stop_protocol"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Separate independent control request needed. Closing a stream means local consumption stopped only. Browser Stop click has historical evidence but supplies no native endpoint.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1"
+        },
+        "response": {
+          "operationId": "fixture-op-1",
+          "requested": true,
+          "localConsumptionStopped": true,
+          "serverStopConfirmed": false,
+          "persisted": false
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "messages.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/OperationReceipt"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/OperationReceipt"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/MessageSnapshot"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_json",
+      "wire": {
+        "status": "host_observed",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversation/{conversationId}",
+        "unknowns": [
+          "Native reconciliation admission requires original dispatch identity and admitted conversation read."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "durable_operation_journal",
+        "known_conversation_identity"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Read-only server reconciliation using immutable local identity/current branch. No blind retry. Unknown conversation identity leaves uncertain.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1"
+        },
+        "response": {
+          "operationId": "fixture-op-1",
+          "state": "uncertain",
+          "conversationId": null,
+          "userMessageId": null,
+          "assistantMessageId": null,
+          "persisted": false
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "content.present",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "messageId",
+          "text",
+          "format"
+        ],
+        "properties": {
+          "messageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "text": {
+            "$ref": "#/types/Text"
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "plain",
+              "markdown"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Presentation"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Produces bounded display DTOs. Markdown/code/image/link UI is a later renderer; server/model-supplied code is never executed. Existing Foundation renderer maps heading/list/quote to paragraph with level/runs; preserves inline styles and complete code via optional copyText. UI rendering is still separate.",
+      "examples": {
+        "request": {
+          "messageId": "fixture-assistant-1",
+          "text": "Fixture answer.",
+          "format": "plain"
+        },
+        "response": {
+          "messageId": "fixture-assistant-1",
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "Fixture answer.",
+              "url": null,
+              "language": null,
+              "runs": [],
+              "level": 0
+            }
+          ],
+          "plainText": "Fixture answer.",
+          "format": "plain"
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "content.copy",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "messageId",
+          "text"
+        ],
+        "properties": {
+          "messageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "text": {
+            "$ref": "#/types/Text"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "$ref": "#/types/Text"
+          }
+        },
+        "additionalProperties": false
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Returns exact copy payload for explicit UIPasteboard action. Core return is not proof of an actual clipboard write.",
+      "examples": {
+        "request": {
+          "messageId": "fixture-assistant-1",
+          "text": "Fixture answer."
+        },
+        "response": {
+          "text": "Fixture answer."
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "content.select",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "messageId",
+          "text",
+          "start",
+          "length"
+        ],
+        "properties": {
+          "messageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "text": {
+            "$ref": "#/types/Text"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 200000
+          },
+          "length": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 200000
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Selection"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Offsets and limits are UTF-16 code units on Foundation; enforce start+length <= text.length and avoid broken surrogate boundaries.",
+      "examples": {
+        "request": {
+          "messageId": "fixture-assistant-1",
+          "text": "Fixture answer.",
+          "start": 0,
+          "length": 7
+        },
+        "response": {
+          "messageId": "fixture-assistant-1",
+          "start": 0,
+          "length": 7,
+          "selectedText": "Fixture"
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "content.sources",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "messageId",
+          "sources"
+        ],
+        "properties": {
+          "messageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/Source"
+            },
+            "minItems": 0,
+            "maxItems": 100
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "required": [
+          "messageId",
+          "sources"
+        ],
+        "properties": {
+          "messageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/Source"
+            },
+            "minItems": 0,
+            "maxItems": 100
+          }
+        },
+        "additionalProperties": false
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "All upstream citation formats are not recovered."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Presents only previously decoded citations. URL parsing/allowlist and explicit user action gate opening. Missing citation metadata is not fabricated.",
+      "examples": {
+        "request": {
+          "messageId": "fixture-assistant-1",
+          "sources": []
+        },
+        "response": {
+          "messageId": "fixture-assistant-1",
+          "sources": []
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "content.accessibility",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "messageId",
+          "elements"
+        ],
+        "properties": {
+          "messageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/AccessibleElement"
+            },
+            "minItems": 0,
+            "maxItems": 10000
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "required": [
+          "messageId",
+          "elements"
+        ],
+        "properties": {
+          "messageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/AccessibleElement"
+            },
+            "minItems": 0,
+            "maxItems": 10000
+          }
+        },
+        "additionalProperties": false
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Semantic accessibility labels, traits and actions for text/links/media; UIKit/VoiceOver adapter and physical validation are separate.",
+      "examples": {
+        "request": {
+          "messageId": "fixture-assistant-1",
+          "elements": [
+            {
+              "id": "fixture-text-1",
+              "label": "Fixture answer.",
+              "hint": "",
+              "traits": [
+                "text"
+              ],
+              "action": "none"
+            }
+          ]
+        },
+        "response": {
+          "messageId": "fixture-assistant-1",
+          "elements": [
+            {
+              "id": "fixture-text-1",
+              "label": "Fixture answer.",
+              "hint": "",
+              "traits": [
+                "text"
+              ],
+              "action": "none"
+            }
+          ]
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "content.scale",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "scale"
+        ],
+        "properties": {
+          "scale": {
+            "type": "number",
+            "minimum": 0.75,
+            "maximum": 3
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "required": [
+          "scale"
+        ],
+        "properties": {
+          "scale": {
+            "type": "number",
+            "minimum": 0.75,
+            "maximum": 3
+          }
+        },
+        "additionalProperties": false
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Local app font/layout scale. iOS6 has no modern Dynamic Type API; no server request or system setting mutation.",
+      "examples": {
+        "request": {
+          "scale": 1.5
+        },
+        "response": {
+          "scale": 1.5
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "generation.status",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/GenerationStatus"
+      },
+      "events": [
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/GenerationStatus"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Read local observed generation state. Detailed model progress/reasoning is unknown unless explicit vendor metadata is decoded. Never expose private reasoning or infer elapsed state as server truth.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1"
+        },
+        "response": {
+          "operationId": "fixture-op-1",
+          "phase": "unknown",
+          "label": "",
+          "sequence": 0
+        },
+        "events": [
+          {
+            "name": "status",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "phase": "unknown",
+              "label": "",
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "translation.translate",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "text",
+          "sourceLanguage",
+          "targetLanguage"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          },
+          "sourceLanguage": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 64
+          },
+          "targetLanguage": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "text",
+          "targetLanguage"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 16000
+          },
+          "targetLanguage": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_sse",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Exact remote method/path/request and result wire contract unknown."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "validated_web_session",
+        "account_capability",
+        "admitted_tool_protocol"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Original translation scenario has UI/string evidence only. No dedicated route or automatic prompt rewrite is claimed.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "text": "Hello",
+          "sourceLanguage": "en",
+          "targetLanguage": "ru"
+        },
+        "response": {
+          "operationId": "fixture-op-1",
+          "text": "Привет",
+          "targetLanguage": "ru"
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "search.web",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "query",
+          "conversationId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "modelId": {
+            "$ref": "#/types/Identifier"
+          },
+          "thinkingEffort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "text",
+          "sources"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "text": {
+            "$ref": "#/types/Text"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/Source"
+            },
+            "minItems": 0,
+            "maxItems": 100
+          }
+        },
+        "additionalProperties": false
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_sse",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Exact remote method/path/request and result wire contract unknown."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "validated_web_session",
+        "account_capability",
+        "admitted_tool_protocol"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Web search capability/tool mode and resulting citation schema remain unadmitted; history search is a distinct operation.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "query": "Fixture public question",
+          "conversationId": null
+        },
+        "response": {
+          "operationId": "fixture-op-1",
+          "text": "Fixture answer.",
+          "sources": []
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "voice.start",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "conversationId",
+          "voiceId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "voiceId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/VoiceState"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/VoiceState"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "realtime_unresolved",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Original modern runtime unavailable; completed voice call, resume and native backend admission unobserved.",
+          "No admitted signaling/media transport or request/response packet shapes."
+        ],
+        "candidates": [
+          {
+            "transport": "https_sdp_prewarm",
+            "method": null,
+            "pathTemplate": "/realtime/wm",
+            "evidence": "docs/media-20261107.md",
+            "admitted": false,
+            "limits": "Observed HTTP201 prewarm only; signaling body/headers, audio and resumed session unknown."
+          },
+          {
+            "transport": "webrtc_with_datachannel",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Static string only; exact signaling, SDP, ICE, DTLS/SRTP, codecs and iOS6 implementation unverified."
+          },
+          {
+            "transport": "livekit",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Packaged/static dependency is not executed call-path proof; modern binary cannot link ARMv7/iOS6."
+          }
+        ],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "research_only",
+      "prerequisites": [
+        "explicit_user_voice_intent",
+        "admitted_realtime_protocol",
+        "microphone_permission",
+        "ios6_audio_and_transport_acceptance"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Explicit start intent; no microphone starts from validation or status.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "conversationId": null,
+          "voiceId": null
+        },
+        "response": {
+          "sessionId": "fixture-voice-1",
+          "state": "unavailable",
+          "microphoneMuted": true,
+          "outputMuted": true,
+          "canResume": false,
+          "sequence": 0
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "sessionId": "fixture-voice-1",
+              "state": "unavailable",
+              "microphoneMuted": true,
+              "outputMuted": true,
+              "canResume": false,
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "voice.interrupt",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "sessionId"
+        ],
+        "properties": {
+          "sessionId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/VoiceState"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/VoiceState"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "realtime_unresolved",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Original modern runtime unavailable; completed voice call, resume and native backend admission unobserved.",
+          "No admitted signaling/media transport or request/response packet shapes."
+        ],
+        "candidates": [
+          {
+            "transport": "https_sdp_prewarm",
+            "method": null,
+            "pathTemplate": "/realtime/wm",
+            "evidence": "docs/media-20261107.md",
+            "admitted": false,
+            "limits": "Observed HTTP201 prewarm only; signaling body/headers, audio and resumed session unknown."
+          },
+          {
+            "transport": "webrtc_with_datachannel",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Static string only; exact signaling, SDP, ICE, DTLS/SRTP, codecs and iOS6 implementation unverified."
+          },
+          {
+            "transport": "livekit",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Packaged/static dependency is not executed call-path proof; modern binary cannot link ARMv7/iOS6."
+          }
+        ],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "research_only",
+      "prerequisites": [
+        "explicit_user_voice_intent",
+        "admitted_realtime_protocol",
+        "microphone_permission",
+        "ios6_audio_and_transport_acceptance"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Barge-in requires server speech interruption and separate capture/playout state; local playback stop is not server acknowledgment.",
+      "examples": {
+        "request": {
+          "sessionId": "fixture-voice-1"
+        },
+        "response": {
+          "sessionId": "fixture-voice-1",
+          "state": "unavailable",
+          "microphoneMuted": true,
+          "outputMuted": true,
+          "canResume": false,
+          "sequence": 0
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "sessionId": "fixture-voice-1",
+              "state": "unavailable",
+              "microphoneMuted": true,
+              "outputMuted": true,
+              "canResume": false,
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "voice.mute",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "sessionId",
+          "microphoneMuted",
+          "outputMuted"
+        ],
+        "properties": {
+          "sessionId": {
+            "$ref": "#/types/Identifier"
+          },
+          "microphoneMuted": {
+            "type": "boolean"
+          },
+          "outputMuted": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/VoiceState"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/VoiceState"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "realtime_unresolved",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Original modern runtime unavailable; completed voice call, resume and native backend admission unobserved.",
+          "No admitted signaling/media transport or request/response packet shapes."
+        ],
+        "candidates": [
+          {
+            "transport": "https_sdp_prewarm",
+            "method": null,
+            "pathTemplate": "/realtime/wm",
+            "evidence": "docs/media-20261107.md",
+            "admitted": false,
+            "limits": "Observed HTTP201 prewarm only; signaling body/headers, audio and resumed session unknown."
+          },
+          {
+            "transport": "webrtc_with_datachannel",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Static string only; exact signaling, SDP, ICE, DTLS/SRTP, codecs and iOS6 implementation unverified."
+          },
+          {
+            "transport": "livekit",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Packaged/static dependency is not executed call-path proof; modern binary cannot link ARMv7/iOS6."
+          }
+        ],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "research_only",
+      "prerequisites": [
+        "explicit_user_voice_intent",
+        "admitted_realtime_protocol",
+        "microphone_permission",
+        "ios6_audio_and_transport_acceptance"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Independent explicit microphone/output controls; no implicit unmute after recovery.",
+      "examples": {
+        "request": {
+          "sessionId": "fixture-voice-1",
+          "microphoneMuted": true,
+          "outputMuted": false
+        },
+        "response": {
+          "sessionId": "fixture-voice-1",
+          "state": "unavailable",
+          "microphoneMuted": true,
+          "outputMuted": true,
+          "canResume": false,
+          "sequence": 0
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "sessionId": "fixture-voice-1",
+              "state": "unavailable",
+              "microphoneMuted": true,
+              "outputMuted": true,
+              "canResume": false,
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "voice.end",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "sessionId"
+        ],
+        "properties": {
+          "sessionId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/VoiceState"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/VoiceState"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "realtime_unresolved",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Original modern runtime unavailable; completed voice call, resume and native backend admission unobserved.",
+          "No admitted signaling/media transport or request/response packet shapes."
+        ],
+        "candidates": [
+          {
+            "transport": "https_sdp_prewarm",
+            "method": null,
+            "pathTemplate": "/realtime/wm",
+            "evidence": "docs/media-20261107.md",
+            "admitted": false,
+            "limits": "Observed HTTP201 prewarm only; signaling body/headers, audio and resumed session unknown."
+          },
+          {
+            "transport": "webrtc_with_datachannel",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Static string only; exact signaling, SDP, ICE, DTLS/SRTP, codecs and iOS6 implementation unverified."
+          },
+          {
+            "transport": "livekit",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Packaged/static dependency is not executed call-path proof; modern binary cannot link ARMv7/iOS6."
+          }
+        ],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "research_only",
+      "prerequisites": [
+        "explicit_user_voice_intent",
+        "admitted_realtime_protocol",
+        "microphone_permission",
+        "ios6_audio_and_transport_acceptance"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Terminate local capture/playout and signaling; retain final state and distinguish unconfirmed remote teardown.",
+      "examples": {
+        "request": {
+          "sessionId": "fixture-voice-1"
+        },
+        "response": {
+          "sessionId": "fixture-voice-1",
+          "state": "unavailable",
+          "microphoneMuted": true,
+          "outputMuted": true,
+          "canResume": false,
+          "sequence": 0
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "sessionId": "fixture-voice-1",
+              "state": "unavailable",
+              "microphoneMuted": true,
+              "outputMuted": true,
+              "canResume": false,
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "voice.resume",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "sessionId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "sessionId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/VoiceState"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/VoiceState"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "realtime_unresolved",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Original modern runtime unavailable; completed voice call, resume and native backend admission unobserved.",
+          "No admitted signaling/media transport or request/response packet shapes."
+        ],
+        "candidates": [
+          {
+            "transport": "https_sdp_prewarm",
+            "method": null,
+            "pathTemplate": "/realtime/wm",
+            "evidence": "docs/media-20261107.md",
+            "admitted": false,
+            "limits": "Observed HTTP201 prewarm only; signaling body/headers, audio and resumed session unknown."
+          },
+          {
+            "transport": "webrtc_with_datachannel",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Static string only; exact signaling, SDP, ICE, DTLS/SRTP, codecs and iOS6 implementation unverified."
+          },
+          {
+            "transport": "livekit",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Packaged/static dependency is not executed call-path proof; modern binary cannot link ARMv7/iOS6."
+          }
+        ],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "research_only",
+      "prerequisites": [
+        "explicit_user_voice_intent",
+        "admitted_realtime_protocol",
+        "microphone_permission",
+        "ios6_audio_and_transport_acceptance"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Explicit resume only, never automatic re-recording after background or disconnect.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "sessionId": "fixture-voice-1"
+        },
+        "response": {
+          "sessionId": "fixture-voice-1",
+          "state": "unavailable",
+          "microphoneMuted": true,
+          "outputMuted": true,
+          "canResume": false,
+          "sequence": 0
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "sessionId": "fixture-voice-1",
+              "state": "unavailable",
+              "microphoneMuted": true,
+              "outputMuted": true,
+              "canResume": false,
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "voice.state",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "sessionId"
+        ],
+        "properties": {
+          "sessionId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/VoiceState"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/VoiceState"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "realtime_unresolved",
+      "wire": {
+        "status": "unresolved",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Original modern runtime unavailable; completed voice call, resume and native backend admission unobserved.",
+          "No admitted signaling/media transport or request/response packet shapes."
+        ],
+        "candidates": [
+          {
+            "transport": "https_sdp_prewarm",
+            "method": null,
+            "pathTemplate": "/realtime/wm",
+            "evidence": "docs/media-20261107.md",
+            "admitted": false,
+            "limits": "Observed HTTP201 prewarm only; signaling body/headers, audio and resumed session unknown."
+          },
+          {
+            "transport": "webrtc_with_datachannel",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Static string only; exact signaling, SDP, ICE, DTLS/SRTP, codecs and iOS6 implementation unverified."
+          },
+          {
+            "transport": "livekit",
+            "method": null,
+            "pathTemplate": null,
+            "evidence": "",
+            "admitted": false,
+            "limits": "Packaged/static dependency is not executed call-path proof; modern binary cannot link ARMv7/iOS6."
+          }
+        ],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "research_only",
+      "prerequisites": [
+        "explicit_user_voice_intent",
+        "admitted_realtime_protocol",
+        "microphone_permission",
+        "ios6_audio_and_transport_acceptance"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Observes connection lifecycle; absence of transport cannot be reported connected.",
+      "examples": {
+        "request": {
+          "sessionId": "fixture-voice-1"
+        },
+        "response": {
+          "sessionId": "fixture-voice-1",
+          "state": "unavailable",
+          "microphoneMuted": true,
+          "outputMuted": true,
+          "canResume": false,
+          "sequence": 0
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "sessionId": "fixture-voice-1",
+              "state": "unavailable",
+              "microphoneMuted": true,
+              "outputMuted": true,
+              "canResume": false,
+              "sequence": 0
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "dictation.start",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "recordingId",
+          "maxDurationMS"
+        ],
+        "properties": {
+          "recordingId": {
+            "$ref": "#/types/Identifier"
+          },
+          "maxDurationMS": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 60000
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Recording"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/Recording"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "interaction",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "interaction_handoff",
+      "prerequisites": [
+        "explicit_user_recording_intent",
+        "microphone_permission"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Explicit AVAudioRecorder handoff, PCM16LE mono16kHz; microphone does not start merely from schema validation.",
+      "examples": {
+        "request": {
+          "recordingId": "fixture-recording-1",
+          "maxDurationMS": 1000
+        },
+        "response": {
+          "recordingId": "fixture-recording-1",
+          "state": "recording",
+          "assetId": null,
+          "durationMS": 0,
+          "bytes": 0,
+          "mediaType": "audio/wav"
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "recordingId": "fixture-recording-1",
+              "state": "stopped",
+              "assetId": "fixture-asset-1",
+              "durationMS": 1000,
+              "bytes": 32044,
+              "mediaType": "audio/wav"
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "dictation.stop",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "recordingId"
+        ],
+        "properties": {
+          "recordingId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Recording"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/Recording"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "interaction",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "interaction_handoff",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Stop preserves a verified recording for explicit transcription; Cancel removes only owned partial/final capture files. Background/interruption stops capture and never auto-resumes.",
+      "examples": {
+        "request": {
+          "recordingId": "fixture-recording-1"
+        },
+        "response": {
+          "recordingId": "fixture-recording-1",
+          "state": "stopped",
+          "assetId": "fixture-asset-1",
+          "durationMS": 1000,
+          "bytes": 32044,
+          "mediaType": "audio/wav"
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "recordingId": "fixture-recording-1",
+              "state": "stopped",
+              "assetId": "fixture-asset-1",
+              "durationMS": 1000,
+              "bytes": 32044,
+              "mediaType": "audio/wav"
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "dictation.cancel",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "recordingId"
+        ],
+        "properties": {
+          "recordingId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Recording"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/Recording"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "interaction",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "interaction_handoff",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Stop preserves a verified recording for explicit transcription; Cancel removes only owned partial/final capture files. Background/interruption stops capture and never auto-resumes.",
+      "examples": {
+        "request": {
+          "recordingId": "fixture-recording-1"
+        },
+        "response": {
+          "recordingId": "fixture-recording-1",
+          "state": "cancelled",
+          "assetId": null,
+          "durationMS": 0,
+          "bytes": 0,
+          "mediaType": "audio/wav"
+        },
+        "events": [
+          {
+            "name": "state",
+            "payload": {
+              "recordingId": "fixture-recording-1",
+              "state": "cancelled",
+              "assetId": "fixture-asset-1",
+              "durationMS": 1000,
+              "bytes": 32044,
+              "mediaType": "audio/wav"
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "dictation.retry",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "priorOperationId",
+          "recordingId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "priorOperationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "recordingId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Transcript"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "multipart_upload",
+      "wire": {
+        "status": "host_observed",
+        "method": "POST",
+        "pathTemplate": "/backend-api/transcribe",
+        "unknowns": [
+          "Native transcription admission/encoder remain unverified."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "explicit_user_retry",
+        "previous_rejected_with_confirmed_no_dispatch",
+        "verified_recording",
+        "durable_operation_journal"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Explicit fresh-ID retry only after a known rejected record with confirmed no-dispatch. If prior dispatch is uncertain, status recovery precedes any new transcription; never resubmit the same operation.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-2",
+          "priorOperationId": "fixture-op-1",
+          "recordingId": "fixture-recording-1"
+        },
+        "response": {
+          "operationId": "fixture-op-2",
+          "recordingId": "fixture-recording-1",
+          "text": "Fixture transcript.",
+          "editable": true,
+          "insertedIntoDraft": false
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-2",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-2",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "dictation.transcribe",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "recordingId",
+          "assetId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "recordingId": {
+            "$ref": "#/types/Identifier"
+          },
+          "assetId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Transcript"
+      },
+      "events": [
+        {
+          "name": "transcript",
+          "schema": {
+            "$ref": "#/types/Transcript"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "multipart_upload",
+      "wire": {
+        "status": "host_observed",
+        "method": "POST",
+        "pathTemplate": "/backend-api/transcribe",
+        "unknowns": [
+          "Native admission and multipart encoder not established; streaming dictation not selected."
+        ],
+        "candidates": [
+          {
+            "transport": "websocket_pcm_dictation",
+            "method": null,
+            "pathTemplate": "/dictation/stream",
+            "evidence": "docs/media-20261107.md",
+            "admitted": false,
+            "limits": "Web source path only, not live admitted streaming dictation."
+          }
+        ],
+        "steps": [],
+        "recoveredFields": {
+          "request": [
+            "multipart file:recording.wav(audio/wav)"
+          ],
+          "response": [
+            "text"
+          ]
+        }
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "explicit_user_transcription",
+        "verified_pcm16_mono_16khz_wav",
+        "validated_web_session",
+        "durable_operation_journal"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Observed multipart file recording.wav audio/wav, JSON {text}. Transcript stays editable and unsent; no automatic insertion/message Send.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "recordingId": "fixture-recording-1",
+          "assetId": "fixture-asset-1"
+        },
+        "response": {
+          "operationId": "fixture-op-1",
+          "recordingId": "fixture-recording-1",
+          "text": "Fixture transcript.",
+          "editable": true,
+          "insertedIntoDraft": false
+        },
+        "events": [
+          {
+            "name": "transcript",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "recordingId": "fixture-recording-1",
+              "text": "Fixture transcript.",
+              "editable": true,
+              "insertedIntoDraft": false
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "assets.acquire",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "source",
+          "selectionId"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "camera",
+              "photo_library",
+              "document"
+            ]
+          },
+          "selectionId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Asset"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "interaction",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Camera/Photos/Open In physical acceptance remains separate."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "interaction_handoff",
+      "prerequisites": [
+        "explicit_user_picker_intent",
+        "source_permission"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Explicit UIKit camera/photo/document acquisition; preserve original and produce immutable app-owned descriptor only after user picks. No upload on selection.",
+      "examples": {
+        "request": {
+          "source": "document",
+          "selectionId": "fixture-selection-1"
+        },
+        "response": {
+          "assetId": "fixture-asset-1",
+          "name": "fixture.txt",
+          "mediaType": "text/plain",
+          "bytes": 16,
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "state": "local",
+          "remoteId": null
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "assets.upload",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "assetId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "assetId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Asset"
+      },
+      "events": [
+        {
+          "name": "progress",
+          "schema": {
+            "$ref": "#/types/Progress"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "asset_pipeline",
+      "wire": {
+        "status": "host_observed",
+        "method": "POST",
+        "pathTemplate": "/backend-api/files",
+        "unknowns": [
+          "Native creation payload details, signed-origin admission and processing readiness schema remain unadmitted."
+        ],
+        "candidates": [],
+        "steps": [
+          {
+            "method": "POST",
+            "pathTemplate": "/backend-api/files",
+            "condition": "Observed request includes file_name/file_size; captures file_id."
+          },
+          {
+            "method": "PUT",
+            "pathTemplate": null,
+            "condition": "Server-provided signed upload URL. Unknown/variable origin, never invented or persisted in public contracts."
+          },
+          {
+            "method": "POST",
+            "pathTemplate": "/backend-api/files/process_upload_stream",
+            "condition": "Observed file_id; JSON-lines processing can abort after ready event; byte PUT hash and ready attachment required."
+          }
+        ],
+        "recoveredFields": {
+          "request": [
+            "file_name",
+            "file_size"
+          ],
+          "response": [
+            "file_id"
+          ],
+          "processingRequest": [
+            "file_id"
+          ]
+        }
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "explicit_user_upload",
+        "verified_local_asset",
+        "validated_web_session",
+        "durable_operation_journal"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "mutation_no_replay",
+        "onUncertain": "reconcile_only",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Three-stage observed browser path: create file, signed byte PUT, processing stream. Explicit ready state plus matching fileID/byte hash are required. Do not export signed URLs or treat AbortError as success.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "assetId": "fixture-asset-1"
+        },
+        "response": {
+          "assetId": "fixture-asset-1",
+          "name": "fixture.txt",
+          "mediaType": "text/plain",
+          "bytes": 16,
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "state": "ready",
+          "remoteId": "file_fixture"
+        },
+        "events": [
+          {
+            "name": "progress",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "completedBytes": 0,
+              "totalBytes": 16,
+              "phase": "uploading"
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "assets.detach",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "draftId",
+          "assetId"
+        ],
+        "properties": {
+          "draftId": {
+            "$ref": "#/types/Identifier"
+          },
+          "assetId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "required": [
+          "draftId",
+          "assetId",
+          "detached"
+        ],
+        "properties": {
+          "draftId": {
+            "$ref": "#/types/Identifier"
+          },
+          "assetId": {
+            "$ref": "#/types/Identifier"
+          },
+          "detached": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Remove from local unsent draft; does not delete remote upload or imported original. Replacement is detach then acquire/explicit upload new asset.",
+      "examples": {
+        "request": {
+          "draftId": "fixture-draft-1",
+          "assetId": "fixture-asset-1"
+        },
+        "response": {
+          "draftId": "fixture-draft-1",
+          "assetId": "fixture-asset-1",
+          "detached": true
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "assets.limits",
+      "requestSchema": {
+        "type": "object",
+        "required": [],
+        "properties": {},
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/AssetLimits"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "Account/server MIME/count/size policy and quota negotiation not recovered."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Conservative client safety bounds, not advertised account quotas or all supported vendor MIME types. Rejection preserves draft/asset.",
+      "examples": {
+        "request": {},
+        "response": {
+          "maxBytes": 8388608,
+          "maxCount": 4,
+          "allowedMediaTypes": [
+            "text/plain",
+            "image/png",
+            "image/jpeg",
+            "audio/wav"
+          ],
+          "scope": "client_policy",
+          "serverLimitsKnown": false
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "assets.status",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "assetId"
+        ],
+        "properties": {
+          "assetId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/AssetStatus"
+      },
+      "events": [
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "local",
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null,
+        "unknowns": [
+          "No dedicated remote expiry/status route recovered."
+        ],
+        "candidates": [],
+        "steps": [],
+        "recoveredFields": {}
+      },
+      "execution": "local_projection",
+      "prerequisites": [],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "Local known state/last observation only. Unknown cannot be treated ready. Expiry/unavailable errors preserve descriptor and offer explicit new acquisition.",
+      "examples": {
+        "request": {
+          "assetId": "fixture-asset-1"
+        },
+        "response": {
+          "assetId": "fixture-asset-1",
+          "state": "unknown",
+          "available": false,
+          "expiresAt": null,
+          "remoteId": null
+        },
+        "events": [
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "capability_unavailable",
+              "operationId": null,
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "capability_unavailable",
+          "operationId": null,
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    },
+    {
+      "id": "assets.download",
+      "requestSchema": {
+        "type": "object",
+        "required": [
+          "operationId",
+          "conversationId",
+          "messageId",
+          "fileId"
+        ],
+        "properties": {
+          "operationId": {
+            "$ref": "#/types/OperationId"
+          },
+          "conversationId": {
+            "$ref": "#/types/Identifier"
+          },
+          "messageId": {
+            "$ref": "#/types/Identifier"
+          },
+          "fileId": {
+            "$ref": "#/types/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Asset"
+      },
+      "events": [
+        {
+          "name": "progress",
+          "schema": {
+            "$ref": "#/types/Progress"
+          }
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "$ref": "#/types/Error"
+          }
+        }
+      ],
+      "transport": "https_download",
+      "wire": {
+        "status": "host_observed",
+        "method": "GET",
+        "pathTemplate": "/backend-api/files/download/{fileId}?download_intent=false",
+        "unknowns": [
+          "Native JSON authorization/binary content admission and output MIME conversion are unverified.",
+          "Only the historical same-origin content path is evidenced. Other or future signed content origins are not admitted."
+        ],
+        "candidates": [],
+        "steps": [
+          {
+            "method": "GET",
+            "pathTemplate": "/backend-api/conversation/{conversationId}",
+            "condition": "Verify message/file attachment, citation or image pointer."
+          },
+          {
+            "method": "GET",
+            "pathTemplate": "/backend-api/files/download/{fileId}?download_intent=false",
+            "condition": "JSON authorization response provides download_url and optional file_name; keep its opaque query internal."
+          },
+          {
+            "method": "GET",
+            "pathTemplate": "/backend-api/estuary/content",
+            "condition": "Bounded binary GET, maximum8MiB decoded bytes, only the observed same-origin path; verify byte hash. Other/future signed origins and redirects remain unadmitted."
+          }
+        ],
+        "recoveredFields": {
+          "response": [
+            "download_url",
+            "file_name"
+          ]
+        }
+      },
+      "execution": "contract_only",
+      "prerequisites": [
+        "explicit_user_download",
+        "validated_web_session",
+        "current_branch_file_ownership"
+      ],
+      "retry": {
+        "automatic": false,
+        "maxAttempts": 1,
+        "policy": "explicit_only",
+        "onUncertain": "report_without_replay",
+        "stopOn": [
+          "service_challenge",
+          "rate_limited",
+          "auth_failed"
+        ]
+      },
+      "notes": "First verify the file belongs to a visible current-branch message. Resolve JSON download authorization, then fetch bounded binary bytes from the observed same-origin /backend-api/estuary/content path and verify their hash. This is a two-format pipeline, not a JSON body download. Future signed origins/redirects require separate admission. Explicit Save does not autoplay/open.",
+      "examples": {
+        "request": {
+          "operationId": "fixture-op-1",
+          "conversationId": "fixture-conversation-1",
+          "messageId": "fixture-assistant-1",
+          "fileId": "file_fixture"
+        },
+        "response": {
+          "assetId": "fixture-asset-1",
+          "name": "fixture.txt",
+          "mediaType": "text/plain",
+          "bytes": 16,
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "state": "local",
+          "remoteId": null
+        },
+        "events": [
+          {
+            "name": "progress",
+            "payload": {
+              "operationId": "fixture-op-1",
+              "completedBytes": 0,
+              "totalBytes": 16,
+              "phase": "downloading"
+            }
+          },
+          {
+            "name": "failed",
+            "payload": {
+              "domain": "OR6API",
+              "code": "not_implemented",
+              "operationId": "fixture-op-1",
+              "retryable": false,
+              "dispatched": false
+            }
+          }
+        ],
+        "error": {
+          "domain": "OR6API",
+          "code": "not_implemented",
+          "operationId": "fixture-op-1",
+          "retryable": false,
+          "dispatched": false
+        },
+        "scope": "illustrative_internal_contract_not_remote_acceptance"
+      }
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "chat.new",
+      "title": "Новый личный чат",
+      "usefulness": 10,
+      "operations": [
+        "messages.newDraft",
+        "messages.send"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.history",
+      "title": "Список и открытие истории",
+      "usefulness": 10,
+      "operations": [
+        "history.list",
+        "history.get"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.temporary",
+      "title": "Временный чат",
+      "usefulness": 8,
+      "operations": [
+        "messages.newDraft",
+        "messages.send"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.edit_message",
+      "title": "Редактирование отправленного сообщения",
+      "usefulness": 8,
+      "operations": [
+        "messages.edit"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.retry",
+      "title": "Повтор неудачного запроса",
+      "usefulness": 9,
+      "operations": [
+        "messages.retry",
+        "messages.reconcile"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.copy_text",
+      "title": "Копирование ответа",
+      "usefulness": 9,
+      "operations": [
+        "content.copy"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.select_text",
+      "title": "Выделение фрагмента ответа",
+      "usefulness": 9,
+      "operations": [
+        "content.select"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.stream",
+      "title": "Получение ответа по мере генерации",
+      "usefulness": 10,
+      "operations": [
+        "messages.send",
+        "generation.status",
+        "messages.reconcile"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.stop",
+      "title": "Остановка генерации",
+      "usefulness": 9,
+      "operations": [
+        "messages.stop",
+        "messages.reconcile"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.rich_text",
+      "title": "Форматированный текст ответа",
+      "usefulness": 9,
+      "operations": [
+        "content.present"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.sources",
+      "title": "Источники и цитаты ответа",
+      "usefulness": 8,
+      "operations": [
+        "content.sources"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "chat.regenerate",
+      "title": "Новый вариант ответа",
+      "usefulness": 8,
+      "operations": [
+        "messages.regenerate"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "compose.send",
+      "title": "Отправка текстового сообщения",
+      "usefulness": 10,
+      "operations": [
+        "messages.send"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "tools.model_picker",
+      "title": "Выбор модели и режима",
+      "usefulness": 8,
+      "operations": [
+        "models.list",
+        "models.select"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "tools.reasoning_status",
+      "title": "Ход работы модели",
+      "usefulness": 8,
+      "operations": [
+        "generation.status"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "tools.translate",
+      "title": "Текстовый перевод",
+      "usefulness": 8,
+      "operations": [
+        "translation.translate"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "search.history",
+      "title": "Поиск по истории чатов",
+      "usefulness": 8,
+      "operations": [
+        "history.search",
+        "history.get"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "search.web",
+      "title": "Поиск в интернете",
+      "usefulness": 8,
+      "operations": [
+        "search.web",
+        "content.sources"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "voice.conversation",
+      "title": "Разговор голосом",
+      "usefulness": 8,
+      "operations": [
+        "voice.start",
+        "voice.state"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "voice.interrupt",
+      "title": "Перебить голосовой ответ",
+      "usefulness": 8,
+      "operations": [
+        "voice.interrupt"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "voice.mute",
+      "title": "Управление микрофоном и звуком",
+      "usefulness": 8,
+      "operations": [
+        "voice.mute"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "voice.end",
+      "title": "Завершение звонка",
+      "usefulness": 8,
+      "operations": [
+        "voice.end"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "voice.resume",
+      "title": "Возобновление голосового разговора",
+      "usefulness": 8,
+      "operations": [
+        "voice.resume"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "voice.connection_recovery",
+      "title": "Состояния голосового соединения",
+      "usefulness": 8,
+      "operations": [
+        "voice.state",
+        "voice.resume"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "audio.dictation",
+      "title": "Диктовка в текст сообщения",
+      "usefulness": 9,
+      "operations": [
+        "dictation.start",
+        "dictation.stop",
+        "dictation.transcribe"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "audio.dictation_cancel",
+      "title": "Остановка и отмена диктовки",
+      "usefulness": 8,
+      "operations": [
+        "dictation.stop",
+        "dictation.cancel"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "audio.dictation_retry",
+      "title": "Сбой и повтор расшифровки",
+      "usefulness": 8,
+      "operations": [
+        "dictation.retry"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "media.camera_photo",
+      "title": "Снимок для сообщения",
+      "usefulness": 8,
+      "operations": [
+        "assets.acquire",
+        "assets.upload"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "media.photo_picker",
+      "title": "Фото из медиатеки",
+      "usefulness": 8,
+      "operations": [
+        "assets.acquire",
+        "assets.upload"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "media.file_upload",
+      "title": "Загрузка файлов",
+      "usefulness": 8,
+      "operations": [
+        "assets.acquire",
+        "assets.upload"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "media.attachment_remove_replace",
+      "title": "Удалить или заменить вложение",
+      "usefulness": 8,
+      "operations": [
+        "assets.detach",
+        "assets.acquire",
+        "assets.upload"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "media.attachment_constraints",
+      "title": "Лимиты и ограничения вложений",
+      "usefulness": 8,
+      "operations": [
+        "assets.limits"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "media.file_expiry",
+      "title": "Недоступный или истёкший файл",
+      "usefulness": 8,
+      "operations": [
+        "assets.status"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "media.download_file",
+      "title": "Скачивание результата",
+      "usefulness": 8,
+      "operations": [
+        "assets.download"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "accessibility.voiceover_messages",
+      "title": "Доступность текста и ссылок ответа",
+      "usefulness": 9,
+      "operations": [
+        "content.accessibility"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "accessibility.controls",
+      "title": "Доступные действия медиа и рисунков",
+      "usefulness": 9,
+      "operations": [
+        "content.accessibility"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "accessibility.large_text",
+      "title": "Адаптация к крупному тексту",
+      "usefulness": 8,
+      "operations": [
+        "content.scale"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "account.login.email_password",
+      "title": "Вход по email и паролю",
+      "usefulness": 8,
+      "operations": [
+        "auth.begin",
+        "auth.status"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "account.login.google",
+      "title": "Вход через Google",
+      "usefulness": 8,
+      "operations": [
+        "auth.begin",
+        "auth.status"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "account.mfa.authenticator",
+      "title": "MFA кодом приложения-аутентификатора",
+      "usefulness": 8,
+      "operations": [
+        "auth.begin",
+        "auth.status"
+      ],
+      "notes": "MFA is inherited by the usual interactive WebPort flow; never a credential/OTP POST."
+    },
+    {
+      "featureId": "account.login.cancel_retry",
+      "title": "Отмена и повтор входа",
+      "usefulness": 8,
+      "operations": [
+        "auth.begin",
+        "auth.cancel",
+        "auth.status"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "account.logout",
+      "title": "Выход из текущего аккаунта",
+      "usefulness": 9,
+      "operations": [
+        "auth.logout"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "account.session.restore",
+      "title": "Восстановление сессии после запуска",
+      "usefulness": 10,
+      "operations": [
+        "auth.restore"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    },
+    {
+      "featureId": "account.session.renew",
+      "title": "Обновление credentials",
+      "usefulness": 10,
+      "operations": [
+        "auth.renew"
+      ],
+      "notes": "Typed internal contract coverage; feature acceptance remains bounded by referenced operation execution and wire status."
+    }
+  ]
+}

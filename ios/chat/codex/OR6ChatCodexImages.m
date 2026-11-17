@@ -1,0 +1,29 @@
+#import "OR6ChatCodexImages.h"
+#import "OR6ChatCodexScreens.h"
+#import "../../ui/RCActivitySheet.h"
+#import "../../api/priority7h/OR6API7HWire.h"
+#import "../../localization/OR6Localization.h"
+@interface OR6ChatCodexImages()<RCActivitySheetDelegate>
+- (void)stageImage:(UIImage*)image;
+@end
+@implementation OR6ChatCodexImages
+@synthesize delegate=_delegate;
+- (id)initWithBackend:(id<OR6ChatCodexBackend>)backend owner:(UIViewController*)owner{if((self=[super init])){_model=[[OR6ChatCodexModel alloc]initWithBackend:backend];_owner=owner;_epoch=backend.epoch;_tokens=[NSMutableArray new];_attachments=[NSMutableArray new];[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(changed:)name:OR6ChatCodexChanged object:backend];}return self;}
+- (NSArray*)tokens{return[[_tokens copy]autorelease];}
+- (NSArray*)attachments{return[[_attachments copy]autorelease];}
+- (NSString*)note{return _note;}
+- (BOOL)busy{return _model.busy;}
+- (void)notify{[_delegate codexImagesChanged:self];}
+- (void)setNote:(NSString*)note{[_note release];_note=[note copy];[self notify];}
+- (void)changed:(NSNotification*)n{if(_epoch!=_model.backend.epoch||!_model.backend.available||[n.userInfo[@"event"][@"kind"]isEqual:@"disconnected"]){[self consume];[self setNote:OR6L(@"Add the images again after reconnecting.")];}}
+- (void)choose{if(_invalid||_model.stale||_model.busy||_tokens.count>=2)return;NSMutableArray*items=[NSMutableArray array],*sources=[NSMutableArray array];if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){[items addObject:[RCActivityItem itemWithTitle:OR6L(@"Photos")glyph:@"photo"tile:RCTileBlue]];[sources addObject:@(UIImagePickerControllerSourceTypePhotoLibrary)];}if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){[items addObject:[RCActivityItem itemWithTitle:OR6L(@"Camera")glyph:@"camera"tile:RCTileDark]];[sources addObject:@(UIImagePickerControllerSourceTypeCamera)];}if(!items.count)return;[_sources release];_sources=[sources copy];[_sheet release];_sheet=[[RCActivitySheet alloc]initWithTitle:OR6L(@"Add image")items:items];_sheet.delegate=self;[_sheet showInView:_owner.view.window?:_owner.view];}
+- (void)activitySheet:(RCActivitySheet*)s didSelectItemAtIndex:(NSUInteger)index{(void)s;if(_invalid||index>=_sources.count)return;[_picker release];_picker=[[UIImagePickerController alloc]init];_picker.delegate=self;_picker.sourceType=[_sources[index]integerValue];_picker.mediaTypes=@[@"public.image"];[_owner presentViewController:_picker animated:YES completion:nil];}
+- (void)closePicker{_picker.delegate=nil;[_owner dismissViewControllerAnimated:YES completion:nil];[_picker release];_picker=nil;}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker{(void)picker;[self closePicker];}
+- (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info{(void)picker;UIImage*image=[[info[UIImagePickerControllerOriginalImage]retain]autorelease];[self closePicker];[self stageImage:image];}
+- (void)stageImage:(UIImage*)image{if(_invalid||_model.stale||_model.busy||_tokens.count>=2||!image)return;CGFloat w=image.size.width,h=image.size.height;if(w<=0||h<=0||w*h>16000000){[self setNote:OR6L(@"This image is too large. Choose a smaller image.")];return;}CGFloat scale=MIN(1,768/MAX(w,h));CGSize size=CGSizeMake(MAX(1,floor(w*scale)),MAX(1,floor(h*scale)));UIGraphicsBeginImageContextWithOptions(size,NO,1);[image drawInRect:CGRectMake(0,0,size.width,size.height)];UIImage*thumb=UIGraphicsGetImageFromCurrentImageContext();NSData*bytes=UIImageJPEGRepresentation(thumb,.65);[thumb retain];UIGraphicsEndImageContext();if(!bytes.length||bytes.length>1048576){[thumb release];[self setNote:OR6L(@"This image is too large. Choose a smaller image.")];return;}NSString*base64=OR6API7HBase64(bytes);NSMutableArray*chunks=[NSMutableArray array];for(NSUInteger i=0;i<base64.length;i+=196608)[chunks addObject:[base64 substringWithRange:NSMakeRange(i,MIN((NSUInteger)196608,base64.length-i))]];[_model call:@"codex.attachments.prepare"parameters:@{@"chunks":chunks}slot:nil mutation:NO completion:^(NSDictionary*r,NSError*e){if(_invalid)return;if(e){[self setNote:OR6ChatCodexError(e)];return;}if(![r[@"token"]isKindOfClass:NSString.class]){[self setNote:OR6L(@"Could not prepare the image. Choose it again.")];return;}[_tokens addObject:r[@"token"]];RCComposerAttachment*a=[RCComposerAttachment attachmentWithTitle:OR6L(@"Image")glyph:@"photo"image:thumb];a.progress=1;a.detail=OR6L(@"Ready to send");[_attachments addObject:a];[self setNote:nil];}];[thumb release];[self notify];}
+- (void)remove:(NSUInteger)i{if(_invalid||_model.busy||i>=_tokens.count)return;NSString*token=[[_tokens[i]copy]autorelease];[_tokens removeObjectAtIndex:i];[_attachments removeObjectAtIndex:i];[_model call:@"codex.attachments.discard"parameters:@{@"token":token}slot:nil mutation:NO completion:^(NSDictionary*r,NSError*e){(void)r;if(e)[self setNote:OR6ChatCodexError(e)];}];[self notify];}
+- (void)consume{[_tokens removeAllObjects];[_attachments removeAllObjects];[_note release];_note=nil;[self notify];}
+- (void)invalidate{if(_invalid)return;_invalid=YES;_delegate=nil;[NSNotificationCenter.defaultCenter removeObserver:self];_sheet.delegate=nil;[_sheet dismiss];if(_picker){_picker.delegate=nil;[_owner dismissViewControllerAnimated:NO completion:nil];}for(NSString*token in[[_tokens copy]autorelease])[_model call:@"codex.attachments.discard"parameters:@{@"token":token}slot:nil mutation:NO completion:nil];[_model cancel];[_tokens removeAllObjects];[_attachments removeAllObjects];}
+- (void)dealloc{[self invalidate];[_model release];[_tokens release];[_attachments release];[_note release];[_sources release];[_sheet release];[_picker release];[super dealloc];}
+@end

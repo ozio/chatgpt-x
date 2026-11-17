@@ -1,0 +1,1809 @@
+{
+  "schemaVersion": 1,
+  "module": "priority6d",
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API6DTask": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "prompt": {
+          "type": "string",
+          "maxLength": 16000
+        },
+        "schedule": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "timezone": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "modelId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "thinkingEffort": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "emoji": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "canManage": {
+          "type": "boolean"
+        },
+        "canDelete": {
+          "type": "boolean"
+        },
+        "runNowAllowed": {
+          "type": "boolean"
+        },
+        "emailEnabled": {
+          "type": "boolean"
+        },
+        "notificationsEnabled": {
+          "type": "boolean"
+        },
+        "timingMode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "threadMode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "nextRunTimes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "maxItems": 16
+        },
+        "updatedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "prompt",
+        "schedule",
+        "timezone",
+        "enabled",
+        "modelId",
+        "thinkingEffort",
+        "emoji",
+        "canManage",
+        "canDelete",
+        "runNowAllowed",
+        "emailEnabled",
+        "notificationsEnabled",
+        "timingMode",
+        "threadMode",
+        "nextRunTimes",
+        "updatedAt",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "API6DTaskDraft": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "prompt": {
+          "type": "string",
+          "maxLength": 16000
+        },
+        "schedule": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "timezone": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "modelId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "thinkingEffort": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "emoji": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "emailEnabled": {
+          "type": "boolean"
+        },
+        "notificationsEnabled": {
+          "type": "boolean"
+        },
+        "timingMode": {
+          "type": "string",
+          "enum": [
+            "exact_schedule",
+            "flexible_schedule",
+            "condition_watch"
+          ]
+        },
+        "threadMode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "new_chat",
+            "existing_chat",
+            null
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "prompt",
+        "schedule",
+        "timezone",
+        "modelId",
+        "thinkingEffort",
+        "emoji",
+        "emailEnabled",
+        "notificationsEnabled",
+        "timingMode",
+        "threadMode"
+      ],
+      "additionalProperties": false
+    },
+    "API6DTaskList": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6DTask"
+          },
+          "maxItems": 25
+        },
+        "nextCursor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 4096
+        }
+      },
+      "required": [
+        "items",
+        "nextCursor"
+      ],
+      "additionalProperties": false
+    },
+    "API6DMemory": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "content": {
+          "type": "string",
+          "maxLength": 16000
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "createdAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "updatedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "id",
+        "content",
+        "status",
+        "createdAt",
+        "updatedAt",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "API6DMemoryList": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6DMemory"
+          },
+          "maxItems": 1024
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1024
+        },
+        "query": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "items",
+        "total",
+        "query",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "API6DCapacity": {
+      "type": "object",
+      "properties": {
+        "usedTokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "maxTokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "percentUsed": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "usedTokens",
+        "maxTokens",
+        "percentUsed"
+      ],
+      "additionalProperties": false
+    },
+    "API6DManagement": {
+      "type": "object",
+      "properties": {
+        "automaticallyManaged": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "automaticallyManaged",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "API6DAdvanced": {
+      "type": "object",
+      "properties": {
+        "autoWebSearch": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "imageCreation": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "imageCreationLocked": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "autoWebSearch",
+        "imageCreation",
+        "imageCreationLocked",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "API6DLocation": {
+      "type": "object",
+      "properties": {
+        "preciseLocationAllowed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "locked": {
+          "type": "boolean"
+        },
+        "restrictedReason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 256
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "preciseLocationAllowed",
+        "locked",
+        "restrictedReason",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "API6DCitation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "user_instructions",
+            "user_memory",
+            "general_memory",
+            "past_conversation"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "snippet": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 8000
+        },
+        "memoryId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "feedback": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "positive",
+            "negative",
+            null
+          ]
+        },
+        "canFeedback": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "title",
+        "snippet",
+        "memoryId",
+        "feedback",
+        "canFeedback"
+      ],
+      "additionalProperties": false
+    },
+    "API6DCitations": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6DCitation"
+          },
+          "maxItems": 128
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "conversationId",
+        "messageId",
+        "items",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "API6DReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "task",
+            "memory",
+            "preferences",
+            "location",
+            "account"
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "acknowledged",
+            "verified",
+            "uncertain",
+            "rejected"
+          ]
+        },
+        "entityId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 256
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "actionRequired": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "reauthenticate",
+            "verify_phone",
+            "add_email",
+            "wait_for_export",
+            "contact_organization",
+            "transfer_workspace_ownership",
+            null
+          ]
+        },
+        "delivery": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "email",
+            null
+          ]
+        },
+        "localCacheCleared": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "operationId",
+        "category",
+        "state",
+        "entityId",
+        "serverAcknowledged",
+        "verified",
+        "actionRequired",
+        "delivery",
+        "localCacheCleared"
+      ],
+      "additionalProperties": false
+    },
+    "API6DOperationStatus": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "command": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "reserved",
+            "uncertain",
+            "completed",
+            "rejected"
+          ]
+        },
+        "receipt": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "operationId": {
+              "type": "string",
+              "minLength": 36,
+              "maxLength": 36
+            },
+            "category": {
+              "type": "string",
+              "enum": [
+                "task",
+                "memory",
+                "preferences",
+                "location",
+                "account"
+              ]
+            },
+            "state": {
+              "type": "string",
+              "enum": [
+                "acknowledged",
+                "verified",
+                "uncertain",
+                "rejected"
+              ]
+            },
+            "entityId": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 256
+            },
+            "serverAcknowledged": {
+              "type": "boolean"
+            },
+            "verified": {
+              "type": "boolean"
+            },
+            "actionRequired": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "reauthenticate",
+                "verify_phone",
+                "add_email",
+                "wait_for_export",
+                "contact_organization",
+                "transfer_workspace_ownership",
+                null
+              ]
+            },
+            "delivery": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "email",
+                null
+              ]
+            },
+            "localCacheCleared": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "operationId",
+            "category",
+            "state",
+            "entityId",
+            "serverAcknowledged",
+            "verified",
+            "actionRequired",
+            "delivery",
+            "localCacheCleared"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "operationId",
+        "command",
+        "state",
+        "receipt"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "tasks.list",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 4096
+          },
+          "filter": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "scheduled",
+              "paused",
+              "finished",
+              null
+            ]
+          }
+        },
+        "required": [
+          "cursor",
+          "filter"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DTaskList"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.get",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "taskId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DTask"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.create",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "task": {
+            "$ref": "#/types/API6DTaskDraft"
+          }
+        },
+        "required": [
+          "operationId",
+          "task"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.update",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "taskId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "task": {
+            "$ref": "#/types/API6DTaskDraft"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "taskId",
+          "task"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.setSchedule",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "taskId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "schedule": {
+            "type": "string",
+            "maxLength": 4096
+          },
+          "timezone": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "timingMode": {
+            "type": "string",
+            "enum": [
+              "exact_schedule",
+              "flexible_schedule",
+              "condition_watch"
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "taskId",
+          "schedule",
+          "timezone",
+          "timingMode"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.setEnabled",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "taskId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "taskId",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.runNow",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "taskId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "taskId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.delete",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "taskId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "taskId",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.reconcile",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.list",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DMemoryList"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.search",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DMemoryList"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.capacity",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DCapacity"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.delete",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "memoryId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "memoryId",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.deleteAll",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.prioritize",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "memoryId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "memoryId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.management.get",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DManagement"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.management.update",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.citations",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "conversationId",
+          "messageId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DCitations"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.feedback",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "citationId": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "feedback": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "positive",
+              "negative",
+              null
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "conversationId",
+          "messageId",
+          "citationId",
+          "feedback"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.correctCitation",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "citationId": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "correction": {
+            "type": "string",
+            "maxLength": 8000
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "conversationId",
+          "messageId",
+          "citationId",
+          "correction"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "memories.reconcile",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "preferences.advanced.get",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DAdvanced"
+      },
+      "events": []
+    },
+    {
+      "id": "preferences.setAutoWebSearch",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "preferences.setImageCreation",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "preferences.reconcile",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "privacy.locationControls.get",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DLocation"
+      },
+      "events": []
+    },
+    {
+      "id": "privacy.locationControls.update",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "privacy.locationControls.reconcile",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "privacy.exportData",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "privacy.deleteAccount",
+      "kind": "mutation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "confirmed": {
+            "type": "boolean"
+          },
+          "confirmation": {
+            "type": "string",
+            "maxLength": 32
+          }
+        },
+        "required": [
+          "operationId",
+          "confirmed",
+          "confirmation"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "privacy.operationStatus",
+      "kind": "read",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6DOperationStatus"
+      },
+      "events": []
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "tasks.list",
+      "title": "Список запланированных задач",
+      "usefulness": 6,
+      "operations": [
+        "tasks.list",
+        "tasks.get"
+      ]
+    },
+    {
+      "featureId": "tasks.create",
+      "title": "Создание задачи",
+      "usefulness": 6,
+      "operations": [
+        "tasks.create"
+      ]
+    },
+    {
+      "featureId": "tasks.edit",
+      "title": "Редактирование задания",
+      "usefulness": 6,
+      "operations": [
+        "tasks.update"
+      ]
+    },
+    {
+      "featureId": "tasks.schedule",
+      "title": "Настройка расписания",
+      "usefulness": 6,
+      "operations": [
+        "tasks.setSchedule"
+      ]
+    },
+    {
+      "featureId": "tasks.pause_resume",
+      "title": "Приостановка и возобновление",
+      "usefulness": 6,
+      "operations": [
+        "tasks.setEnabled"
+      ]
+    },
+    {
+      "featureId": "tasks.run_now",
+      "title": "Немедленный запуск задачи",
+      "usefulness": 6,
+      "operations": [
+        "tasks.runNow"
+      ]
+    },
+    {
+      "featureId": "tasks.delete",
+      "title": "Удаление задания",
+      "usefulness": 6,
+      "operations": [
+        "tasks.delete"
+      ]
+    },
+    {
+      "featureId": "memory.legacy_list_search",
+      "title": "Список и поиск сохранённых воспоминаний",
+      "usefulness": 6,
+      "operations": [
+        "memories.list",
+        "memories.search"
+      ]
+    },
+    {
+      "featureId": "memory.delete_one",
+      "title": "Удаление воспоминания",
+      "usefulness": 6,
+      "operations": [
+        "memories.delete"
+      ]
+    },
+    {
+      "featureId": "memory.delete_all",
+      "title": "Удаление всех воспоминаний",
+      "usefulness": 6,
+      "operations": [
+        "memories.deleteAll"
+      ]
+    },
+    {
+      "featureId": "memory.priority",
+      "title": "Приоритет и автоматическое управление",
+      "usefulness": 6,
+      "operations": [
+        "memories.prioritize",
+        "memories.management.get",
+        "memories.management.update"
+      ]
+    },
+    {
+      "featureId": "memory.capacity",
+      "title": "Состояние заполнения памяти",
+      "usefulness": 6,
+      "operations": [
+        "memories.capacity"
+      ]
+    },
+    {
+      "featureId": "memory.citations",
+      "title": "Источники памяти в ответе",
+      "usefulness": 6,
+      "operations": [
+        "memories.citations"
+      ]
+    },
+    {
+      "featureId": "memory.citation_feedback",
+      "title": "Обратная связь по использованной памяти",
+      "usefulness": 6,
+      "operations": [
+        "memories.feedback",
+        "memories.correctCitation"
+      ]
+    },
+    {
+      "featureId": "preferences.auto_web_search",
+      "title": "Автоматический поиск в интернете",
+      "usefulness": 6,
+      "operations": [
+        "preferences.advanced.get",
+        "preferences.setAutoWebSearch"
+      ]
+    },
+    {
+      "featureId": "preferences.image_creation",
+      "title": "Настройка использования генерации изображений",
+      "usefulness": 6,
+      "operations": [
+        "preferences.advanced.get",
+        "preferences.setImageCreation"
+      ]
+    },
+    {
+      "featureId": "privacy.location_controls",
+      "title": "Контроль передачи точной геолокации",
+      "usefulness": 6,
+      "operations": [
+        "privacy.locationControls.get",
+        "privacy.locationControls.update",
+        "privacy.locationControls.reconcile"
+      ]
+    },
+    {
+      "featureId": "privacy.export",
+      "title": "Экспорт данных аккаунта",
+      "usefulness": 6,
+      "operations": [
+        "privacy.exportData"
+      ]
+    },
+    {
+      "featureId": "privacy.delete_account",
+      "title": "Удаление аккаунта",
+      "usefulness": 6,
+      "operations": [
+        "privacy.deleteAccount"
+      ]
+    }
+  ]
+}

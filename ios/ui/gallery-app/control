@@ -1,0 +1,8 @@
+Package: io.ozio.chatgptx.kit
+Name: ChatGPTXKit
+Version: 0.1.0
+Architecture: iphoneos-arm
+Description: ChatGPTX iOS 6 component gallery (development only)
+Maintainer: ozio
+Author: ozio
+Section: Applications

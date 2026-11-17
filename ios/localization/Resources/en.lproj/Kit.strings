@@ -1,0 +1,2110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>  ✓ an expired link is refused (4 ms)</key>
+	<string>  ✓ an expired link is refused (4 ms)</string>
+	<key> Sources %lu</key>
+	<string> Sources %lu</string>
+	<key>## Saturday plan
+Morning — **Kremlin** and *Kul Sharif* Mosque, afternoon — Bauman Street. Details at [kazan.travel](https://kazan.travel).
+
+### What to bring
+- comfortable shoes
+- `power bank` 10,000 mAh
+- umbrella: rain is forecast
+
+1. Kremlin — 2 h
+2. Lunch in the Old Quarter
+3. Kazanka embankment
+
+&gt; Mosque entry is free, but a headscarf is required.
+
+| Place | Time | Price |
+|---|---|---|
+| Kremlin | 2 h | 0 ₽ |
+| Chak-Chak Museum | 1 h | 500 ₽ |
+
+```python
+# trip budget
+costs = [500, 1200, 800]
+print("Total:", sum(costs))
+```
+Have a nice trip!</key>
+	<string>## Saturday plan
+Morning — **Kremlin** and *Kul Sharif* Mosque, afternoon — Bauman Street. Details at [kazan.travel](https://kazan.travel).
+
+### What to bring
+- comfortable shoes
+- `power bank` 10,000 mAh
+- umbrella: rain is forecast
+
+1. Kremlin — 2 h
+2. Lunch in the Old Quarter
+3. Kazanka embankment
+
+&gt; Mosque entry is free, but a headscarf is required.
+
+| Place | Time | Price |
+|---|---|---|
+| Kremlin | 2 h | 0 ₽ |
+| Chak-Chak Museum | 1 h | 500 ₽ |
+
+```python
+# trip budget
+costs = [500, 1200, 800]
+print("Total:", sum(costs))
+```
+Have a nice trip!</string>
+	<key>### Summary
+The market is growing for the third year in a row: demand is shifting to city models with a **500–700 Wh** battery.
+
+### Key figures
+- sales: +18% YoY
+- average price: 92,000 ₽
+- online sales share: 41%
+
+### What matters to buyers
+1. Range of at least 60 km
+2. Removable battery
+3. Service nearby
+
+&gt; Data from public retailer reports and industry reviews.</key>
+	<string>### Summary
+The market is growing for the third year in a row: demand is shifting to city models with a **500–700 Wh** battery.
+
+### Key figures
+- sales: +18% YoY
+- average price: 92,000 ₽
+- online sales share: 41%
+
+### What matters to buyers
+1. Range of at least 60 km
+2. Removable battery
+3. Service nearby
+
+&gt; Data from public retailer reports and industry reviews.</string>
+	<key>%@ s</key>
+	<string>%@ s</string>
+	<key>%@, remove mode</key>
+	<string>%@, remove mode</string>
+	<key>%@: %d of 4 entered</key>
+	<string>%@: %d of 4 entered</string>
+	<key>%d of %d</key>
+	<string>%d of %d</string>
+	<key>%d p.</key>
+	<string>%d p.</string>
+	<key>%lu of %lu</key>
+	<string>%lu of %lu</string>
+	<key>0.5×</key>
+	<string>0.5×</string>
+	<key>1.2 MB · yesterday</key>
+	<string>1.2 MB · yesterday</string>
+	<key>1.5×</key>
+	<string>1.5×</string>
+	<key>16 cores</key>
+	<string>16 cores</string>
+	<key>1×</key>
+	<string>1×</string>
+	<key>2 KB · a month ago</key>
+	<string>2 KB · a month ago</string>
+	<key>2 h ago</key>
+	<string>2 h ago</string>
+	<key>2026 hybrid bike ratings</key>
+	<string>2026 hybrid bike ratings</string>
+	<key>2×</key>
+	<string>2×</string>
+	<key>3000 JPY</key>
+	<string>3000 JPY</string>
+	<key>4 cores</key>
+	<string>4 cores</string>
+	<key>4 digits. A forgotten PIN cannot be recovered — only reset along with locked chats.</key>
+	<string>4 digits. A forgotten PIN cannot be recovered — only reset along with locked chats.</string>
+	<key>40 pt tiles</key>
+	<string>40 pt tiles</string>
+	<key>44 pt buttons (RCButton)</key>
+	<string>44 pt buttons (RCButton)</string>
+	<key>50–100K RUB</key>
+	<string>50–100K RUB</string>
+	<key>6 messages · today, 14:20</key>
+	<string>6 messages · today, 14:20</string>
+	<key>640 KB · a week ago</key>
+	<string>640 KB · a week ago</string>
+	<key>820 KB</key>
+	<string>820 KB</string>
+	<key>84 KB · 3 days ago</key>
+	<string>84 KB · 3 days ago</string>
+	<key>A cloud environment clones the repository and runs the task without your computer.</key>
+	<string>A cloud environment clones the repository and runs the task without your computer.</string>
+	<key>A tool's access request uses the ordinary permission card with the server tile.</key>
+	<string>A tool's access request uses the ordinary permission card with the server tile.</string>
+	<key>A warm jacket and waterproof shoes.</key>
+	<string>A warm jacket and waterproof shoes.</string>
+	<key>API 7 settings screens appear from stage 7.</key>
+	<string>API 7 settings screens appear from stage 7.</string>
+	<key>AS</key>
+	<string>AS</string>
+	<key>Above the history</key>
+	<string>Above the history</string>
+	<key>Access to registry.npmjs.org for this task</key>
+	<string>Access to registry.npmjs.org for this task</string>
+	<key>Account</key>
+	<string>Account</string>
+	<key>Account and settings, %@</key>
+	<string>Account and settings, %@</string>
+	<key>Account header</key>
+	<string>Account header</string>
+	<key>Account header (plan — stage 7)</key>
+	<string>Account header (plan — stage 7)</string>
+	<key>Action</key>
+	<string>Action</string>
+	<key>Action → placeholder before stage 7</key>
+	<string>Action → placeholder before stage 7</string>
+	<key>Actions</key>
+	<string>Actions</string>
+	<key>Active</key>
+	<string>Active</string>
+	<key>Add</key>
+	<string>Add</string>
+	<key>Add a computer…</key>
+	<string>Add a computer…</string>
+	<key>Add a dark theme to settings</key>
+	<string>Add a dark theme to settings</string>
+	<key>Add the public key to ~/.ssh/authorized_keys on the computer. The private key never leaves this iPhone.</key>
+	<string>Add the public key to ~/.ssh/authorized_keys on the computer. The private key never leaves this iPhone.</string>
+	<key>Add to message</key>
+	<string>Add to message</string>
+	<key>Added</key>
+	<string>Added</string>
+	<key>After logout</key>
+	<string>After logout</string>
+	<key>Alexey Smirnov</key>
+	<string>Alexey Smirnov</string>
+	<key>All</key>
+	<string>All</string>
+	<key>Allow</key>
+	<string>Allow</string>
+	<key>Allowed</key>
+	<string>Allowed</string>
+	<key>Allowed — event created</key>
+	<string>Allowed — event created</string>
+	<key>Allow…</key>
+	<string>Allow…</string>
+	<key>Always allowed for registry.npmjs.org</key>
+	<string>Always allowed for registry.npmjs.org</string>
+	<key>Always ask</key>
+	<string>Always ask</string>
+	<key>Always for registry.npmjs.org</key>
+	<string>Always for registry.npmjs.org</string>
+	<key>An offline computer continues its tasks when it comes back.</key>
+	<string>An offline computer continues its tasks when it comes back.</string>
+	<key>Analyzing the question</key>
+	<string>Analyzing the question</string>
+	<key>Anna Smirnova</key>
+	<string>Anna Smirnova</string>
+	<key>Answer</key>
+	<string>Answer</string>
+	<key>Answer in Russian.</key>
+	<string>Answer in Russian.</string>
+	<key>Answer parts</key>
+	<string>Answer parts</string>
+	<key>Answer sources</key>
+	<string>Answer sources</string>
+	<key>Answer stopped</key>
+	<string>Answer stopped</string>
+	<key>Answer style</key>
+	<string>Answer style</string>
+	<key>Answer text size</key>
+	<string>Answer text size</string>
+	<key>Answer will be sent as a message</key>
+	<string>Answer will be sent as a message</string>
+	<key>Answers</key>
+	<string>Answers</string>
+	<key>Answers sooner, uses the limit faster</key>
+	<string>Answers sooner, uses the limit faster</string>
+	<key>Anyone with the link can read this conversation. Messages added after the link is created are not included.</key>
+	<string>Anyone with the link can read this conversation. Messages added after the link is created are not included.</string>
+	<key>App action</key>
+	<string>App action</string>
+	<key>App action (stage 7)</key>
+	<string>App action (stage 7)</string>
+	<key>Appearance (stage 7+)</key>
+	<string>Appearance (stage 7+)</string>
+	<key>Archive</key>
+	<string>Archive</string>
+	<key>Archive (action)</key>
+	<string>Archive</string>
+	<key>Archive (tab)</key>
+	<string>Archive</string>
+	<key>Archived</key>
+	<string>Archived</string>
+	<key>Archived tasks keep their history; «Restore» in the task menu.</key>
+	<string>Archived tasks keep their history; «Restore» in the task menu.</string>
+	<key>Around freezing and sleet tomorrow.</key>
+	<string>Around freezing and sleet tomorrow.</string>
+	<key>Ask anything. The answer appears as it is written.</key>
+	<string>Ask anything.</string>
+	<key>Asks Codex to fix this comment in the task</key>
+	<string>Asks Codex to fix this comment in the task</string>
+	<key>At stage 10 Markdown is not rendered: formatting symbols are stripped and text reads as plain.</key>
+	<string>At stage 10 Markdown is not rendered: formatting symbols are stripped and text reads as plain.</string>
+	<key>At this stage chat deletion is not available yet: rows do not respond to swiping.</key>
+	<string>At this stage chat deletion is not available yet: rows do not respond to swiping.</string>
+	<key>Attachments and dictation use the chat's «+» sheet and RCDictationView in the task composer.</key>
+	<string>Attachments and dictation use the chat's «+» sheet and RCDictationView in the task composer.</string>
+	<key>Attachments and versions (stage 8+)</key>
+	<string>Attachments and versions (stage 8+)</string>
+	<key>Audio</key>
+	<string>Audio</string>
+	<key>Auto</key>
+	<string>Auto</string>
+	<key>Bad result</key>
+	<string>Bad result</string>
+	<key>Banners</key>
+	<string>Banners</string>
+	<key>Before every command</key>
+	<string>Before every command</string>
+	<key>Block %ld is copied by the app</key>
+	<string>Block %ld is copied by the app</string>
+	<key>Borscht recipe</key>
+	<string>Borscht recipe</string>
+	<key>Branch for a new task</key>
+	<string>Branch for a new task</string>
+	<key>Browser check — running</key>
+	<string>Browser check — running</string>
+	<key>Build time, s</key>
+	<string>Build time, s</string>
+	<key>Build timing — 9.1 s → 1.6 s</key>
+	<string>Build timing — 9.1 s → 1.6 s</string>
+	<key>Busy → done</key>
+	<string>Busy → done</string>
+	<key>By community</key>
+	<string>By community</string>
+	<key>By example.com</key>
+	<string>By example.com</string>
+	<key>CSS build faster than 2 s</key>
+	<string>CSS build faster than 2 s</string>
+	<key>CSS comparison — identical</key>
+	<string>CSS comparison — identical</string>
+	<key>Cafe “Skazka”</key>
+	<string>Cafe “Skazka”</string>
+	<key>Camera</key>
+	<string>Camera</string>
+	<key>Cancel</key>
+	<string>Cancel</string>
+	<key>Cancel, failure, attachments (API 8)</key>
+	<string>Cancel, failure, attachments (API 8)</string>
+	<key>Capture at least one page</key>
+	<string>Capture at least one page</string>
+	<key>Capture page</key>
+	<string>Capture page</string>
+	<key>Cc:</key>
+	<string>Cc:</string>
+	<key>Cells and selection</key>
+	<string>Cells and selection</string>
+	<key>Change</key>
+	<string>Change</string>
+	<key>Changed files</key>
+	<string>Changed files</string>
+	<key>Changed files: %lu</key>
+	<string>Changed files: %lu</string>
+	<key>Changes</key>
+	<string>Changes</string>
+	<key>Chart</key>
+	<string>Chart</string>
+	<key>Chart (stage 7)</key>
+	<string>Chart (stage 7)</string>
+	<key>Chart → placeholder before stage 7</key>
+	<string>Chart → placeholder before stage 7</string>
+	<key>Chart. %@</key>
+	<string>Chart. %@</string>
+	<key>Chat</key>
+	<string>Chat</string>
+	<key>Chat link</key>
+	<string>Chat link</string>
+	<key>Chat link — from stage 7</key>
+	<string>Chat link — from stage 7</string>
+	<key>Chat “Trip plan”</key>
+	<string>Chat “Trip plan”</string>
+	<key>Chats</key>
+	<string>Chats</string>
+	<key>Chats locked with a PIN are hidden from the list and search.</key>
+	<string>Chats locked with a PIN are hidden from the list and search.</string>
+	<key>Check again</key>
+	<string>Check again</string>
+	<key>Check iPhone</key>
+	<string>Check iPhone</string>
+	<key>Check in history</key>
+	<string>Check in history</string>
+	<key>Checking chat → create</key>
+	<string>Checking chat → create</string>
+	<key>Checking saved login</key>
+	<string>Checking saved login</string>
+	<key>Checking the chat</key>
+	<string>Checking the chat</string>
+	<key>Checking the chat…</key>
+	<string>Checking the chat…</string>
+	<key>Checking the file…</key>
+	<string>Checking the file…</string>
+	<key>Checking the saved login…</key>
+	<string>Checking the saved login…</string>
+	<key>Checking travel time from the airport</key>
+	<string>Checking travel time from the airport</string>
+	<key>Checking with the service</key>
+	<string>Checking with the service</string>
+	<key>Checking…</key>
+	<string>Checking…</string>
+	<key>Choice</key>
+	<string>Choice</string>
+	<key>Choosing…</key>
+	<string>Choosing…</string>
+	<key>Clarifying questions</key>
+	<string>Clarifying questions</string>
+	<key>Clarifying questions (stage 7)</key>
+	<string>Clarifying questions (stage 7)</string>
+	<key>Clarifying questions: per-question answers</key>
+	<string>Clarifying questions: per-question answers</string>
+	<key>Clear temporary files</key>
+	<string>Clear temporary files</string>
+	<key>Close</key>
+	<string>Close</string>
+	<key>Close menu</key>
+	<string>Close menu</string>
+	<key>Close player</key>
+	<string>Close player</string>
+	<key>Close showcase</key>
+	<string>Close showcase</string>
+	<key>Cloud</key>
+	<string>Cloud</string>
+	<key>Cloud machine</key>
+	<string>Cloud machine</string>
+	<key>Code copied</key>
+	<string>Code copied</string>
+	<key>Code: the app copies it (blockIndex)</key>
+	<string>Code: the app copies it (blockIndex)</string>
+	<key>Codex asked for permission</key>
+	<string>Codex asked for permission</string>
+	<key>Codex asks</key>
+	<string>Codex asks</string>
+	<key>Codex asks before every command and change.</key>
+	<string>Codex asks before every command and change.</string>
+	<key>Codex asks for network access</key>
+	<string>Codex asks for network access</string>
+	<key>Codex is waiting for permission</key>
+	<string>Codex is waiting for permission</string>
+	<key>Codex is working…</key>
+	<string>Codex is working…</string>
+	<key>Codex never asks. Use only on a separate machine.</key>
+	<string>Codex never asks. Use only on a separate machine.</string>
+	<key>Codex passcode</key>
+	<string>Codex passcode</string>
+	<key>Codex runs commands and changes files in your projects. Confirm once that this iPhone belongs to your account. The device key stays in the iPhone keychain.</key>
+	<string>Codex runs commands and changes files in your projects. Confirm once that this iPhone belongs to your account. The device key stays in the iPhone keychain.</string>
+	<key>Codex settings</key>
+	<string>Codex settings</string>
+	<key>Codex tasks</key>
+	<string>Codex tasks</string>
+	<key>Codex will not run this action</key>
+	<string>Codex will not run this action</string>
+	<key>Codex works where your account started it. The iPhone shows progress and stops a task only where your decision is needed.</key>
+	<string>Codex works where your account started it. The iPhone shows progress and stops a task only where your decision is needed.</string>
+	<key>Codex · review</key>
+	<string>Codex · review</string>
+	<key>Codex, tier 2</key>
+	<string>Codex, tier 2</string>
+	<key>Codex, tier 3</key>
+	<string>Codex, tier 3</string>
+	<key>Codex: task history</key>
+	<string>Codex: task history</string>
+	<key>Codex: tier 2</key>
+	<string>Codex: tier 2</string>
+	<key>Codex: tier 3</key>
+	<string>Codex: tier 3</string>
+	<key>Collapsed</key>
+	<string>Collapsed</string>
+	<key>Command</key>
+	<string>Command</string>
+	<key>Commands</key>
+	<string>Commands</string>
+	<key>Compared data and verified dates</key>
+	<string>Compared data and verified dates</string>
+	<key>Completed answer</key>
+	<string>Completed answer</string>
+	<key>Components</key>
+	<string>Components</string>
+	<key>Composer</key>
+	<string>Composer</string>
+	<key>Computer</key>
+	<string>Computer</string>
+	<key>Computer screen</key>
+	<string>Computer screen</string>
+	<key>Computers</key>
+	<string>Computers</string>
+	<key>Connect</key>
+	<string>Connect</string>
+	<key>Connected</key>
+	<string>Connected</string>
+	<key>Connected · SSH</key>
+	<string>Connected · SSH</string>
+	<key>Connected · SSH · 192.168.1.20</key>
+	<string>Connected · SSH · 192.168.1.20</string>
+	<key>Connection dropped after sending. The message may have arrived.</key>
+	<string>Connection dropped after sending. The message may have arrived.</string>
+	<key>Connection not secure, </key>
+	<string>Connection not secure, </string>
+	<key>Connection restored · events loaded: 3</key>
+	<string>Connection restored · events loaded: 3</string>
+	<key>Connections</key>
+	<string>Connections</string>
+	<key>Continue</key>
+	<string>Continue</string>
+	<key>Continue answer</key>
+	<string>Continue answer</string>
+	<key>Contract translation</key>
+	<string>Contract translation</string>
+	<key>Conversation</key>
+	<string>Conversation</string>
+	<key>Conversation saved in chat</key>
+	<string>Conversation saved in chat</string>
+	<key>Copied</key>
+	<string>Copied</string>
+	<key>Copied: %d chars</key>
+	<string>Copied: %d chars</string>
+	<key>Copies the selection or all the text</key>
+	<string>Copies the selection or all the text</string>
+	<key>Copy</key>
+	<string>Copy</string>
+	<key>Copy code</key>
+	<string>Copy code</string>
+	<key>Copy link</key>
+	<string>Copy link</string>
+	<key>Copy public key</key>
+	<string>Copy public key</string>
+	<key>Could not check chat</key>
+	<string>Could not check chat</string>
+	<key>Could not check the chat</key>
+	<string>Could not check the chat</string>
+	<key>Could not check the chat. Nothing was published.</key>
+	<string>Could not check the chat. Nothing was published.</string>
+	<key>Could not create</key>
+	<string>Could not create</string>
+	<key>Could not create the link</key>
+	<string>Could not create the link</string>
+	<key>Could not log in. Try again.</key>
+	<string>Could not log in. Try again.</string>
+	<key>Could not play.</key>
+	<string>Could not play.</string>
+	<key>Could not refresh chat history.</key>
+	<string>Could not refresh chat history.</string>
+	<key>Could not show the image</key>
+	<string>Could not show the image</string>
+	<key>Create PIN</key>
+	<string>Create PIN</string>
+	<key>Create a PIN</key>
+	<string>Create a PIN</string>
+	<key>Create image</key>
+	<string>Create image</string>
+	<key>Create link</key>
+	<string>Create link</string>
+	<key>Created issue #212</key>
+	<string>Created issue #212</string>
+	<key>Created research plan</key>
+	<string>Created research plan</string>
+	<key>Creating</key>
+	<string>Creating</string>
+	<key>Creating image…</key>
+	<string>Creating image…</string>
+	<key>Creating link…</key>
+	<string>Creating link…</string>
+	<key>Creating the device key</key>
+	<string>Creating the device key</string>
+	<key>Current branch main</key>
+	<string>Current branch main</string>
+	<key>Dark</key>
+	<string>Dark</string>
+	<key>Dark drawer linen</key>
+	<string>Dark drawer linen</string>
+	<key>Dark drawer linen:</key>
+	<string>Dark drawer linen:</string>
+	<key>Dark variant</key>
+	<string>Dark variant</string>
+	<key>Debossed</key>
+	<string>Debossed</string>
+	<key>Debossed mark: the empty chat (light or dark artwork by appearance, grey for a temporary chat). White embossed: welcome and launch on the dark linen; emerald: light backgrounds. The tile (icon) only in small headers.</key>
+	<string>Debossed mark: the empty chat (light or dark artwork by appearance, grey for a temporary chat). White embossed: welcome and launch on the dark linen; emerald: light backgrounds. The tile (icon) only in small headers.</string>
+	<key>Deep research</key>
+	<string>Deep research</string>
+	<key>Default</key>
+	<string>Default</string>
+	<key>Delete</key>
+	<string>Delete</string>
+	<key>Delete all chats</key>
+	<string>Delete all chats</string>
+	<key>Delete chat</key>
+	<string>Delete chat</string>
+	<key>Delete link</key>
+	<string>Delete link</string>
+	<key>Delete page</key>
+	<string>Delete page</string>
+	<key>Deleted</key>
+	<string>Deleted</string>
+	<key>Delivery not confirmed</key>
+	<string>Delivery not confirmed</string>
+	<key>Delivery not confirmed · tap “?”</key>
+	<string>Delivery not confirmed · tap “?”</string>
+	<key>Delivery: honest states</key>
+	<string>Delivery: honest states</string>
+	<key>Demo: Safari is not opened</key>
+	<string>Demo: Safari is not opened</string>
+	<key>Demo: the launch screen fades into the chat.</key>
+	<string>Demo: the launch screen fades into the chat.</string>
+	<key>Demo: “Log out” flips the screen like a card.</key>
+	<string>Demo: “Log out” flips the screen like a card.</string>
+	<key>Denied</key>
+	<string>Denied</string>
+	<key>Denied — nothing changed</key>
+	<string>Denied — nothing changed</string>
+	<key>Deny</key>
+	<string>Deny</string>
+	<key>Detect</key>
+	<string>Detect</string>
+	<key>Detected: Russian</key>
+	<string>Detected: Russian</string>
+	<key>Device check</key>
+	<string>Device check</string>
+	<key>Dictation</key>
+	<string>Dictation</string>
+	<key>Dictation (stage 9+)</key>
+	<string>Dictation (stage 9+)</string>
+	<key>Diff of one file</key>
+	<string>Diff of one file</string>
+	<key>Diff with review notes</key>
+	<string>Diff with review notes</string>
+	<key>Disabled (alpha .5)</key>
+	<string>Disabled (alpha .5)</string>
+	<key>Document scanner (stage 6)</key>
+	<string>Document scanner (stage 6)</string>
+	<key>Documents</key>
+	<string>Documents</string>
+	<key>Done</key>
+	<string>Done</string>
+	<key>Done (PDF — stage 6)</key>
+	<string>Done (PDF — stage 6)</string>
+	<key>Done · 12 min · 3 sources · 9 pp.</key>
+	<string>Done · 12 min · 3 sources · 9 pp.</string>
+	<key>Done · 4 min · 33 sources · 8 pp.</key>
+	<string>Done · 4 min · 33 sources · 8 pp.</string>
+	<key>Double-tap and hold for chat actions</key>
+	<string>Double-tap and hold for chat actions</string>
+	<key>Double-tap zooms in, single-tap hides the bars. “Edit” is stage 6.</key>
+	<string>Double-tap zooms in, single-tap hides the bars. “Edit” is stage 6.</string>
+	<key>Download</key>
+	<string>Download</string>
+	<key>Download result unknown</key>
+	<string>Download result unknown</string>
+	<key>Download the updated packages</key>
+	<string>Download the updated packages</string>
+	<key>Downloading image…</key>
+	<string>Downloading image…</string>
+	<key>Downloads and shows the image</key>
+	<string>Downloads and shows the image</string>
+	<key>Downloads the image again</key>
+	<string>Downloads the image again</string>
+	<key>Drawer sections</key>
+	<string>Drawer sections</string>
+	<key>Drawer: press and hold a row</key>
+	<string>Drawer: press and hold a row</string>
+	<key>Edit</key>
+	<string>Edit</string>
+	<key>Electric bike market in Russia</key>
+	<string>Electric bike market in Russia</string>
+	<key>Email Editor</key>
+	<string>Email Editor</string>
+	<key>Email draft</key>
+	<string>Email draft</string>
+	<key>Email draft (send — stage 6)</key>
+	<string>Email draft (send — stage 6)</string>
+	<key>Email draft (stage 7)</key>
+	<string>Email draft (stage 7)</string>
+	<key>Email to landlord</key>
+	<string>Email to landlord</string>
+	<key>Email → placeholder before stage 7</key>
+	<string>Email → placeholder before stage 7</string>
+	<key>Emerald</key>
+	<string>Emerald</string>
+	<key>Empty chat</key>
+	<string>Empty chat</string>
+	<key>Empty field</key>
+	<string>Empty field</string>
+	<key>Empty field + voice: the voice conversation button replaces “Send”.</key>
+	<string>Empty field + voice: the voice conversation button replaces “Send”.</string>
+	<key>Empty library</key>
+	<string>Empty library</string>
+	<key>End</key>
+	<string>End</string>
+	<key>Ends the voice conversation</key>
+	<string>Ends the voice conversation</string>
+	<key>Engineer</key>
+	<string>Engineer</string>
+	<key>Enter PIN</key>
+	<string>Enter PIN</string>
+	<key>Enter code</key>
+	<string>Enter code</string>
+	<key>Error</key>
+	<string>Error</string>
+	<key>Escaped punctuation</key>
+	<string>Escaped punctuation</string>
+	<key>Event created</key>
+	<string>Event created</string>
+	<key>Expand</key>
+	<string>Expand</string>
+	<key>Expanded</key>
+	<string>Expanded</string>
+	<key>Expired</key>
+	<string>Expired</string>
+	<key>Expired — download the file again</key>
+	<string>Expired — download the file again</string>
+	<key>Explains step by step without giving away the answer</key>
+	<string>Explains step by step without giving away the answer</string>
+	<key>External tool (MCP)</key>
+	<string>External tool (MCP)</string>
+	<key>Extra High</key>
+	<string>Extra High</string>
+	<key>Failed — tap retries</key>
+	<string>Failed — tap retries</string>
+	<key>Failure with the caller's explanation (failureText)</key>
+	<string>Failure with the caller's explanation (failureText)</string>
+	<key>Family A</key>
+	<string>Family A</string>
+	<key>Family B</key>
+	<string>Family B</string>
+	<key>Fast</key>
+	<string>Fast</string>
+	<key>Fast and economical</key>
+	<string>Fast and economical</string>
+	<key>Faucet repair</key>
+	<string>Faucet repair</string>
+	<key>Favorites</key>
+	<string>Favorites</string>
+	<key>Featured</key>
+	<string>Featured</string>
+	<key>Feb</key>
+	<string>Feb</string>
+	<key>File</key>
+	<string>File</string>
+	<key>File (stage 8): Download → progress → Open</key>
+	<string>File (stage 8): Download → progress → Open</string>
+	<key>File icons (RCFileIcon): a concrete file, not the attach action</key>
+	<string>File icons (RCFileIcon): a concrete file, not the attach action</string>
+	<key>File mentioned</key>
+	<string>File mentioned</string>
+	<key>File → placeholder before stage 8</key>
+	<string>File → placeholder before stage 8</string>
+	<key>Files</key>
+	<string>Files</string>
+	<key>Files you send in chats will appear here.</key>
+	<string>Files you send in chats will appear here.</string>
+	<key>Find where the code does this</key>
+	<string>Find where the code does this</string>
+	<key>Finishes the phrase and sends it</key>
+	<string>Finishes the phrase and sends it</string>
+	<key>First connection to this computer. Compare the fingerprint with ssh-keygen -lf on the computer.</key>
+	<string>First connection to this computer. Compare the fingerprint with ssh-keygen -lf on the computer.</string>
+	<key>First launch and logging out. The logo is the white embossed mark without a tile (RCBrandMarkEmbossedWhite).</key>
+	<string>First launch and logging out. The logo is the white embossed mark without a tile (RCBrandMarkEmbossedWhite).</string>
+	<key>First the app reads the chat (read-only), then offers “Create link”. Retrying after an error is read-only again.</key>
+	<string>First the app reads the chat (read-only), then offers “Create link”. Retrying after an error is read-only again.</string>
+	<key>Fix</key>
+	<string>Fix</string>
+	<key>Fix sign-in by link</key>
+	<string>Fix sign-in by link</string>
+	<key>Folders</key>
+	<string>Folders</string>
+	<key>For code, default</key>
+	<string>For code, default</string>
+	<key>For colleagues</key>
+	<string>For colleagues</string>
+	<key>For me</key>
+	<string>For me</string>
+	<key>For the city, a hybrid or city bike works well.
+
+A step-through frame is comfortable in everyday clothes, an internal gear hub needs less maintenance, and fenders and a rack are usually included.
+
+Budget: from 35,000 ₽ and up.</key>
+	<string>For the city, a hybrid or city bike works well.
+
+A step-through frame is comfortable in everyday clothes, an internal gear hub needs less maintenance, and fenders and a rack are usually included.
+
+Budget: from 35,000 ₽ and up.</string>
+	<key>For the city, a hybrid or city bike works well: a step-through frame, an internal gear hub…</key>
+	<string>For the city, a hybrid or city bike works well: a step-through frame, an internal gear hub…</string>
+	<key>For what budget?</key>
+	<string>For what budget?</string>
+	<key>Fork</key>
+	<string>Fork</string>
+	<key>Form</key>
+	<string>Form</string>
+	<key>Found %d sources</key>
+	<string>Found %d sources</string>
+	<key>Found 33 sources</key>
+	<string>Found 33 sources</string>
+	<key>Foundation</key>
+	<string>Foundation</string>
+	<key>Free inside the project</key>
+	<string>Free inside the project</string>
+	<key>Fri, Nov 14, 15:00</key>
+	<string>Fri, Nov 14, 15:00</string>
+	<key>From library</key>
+	<string>From library</string>
+	<key>From: </key>
+	<string>From: </string>
+	<key>Full access</key>
+	<string>Full access</string>
+	<key>Full-screen editor</key>
+	<string>Full-screen editor</string>
+	<key>General, for analysis and text</key>
+	<string>General, for analysis and text</string>
+	<key>Gift ideas</key>
+	<string>Gift ideas</string>
+	<key>Glyphs (%lu, from icons.js)</key>
+	<string>Glyphs (%lu, from icons.js)</string>
+	<key>Glyphs and tiles</key>
+	<string>Glyphs and tiles</string>
+	<key>Goal and budget</key>
+	<string>Goal and budget</string>
+	<key>Goal:</key>
+	<string>Goal:</string>
+	<key>Good result</key>
+	<string>Good result</string>
+	<key>Green and amber, barber-pole for indeterminate, live bar fills in 3 s. 6 pt is the size in the attachment tray.</key>
+	<string>Green and amber, barber-pole for indeterminate, live bar fills in 3 s. 6 pt is the size in the attachment tray.</string>
+	<key>Grids</key>
+	<string>Grids</string>
+	<key>HUD and progress</key>
+	<string>HUD and progress</string>
+	<key>Headings, lists, quote, table, links, and code. “Copy” on code appears at stage 7.</key>
+	<string>Headings, lists, quote, table, links, and code. “Copy” on code appears at stage 7.</string>
+	<key>Headings, lists, quote, table, links, and code. “Copy” on code is stage 7.</key>
+	<string>Headings, lists, quote, table, links, and code. “Copy” on code is stage 7.</string>
+	<key>Hello!
+
+The kitchen faucet is leaking. When would be a good time to send a plumber?
+
+Thanks, Anna</key>
+	<string>Hello!
+
+The kitchen faucet is leaking. When would be a good time to send a plumber?
+
+Thanks, Anna</string>
+	<key>Here are the first steps: install Python 3, then create a virtual environment and</key>
+	<string>Here are the first steps: install Python 3, then create a virtual environment and</string>
+	<key>Here is the draft:</key>
+	<string>Here is the draft:</string>
+	<key>Here is the image based on your description:</key>
+	<string>Here is the image based on your description:</string>
+	<key>Here is the image:</key>
+	<string>Here is the image:</string>
+	<key>Here is the monthly sales chart:</key>
+	<string>Here is the monthly sales chart:</string>
+	<key>Here the app displays its service sign-in page (WebView). After logging in, you return to ChatGPT X.</key>
+	<string>Here the app displays its service sign-in page (WebView). After logging in, you return to ChatGPT X.</string>
+	<key>Hi! How are you?</key>
+	<string>Hi! How are you?</string>
+	<key>High</key>
+	<string>High</string>
+	<key>History notes</key>
+	<string>History notes</string>
+	<key>Hold a bubble: “Copy” (stage 9+), “Edit” (stage 8+). “!” means retry is safe; “?” means connection dropped after tap, check history only.</key>
+	<string>Hold a bubble: “Copy” (stage 9+), “Edit” (stage 8+). “!” means retry is safe; “?” means connection dropped after tap, check history only.</string>
+	<key>Hold a card: “Copy | Select Text” (stage 9+). Action bar: copy and regenerate (8), speak and share (7), “More” (6).</key>
+	<string>Hold a card: “Copy | Select Text” (stage 9+). Action bar: copy and regenerate (8), speak and share (7), “More” (6).</string>
+	<key>Hold an answer → “Select Text”. Plain text without markup, matching the chat size and appearance; “Copy” copies the selection or all text.</key>
+	<string>Hold an answer → “Select Text”. Plain text without markup, matching the chat size and appearance; “Copy” copies the selection or all text.</string>
+	<key>Hooks</key>
+	<string>Hooks</string>
+	<key>Host</key>
+	<string>Host</string>
+	<key>Host: 192.168.1.30</key>
+	<string>Host: 192.168.1.30</string>
+	<key>How is the result?</key>
+	<string>How is the result?</string>
+	<key>How long?</key>
+	<string>How long?</string>
+	<key>How much does the Moon weigh</key>
+	<string>How much does the Moon weigh</string>
+	<key>How much does the Moon weigh?</key>
+	<string>How much does the Moon weigh?</string>
+	<key>How should the dark theme turn on?</key>
+	<string>How should the dark theme turn on?</string>
+	<key>How to choose a bike</key>
+	<string>How to choose a bike</string>
+	<key>How to choose a city bike: complete guide</key>
+	<string>How to choose a city bike: complete guide</string>
+	<key>How to connect the computer? Codex must be open on it.</key>
+	<string>How to connect the computer? Codex must be open on it.</string>
+	<key>If the check fails, Codex stays closed; ordinary chats keep working.</key>
+	<string>If the check fails, Codex stays closed; ordinary chats keep working.</string>
+	<key>Image</key>
+	<string>Image</string>
+	<key>Image %d</key>
+	<string>Image %d</string>
+	<key>Image (stage 7)</key>
+	<string>Image (stage 7)</string>
+	<key>Image from chat history:</key>
+	<string>Image from chat history:</string>
+	<key>Image viewer (stage 7)</key>
+	<string>Image viewer (stage 7)</string>
+	<key>Image viewer and scanner</key>
+	<string>Image viewer and scanner</string>
+	<key>Image viewer — from stage 7</key>
+	<string>Image viewer — from stage 7</string>
+	<key>Image → placeholder before stage 7</key>
+	<string>Image → placeholder before stage 7</string>
+	<key>Images</key>
+	<string>Images</string>
+	<key>Images and GPTs are stage 6; library is stage 7 (folders, favorites, and grid are stage 6).</key>
+	<string>Images and GPTs are stage 6; library is stage 7 (folders, favorites, and grid are stage 6).</string>
+	<key>In detail</key>
+	<string>In detail</string>
+	<key>In project</key>
+	<string>In project</string>
+	<key>In the app, this opens the service sign-in page. The showcase never contacts the network.</key>
+	<string>In the app, this opens the service sign-in page. The showcase never contacts the network.</string>
+	<key>In the project</key>
+	<string>In the project</string>
+	<key>Input</key>
+	<string>Input</string>
+	<key>Instant</key>
+	<string>Instant</string>
+	<key>Instructions</key>
+	<string>Instructions</string>
+	<key>Instructions apply to new chats.</key>
+	<string>Instructions apply to new chats.</string>
+	<key>Internal gear hubs — pros and cons</key>
+	<string>Internal gear hubs — pros and cons</string>
+	<key>Interrupted answer</key>
+	<string>Interrupted answer</string>
+	<key>Interrupts the answer</key>
+	<string>Interrupts the answer</string>
+	<key>Ivan</key>
+	<string>Ivan</string>
+	<key>Jan</key>
+	<string>Jan</string>
+	<key>Kazan in a weekend: on Saturday — the Kremlin, Kul Sharif Mosque, and Bauman Street, and the Kazanka embankment in the evening. On Sunday — the Old Tatar Quarter and the Chak-Chak Museum.
+
+From the airport, the Aeroexpress is most convenient: about 25 minutes to the station.</key>
+	<string>Kazan in a weekend: on Saturday — the Kremlin, Kul Sharif Mosque, and Bauman Street, and the Kazanka embankment in the evening. On Sunday — the Old Tatar Quarter and the Chak-Chak Museum.
+
+From the airport, the Aeroexpress is most convenient: about 25 minutes to the station.</string>
+	<key>Language selection and “Copy / Share” are stage 7. At stage 8 the pair is fixed: “Detect → English”.</key>
+	<string>Language selection and “Copy / Share” are stage 7. At stage 8 the pair is fixed: “Detect → English”.</string>
+	<key>Large</key>
+	<string>Large</string>
+	<key>Larger</key>
+	<string>Larger</string>
+	<key>Launch</key>
+	<string>Launch</string>
+	<key>Launch without transition (10 s)</key>
+	<string>Launch without transition (10 s)</string>
+	<key>Launch → chat</key>
+	<string>Launch → chat</string>
+	<key>Launch → welcome (long restore)</key>
+	<string>Launch → welcome (long restore)</string>
+	<key>Lease agreement.pdf</key>
+	<string>Lease agreement.pdf</string>
+	<key>Less</key>
+	<string>Less</string>
+	<key>Lets Codex run this action</key>
+	<string>Lets Codex run this action</string>
+	<key>Library</key>
+	<string>Library</string>
+	<key>Library grid</key>
+	<string>Library grid</string>
+	<key>Light</key>
+	<string>Light</string>
+	<key>Like the system</key>
+	<string>Like the system</string>
+	<key>Limit reached</key>
+	<string>Limit reached</string>
+	<key>Link already created</key>
+	<string>Link already created</string>
+	<key>Link and chat actions</key>
+	<string>Link and chat actions</string>
+	<key>Link copied</key>
+	<string>Link copied</string>
+	<key>Link created</key>
+	<string>Link created</string>
+	<key>Link created: open, delete</key>
+	<string>Link created: open, delete</string>
+	<key>Link deleted</key>
+	<string>Link deleted</string>
+	<key>Link: </key>
+	<string>Link: </string>
+	<key>Links</key>
+	<string>Links</string>
+	<key>Listen</key>
+	<string>Listen</string>
+	<key>Listening</key>
+	<string>Listening</string>
+	<key>Locked chats</key>
+	<string>Locked chats</string>
+	<key>Locked chats (stage 6)</key>
+	<string>Locked chats (stage 6)</string>
+	<key>Locked chats PIN</key>
+	<string>Locked chats PIN</string>
+	<key>Locked chats — stage 6</key>
+	<string>Locked chats — stage 6</string>
+	<key>Locked for 5 min</key>
+	<string>Locked for 5 min</string>
+	<key>Log In</key>
+	<string>Log In</string>
+	<key>Log in</key>
+	<string>Log in</string>
+	<key>Log in with browser</key>
+	<string>Log in with browser</string>
+	<key>Log out</key>
+	<string>Log out</string>
+	<key>Login</key>
+	<string>Login</string>
+	<key>Login error</key>
+	<string>Login error</string>
+	<key>Login opens on the ChatGPT page. Passwords and codes are entered only there — ChatGPT X never sees or stores them.</key>
+	<string>Login opens on the ChatGPT page. Passwords and codes are entered only there — ChatGPT X never sees or stores them.</string>
+	<key>Login: alex</key>
+	<string>Login: alex</string>
+	<key>Logout: flip to sign-in</key>
+	<string>Logout: flip to sign-in</string>
+	<key>Long text</key>
+	<string>Long text</string>
+	<key>Low</key>
+	<string>Low</string>
+	<key>MacBook Pro · snapshot</key>
+	<string>MacBook Pro · snapshot</string>
+	<key>Mail, Messages…</key>
+	<string>Mail, Messages…</string>
+	<key>Make a trip plan:
+— Saturday: Kremlin, Kul Sharif
+— Sunday: Old Quarter
+— how to get from the airport</key>
+	<string>Make a trip plan:
+— Saturday: Kremlin, Kul Sharif
+— Sunday: Old Quarter
+— how to get from the airport</string>
+	<key>Make a weekend trip plan for Kazan</key>
+	<string>Make a weekend trip plan for Kazan</string>
+	<key>Make the change and update the tests</key>
+	<string>Make the change and update the tests</string>
+	<key>Manually over SSH</key>
+	<string>Manually over SSH</string>
+	<key>Mar</key>
+	<string>Mar</string>
+	<key>Mark without a tile (RCBrandMark)</key>
+	<string>Mark without a tile (RCBrandMark)</string>
+	<key>Markdown (stage 9+)</key>
+	<string>Markdown (stage 9+)</string>
+	<key>Markdown and code</key>
+	<string>Markdown and code</string>
+	<key>Materials</key>
+	<string>Materials</string>
+	<key>Math Tutor</key>
+	<string>Math Tutor</string>
+	<key>Medium</key>
+	<string>Medium</string>
+	<key>Meeting with Anna</key>
+	<string>Meeting with Anna</string>
+	<key>Mention</key>
+	<string>Mention</string>
+	<key>Message</key>
+	<string>Message</string>
+	<key>Message body</key>
+	<string>Message body</string>
+	<key>Mic off</key>
+	<string>Mic off</string>
+	<key>Microphone</key>
+	<string>Microphone</string>
+	<key>Microphone off</key>
+	<string>Microphone off</string>
+	<key>Mode</key>
+	<string>Mode</string>
+	<key>Mode, attachments, limit (stage 8+)</key>
+	<string>Mode, attachments, limit (stage 8+)</string>
+	<key>Model</key>
+	<string>Model</string>
+	<key>Model choice</key>
+	<string>Model choice</string>
+	<key>Model choice appears from stage 8.</key>
+	<string>Model choice appears from stage 8.</string>
+	<key>Model family</key>
+	<string>Model family</string>
+	<key>Modified</key>
+	<string>Modified</string>
+	<key>Month: 3000 JPY · year: 30000 JPY</key>
+	<string>Month: 3000 JPY · year: 30000 JPY</string>
+	<key>More</key>
+	<string>More</string>
+	<key>Multi-line text</key>
+	<string>Multi-line text</string>
+	<key>My Chef</key>
+	<string>My Chef</string>
+	<key>My GPTs</key>
+	<string>My GPTs</string>
+	<key>Navigation</key>
+	<string>Navigation</string>
+	<key>Needs permission</key>
+	<string>Needs permission</string>
+	<key>Needs your answer</key>
+	<string>Needs your answer</string>
+	<key>Network access</key>
+	<string>Network access</string>
+	<key>Network and outside — ask</key>
+	<string>Network and outside — ask</string>
+	<key>New PIN</key>
+	<string>New PIN</string>
+	<key>New branch in a separate worktree</key>
+	<string>New branch in a separate worktree</string>
+	<key>New chat</key>
+	<string>New chat</string>
+	<key>New chat (toggle — stage 8)</key>
+	<string>New chat (toggle — stage 8)</string>
+	<key>New chat in project “Vacation”. Its files and instructions are included.</key>
+	<string>New chat in project “Vacation”. Its files and instructions are included.</string>
+	<key>New project</key>
+	<string>New project</string>
+	<key>Next</key>
+	<string>Next</string>
+	<key>No internet connection. Your draft is saved.</key>
+	<string>No internet connection. Your draft is saved.</string>
+	<key>No limit</key>
+	<string>No limit</string>
+	<key>No network</key>
+	<string>No network</string>
+	<key>Normal</key>
+	<string>Normal</string>
+	<key>Not recognized. The recording is saved.</key>
+	<string>Not recognized. The recording is saved.</string>
+	<key>Not sent</key>
+	<string>Not sent</string>
+	<key>Not sent · tap “!”</key>
+	<string>Not sent · tap “!”</string>
+	<key>Not sent · text returned to the input field</key>
+	<string>Not sent · text returned to the input field</string>
+	<key>Note.wav</key>
+	<string>Note.wav</string>
+	<key>Notes.txt</key>
+	<string>Notes.txt</string>
+	<key>Nothing found</key>
+	<string>Nothing found</string>
+	<key>Nothing here yet</key>
+	<string>Nothing here yet</string>
+	<key>Nothing selected</key>
+	<string>Nothing selected</string>
+	<key>Nothing will happen without your permission</key>
+	<string>Nothing will happen without your permission</string>
+	<key>Occupation</key>
+	<string>Occupation</string>
+	<key>Off</key>
+	<string>Off</string>
+	<key>Office iMac</key>
+	<string>Office iMac</string>
+	<key>Offline</key>
+	<string>Offline</string>
+	<key>Offline showcase: no network, account or session. Build: OR6_UI_GALLERY=1.</key>
+	<string>Offline showcase: no network, account or session. Build: OR6_UI_GALLERY=1.</string>
+	<key>Offline · seen yesterday at 19:40</key>
+	<string>Offline · seen yesterday at 19:40</string>
+	<key>Old report.pdf</key>
+	<string>Old report.pdf</string>
+	<key>On</key>
+	<string>On</string>
+	<key>Only manually</key>
+	<string>Only manually</string>
+	<key>Only now</key>
+	<string>Only now</string>
+	<key>Only on a separate machine</key>
+	<string>Only on a separate machine</string>
+	<key>Open</key>
+	<string>Open</string>
+	<key>Open chat with drawer</key>
+	<string>Open chat with drawer</string>
+	<key>Open image</key>
+	<string>Open image</string>
+	<key>Open in Safari?</key>
+	<string>Open in Safari?</string>
+	<key>Open in…</key>
+	<string>Open in…</string>
+	<key>Open report</key>
+	<string>Open report</string>
+	<key>Open snapshot</key>
+	<string>Open snapshot</string>
+	<key>Open “+”</key>
+	<string>Open “+”</string>
+	<key>Open “Selection”</key>
+	<string>Open “Selection”</string>
+	<key>Open “Translate”</key>
+	<string>Open “Translate”</string>
+	<key>Opens from the research card: “Open report”. “Save PDF” is stage 6.</key>
+	<string>Opens from the research card: “Open report”. “Save PDF” is stage 6.</string>
+	<key>Opens the ChatGPT login page</key>
+	<string>Opens the ChatGPT login page</string>
+	<key>Opens the answer text selection screen.</key>
+	<string>Opens the answer text selection screen.</string>
+	<key>Opens the diff</key>
+	<string>Opens the diff</string>
+	<key>Opens the diff with the review comments</key>
+	<string>Opens the diff with the review comments</string>
+	<key>Opens the link</key>
+	<string>Opens the link</string>
+	<key>Opens the list of changed files</key>
+	<string>Opens the list of changed files</string>
+	<key>Ordinary</key>
+	<string>Ordinary</string>
+	<key>Ordinary chat</key>
+	<string>Ordinary chat</string>
+	<key>PDF ready</key>
+	<string>PDF ready</string>
+	<key>PDF saved</key>
+	<string>PDF saved</string>
+	<key>PDF saved to Library</key>
+	<string>PDF saved to Library</string>
+	<key>PIN set</key>
+	<string>PIN set</string>
+	<key>Page %d</key>
+	<string>Page %d</string>
+	<key>Page background: light linen (rc-linen-light.png). Without the PNG, components fall back to a solid color.</key>
+	<string>Page background: light linen (rc-linen-light.png). Without the PNG, components fall back to a solid color.</string>
+	<key>Pairing code</key>
+	<string>Pairing code</string>
+	<key>Palette</key>
+	<string>Palette</string>
+	<key>Part not shown at this stage</key>
+	<string>Part not shown at this stage</string>
+	<key>Parts not available at the current stage are shown with a “saved in conversation” placeholder. Dark card colors are a kit extension.</key>
+	<string>Parts not available at the current stage are shown with a “saved in conversation” placeholder. Dark card colors are a kit extension.</string>
+	<key>Passcode lock</key>
+	<string>Passcode lock</string>
+	<key>Passport scan.jpg</key>
+	<string>Passport scan.jpg</string>
+	<key>Pause</key>
+	<string>Pause</string>
+	<key>Paused</key>
+	<string>Paused</string>
+	<key>Permission</key>
+	<string>Permission</string>
+	<key>Permissions</key>
+	<string>Permissions</string>
+	<key>Photo.jpg</key>
+	<string>Photo.jpg</string>
+	<key>Photos</key>
+	<string>Photos</string>
+	<key>Pills (App Store 2012)</key>
+	<string>Pills (App Store 2012)</string>
+	<key>Pin</key>
+	<string>Pin</string>
+	<key>Pinned</key>
+	<string>Pinned</string>
+	<key>Pinned chat</key>
+	<string>Pinned chat</string>
+	<key>Plan</key>
+	<string>Plan</string>
+	<key>Plan </key>
+	<string>Plan </string>
+	<key>Plan: write what to change</key>
+	<string>Plan: write what to change</string>
+	<key>Playback (RCPlaybackView)</key>
+	<string>Playback (RCPlaybackView)</string>
+	<key>Playback speed</key>
+	<string>Playback speed</string>
+	<key>Player, questions, link (API 7)</key>
+	<string>Player, questions, link (API 7)</string>
+	<key>Playing</key>
+	<string>Playing</string>
+	<key>Plays the file saved on this iPhone</key>
+	<string>Plays the file saved on this iPhone</string>
+	<key>Please make a weekend trip plan for Kazan: what to see, where to eat, and how to get from the airport.</key>
+	<string>Please make a weekend trip plan for Kazan: what to see, where to eat, and how to get from the airport.</string>
+	<key>Please postpone the rent payment by five days.</key>
+	<string>Please postpone the rent payment by five days.</string>
+	<key>Please wait…</key>
+	<string>Please wait…</string>
+	<key>Plus</key>
+	<string>Plus</string>
+	<key>Polite, concise, and to the point</key>
+	<string>Polite, concise, and to the point</string>
+	<key>Poor connection</key>
+	<string>Poor connection</string>
+	<key>Popular</key>
+	<string>Popular</string>
+	<key>Port</key>
+	<string>Port</string>
+	<key>Port: 22</key>
+	<string>Port: 22</string>
+	<key>Position %@ of %@</key>
+	<string>Position %@ of %@</string>
+	<key>Preparing to send (live countdown)</key>
+	<string>Preparing to send (live countdown)</string>
+	<key>Preparing to send: lamp on “Send”</key>
+	<string>Preparing to send: lamp on “Send”</string>
+	<key>Preparing to send… %d s</key>
+	<string>Preparing to send… %d s</string>
+	<key>Preparing…</key>
+	<string>Preparing…</string>
+	<key>Preview unavailable</key>
+	<string>Preview unavailable</string>
+	<key>Preview: tap → download → shown</key>
+	<string>Preview: tap → download → shown</string>
+	<key>Price</key>
+	<string>Price</string>
+	<key>Privacy center</key>
+	<string>Privacy center</string>
+	<key>Pro</key>
+	<string>Pro</string>
+	<key>Profile</key>
+	<string>Profile</string>
+	<key>Project files</key>
+	<string>Project files</string>
+	<key>Projects</key>
+	<string>Projects</string>
+	<key>Pull to refresh</key>
+	<string>Pull to refresh</string>
+	<key>Putting together a two-day plan</key>
+	<string>Putting together a two-day plan</string>
+	<key>Python: reading CSV</key>
+	<string>Python: reading CSV</string>
+	<key>Quarterly report.pdf</key>
+	<string>Quarterly report.pdf</string>
+	<key>Questions → placeholder before stage 7</key>
+	<string>Questions → placeholder before stage 7</string>
+	<key>RCChecklistViewController: family, mode, effort</key>
+	<string>RCChecklistViewController: family, mode, effort</string>
+	<key>RCDictationView, RCComposerView: new properties</key>
+	<string>RCDictationView, RCComposerView: new properties</string>
+	<key>RCFormViewController: values, input, choice</key>
+	<string>RCFormViewController: values, input, choice</string>
+	<key>RCGlyph from the prototype</key>
+	<string>RCGlyph from the prototype</string>
+	<key>RCGridViewController: images, GPTs, library</key>
+	<string>RCGridViewController: images, GPTs, library</string>
+	<key>RCLaunchView matches the launch image (Default*.png): only the white mark in the centre, no text or spinner. It leaves once the app knows what to show: fades into the chat or raises the mark to its place on the welcome screen.</key>
+	<string>RCLaunchView matches the launch image (Default*.png): only the white mark in the centre, no text or spinner. It leaves once the app knows what to show: fades into the chat or raises the mark to its place on the welcome screen.</string>
+	<key>RCPlaybackView, RCClarifyPartView, RCShareLinkSheet</key>
+	<string>RCPlaybackView, RCClarifyPartView, RCShareLinkSheet</string>
+	<key>RCUserMessageView: bubble, attachments, versions</key>
+	<string>RCUserMessageView: bubble, attachments, versions</string>
+	<key>RCVoiceViewController: orb</key>
+	<string>RCVoiceViewController: orb</string>
+	<key>RUB</key>
+	<string>RUB</string>
+	<key>Range</key>
+	<string>Range</string>
+	<key>Rating</key>
+	<string>Rating</string>
+	<key>Read aloud</key>
+	<string>Read aloud</string>
+	<key>Read aloud mini player</key>
+	<string>Read aloud mini player</string>
+	<key>Read answers aloud</key>
+	<string>Read answers aloud</string>
+	<key>Read only: the service values and where to change them.</key>
+	<string>Read only: the service values and where to change them.</string>
+	<key>Reading aloud</key>
+	<string>Reading aloud</string>
+	<key>Reading the latest version of the chat. Nothing is published.</key>
+	<string>Reading the latest version of the chat. Nothing is published.</string>
+	<key>Reading, edits and commands in the project folder go without questions. Network and anything outside the project ask first.</key>
+	<string>Reading, edits and commands in the project folder go without questions. Network and anything outside the project ask first.</string>
+	<key>Reads the chat again. No link is created</key>
+	<string>Reads the chat again. No link is created</string>
+	<key>Ready (stages 10–9)</key>
+	<string>Ready (stages 10–9)</string>
+	<key>Ready to play</key>
+	<string>Ready to play</string>
+	<key>Ready to send</key>
+	<string>Ready to send</string>
+	<key>Ready to send · 820 KB</key>
+	<string>Ready to send · 820 KB</string>
+	<key>Ready: model picker (stage 8+)</key>
+	<string>Ready: model picker (stage 8+)</string>
+	<key>Reasoning depth</key>
+	<string>Reasoning depth</string>
+	<key>Recipes from what’s in your fridge</key>
+	<string>Recipes from what’s in your fridge</string>
+	<key>Recognition cancelled, recording deleted</key>
+	<string>Recognition cancelled, recording deleted</string>
+	<key>Recognizing…</key>
+	<string>Recognizing…</string>
+	<key>Recognizing… with “Cancel” (cancelsRecognition)</key>
+	<string>Recognizing… with “Cancel” (cancelsRecognition)</string>
+	<key>Reconnecting… Your last phrase is saved and will be sent once.</key>
+	<string>Reconnecting… Your last phrase is saved and will be sent once.</string>
+	<key>Record → answer → read aloud.</key>
+	<string>Record → answer → read aloud.</string>
+	<key>Record → answer → read aloud. Tap the orb to finish your phrase; tap during the answer to interrupt. Transcript and limits are stage 6.</key>
+	<string>Record → answer → read aloud. Tap the orb to finish your phrase; tap during the answer to interrupt. Transcript and limits are stage 6.</string>
+	<key>Recording %@</key>
+	<string>Recording %@</string>
+	<key>Recording 0:07</key>
+	<string>Recording 0:07</string>
+	<key>Refreshes this conversation and its title</key>
+	<string>Refreshes this conversation and its title</string>
+	<key>Refreshing…</key>
+	<string>Refreshing…</string>
+	<key>Regenerate</key>
+	<string>Regenerate</string>
+	<key>Remind me about the meeting</key>
+	<string>Remind me about the meeting</string>
+	<key>Remove %@</key>
+	<string>Remove %@</string>
+	<key>Rename</key>
+	<string>Rename</string>
+	<key>Rename the auth module</key>
+	<string>Rename the auth module</string>
+	<key>Rename · Pin · Archive · Delete</key>
+	<string>Rename · Pin · Archive · Delete</string>
+	<key>Renamed</key>
+	<string>Renamed</string>
+	<key>Repeat PIN</key>
+	<string>Repeat PIN</string>
+	<key>Replace</key>
+	<string>Replace</string>
+	<key>Replace attachment?</key>
+	<string>Replace attachment?</string>
+	<key>Report</key>
+	<string>Report</string>
+	<key>Report a problem</key>
+	<string>Report a problem</string>
+	<key>Report — from stage 7</key>
+	<string>Report — from stage 7</string>
+	<key>Report.pdf</key>
+	<string>Report.pdf</string>
+	<key>Research in progress (stage 7)</key>
+	<string>Research in progress (stage 7)</string>
+	<key>Research in progress — you can close the app, the report will appear in this chat</key>
+	<string>Research in progress — you can close the app, the report will appear in this chat</string>
+	<key>Research report</key>
+	<string>Research report</string>
+	<key>Research report (stage 7)</key>
+	<string>Research report (stage 7)</string>
+	<key>Research → placeholder before stage 7</key>
+	<string>Research → placeholder before stage 7</string>
+	<key>Restoring session…</key>
+	<string>Restoring session…</string>
+	<key>Result unknown — no retry</key>
+	<string>Result unknown — no retry</string>
+	<key>Result with a chart</key>
+	<string>Result with a chart</string>
+	<key>Results</key>
+	<string>Results</string>
+	<key>Resume</key>
+	<string>Resume</string>
+	<key>Retake</key>
+	<string>Retake</string>
+	<key>Retry</key>
+	<string>Retry</string>
+	<key>Revenue, M RUB</key>
+	<string>Revenue, M RUB</string>
+	<key>Review</key>
+	<string>Review</string>
+	<key>Rotate</key>
+	<string>Rotate</string>
+	<key>Run the plan</key>
+	<string>Run the plan</string>
+	<key>Run the sign-in module tests · in ~/src/shop-web</key>
+	<string>Run the sign-in module tests · in ~/src/shop-web</string>
+	<key>Run the tests and show the diff</key>
+	<string>Run the tests and show the diff</string>
+	<key>Running</key>
+	<string>Running</string>
+	<key>Running…</key>
+	<string>Running…</string>
+	<key>Russian</key>
+	<string>Russian</string>
+	<key>Safari</key>
+	<string>Safari</string>
+	<key>Sales are growing for the third month in a row:</key>
+	<string>Sales are growing for the third month in a row:</string>
+	<key>Save</key>
+	<string>Save</string>
+	<key>Save PDF</key>
+	<string>Save PDF</string>
+	<key>Save instructions</key>
+	<string>Save instructions</string>
+	<key>Save to Photos</key>
+	<string>Save to Photos</string>
+	<key>Save to Photos or share</key>
+	<string>Save to Photos or share</string>
+	<key>Saved memory</key>
+	<string>Saved memory</string>
+	<key>Saved to Photos</key>
+	<string>Saved to Photos</string>
+	<key>Saved · %@</key>
+	<string>Saved · %@</string>
+	<key>Saving to Photos…</key>
+	<string>Saving to Photos…</string>
+	<key>Saving…</key>
+	<string>Saving…</string>
+	<key>Scan</key>
+	<string>Scan</string>
+	<key>Scan QR code</key>
+	<string>Scan QR code</string>
+	<key>Scan.png</key>
+	<string>Scan.png</string>
+	<key>Scanner — stage 6</key>
+	<string>Scanner — stage 6</string>
+	<key>Screen assembled from components</key>
+	<string>Screen assembled from components</string>
+	<key>Screens</key>
+	<string>Screens</string>
+	<key>Search</key>
+	<string>Search</string>
+	<key>Search GPTs</key>
+	<string>Search GPTs</string>
+	<key>Search chats</key>
+	<string>Search chats</string>
+	<key>Search everywhere</key>
+	<string>Search everywhere</string>
+	<key>Search library</key>
+	<string>Search library</string>
+	<key>Searching for sights in Kazan</key>
+	<string>Searching for sights in Kazan</string>
+	<key>Searching the web</key>
+	<string>Searching the web</string>
+	<key>Secure connection, </key>
+	<string>Secure connection, </string>
+	<key>Segments: light and jade</key>
+	<string>Segments: light and jade</string>
+	<key>Select All</key>
+	<string>Select All</string>
+	<key>Select Text</key>
+	<string>Select Text</string>
+	<key>Select a passage: touch and hold a word, then drag the handles.</key>
+	<string>Select a passage: touch and hold a word, then drag the handles.</string>
+	<key>Selected: %@</key>
+	<string>Selected: %@</string>
+	<key>Selection</key>
+	<string>Selection</string>
+	<key>Selects all the text</key>
+	<string>Selects all the text</string>
+	<key>Send</key>
+	<string>Send</string>
+	<key>Send (short composer title)</key>
+	<string>Send</string>
+	<key>Send again</key>
+	<string>Send again</string>
+	<key>Sending your decision…</key>
+	<string>Sending your decision…</string>
+	<key>Sending…</key>
+	<string>Sending…</string>
+	<key>Send…</key>
+	<string>Send…</string>
+	<key>Sent</key>
+	<string>Sent</string>
+	<key>Sent to the task</key>
+	<string>Sent to the task</string>
+	<key>Session expired. Your draft and chats are safe.</key>
+	<string>Session expired. Your draft and chats are safe.</string>
+	<key>Settings</key>
+	<string>Settings</string>
+	<key>Settings form (API 7)</key>
+	<string>Settings form (API 7)</string>
+	<key>Share</key>
+	<string>Share</string>
+	<key>Share link</key>
+	<string>Share link</string>
+	<key>Shared conversation · read-only</key>
+	<string>Shared conversation · read-only</string>
+	<key>Share…</key>
+	<string>Share…</string>
+	<key>Short</key>
+	<string>Short</string>
+	<key>Short and to the point.</key>
+	<string>Short and to the point.</string>
+	<key>Should read: (tiramisu). (desu, masu). *not italic*, C:\temp; code keeps its backslash.</key>
+	<string>Should read: (tiramisu). (desu, masu). *not italic*, C:\temp; code keeps its backslash.</string>
+	<key>Show analysis code ›</key>
+	<string>Show analysis code ›</string>
+	<key>Show more</key>
+	<string>Show more</string>
+	<key>Show my name</key>
+	<string>Show my name</string>
+	<key>Showcase</key>
+	<string>Showcase</string>
+	<key>Shown (real image)</key>
+	<string>Shown (real image)</string>
+	<key>Shown for reference. You can change this in the web version.</key>
+	<string>Shown for reference. You can change this in the web version.</string>
+	<key>Shows more output</key>
+	<string>Shows more output</string>
+	<key>Shows only the last lines</key>
+	<string>Shows only the last lines</string>
+	<key>Shows the “%@” button</key>
+	<string>Shows the “%@” button</string>
+	<key>Side drawer</key>
+	<string>Side drawer</string>
+	<key>Sign Up</key>
+	<string>Sign Up</string>
+	<key>Sign up</key>
+	<string>Sign up</string>
+	<key>Sign-in page</key>
+	<string>Sign-in page</string>
+	<key>Sign-in page frame</key>
+	<string>Sign-in page frame</string>
+	<key>Sign-in page with error</key>
+	<string>Sign-in page with error</string>
+	<key>Signing the account request</key>
+	<string>Signing the account request</string>
+	<key>Single line and read-only</key>
+	<string>Single line and read-only</string>
+	<key>Skip</key>
+	<string>Skip</string>
+	<key>Small</key>
+	<string>Small</string>
+	<key>Small controls</key>
+	<string>Small controls</string>
+	<key>Smaller</key>
+	<string>Smaller</string>
+	<key>Sound</key>
+	<string>Sound</string>
+	<key>Sound off</key>
+	<string>Sound off</string>
+	<key>Sources</key>
+	<string>Sources</string>
+	<key>Sources and share link</key>
+	<string>Sources and share link</string>
+	<key>Sources: %lu</key>
+	<string>Sources: %lu</string>
+	<key>Speak. When you finish, tap the orb.</key>
+	<string>Speak. When you finish, tap the orb.</string>
+	<key>Speaking</key>
+	<string>Speaking</string>
+	<key>Speak…</key>
+	<string>Speak…</string>
+	<key>Speed</key>
+	<string>Speed</string>
+	<key>Speed up the CSS build</key>
+	<string>Speed up the CSS build</string>
+	<key>Stage (feature usefulness)</key>
+	<string>Stage (feature usefulness)</string>
+	<key>Stage 10 · core</key>
+	<string>Stage 10 · core</string>
+	<key>Stage 10: hold menu and retry are not present yet; unsent text returns to the input field.</key>
+	<string>Stage 10: hold menu and retry are not present yet; unsent text returns to the input field.</string>
+	<key>Stage 10: plain text without markup</key>
+	<string>Stage 10: plain text without markup</string>
+	<key>Stage 6 · everything</key>
+	<string>Stage 6 · everything</string>
+	<key>Stage 7 · library and tools</key>
+	<string>Stage 7 · library and tools</string>
+	<key>Stage 8 adds search; stage 7 adds projects and library; stage 6 adds images, GPTs, tasks, locked chats, and “Search everywhere”.</key>
+	<string>Stage 8 adds search; stage 7 adds projects and library; stage 6 adds images, GPTs, tasks, locked chats, and “Search everywhere”.</string>
+	<key>Stage 8 · model, attachments, voice</key>
+	<string>Stage 8 · model, attachments, voice</string>
+	<key>Stage 9 · reliability and text</key>
+	<string>Stage 9 · reliability and text</string>
+	<key>Stages 10–9</key>
+	<string>Stages 10–9</string>
+	<key>Stages 10–9: “New chat” and history by date, without search.</key>
+	<string>Stages 10–9: “New chat” and history by date, without search.</string>
+	<key>Standard</key>
+	<string>Standard</string>
+	<key>Stop</key>
+	<string>Stop</string>
+	<key>Stop the command</key>
+	<string>Stop the command</string>
+	<key>Stopped</key>
+	<string>Stopped</string>
+	<key>Stops reading aloud</key>
+	<string>Stops reading aloud</string>
+	<key>Stream with cursor</key>
+	<string>Stream with cursor</string>
+	<key>Streaming answer: send disabled</key>
+	<string>Streaming answer: send disabled</string>
+	<key>Streaming answer: “Stop” (stage 9+)</key>
+	<string>Streaming answer: “Stop” (stage 9+)</string>
+	<key>Study</key>
+	<string>Study</string>
+	<key>Subagents</key>
+	<string>Subagents</string>
+	<key>Subagents · 3</key>
+	<string>Subagents · 3</string>
+	<key>Subject:</key>
+	<string>Subject:</string>
+	<key>Swap languages</key>
+	<string>Swap languages</string>
+	<key>Swipe a task left to archive it; hold it for the menu.</key>
+	<string>Swipe a task left to archive it; hold it for the menu.</string>
+	<key>Swipe to delete (stage 7)</key>
+	<string>Swipe to delete (stage 7)</string>
+	<key>Swipe to delete — from stage 7</key>
+	<string>Swipe to delete — from stage 7</string>
+	<key>System + manual choice</key>
+	<string>System + manual choice</string>
+	<key>System controls</key>
+	<string>System controls</string>
+	<key>System sheets and alerts</key>
+	<string>System sheets and alerts</string>
+	<key>System “Open in” menu with iPhone apps.</key>
+	<string>System “Open in” menu with iPhone apps.</string>
+	<key>Tap a file for its status, retry or replace. ✕ removes the file from the message.</key>
+	<string>Tap a file for its status, retry or replace. ✕ removes the file from the message.</string>
+	<key>Tap the orb to interrupt</key>
+	<string>Tap the orb to interrupt</string>
+	<key>Tap the output to show up to the last 200 lines.</key>
+	<string>Tap the output to show up to the last 200 lines.</string>
+	<key>Tap to retry</key>
+	<string>Tap to retry</string>
+	<key>Tap to show</key>
+	<string>Tap to show</string>
+	<key>Tapping an attachment (didTapAttachmentAtIndex, detail)</key>
+	<string>Tapping an attachment (didTapAttachmentAtIndex, detail)</string>
+	<key>Tapping the title with ▾ opens the model picker. iOS 6 takes the status bar tint from the navigation bar.</key>
+	<string>Tapping the title with ▾ opens the model picker. iOS 6 takes the status bar tint from the navigation bar.</string>
+	<key>Task actions</key>
+	<string>Task actions</string>
+	<key>Task list</key>
+	<string>Task list</string>
+	<key>Task menu</key>
+	<string>Task menu</string>
+	<key>Task name</key>
+	<string>Task name</string>
+	<key>Tasks</key>
+	<string>Tasks</string>
+	<key>Tasks and archive</key>
+	<string>Tasks and archive</string>
+	<key>Tatar</key>
+	<string>Tatar</string>
+	<key>Tell a long story</key>
+	<string>Tell a long story</string>
+	<key>Tell me how to make flourless syrniki</key>
+	<string>Tell me how to make flourless syrniki</string>
+	<key>Tell me how to make syrniki…</key>
+	<string>Tell me how to make syrniki…</string>
+	<key>Temporary</key>
+	<string>Temporary</string>
+	<key>Temporary chat</key>
+	<string>Temporary chat</string>
+	<key>Temporary chat (stage 8+)</key>
+	<string>Temporary chat (stage 8+)</string>
+	<key>Temporary chat: graphite (stage 8+)</key>
+	<string>Temporary chat: graphite (stage 8+)</string>
+	<key>Terminal</key>
+	<string>Terminal</string>
+	<key>Tests for the date parser</key>
+	<string>Tests for the date parser</string>
+	<key>Text</key>
+	<string>Text</string>
+	<key>Text only</key>
+	<string>Text only</string>
+	<key>Text size</key>
+	<string>Text size</string>
+	<key>Text size (stage 8)</key>
+	<string>Text size (stage 8)</string>
+	<key>Text to select</key>
+	<string>Text to select</string>
+	<key>Text to translate</key>
+	<string>Text to translate</string>
+	<key>Thanks</key>
+	<string>Thanks</string>
+	<key>Thanks!</key>
+	<string>Thanks!</string>
+	<key>The PINs do not match. Create the PIN again.</key>
+	<string>The PINs do not match. Create the PIN again.</string>
+	<key>The account confirmed this iPhone</key>
+	<string>The account confirmed this iPhone</string>
+	<key>The active mode (here “Web search”) is marked with a glowing white ring. Tapping the dim background or “Cancel” closes the menu.</key>
+	<string>The active mode (here “Web search”) is marked with a glowing white ring. Tapping the dim background or “Cancel” closes the menu.</string>
+	<key>The answer is incomplete</key>
+	<string>The answer is incomplete</string>
+	<key>The app creates the link. Shown here are the button states: create → creating → copy, or error with retry.</key>
+	<string>The app creates the link. Shown here are the button states: create → creating → copy, or error with retry.</string>
+	<key>The app manages the camera and pages; without a camera, the viewfinder layout is shown.</key>
+	<string>The app manages the camera and pages; without a camera, the viewfinder layout is shown.</string>
+	<key>The app reports the state: the view never pretends to play.</key>
+	<string>The app reports the state: the view never pretends to play.</string>
+	<key>The app stores and verifies the PIN; the kit only shows the keypad. In this demo the valid PIN is 1234.</key>
+	<string>The app stores and verifies the PIN; the kit only shows the keypad. In this demo the valid PIN is 1234.</string>
+	<key>The app would retry the download</key>
+	<string>The app would retry the download</string>
+	<key>The cache is not reset when browserslist changes: after a browser update the CSS stays old.</key>
+	<string>The cache is not reset when browserslist changes: after a browser update the CSS stays old.</string>
+	<key>The code is shown in Codex on the computer: Settings › Mobile device.</key>
+	<string>The code is shown in Codex on the computer: Settings › Mobile device.</string>
+	<key>The download is not repeated</key>
+	<string>The download is not repeated</string>
+	<key>The field grows up to 118 pt; “⤢” appears on a tall field from stage 7. All fields are interactive: “+”, microphone, send.</key>
+	<string>The field grows up to 118 pt; “⤢” appears on a tall field from stage 7. All fields are interactive: “+”, microphone, send.</string>
+	<key>The file is no longer on this iPhone.</key>
+	<string>The file is no longer on this iPhone.</string>
+	<key>The link could not be created. Nothing was published.</key>
+	<string>The link could not be created. Nothing was published.</string>
+	<key>The list comes from the account; models it does not offer are not shown.</key>
+	<string>The list comes from the account; models it does not offer are not shown.</string>
+	<key>The microphone in any field above starts a live simulation: recording → “Recognizing…” → text in the field.</key>
+	<string>The microphone in any field above starts a live simulation: recording → “Recognizing…” → text in the field.</string>
+	<key>The page did not load. Check your connection.</key>
+	<string>The page did not load. Check your connection.</string>
+	<key>The passcode is asked when you open Codex. It does not lock ordinary chats.</key>
+	<string>The passcode is asked when you open Codex. It does not lock ordinary chats.</string>
+	<key>The real service page is the app’s WebView; here a schematic is shown instead.</key>
+	<string>The real service page is the app’s WebView; here a schematic is shown instead.</string>
+	<key>The report includes the task ID. Project code and files are not sent.</key>
+	<string>The report includes the task ID. Project code and files are not sent.</string>
+	<key>The result is unknown. It is not retried, so the recording is not uploaded twice.</key>
+	<string>The result is unknown. It is not retried, so the recording is not uploaded twice.</string>
+	<key>The second question takes no own answer (allowFreeText NO).</key>
+	<string>The second question takes no own answer (allowFreeText NO).</string>
+	<key>The service rate-limited requests. Sending will resume automatically in 2 minutes; your draft is saved.</key>
+	<string>The service rate-limited requests. Sending will resume automatically in 2 minutes; your draft is saved.</string>
+	<key>The slider only changes the sample on this page; the global size is the toggle in the component list.</key>
+	<string>The slider only changes the sample on this page; the global size is the toggle in the component list.</string>
+	<key>The upload result is unknown. It is not retried automatically.</key>
+	<string>The upload result is unknown. It is not retried automatically.</string>
+	<key>Theme and buttons</key>
+	<string>Theme and buttons</string>
+	<key>These elements appear from stage 7.</key>
+	<string>These elements appear from stage 7.</string>
+	<key>These states appear from stage 8 (dictation cancel/retry, attachments).</key>
+	<string>These states appear from stage 8 (dictation cancel/retry, attachments).</string>
+	<key>Thinking</key>
+	<string>Thinking</string>
+	<key>Thinking effort</key>
+	<string>Thinking effort</string>
+	<key>Thinking: reasoning steps (stage 8+)</key>
+	<string>Thinking: reasoning steps (stage 8+)</string>
+	<key>Thinking…</key>
+	<string>Thinking…</string>
+	<key>This chat won’t be saved to history or memory. A copy may be kept on servers for up to 30 days.</key>
+	<string>This chat won’t be saved to history or memory. A copy may be kept on servers for up to 30 days.</string>
+	<key>This is how ChatGPT answers and your messages will look.</key>
+	<string>This is how ChatGPT answers and your messages will look.</string>
+	<key>This part of the answer cannot be shown on the iPhone yet — it is saved in the conversation.</key>
+	<string>This part of the answer cannot be shown on the iPhone yet — it is saved in the conversation.</string>
+	<key>This task item is not shown on iPhone yet — it is saved in the task.</key>
+	<string>This task item is not shown on iPhone yet — it is saved in the task.</string>
+	<key>This won’t be saved in history.</key>
+	<string>This won’t be saved in history.</string>
+	<key>Thought for 4 s · searched the web</key>
+	<string>Thought for 4 s · searched the web</string>
+	<key>Tier 1 shows a plan as a placeholder saved in the task.</key>
+	<string>Tier 1 shows a plan as a placeholder saved in the task.</string>
+	<key>Tier 1 shows network access as an ordinary permission; tier 2 adds «Only now» / «Always for the domain».</key>
+	<string>Tier 1 shows network access as an ordinary permission; tier 2 adds «Only now» / «Always for the domain».</string>
+	<key>Title and lamp</key>
+	<string>Title and lamp</string>
+	<key>To pick a bike, let me clarify:</key>
+	<string>To pick a bike, let me clarify:</string>
+	<key>To:</key>
+	<string>To:</string>
+	<key>To: </key>
+	<string>To: </string>
+	<key>Today</key>
+	<string>Today</string>
+	<key>Today’s upload limit is reached — resets at 18:40. You can send text without the attachment.</key>
+	<string>Today’s upload limit is reached — resets at 18:40. You can send text without the attachment.</string>
+	<key>Too many attempts</key>
+	<string>Too many attempts</string>
+	<key>Too many attempts. Try again in %d min</key>
+	<string>Too many attempts. Try again in %d min</string>
+	<key>Too many attempts. Try again in %d s</key>
+	<string>Too many attempts. Try again in %d s</string>
+	<key>Translate</key>
+	<string>Translate</string>
+	<key>Translate (stage 8)</key>
+	<string>Translate (stage 8)</string>
+	<key>Translate from</key>
+	<string>Translate from</string>
+	<key>Translate to</key>
+	<string>Translate to</string>
+	<key>Translate to English</key>
+	<string>Translate to English</string>
+	<key>Translate to English, but keep it short</key>
+	<string>Translate to English, but keep it short</string>
+	<key>Translate — from stage 8</key>
+	<string>Translate — from stage 8</string>
+	<key>Translating</key>
+	<string>Translating</string>
+	<key>Translations are not saved in the chat history.</key>
+	<string>Translations are not saved in the chat history.</string>
+	<key>Trip budget.xlsx</key>
+	<string>Trip budget.xlsx</string>
+	<key>Trip plan</key>
+	<string>Trip plan</string>
+	<key>Trip plan to Kazan</key>
+	<string>Trip plan to Kazan</string>
+	<key>Trust</key>
+	<string>Trust</string>
+	<key>Turn on the microphone to continue</key>
+	<string>Turn on the microphone to continue</string>
+	<key>Turn-by-turn voice</key>
+	<string>Turn-by-turn voice</string>
+	<key>Turn-by-turn voice (stage 8)</key>
+	<string>Turn-by-turn voice (stage 8)</string>
+	<key>Type or paste text</key>
+	<string>Type or paste text</string>
+	<key>UIAppearance: bars, UISwitch, tables</key>
+	<string>UIAppearance: bars, UISwitch, tables</string>
+	<key>Unavailable</key>
+	<string>Unavailable</string>
+	<key>Under 50K RUB</key>
+	<string>Under 50K RUB</string>
+	<key>Unknown server key</key>
+	<string>Unknown server key</string>
+	<key>Unlocked</key>
+	<string>Unlocked</string>
+	<key>Up to 1,500 characters. The service may have its own limits.</key>
+	<string>Up to 1,500 characters. The service may have its own limits.</string>
+	<key>Update dependencies</key>
+	<string>Update dependencies</string>
+	<key>Uploading · 40%</key>
+	<string>Uploading · 40%</string>
+	<key>Use personalization</key>
+	<string>Use personalization</string>
+	<key>User messages</key>
+	<string>User messages</string>
+	<key>Vacation</key>
+	<string>Vacation</string>
+	<key>Values</key>
+	<string>Values</string>
+	<key>Version %@</key>
+	<string>Version %@</string>
+	<key>Via custom copy handler</key>
+	<string>Via custom copy handler</string>
+	<key>Viewfinder: frame the page</key>
+	<string>Viewfinder: frame the page</string>
+	<key>Voice</key>
+	<string>Voice</string>
+	<key>Voice and language</key>
+	<string>Voice and language</string>
+	<key>Voice conversation</key>
+	<string>Voice conversation</string>
+	<key>Voice mode limit reached. Resets tomorrow at 03:00. You can continue by text in the same chat.</key>
+	<string>Voice mode limit reached. Resets tomorrow at 03:00. You can continue by text in the same chat.</string>
+	<key>Voice mode unavailable</key>
+	<string>Voice mode unavailable</string>
+	<key>Voice settings</key>
+	<string>Voice settings</string>
+	<key>Voice unavailable offline</key>
+	<string>Voice unavailable offline</string>
+	<key>Voice — from stage 8</key>
+	<string>Voice — from stage 8</string>
+	<key>Voice: %@</key>
+	<string>Voice: %@</string>
+	<key>Waiting for answer: dots</key>
+	<string>Waiting for answer: dots</string>
+	<key>Waiting for connection — will be sent once</key>
+	<string>Waiting for connection — will be sent once</string>
+	<key>Waiting for you</key>
+	<string>Waiting for you</string>
+	<key>Waiting for your decision</key>
+	<string>Waiting for your decision</string>
+	<key>Watercolor: lighthouse on a cliff at sunset</key>
+	<string>Watercolor: lighthouse on a cliff at sunset</string>
+	<key>Web search</key>
+	<string>Web search</string>
+	<key>Weekly menu</key>
+	<string>Weekly menu</string>
+	<key>Weight</key>
+	<string>Weight</string>
+	<key>Welcome</key>
+	<string>Welcome</string>
+	<key>Welcome and sign-in</key>
+	<string>Welcome and sign-in</string>
+	<key>What</key>
+	<string>What</string>
+	<key>What can I help with?</key>
+	<string>What can I help with?</string>
+	<key>What is in the photo?</key>
+	<string>What is in the photo?</string>
+	<key>What is in these files?</key>
+	<string>What is in these files?</string>
+	<key>What is in these photos?</key>
+	<string>What is in these photos?</string>
+	<key>What is the weather in Kazan tomorrow?</key>
+	<string>What is the weather in Kazan tomorrow?</string>
+	<key>What matters more?</key>
+	<string>What matters more?</string>
+	<key>What should I wear?</key>
+	<string>What should I wear?</string>
+	<key>What would you like to change?</key>
+	<string>What would you like to change?</string>
+	<key>When</key>
+	<string>When</string>
+	<key>Where</key>
+	<string>Where</string>
+	<key>Where to make the changes</key>
+	<string>Where to make the changes</string>
+	<key>Where to run</key>
+	<string>Where to run</string>
+	<key>White</key>
+	<string>White</string>
+	<key>Who is the text for?</key>
+	<string>Who is the text for?</string>
+	<key>Will send as soon as connected</key>
+	<string>Will send as soon as connected</string>
+	<key>With completed translation</key>
+	<string>With completed translation</string>
+	<key>With title</key>
+	<string>With title</string>
+	<key>Without failureText: the kit's standard line and an active “Retry”.</key>
+	<string>Without failureText: the kit's standard line and an active “Retry”.</string>
+	<key>Without voice, “Send” is simply disabled when the field is empty.</key>
+	<string>Without voice, “Send” is simply disabled when the field is empty.</string>
+	<key>Work</key>
+	<string>Work</string>
+	<key>Work plan</key>
+	<string>Work plan</string>
+	<key>Working on parts of the task</key>
+	<string>Working on parts of the task</string>
+	<key>Write what to change in the plan</key>
+	<string>Write what to change in the plan</string>
+	<key>Writing (stream, blinking cursor)</key>
+	<string>Writing (stream, blinking cursor)</string>
+	<key>Writing report</key>
+	<string>Writing report</string>
+	<key>Wrong PIN</key>
+	<string>Wrong PIN</string>
+	<key>Yesterday</key>
+	<string>Yesterday</string>
+	<key>You</key>
+	<string>You</string>
+	<key>You can attach up to 4 files to a message. Replace the last one?</key>
+	<string>You can attach up to 4 files to a message. Replace the last one?</string>
+	<key>You can continue by text in the same chat.</key>
+	<string>You can continue by text in the same chat.</string>
+	<key>You logged out of ChatGPT X. Your history remains in your account.</key>
+	<string>You logged out of ChatGPT X. Your history remains in your account.</string>
+	<key>Your ChatGPT account and all your history on an iPhone with iOS 6.</key>
+	<string>Your ChatGPT account and all your history on an iPhone with iOS 6.</string>
+	<key>Your name is not shown.</key>
+	<string>Your name is not shown.</string>
+	<key>Your name is visible in the link.</key>
+	<string>Your name is visible in the link.</string>
+	<key>Your own answer</key>
+	<string>Your own answer</string>
+	<key>You’re welcome! Have a nice day.</key>
+	<string>You’re welcome! Have a nice day.</string>
+	<key>address</key>
+	<string>address</string>
+	<key>after</key>
+	<string>after</string>
+	<key>before</key>
+	<string>before</string>
+	<key>budget %d %%</key>
+	<string>budget %d %%</string>
+	<key>budget used up</key>
+	<string>budget used up</string>
+	<key>code</key>
+	<string>code</string>
+	<key>colors, linen, RCButton</key>
+	<string>colors, linen, RCButton</string>
+	<key>comments: %lu</key>
+	<string>comments: %lu</string>
+	<key>done</key>
+	<string>done</string>
+	<key>err: no network</key>
+	<string>err: no network</string>
+	<key>exit %ld</key>
+	<string>exit %ld</string>
+	<key>failed</key>
+	<string>failed</string>
+	<key>files: %lu</key>
+	<string>files: %lu</string>
+	<key>goal, subagents, hooks, settings, files, archive</key>
+	<string>goal, subagents, hooks, settings, files, archive</string>
+	<key>hook post-run · linter · stopped the task: 2 flake8 errors · 1.2 s</key>
+	<string>hook post-run · linter · stopped the task: 2 flake8 errors · 1.2 s</string>
+	<key>hook pre-run · working copy check · passed · 0.4 s</key>
+	<string>hook pre-run · working copy check · passed · 0.4 s</string>
+	<key>iPhone confirmed</key>
+	<string>iPhone confirmed</string>
+	<key>iPhone key</key>
+	<string>iPhone key</string>
+	<key>image, chart, research, email…</key>
+	<string>image, chart, research, email…</string>
+	<key>import matplotlib.pyplot as plt
+plt.bar(["Jan","Feb","Mar"], [1.2, 1.5, 1.9])
+plt.title("Revenue, M RUB")</key>
+	<string>import matplotlib.pyplot as plt
+plt.bar(["Jan","Feb","Mar"], [1.2, 1.5, 1.9])
+plt.title("Revenue, M RUB")</string>
+	<key>in use</key>
+	<string>in use</string>
+	<key>line %ld</key>
+	<string>line %ld</string>
+	<key>lines added</key>
+	<string>lines added</string>
+	<key>lines added: %ld, removed: %ld</key>
+	<string>lines added: %ld, removed: %ld</string>
+	<key>lines removed</key>
+	<string>lines removed</string>
+	<key>no preference</key>
+	<string>no preference</string>
+	<key>plan, network, MCP, review, connections, model</key>
+	<string>plan, network, MCP, review, connections, model</string>
+	<key>query: «css build»</key>
+	<string>query: «css build»</string>
+	<key>running</key>
+	<string>running</string>
+	<key>source</key>
+	<string>source</string>
+	<key>sources</key>
+	<string>sources</string>
+	<key>sources (2–4)</key>
+	<string>sources (2–4)</string>
+	<key>stopped</key>
+	<string>stopped</string>
+	<key>stopped with an error</key>
+	<string>stopped with an error</string>
+	<key>tasks this week</key>
+	<string>tasks this week</string>
+	<key>terminal, files, permission, diff (Codex tier 1)</key>
+	<string>terminal, files, permission, diff (Codex tier 1)</string>
+	<key>text size, segments, account, swipe</key>
+	<string>text size, segments, account, swipe</string>
+	<key>title: «Reset the CSS cache when browserslist changes»</key>
+	<string>title: «Reset the CSS cache when browserslist changes»</string>
+	<key>waiting for approval</key>
+	<string>waiting for approval</string>
+	<key>warn: session expired</key>
+	<string>warn: session expired</string>
+	<key>«Mention» adds the file to the task's next message.</key>
+	<string>«Mention» adds the file to the task's next message.</string>
+	<key>“+” appears from stage 8 (camera, photos, files, web search). At stages 10–9 there is nothing to the left of the input field.</key>
+	<string>“+” appears from stage 8 (camera, photos, files, web search). At stages 10–9 there is nothing to the left of the input field.</string>
+	<key>“+” menu</key>
+	<string>“+” menu</string>
+	<key>“+” menu for the current stage</key>
+	<string>“+” menu for the current stage</string>
+	<key>“Calendar” wants to create an event</key>
+	<string>“Calendar” wants to create an event</string>
+	<key>“Cancel” stops the app's recognition and deletes the recording; “Done” is hidden until the result.</key>
+	<string>“Cancel” stops the app's recognition and deletes the recording; “Done” is hidden until the result.</string>
+	<key>“Copied”</key>
+	<string>“Copied”</string>
+	<key>“Default” uses the account’s default model and the service’s default thinking effort.</key>
+	<string>“Default” uses the account’s default model and the service’s default thinking effort.</string>
+	<key>“Select Text”</key>
+	<string>“Select Text”</string>
+	<key>“Select Text” (stage 9)</key>
+	<string>“Select Text” (stage 9)</string>
+	<key>“Select Text” — from stage 9</key>
+	<string>“Select Text” — from stage 9</string>
+	<key>“Share link” (stage 7)</key>
+	<string>“Share link” (stage 7)</string>
+	<key>“Sources” (stage 8)</key>
+	<string>“Sources” (stage 8)</string>
+	<key>“Sources” — from stage 8</key>
+	<string>“Sources” — from stage 8</string>
+	<key>… %lu earlier lines</key>
+	<string>… %lu earlier lines</string>
+	<key>… %lu more lines</key>
+	<string>… %lu more lines</string>
+	<key>☰ or swiping the navbar right opens the drawer; tapping or swiping the screen back closes it. “Close showcase” or the account row at the bottom returns here.</key>
+	<string>☰ or swiping the navbar right opens the drawer; tapping or swiping the screen back closes it. “Close showcase” or the account row at the bottom returns here.</string>
+	<key>Viewfinder: frame the QR code</key>
+	<string>Viewfinder: frame the QR code</string>
+	<key>Unofficial app. Not affiliated with OpenAI.</key>
+	<string>Unofficial app. Not affiliated with OpenAI.</string>
+	<key>You logged out.</key>
+	<string>You logged out.</string>
+</dict>
+</plist>

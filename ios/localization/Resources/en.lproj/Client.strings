@@ -1,0 +1,2886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> It is not repeated automatically.</key>
+	<string> It is not repeated automatically.</string>
+	<key> The send result is unknown.</key>
+	<string> The send result is unknown.</string>
+	<key> · Code</key>
+	<string> · Code</string>
+	<key> · Continued</key>
+	<string> · Continued</string>
+	<key> · Link</key>
+	<string> · Link</string>
+	<key>%@ (default)</key>
+	<string>%@ (default)</string>
+	<key>%@ (optional)</key>
+	<string>%@ (optional)</string>
+	<key>%@ is on for the next message</key>
+	<string>%@ is on for the next message</string>
+	<key>%@ of %@ tokens used</key>
+	<string>%@ of %@ tokens used</string>
+	<key>%@ · locked</key>
+	<string>%@ · locked</string>
+	<key>%@ · on this iPhone</key>
+	<string>%@ · on this iPhone</string>
+	<key>%@ · priority</key>
+	<string>%@ · priority</string>
+	<key>%lu KB</key>
+	<string>%lu KB</string>
+	<key>%lu bytes</key>
+	<string>%lu bytes</string>
+	<key>%lu images — not shown in a locked chat; they stay in the chat.</key>
+	<string>%lu images — not shown in a locked chat; they stay in the chat.</string>
+	<key>%lu parts of this message that ChatGPT X cannot show — they stay in the chat.</key>
+	<string>%lu parts of this message that ChatGPT X cannot show — they stay in the chat.</string>
+	<key>%lu runs · %@</key>
+	<string>%lu runs · %@</string>
+	<key>(not read back yet)</key>
+	<string>(not read back yet)</string>
+	<key>A 4-digit PIN protects locked chats on the service. ChatGPT X never stores it.</key>
+	<string>A 4-digit PIN protects locked chats on the service. ChatGPT X never stores it.</string>
+	<key>A file is no longer available. Remove it or replace it with a new copy.</key>
+	<string>A file is no longer available. Remove it or replace it with a new copy.</string>
+	<key>A folder cannot be moved into a folder inside it.</key>
+	<string>A folder cannot be moved into a folder inside it.</string>
+	<key>A folder cannot be moved into itself.</key>
+	<string>A folder cannot be moved into itself.</string>
+	<key>A forgotten PIN can be reset in the web version. It deletes every locked chat.</key>
+	<string>A forgotten PIN can be reset in the web version. It deletes every locked chat.</string>
+	<key>A forgotten PIN is reset on the ChatGPT website. It deletes every locked chat.</key>
+	<string>A forgotten PIN is reset on the ChatGPT website. It deletes every locked chat.</string>
+	<key>A part of this message that ChatGPT X cannot show — it stays in the chat.</key>
+	<string>A part of this message that ChatGPT X cannot show — it stays in the chat.</string>
+	<key>A separate web search, not part of this conversation. The service may keep it as its own chat.</key>
+	<string>Runs as a separate search.</string>
+	<key>A subscription bought through the App Store must be cancelled separately.</key>
+	<string>A subscription bought through the App Store must be cancelled separately.</string>
+	<key>A text preview is unavailable for this file.</key>
+	<string>A text preview is unavailable for this file.</string>
+	<key>About you</key>
+	<string>About you</string>
+	<key>Access</key>
+	<string>Access</string>
+	<key>Access removed.</key>
+	<string>Access removed.</string>
+	<key>Account settings</key>
+	<string>Account settings</string>
+	<key>Accounts of other services that your apps use. Open one to see its state, permissions or disconnect it.</key>
+	<string>Accounts your apps use.</string>
+	<key>Action permissions on the website…</key>
+	<string>Action permissions on the website…</string>
+	<key>Active</key>
+	<string>Active</string>
+	<key>Active tasks</key>
+	<string>Active</string>
+	<key>Add a computer…</key>
+	<string>Add a computer…</string>
+	<key>Add image</key>
+	<string>Add image</string>
+	<key>Add screenshot</key>
+	<string>Add screenshot</string>
+	<key>Add the images again after reconnecting.</key>
+	<string>Add the images again after reconnecting.</string>
+	<key>Add the public key to ~/.ssh/authorized_keys on the computer. The private key never leaves this iPhone.</key>
+	<string>Add the public key to ~/.ssh/authorized_keys on the computer. The private key never leaves this iPhone.</string>
+	<key>Add to favorites</key>
+	<string>Add to favorites</string>
+	<key>Add to message</key>
+	<string>Add to message</string>
+	<key>Add to the draft</key>
+	<string>Add to the draft</string>
+	<key>Added to favorites.</key>
+	<string>Added to favorites.</string>
+	<key>Added to the message. Nothing is sent until you tap Send.</key>
+	<string>Added to the message. Nothing is sent until you tap Send.</string>
+	<key>Adding sources needs files uploaded in this session; removing a source does not delete the file from your Library.</key>
+	<string>Removing a source keeps the file in your Library.</string>
+	<key>Adding to the message…</key>
+	<string>Adding to the message…</string>
+	<key>Adds the file to the message. Nothing is sent.</key>
+	<string>Adds the file to the message. Nothing is sent.</string>
+	<key>Adult</key>
+	<string>Adult</string>
+	<key>Advanced</key>
+	<string>Advanced</string>
+	<key>Advanced account security</key>
+	<string>Advanced account security</string>
+	<key>After</key>
+	<string>After</string>
+	<key>Age</key>
+	<string>Age</string>
+	<key>Age group</key>
+	<string>Age group</string>
+	<key>Age or birth date verified</key>
+	<string>Age or birth date verified</string>
+	<key>All</key>
+	<string>All</string>
+	<key>All apps</key>
+	<string>All apps</string>
+	<key>All memories deleted.</key>
+	<string>All memories deleted.</string>
+	<key>All sources</key>
+	<string>All sources</string>
+	<key>All tasks</key>
+	<string>All tasks</string>
+	<key>All text is selected. Tap Copy in the selection menu.</key>
+	<string>All text is selected. Tap Copy in the selection menu.</string>
+	<key>All types</key>
+	<string>All types</string>
+	<key>Allow command prefix: %@</key>
+	<string>Allow command prefix: %@</string>
+	<key>Allow full access</key>
+	<string>Allow full access</string>
+	<key>Allow sending this conversation with the report first.</key>
+	<string>Allow sending this conversation with the report first.</string>
+	<key>Allow this action once? %@</key>
+	<string>Allow this action once? %@</string>
+	<key>Also search projects and files</key>
+	<string>Also search projects and files</string>
+	<key>Always allow %@</key>
+	<string>Always allow %@</string>
+	<key>Always ask</key>
+	<string>Always ask</string>
+	<key>Always deny %@</key>
+	<string>Always deny %@</string>
+	<key>An earlier attempt has an unknown result. It is not sent again; check it first.</key>
+	<string>An earlier attempt has an unknown result. It is not sent again; check it first.</string>
+	<key>An earlier attempt of this change has an unknown result. It is not sent again. Check the current state?</key>
+	<string>An earlier attempt of this change has an unknown result. It is not sent again. Check the current state?</string>
+	<key>An export is already being prepared. Wait for its e-mail before you request another one.</key>
+	<string>An export is already being prepared. Wait for its e-mail before you request another one.</string>
+	<key>Analysis results</key>
+	<string>Analysis results</string>
+	<key>Answer element</key>
+	<string>Answer element</string>
+	<key>Answering from ChatGPT X is not enabled yet; answer in the web version.</key>
+	<string>Answering from ChatGPT X is not enabled yet; answer in the web version.</string>
+	<key>Answers</key>
+	<string>Answers</string>
+	<key>App</key>
+	<string>App</string>
+	<key>App installed.</key>
+	<string>App installed.</string>
+	<key>App mention</key>
+	<string>App mention</string>
+	<key>App name</key>
+	<string>App name</string>
+	<key>App permissions</key>
+	<string>App permissions</string>
+	<key>App removed.</key>
+	<string>App removed.</string>
+	<key>App turned off.</key>
+	<string>App turned off.</string>
+	<key>App turned on.</key>
+	<string>App turned on.</string>
+	<key>Applies after a restart. Chats are not translated.</key>
+	<string>Applies after a restart. Chats are not translated.</string>
+	<key>Applies to apps that do not have their own setting.</key>
+	<string>Applies to apps that do not have their own setting.</string>
+	<key>Applies to this connection only.</key>
+	<string>Applies to this connection only.</string>
+	<key>Approval prompts: %@</key>
+	<string>Approval prompts: %@</string>
+	<key>Approve on another device</key>
+	<string>Approve on another device</string>
+	<key>Apps act without asking. Use only with apps you trust.</key>
+	<string>Apps act without asking. Use only with apps you trust.</string>
+	<key>Apps ask before they change or send anything.</key>
+	<string>Apps ask before they change or send anything.</string>
+	<key>Apps ask you before every action.</key>
+	<string>Apps ask you before every action.</string>
+	<key>Apps ask you to review important actions.</key>
+	<string>Apps ask you to review important actions.</string>
+	<key>Apps let ChatGPT use other services in your chats. Open an app to see what you can do with it.</key>
+	<string>Apps let ChatGPT use other services.</string>
+	<key>Archive (collection)</key>
+	<string>Archived chats</string>
+	<key>As on the iPhone</key>
+	<string>As on the iPhone</string>
+	<key>Ask anything. The answer appears as it is written.</key>
+	<string>Ask anything.</string>
+	<key>Ask before changes</key>
+	<string>Ask before changes</string>
+	<key>Ask before untrusted actions</key>
+	<string>Ask before untrusted actions</string>
+	<key>Ask the service to stop this research? Work already done may stay.</key>
+	<string>Ask the service to stop this research? Work already done may stay.</string>
+	<key>Ask when needed</key>
+	<string>Ask when needed</string>
+	<key>Asks ChatGPT to stop the response</key>
+	<string>Asks ChatGPT to stop the response</string>
+	<key>Audio</key>
+	<string>Audio</string>
+	<key>Authorize connection</key>
+	<string>Authorize connection</string>
+	<key>Auto</key>
+	<string>Auto</string>
+	<key>Auto is not available for this account.</key>
+	<string>Auto is not available for this account.</string>
+	<key>Auto is not in use for the next message.</key>
+	<string>Auto is not in use for the next message.</string>
+	<key>Auto picks a model for each message.</key>
+	<string>Auto picks a model for each message.</string>
+	<key>Automatic</key>
+	<string>Automatic</string>
+	<key>Availability</key>
+	<string>Availability</string>
+	<key>Available</key>
+	<string>Available</string>
+	<key>Bcc</key>
+	<string>Bcc</string>
+	<key>Before</key>
+	<string>Before</string>
+	<key>Binary file</key>
+	<string>Binary file</string>
+	<key>Branch into a new chat</key>
+	<string>Branch into a new chat</string>
+	<key>Budget exhausted</key>
+	<string>Budget exhausted</string>
+	<key>Buying is on the web page.</key>
+	<string>Buying is on the web page.</string>
+	<key>Can be installed</key>
+	<string>Can be installed</string>
+	<key>Catalogue for %@</key>
+	<string>Catalogue for %@</string>
+	<key>Cc</key>
+	<string>Cc</string>
+	<key>Change</key>
+	<string>Change</string>
+	<key>Change PIN</key>
+	<string>Change PIN</string>
+	<key>Change e-mail</key>
+	<string>Change e-mail</string>
+	<key>Change password</key>
+	<string>Change password</string>
+	<key>Change permissions?</key>
+	<string>Change permissions?</string>
+	<key>Change schedule…</key>
+	<string>Change schedule…</string>
+	<key>Changes</key>
+	<string>Changes</string>
+	<key>Changes to this project are not available: ChatGPT X cannot confirm your user and workspace for it.</key>
+	<string>This project can't be changed here.</string>
+	<key>Changes to this task are not available.</key>
+	<string>Changes to this task are not available.</string>
+	<key>Chat actions</key>
+	<string>Chat actions</string>
+	<key>Chat archived.</key>
+	<string>Chat archived.</string>
+	<key>Chat pinned.</key>
+	<string>Chat pinned.</string>
+	<key>Chat renamed.</key>
+	<string>Chat renamed.</string>
+	<key>Chat returned.</key>
+	<string>Chat returned.</string>
+	<key>Chat unpinned.</key>
+	<string>Chat unpinned.</string>
+	<key>ChatGPT account</key>
+	<string>ChatGPT account</string>
+	<key>ChatGPT can look at files in your Library when they help with an answer.</key>
+	<string>ChatGPT can look at files in your Library when they help with an answer.</string>
+	<key>ChatGPT confirmed that the response stopped.</key>
+	<string>ChatGPT confirmed that the response stopped.</string>
+	<key>ChatGPT confirmed that the response stopped. Check that the conversation was saved.</key>
+	<string>ChatGPT confirmed that the response stopped. Check that the conversation was saved.</string>
+	<key>ChatGPT could not finish the response.</key>
+	<string>ChatGPT could not finish the response.</string>
+	<key>ChatGPT decides when an answer needs a fresh search.</key>
+	<string>ChatGPT decides when an answer needs a fresh search.</string>
+	<key>ChatGPT follows these instructions in every chat of this project. Up to 16,000 characters.</key>
+	<string>ChatGPT follows these instructions in every chat of this project. Up to 16,000 characters.</string>
+	<key>ChatGPT has not saved any memories yet.</key>
+	<string>ChatGPT has not saved any memories yet.</string>
+	<key>ChatGPT login</key>
+	<string>ChatGPT login</string>
+	<key>ChatGPT prepares a copy of your account data and sends a download link to the e-mail address of your account. Preparing it can take a while.</key>
+	<string>ChatGPT prepares a copy of your account data and sends a download link to the e-mail address of your account. Preparing it can take a while.</string>
+	<key>ChatGPT response</key>
+	<string>ChatGPT response</string>
+	<key>ChatGPT suggests doing this task in Work mode.</key>
+	<string>ChatGPT suggests doing this task in Work mode.</string>
+	<key>ChatGPT uses these tools when an answer needs them.</key>
+	<string>ChatGPT uses these tools when an answer needs them.</string>
+	<key>Chats · %lu</key>
+	<string>Chats · %lu</string>
+	<key>Chats, recordings and downloads stay.</key>
+	<string>Chats, recordings and downloads stay.</string>
+	<key>Check</key>
+	<string>Check</string>
+	<key>Check again</key>
+	<string>Check again</string>
+	<key>Check age status again</key>
+	<string>Check age status again</string>
+	<key>Check and renew</key>
+	<string>Check and renew</string>
+	<key>Check availability</key>
+	<string>Check availability</string>
+	<key>Check in history</key>
+	<string>Check in history</string>
+	<key>Check result</key>
+	<string>Check result</string>
+	<key>Check status</key>
+	<string>Check status</string>
+	<key>Check the PIN change</key>
+	<string>Check the PIN change</string>
+	<key>Check the connection code.</key>
+	<string>Check the connection code.</string>
+	<key>Check the form values.</key>
+	<string>Check the form values.</string>
+	<key>Check the updated state</key>
+	<string>Check the updated state</string>
+	<key>Check upload</key>
+	<string>Check upload</string>
+	<key>Check worktree state</key>
+	<string>Check worktree state</string>
+	<key>Check your message and try again.</key>
+	<string>Check your message and try again.</string>
+	<key>Check «%@».</key>
+	<string>Check «%@».</string>
+	<key>Checking session…</key>
+	<string>Checking session…</string>
+	<key>Checking the file…</key>
+	<string>Checking the file…</string>
+	<key>Checking…</key>
+	<string>Checking…</string>
+	<key>Chinese</key>
+	<string>Chinese</string>
+	<key>Choose Read aloud again from the answer menu.</key>
+	<string>Choose Read aloud again from the answer menu.</string>
+	<key>Choose a conversation or start a new chat.</key>
+	<string>Choose a conversation or start a new chat.</string>
+	<key>Choose a new PIN.</key>
+	<string>Choose a new PIN.</string>
+	<key>Choose a reason first.</key>
+	<string>Choose a reason first.</string>
+	<key>Choose a short name using letters, digits, hyphen or underscore.</key>
+	<string>Choose a short name using letters, digits, hyphen or underscore.</string>
+	<key>Choose a time in the future.</key>
+	<string>Choose a time in the future.</string>
+	<key>Choose a time zone.</key>
+	<string>Choose a time zone.</string>
+	<key>Choose at least one day of the week.</key>
+	<string>Choose at least one day of the week.</string>
+	<key>Choose folder…</key>
+	<string>Choose folder…</string>
+	<key>Choose image</key>
+	<string>Choose image</string>
+	<key>Choose this model in the chat's model menu to use it there.</key>
+	<string>Choose this model in the chat's model menu to use it there.</string>
+	<key>Choose when the task runs.</key>
+	<string>Choose when the task runs.</string>
+	<key>Chooses the model for the next messages</key>
+	<string>Chooses the model for the next messages</string>
+	<key>Choosing the file…</key>
+	<string>Choosing the file…</string>
+	<key>Choosing the model…</key>
+	<string>Choosing the model…</string>
+	<key>Clear rating</key>
+	<string>Clear rating</string>
+	<key>Clear temporary files</key>
+	<string>Clear temporary files</string>
+	<key>Cloud</key>
+	<string>Cloud</string>
+	<key>Cloud environments</key>
+	<string>Cloud environments</string>
+	<key>Cloud tasks</key>
+	<string>Cloud tasks</string>
+	<key>Code block copied.</key>
+	<string>Code block copied.</string>
+	<key>Code block. </key>
+	<string>Code block. </string>
+	<key>Codex</key>
+	<string>Codex</string>
+	<key>Codex asks before actions the computer does not already trust.</key>
+	<string>Codex asks before actions the computer does not already trust.</string>
+	<key>Codex asks for network access</key>
+	<string>Codex asks for network access</string>
+	<key>Codex asks when it needs access beyond the current permissions.</key>
+	<string>Codex asks when it needs access beyond the current permissions.</string>
+	<key>Codex authorization could not finish. Close verification and start connecting again.</key>
+	<string>Codex authorization could not finish. Close verification and start connecting again.</string>
+	<key>Codex authorization failed. %@: %@. Close verification and start connecting again. No request was repeated.</key>
+	<string>Codex authorization failed. %@: %@. Close verification and start connecting again. No request was repeated.</string>
+	<key>Codex could not accept this request. Check the values and the connection.</key>
+	<string>Codex could not accept this request. Check the values and the connection.</string>
+	<key>Codex could not verify this session. Check Account before connecting again.</key>
+	<string>Codex could not verify this session. Check Account before connecting again.</string>
+	<key>Codex is unavailable. Your draft is kept.</key>
+	<string>Codex is unavailable. Your draft is kept.</string>
+	<key>Codex is waiting for permission</key>
+	<string>Codex is waiting for permission</string>
+	<key>Codex task</key>
+	<string>Codex task</string>
+	<key>Codex will not ask for approval. The computer still enforces its access restrictions.</key>
+	<string>Codex will not ask for approval. The computer still enforces its access restrictions.</string>
+	<key>Command rules</key>
+	<string>Command rules</string>
+	<key>Commands</key>
+	<string>Commands</string>
+	<key>Comment</key>
+	<string>Comment</string>
+	<key>Commit</key>
+	<string>Commit</string>
+	<key>Compare</key>
+	<string>Compare</string>
+	<key>Compare changes</key>
+	<string>Compare changes</string>
+	<key>Compare plans in Safari</key>
+	<string>Compare plans in Safari</string>
+	<key>Compare with commit…</key>
+	<string>Compare with commit…</string>
+	<key>Complete goal</key>
+	<string>Complete goal</string>
+	<key>Complete my draft</key>
+	<string>Complete my draft</string>
+	<key>Completed</key>
+	<string>Completed</string>
+	<key>Computer</key>
+	<string>Computer</string>
+	<key>Computer paired</key>
+	<string>Computer paired</string>
+	<key>Computers</key>
+	<string>Computers</string>
+	<key>Confirm it is you</key>
+	<string>Confirm it is you</string>
+	<key>Confirm on the website.</key>
+	<string>Confirm on the website.</string>
+	<key>Confirm to lock the chat.</key>
+	<string>Confirm to lock the chat.</string>
+	<key>Connected</key>
+	<string>Connected</string>
+	<key>Connected accounts</key>
+	<string>Connected accounts</string>
+	<key>Connected sources</key>
+	<string>Connected sources</string>
+	<key>Connected sources are read-only here: files are not downloaded, copied or attached.</key>
+	<string>Connected sources are read-only here.</string>
+	<key>Connecting and sending…</key>
+	<string>Connecting and sending…</string>
+	<key>Connection</key>
+	<string>Connection</string>
+	<key>Connection %lu</key>
+	<string>Connection %lu</string>
+	<key>Connection code</key>
+	<string>Connection code</string>
+	<key>Connection restored</key>
+	<string>Connection restored</string>
+	<key>Connections</key>
+	<string>Connections</string>
+	<key>Continue in Safari.</key>
+	<string>Continue in Safari.</string>
+	<key>Continue in Safari. Nothing was reset in ChatGPT X; tap Check again when you return.</key>
+	<string>Continue in Safari, then tap Check again.</string>
+	<key>Continue in Safari. Then come back and sign in here.</key>
+	<string>Continue in Safari. Then come back and sign in here.</string>
+	<key>Continue in Work?</key>
+	<string>Continue in Work?</string>
+	<key>Continue on the web</key>
+	<string>Continue on the web</string>
+	<key>Continue this task in Work with:</key>
+	<string>Continue this task in Work with:</string>
+	<key>Continue with Google on the service page. A code from your authenticator app is entered there too.</key>
+	<string>Continue with Google on the service page. A code from your authenticator app is entered there too.</string>
+	<key>Conversation</key>
+	<string>Conversation</string>
+	<key>Copy Markdown</key>
+	<string>Copy Markdown</string>
+	<key>Copy public key</key>
+	<string>Copy public key</string>
+	<key>Copy verification link</key>
+	<string>Copy verification link</string>
+	<key>Correct this memory</key>
+	<string>Correct this memory</string>
+	<key>Correct this…</key>
+	<string>Correct this…</string>
+	<key>Correction sent.</key>
+	<string>Correction sent.</string>
+	<key>Could not complete the request. Check your connection and the operation result.</key>
+	<string>Could not complete the request. Check your connection and the operation result.</string>
+	<key>Could not open ChatGPT X. Restart the app.</key>
+	<string>Could not open ChatGPT X. Restart the app.</string>
+	<key>Could not open login.</key>
+	<string>Could not open login.</string>
+	<key>Could not prepare the image. Choose it again.</key>
+	<string>Could not prepare the image. Choose it again.</string>
+	<key>Could not read this conversation.</key>
+	<string>Could not read this conversation.</string>
+	<key>Could not retrieve the session. Check your connection and log in again.</key>
+	<string>Could not retrieve the session. Check your connection and log in again.</string>
+	<key>Could not save state on this iPhone. Check the result before sending again.</key>
+	<string>Could not save state on this iPhone. Check the result before sending again.</string>
+	<key>Could not save your login on this iPhone. Try again.</key>
+	<string>Could not save your login on this iPhone. Try again.</string>
+	<key>Could not start login.</key>
+	<string>Could not start login.</string>
+	<key>Could not start login. Try again.</key>
+	<string>Could not start login. Try again.</string>
+	<key>Could not verify login. Check your connection and try again.</key>
+	<string>Could not verify login. Check your connection and try again.</string>
+	<key>Could not verify the session. Log in again.</key>
+	<string>Could not verify the session. Log in again.</string>
+	<key>Create</key>
+	<string>Create</string>
+	<key>Create a PIN</key>
+	<string>Create a PIN</string>
+	<key>Create a PIN first. Locked chats open only with it.</key>
+	<string>Create a PIN first. Locked chats open only with it.</string>
+	<key>Create an account</key>
+	<string>Create an account</string>
+	<key>Create e-mail from answer…</key>
+	<string>Create e-mail from answer…</string>
+	<key>Create images</key>
+	<string>Create images</string>
+	<key>Created</key>
+	<string>Created</string>
+	<key>Created by ChatGPT</key>
+	<string>Created by ChatGPT</string>
+	<key>Created by me</key>
+	<string>Created by me</string>
+	<key>Current branch</key>
+	<string>Current branch</string>
+	<key>Data analysis</key>
+	<string>Data analysis</string>
+	<key>Day of the month</key>
+	<string>Day of the month</string>
+	<key>Days of the week</key>
+	<string>Days of the week</string>
+	<key>Default</key>
+	<string>Default</string>
+	<key>Default model</key>
+	<string>Default model</string>
+	<key>Delete all memories</key>
+	<string>Delete all memories</string>
+	<key>Delete all saved memories? ChatGPT will forget everything it has saved about you. This cannot be undone.</key>
+	<string>Delete all saved memories? ChatGPT will forget everything it has saved about you. This cannot be undone.</string>
+	<key>Delete chat</key>
+	<string>Delete chat</string>
+	<key>Delete everything in Trash forever? This cannot be undone.</key>
+	<string>Delete everything in Trash forever? This cannot be undone.</string>
+	<key>Delete forever</key>
+	<string>Delete forever</string>
+	<key>Delete locked chats and reset</key>
+	<string>Delete locked chats and reset</string>
+	<key>Delete memory</key>
+	<string>Delete memory</string>
+	<key>Delete recording</key>
+	<string>Delete recording</string>
+	<key>Delete requested.</key>
+	<string>Delete requested.</string>
+	<key>Delete task</key>
+	<string>Delete task</string>
+	<key>Delete the project «%@»? It is deleted from your ChatGPT account and cannot be restored in ChatGPT X.</key>
+	<string>Delete the project «%@»? It is deleted from your ChatGPT account and cannot be restored in ChatGPT X.</string>
+	<key>Delete the task «%@»? It will no longer run.</key>
+	<string>Delete the task «%@»? It will no longer run.</string>
+	<key>Delete this chat from your account? This cannot be undone here.</key>
+	<string>Delete this chat from your account? This cannot be undone here.</string>
+	<key>Delete this link? People who have it can no longer open the chat.</key>
+	<string>Delete this link? People who have it can no longer open the chat.</string>
+	<key>Delete this memory? ChatGPT will no longer use it.</key>
+	<string>Delete this memory? ChatGPT will no longer use it.</string>
+	<key>Delete this memory? ChatGPT will no longer use it. This cannot be undone.</key>
+	<string>Delete this memory? ChatGPT will no longer use it. This cannot be undone.</string>
+	<key>Delete your ChatGPT account permanently? Your chats, memories and settings will be removed. This cannot be undone.</key>
+	<string>Delete your ChatGPT account permanently? Your chats, memories and settings will be removed. This cannot be undone.</string>
+	<key>Delete «%@» forever? This cannot be undone.</key>
+	<string>Delete «%@» forever? This cannot be undone.</string>
+	<key>Delete «%@»?</key>
+	<string>Delete «%@»?</string>
+	<key>Deleted forever.</key>
+	<string>Deleted forever.</string>
+	<key>Deleting your ChatGPT account is permanent and cannot be undone. Your chats, memories and settings are removed with it.</key>
+	<string>Deleting your ChatGPT account is permanent and cannot be undone. Your chats, memories and settings are removed with it.</string>
+	<key>Delivery not confirmed</key>
+	<string>Delivery not confirmed</string>
+	<key>Delivery not confirmed · tap “?”</key>
+	<string>Delivery not confirmed · tap “?”</string>
+	<key>Details unavailable</key>
+	<string>Details unavailable</string>
+	<key>Device check</key>
+	<string>Device check</string>
+	<key>Device verification is unavailable on iOS 6.</key>
+	<string>Device verification is unavailable on iOS 6.</string>
+	<key>Devices and sessions</key>
+	<string>Devices and sessions</string>
+	<key>Dictation text</key>
+	<string>Dictation text</string>
+	<key>Discard</key>
+	<string>Discard</string>
+	<key>Discard pages</key>
+	<string>Discard pages</string>
+	<key>Discard your changes?</key>
+	<string>Discard your changes?</string>
+	<key>Disconnect this account from «%@»? ChatGPT can no longer use it until you connect it again on the web.</key>
+	<string>Disconnect this account from «%@»? ChatGPT can no longer use it until you connect it again on the web.</string>
+	<key>Disconnected.</key>
+	<string>Disconnected.</string>
+	<key>Do not ask for approvals</key>
+	<string>Do not ask for approvals</string>
+	<key>Document</key>
+	<string>Document</string>
+	<key>Documents</key>
+	<string>Documents</string>
+	<key>Download %@</key>
+	<string>Download %@</string>
+	<key>Downloading the image to this iPhone…</key>
+	<string>Downloading the image to this iPhone…</string>
+	<key>E-mail</key>
+	<string>E-mail</string>
+	<key>E-mail and password</key>
+	<string>E-mail and password</string>
+	<key>E-mail code</key>
+	<string>E-mail code</string>
+	<key>E-mail…</key>
+	<string>E-mail…</string>
+	<key>Earlier</key>
+	<string>Earlier</string>
+	<key>Earlier chat</key>
+	<string>Earlier chat</string>
+	<key>Earlier output is kept in the task.</key>
+	<string>Earlier output is kept in the task.</string>
+	<key>Edit project…</key>
+	<string>Edit project…</string>
+	<key>Edit task</key>
+	<string>Edit task</string>
+	<key>Edit the text before inserting it into your message</key>
+	<string>Edit the text before inserting it into your message</string>
+	<key>Edit…</key>
+	<string>Edit…</string>
+	<key>Elsewhere</key>
+	<string>Elsewhere</string>
+	<key>Elsewhere · %lu</key>
+	<string>Elsewhere · %lu</string>
+	<key>Emoji (optional)</key>
+	<string>Emoji (optional)</string>
+	<key>Empty Trash</key>
+	<string>Empty Trash</string>
+	<key>Empty code block</key>
+	<string>Empty code block</string>
+	<key>Emptying Trash deletes every file in it forever, including files not shown yet.</key>
+	<string>Emptying Trash deletes every file in it forever, including files not shown yet.</string>
+	<key>English</key>
+	<string>English</string>
+	<key>Enter a message of up to 16,000 characters.</key>
+	<string>Enter a message of up to 16,000 characters.</string>
+	<key>Enter a name.</key>
+	<string>Enter a name.</string>
+	<key>Enter a project title.</key>
+	<string>Enter a project title.</string>
+	<key>Enter a search query of up to 16,000 characters.</key>
+	<string>Enter a search query of up to 16,000 characters.</string>
+	<key>Enter connection code</key>
+	<string>Enter connection code</string>
+	<key>Enter the full 40-character commit hash.</key>
+	<string>Enter the full 40-character commit hash.</string>
+	<key>Enter up to 16,000 characters to translate.</key>
+	<string>Enter up to 16,000 characters to translate.</string>
+	<key>Enter what ChatGPT should do.</key>
+	<string>Enter what ChatGPT should do.</string>
+	<key>Enter your PIN to lock «%@».</key>
+	<string>Enter your PIN to lock «%@».</string>
+	<key>Enter your current PIN.</key>
+	<string>Enter your current PIN.</string>
+	<key>Enter your e-mail and password on the service page. A code from your authenticator app is entered there too.</key>
+	<string>Enter your e-mail and password on the service page. A code from your authenticator app is entered there too.</string>
+	<key>Entered in Safari. ChatGPT X does not see them.</key>
+	<string>Entered in Safari.</string>
+	<key>Environment</key>
+	<string>Environment</string>
+	<key>Environment selected</key>
+	<string>Environment selected</string>
+	<key>Environments</key>
+	<string>Environments</string>
+	<key>Every day</key>
+	<string>Every day</string>
+	<key>Every day at %@</key>
+	<string>Every day at %@</string>
+	<key>Every month</key>
+	<string>Every month</string>
+	<key>Every month on day %d at %@</key>
+	<string>Every month on day %d at %@</string>
+	<key>Every week</key>
+	<string>Every week</string>
+	<key>Every week on %@ at %@</key>
+	<string>Every week on %@ at %@</string>
+	<key>Exact time</key>
+	<string>Exact time</string>
+	<key>Examples</key>
+	<string>Examples</string>
+	<key>Extra protection from sensitive content</key>
+	<string>Extra protection from sensitive content</string>
+	<key>Failed</key>
+	<string>Failed</string>
+	<key>Favorite folders</key>
+	<string>Favorite folders</string>
+	<key>Favorites</key>
+	<string>Favorites</string>
+	<key>File mentioned</key>
+	<string>File mentioned</string>
+	<key>File type</key>
+	<string>File type</string>
+	<key>File «%@»%@ — it stays in the chat.</key>
+	<string>File «%@»%@ — it stays in the chat.</string>
+	<key>Files and folders</key>
+	<string>Files and folders</string>
+	<key>Files in Trash can be restored.</key>
+	<string>Files in Trash can be restored.</string>
+	<key>Files in Trash can be restored. Folders in Trash cannot be restored or deleted from ChatGPT X.</key>
+	<string>Files in Trash can be restored.</string>
+	<key>Files in this chat</key>
+	<string>Files in this chat</string>
+	<key>Files of this chat appear here.</key>
+	<string>Files of this chat appear here.</string>
+	<key>Files you opened in ChatGPT X from other apps (“Open in…”). Choosing one only adds it to the message; nothing is sent.</key>
+	<string>Files opened in ChatGPT X from other apps.</string>
+	<key>Fill in «%@».</key>
+	<string>Fill in «%@».</string>
+	<key>Filters and view</key>
+	<string>Filters and view</string>
+	<key>Finish dictation before listening.</key>
+	<string>Finish dictation before listening.</string>
+	<key>Finish the current message first.</key>
+	<string>Finish the current message first.</string>
+	<key>Finished</key>
+	<string>Finished</string>
+	<key>Finishing login…</key>
+	<string>Finishing login…</string>
+	<key>First connection to this computer. Compare the fingerprint with ssh-keygen -lf on the computer.</key>
+	<string>First connection to this computer. Compare the fingerprint with ssh-keygen -lf on the computer.</string>
+	<key>Fix this review comment.</key>
+	<string>Fix this review comment.</string>
+	<key>Flexible time</key>
+	<string>Flexible time</string>
+	<key>Folder</key>
+	<string>Folder</string>
+	<key>Folder created.</key>
+	<string>Folder created.</string>
+	<key>Folder details</key>
+	<string>Folder details</string>
+	<key>Folders</key>
+	<string>Folders</string>
+	<key>Folders, filters and search</key>
+	<string>Folders, filters and search</string>
+	<key>For this session</key>
+	<string>For this session</string>
+	<key>Forget</key>
+	<string>Forget</string>
+	<key>Forget local setup?</key>
+	<string>Forget local setup?</string>
+	<key>Forget local setup…</key>
+	<string>Forget local setup…</string>
+	<key>Forgot PIN…</key>
+	<string>Forgot PIN…</string>
+	<key>Forgot PIN… (on the website)</key>
+	<string>Forgot PIN… (on the website)</string>
+	<key>Forgot password</key>
+	<string>Forgot password</string>
+	<key>Found · %lu</key>
+	<string>Found · %lu</string>
+	<key>French</key>
+	<string>French</string>
+	<key>From Library</key>
+	<string>From Library</string>
+	<key>Full access</key>
+	<string>Full access</string>
+	<key>GPT</key>
+	<string>GPT</string>
+	<key>German</key>
+	<string>German</string>
+	<key>Goal</key>
+	<string>Goal</string>
+	<key>Goal and budget</key>
+	<string>Goal and budget</string>
+	<key>Groups</key>
+	<string>Groups</string>
+	<key>Helpful</key>
+	<string>Helpful</string>
+	<key>History appears after the session is restored.</key>
+	<string>History appears after the session is restored.</string>
+	<key>History arrived in an unknown format. Try loading it again later.</key>
+	<string>History arrived in an unknown format. Try loading it again later.</string>
+	<key>Host</key>
+	<string>Host</string>
+	<key>Hour</key>
+	<string>Hour</string>
+	<key>How should ChatGPT answer in this project?</key>
+	<string>How should ChatGPT answer in this project?</string>
+	<key>Icon</key>
+	<string>Icon</string>
+	<key>Image %lu</key>
+	<string>Image %lu</string>
+	<key>Image creation is locked for this account.</key>
+	<string>Image creation is locked for this account.</string>
+	<key>Image saved in the task</key>
+	<string>Image saved in the task</string>
+	<key>Image — not shown in a locked chat; it stays in the chat.</key>
+	<string>Image — not shown in a locked chat; it stays in the chat.</string>
+	<key>Implement the approved plan.</key>
+	<string>Implement the approved plan.</string>
+	<key>In Trash since</key>
+	<string>In Trash since</string>
+	<key>In favorites</key>
+	<string>In favorites</string>
+	<key>Insert into message</key>
+	<string>Insert into message</string>
+	<key>Inserts text without sending the message</key>
+	<string>Inserts text without sending the message</string>
+	<key>Install</key>
+	<string>Install</string>
+	<key>Install skill</key>
+	<string>Install skill</string>
+	<key>Install «%@»? ChatGPT can then use it in your chats.</key>
+	<string>Install «%@»? ChatGPT can then use it in your chats.</string>
+	<key>Installation</key>
+	<string>Installation</string>
+	<key>Installed</key>
+	<string>Installed</string>
+	<key>Installed by default</key>
+	<string>Installed by default</string>
+	<key>Instant</key>
+	<string>Instant</string>
+	<key>Instructions…</key>
+	<string>Instructions…</string>
+	<key>Interrupted</key>
+	<string>Interrupted</string>
+	<key>It is already in this folder.</key>
+	<string>It is already in this folder.</string>
+	<key>It is no longer available.</key>
+	<string>It is no longer available.</string>
+	<key>It may have been applied; it is not repeated.</key>
+	<string>It may have been applied; it is not repeated.</string>
+	<key>Italian</key>
+	<string>Italian</string>
+	<key>Japanese</key>
+	<string>Japanese</string>
+	<key>Keep memory inside this project</key>
+	<string>Keep memory inside this project</string>
+	<key>Keep pages</key>
+	<string>Keep pages</string>
+	<key>Keep this memory a priority</key>
+	<string>Keep this memory a priority</string>
+	<key>Keep working in this chat without Work mode?</key>
+	<string>Keep working in this chat without Work mode?</string>
+	<key>Korean</key>
+	<string>Korean</string>
+	<key>Language</key>
+	<string>Language</string>
+	<key>Language name: English</key>
+	<string>English</string>
+	<key>Language name: Russian</key>
+	<string>Русский</string>
+	<key>Language saved.</key>
+	<string>Language saved.</string>
+	<key>Large</key>
+	<string>Large</string>
+	<key>Larger</key>
+	<string>Larger</string>
+	<key>Later</key>
+	<string>Later</string>
+	<key>Leave empty for no token budget.</key>
+	<string>Leave empty for no token budget.</string>
+	<key>Leave empty to mention the first line.</key>
+	<string>Leave empty to mention the first line.</string>
+	<key>Library (no folder)</key>
+	<string>Library (no folder)</string>
+	<key>Library files will be used in answers.</key>
+	<string>Library files will be used in answers.</string>
+	<key>Library files will not be used in answers.</key>
+	<string>Library files will not be used in answers.</string>
+	<key>Line</key>
+	<string>Line</string>
+	<key>Line number</key>
+	<string>Line number</string>
+	<key>Link deleted.</key>
+	<string>Link deleted.</string>
+	<key>Load earlier messages</key>
+	<string>Load earlier messages</string>
+	<key>Load history</key>
+	<string>Load history</string>
+	<key>Loading conversation…</key>
+	<string>Loading conversation…</string>
+	<key>Loading history…</key>
+	<string>Loading history…</string>
+	<key>Loading models…</key>
+	<string>Loading models…</string>
+	<key>Loading the shared chat…</key>
+	<string>Loading the shared chat…</string>
+	<key>Location</key>
+	<string>Location</string>
+	<key>Lock chat…</key>
+	<string>Lock chat…</string>
+	<key>Lock «%@»? It moves to Locked chats, is hidden from the chat list and search, and new messages in it are not added to memory.</key>
+	<string>Lock «%@»? It moves to Locked chats, is hidden from the chat list and search, and new messages in it are not added to memory.</string>
+	<key>Locked chat</key>
+	<string>Locked chat</string>
+	<key>Locked chat · read only · %lu messages</key>
+	<string>Locked chat · read only · %lu messages</string>
+	<key>Locked chats</key>
+	<string>Locked chats</string>
+	<key>Locked chats are hidden from the chat list and search.</key>
+	<string>Locked chats are hidden from the chat list and search.</string>
+	<key>Log out of ChatGPT X</key>
+	<string>Log out of ChatGPT X</string>
+	<key>Log out of ChatGPT X on this iPhone? The session and recordings are removed from the device. Chats stay in your account.</key>
+	<string>Log out of ChatGPT X? Your chats stay in your account.</string>
+	<key>Login</key>
+	<string>Login</string>
+	<key>Login did not complete. Try again.</key>
+	<string>Login did not complete. Try again.</string>
+	<key>Login later</key>
+	<string>Login later</string>
+	<key>Login required</key>
+	<string>Login required</string>
+	<key>Login requires Web Port to be enabled. Restart ChatGPT X after enabling it.</key>
+	<string>Login requires Web Port to be enabled. Restart ChatGPT X after enabling it.</string>
+	<key>Login was cancelled. You can try again.</key>
+	<string>Login was cancelled. You can try again.</string>
+	<key>Lost access to two-step verification</key>
+	<string>Lost access to two-step verification</string>
+	<key>Mail is not set up on this iPhone.</key>
+	<string>Mail is not set up on this iPhone.</string>
+	<key>Mail opened with the letter. It is sent only from Mail.</key>
+	<string>Mail opened with the letter. It is sent only from Mail.</string>
+	<key>Manage memories automatically</key>
+	<string>Manage memories automatically</string>
+	<key>Managed permissions</key>
+	<string>Managed permissions</string>
+	<key>Managed policy %lu</key>
+	<string>Managed policy %lu</string>
+	<key>Manually over SSH</key>
+	<string>Manually over SSH</string>
+	<key>Memory deleted.</key>
+	<string>Memory deleted.</string>
+	<key>Memory in search</key>
+	<string>Memory in search</string>
+	<key>Memory is %d%% full</key>
+	<string>Memory is %d%% full</string>
+	<key>Memory is almost full. Delete what ChatGPT no longer needs to remember.</key>
+	<string>Memory is almost full. Delete what ChatGPT no longer needs to remember.</string>
+	<key>Memory used</key>
+	<string>Memory used</string>
+	<key>Mention</key>
+	<string>Mention</string>
+	<key>Mention an app</key>
+	<string>Mention an app</string>
+	<key>Message copied.</key>
+	<string>Message copied.</string>
+	<key>Message for Codex</key>
+	<string>Message for Codex</string>
+	<key>Message text</key>
+	<string>Message text</string>
+	<key>Minute</key>
+	<string>Minute</string>
+	<key>Model family</key>
+	<string>Model family</string>
+	<key>Model selected.</key>
+	<string>Model selected.</string>
+	<key>Models</key>
+	<string>Models</string>
+	<key>Month: %@ · year: %@</key>
+	<string>Month: %@ · year: %@</string>
+	<key>More about this reason</key>
+	<string>More about this reason</string>
+	<key>More files match. Refine the search.</key>
+	<string>More files match. Refine the search.</string>
+	<key>Move here</key>
+	<string>Move here</string>
+	<key>Move the folder «%@» and everything in it to Trash?</key>
+	<string>Move the folder «%@» and everything in it to Trash?</string>
+	<key>Move this chat to the archive? It stays in your account.</key>
+	<string>Move this chat to the archive? It stays in your account.</string>
+	<key>Move to</key>
+	<string>Move to</string>
+	<key>Move to Trash</key>
+	<string>Move to Trash</string>
+	<key>Move to folder</key>
+	<string>Move to folder</string>
+	<key>Move to folder…</key>
+	<string>Move to folder…</string>
+	<key>Move to project</key>
+	<string>Move to project</string>
+	<key>Move to project…</key>
+	<string>Move to project…</string>
+	<key>Move «%@» to Trash? You can restore it from Trash.</key>
+	<string>Move «%@» to Trash? You can restore it from Trash.</string>
+	<key>Moved to Trash.</key>
+	<string>Moved to Trash.</string>
+	<key>Moved to the project.</key>
+	<string>Moved to the project.</string>
+	<key>Moved.</key>
+	<string>Moved.</string>
+	<key>Network access for this turn</key>
+	<string>Network access for this turn</string>
+	<key>New branch in a separate worktree</key>
+	<string>New branch in a separate worktree</string>
+	<key>New chat created.</key>
+	<string>New chat created.</string>
+	<key>New chat in this project</key>
+	<string>New chat in this project</string>
+	<key>New folder</key>
+	<string>New folder</string>
+	<key>New folder…</key>
+	<string>New folder…</string>
+	<key>New project…</key>
+	<string>New project…</string>
+	<key>New task…</key>
+	<string>New task…</string>
+	<key>New working tree</key>
+	<string>New working tree</string>
+	<key>Next message</key>
+	<string>Next message</string>
+	<key>Next run</key>
+	<string>Next run</string>
+	<key>Next run: %@</key>
+	<string>Next run: %@</string>
+	<key>Next runs</key>
+	<string>Next runs</string>
+	<key>No Codex tasks yet.</key>
+	<string>No Codex tasks yet.</string>
+	<key>No accounts are connected.</key>
+	<string>No accounts are connected.</string>
+	<key>No apps are installed.</key>
+	<string>No apps are installed.</string>
+	<key>No apps can be mentioned on this account.</key>
+	<string>No apps can be mentioned on this account.</string>
+	<key>No apps have access to your account.</key>
+	<string>No apps have access to your account.</string>
+	<key>No archived chats.</key>
+	<string>No archived chats.</string>
+	<key>No calculation was observed in this answer. The answer text is all there is.</key>
+	<string>No calculation was observed in this answer. The answer text is all there is.</string>
+	<key>No chats in this project.</key>
+	<string>No chats in this project.</string>
+	<key>No connected sources.</key>
+	<string>No connected sources.</string>
+	<key>No favorites yet.</key>
+	<string>No favorites yet.</string>
+	<key>No files</key>
+	<string>No files</string>
+	<key>No files yet. In Mail, Safari or another app, tap “Open in…” and choose ChatGPT X. The file then appears here.</key>
+	<string>No files yet. Use “Open in…” in another app.</string>
+	<key>No folders from connected sources.</key>
+	<string>No folders from connected sources.</string>
+	<key>No folders here.</key>
+	<string>No folders here.</string>
+	<key>No folders yet.</key>
+	<string>No folders yet.</string>
+	<key>No goal</key>
+	<string>No goal</string>
+	<key>No image was created. The answer explains why.</key>
+	<string>No image was created. The answer explains why.</string>
+	<key>No images yet.</key>
+	<string>No images yet.</string>
+	<key>No instructions.</key>
+	<string>No instructions.</string>
+	<key>No languages are available.</key>
+	<string>No languages are available.</string>
+	<key>No languages available.</key>
+	<string>No languages available.</string>
+	<key>No locked chats.</key>
+	<string>No locked chats.</string>
+	<key>No locked chats. Locked chats are not set up for this account.</key>
+	<string>No locked chats. Locked chats are not set up for this account.</string>
+	<key>No models were received for this account.</key>
+	<string>No models were received for this account.</string>
+	<key>No other devices.</key>
+	<string>No other devices.</string>
+	<key>No pending operations.</key>
+	<string>No pending operations.</string>
+	<key>No projects yet.</key>
+	<string>No projects yet.</string>
+	<key>No response yet.</key>
+	<string>No response yet.</string>
+	<key>No running commands.</key>
+	<string>No running commands.</string>
+	<key>No subagents yet.</key>
+	<string>No subagents yet.</string>
+	<key>No task events yet.</key>
+	<string>No task events yet.</string>
+	<key>No tasks here.</key>
+	<string>No tasks here.</string>
+	<key>No tasks yet.</key>
+	<string>No tasks yet.</string>
+	<key>No tasks. Tasks are created in a chat with ChatGPT.</key>
+	<string>No tasks. Tasks are created in a chat with ChatGPT.</string>
+	<key>No voice limit information yet.</key>
+	<string>No voice limit information yet.</string>
+	<key>No voice limit notices.</key>
+	<string>No voice limit notices.</string>
+	<key>No voices for this mode and language.</key>
+	<string>No voices for this mode and language.</string>
+	<key>No, thanks</key>
+	<string>No, thanks</string>
+	<key>Normal</key>
+	<string>Normal</string>
+	<key>Not available</key>
+	<string>Not available</string>
+	<key>Not available for this account</key>
+	<string>Not available for this account</string>
+	<key>Not confirmed yet</key>
+	<string>Not confirmed yet</string>
+	<key>Not determined</key>
+	<string>Not determined</string>
+	<key>Not downloaded: %@</key>
+	<string>Not downloaded: %@</string>
+	<key>Not helpful</key>
+	<string>Not helpful</string>
+	<key>Not installed</key>
+	<string>Not installed</string>
+	<key>Not saved</key>
+	<string>Not saved</string>
+	<key>Not scheduled</key>
+	<string>Not scheduled</string>
+	<key>Not sent · tap “!”</key>
+	<string>Not sent · tap “!”</string>
+	<key>Not set</key>
+	<string>Not set</string>
+	<key>Not uploaded: %@</key>
+	<string>Not uploaded: %@</string>
+	<key>Not uploaded: %@ The file can be uploaded again.</key>
+	<string>Not uploaded: %@ The file can be uploaded again.</string>
+	<key>Nothing found</key>
+	<string>Nothing found</string>
+	<key>Nothing found for “%@”.</key>
+	<string>Nothing found for “%@”.</string>
+	<key>Nothing found.</key>
+	<string>Nothing found.</string>
+	<key>Nothing has changed.</key>
+	<string>Nothing has changed.</string>
+	<key>Nothing of this kind in favorites.</key>
+	<string>Nothing of this kind in favorites.</string>
+	<key>Nothing to show yet.</key>
+	<string>Nothing to show yet.</string>
+	<key>Nothing was recognised. No text was inserted.</key>
+	<string>Nothing was recognised. No text was inserted.</string>
+	<key>Nothing was reset.</key>
+	<string>Nothing was reset.</string>
+	<key>OAuth callback</key>
+	<string>OAuth callback</string>
+	<key>OAuth token exchange</key>
+	<string>OAuth token exchange</string>
+	<key>OAuth token validation</key>
+	<string>OAuth token validation</string>
+	<key>Occupation</key>
+	<string>Occupation</string>
+	<key>Older events</key>
+	<string>Older events</string>
+	<key>On the service page</key>
+	<string>On the service page</string>
+	<key>On weekdays</key>
+	<string>On weekdays</string>
+	<key>On weekdays at %@</key>
+	<string>On weekdays at %@</string>
+	<key>On your computer, open ChatGPT Settings → Connections → Control this Mac or PC → Add. Scan the QR code or enter its connection code.</key>
+	<string>On your computer, open ChatGPT Settings → Connections → Control this Mac or PC → Add. Scan the QR code or enter its connection code.</string>
+	<key>Once</key>
+	<string>Once</string>
+	<key>Once, %@</key>
+	<string>Once, %@</string>
+	<key>Only a clean working tree can be removed. Its branch is kept.</key>
+	<string>Only a clean working tree can be removed. Its branch is kept.</string>
+	<key>Only a research report can be saved as PDF.</key>
+	<string>Only a research report can be saved as PDF.</string>
+	<key>Only now</key>
+	<string>Only now</string>
+	<key>Only the chart's description is available; the picture is not shown here.</key>
+	<string>Only the chart's description is available; the picture is not shown here.</string>
+	<key>Only this project</key>
+	<string>Only this project</string>
+	<key>Open</key>
+	<string>Open</string>
+	<key>Open Session to log in to ChatGPT.</key>
+	<string>Open Session to log in to ChatGPT.</string>
+	<key>Open a chat and start typing to add this file to a message.</key>
+	<string>Open a chat and start typing to add this file to a message.</string>
+	<key>Open by link…</key>
+	<string>Open by link…</string>
+	<key>Open chatgpt.com in a browser to continue.</key>
+	<string>Open chatgpt.com in a browser to continue.</string>
+	<key>Open conversation</key>
+	<string>Open conversation</string>
+	<key>Open in Mail</key>
+	<string>Open in Mail</string>
+	<key>Open in Safari</key>
+	<string>Open in Safari</string>
+	<key>Open text selection and copying</key>
+	<string>Open text selection and copying</string>
+	<key>Open the link on your computer. After verification, copy the full localhost callback URL and paste it here within ten minutes.</key>
+	<string>Open the link on your computer. After verification, copy the full localhost callback URL and paste it here within ten minutes.</string>
+	<key>Open this GPT on the ChatGPT website to manage its action permissions? Nothing changes in ChatGPT X.</key>
+	<string>Manage this GPT's permissions on chatgpt.com?</string>
+	<key>OpenAI reviews the report together with this conversation. Nothing is sent until you tap Send report.</key>
+	<string>OpenAI reviews the report together with this conversation. Nothing is sent until you tap Send report.</string>
+	<key>Opening the login page…</key>
+	<string>Opening the login page…</string>
+	<key>Opening the secure login page…</key>
+	<string>Opening the secure login page…</string>
+	<key>Opens dictation. Recording starts with a separate button</key>
+	<string>Opens dictation. Recording starts with a separate button</string>
+	<key>Other devices</key>
+	<string>Other devices</string>
+	<key>Other devices stay logged in.</key>
+	<string>Other devices stay logged in.</string>
+	<key>Other ways to sign in…</key>
+	<string>Other ways to sign in…</string>
+	<key>PDF</key>
+	<string>PDF</string>
+	<key>PDF files</key>
+	<string>PDF files</string>
+	<key>PIN</key>
+	<string>PIN</string>
+	<key>Pages</key>
+	<string>Pages</string>
+	<key>Pages open in the ChatGPT web version.</key>
+	<string>Pages open in the ChatGPT web version.</string>
+	<key>Pair a computer</key>
+	<string>Pair a computer</string>
+	<key>Paired computer</key>
+	<string>Paired computer</string>
+	<key>Pairing on this legacy iPhone is experimental. The service may reject this device. You can also connect over SSH.</key>
+	<string>Pairing is experimental on iOS 6. SSH also works.</string>
+	<key>Paste the full localhost callback URL shown after verification on your computer. It is used only for this pending request.</key>
+	<string>Paste the full localhost callback URL shown after verification on your computer. It is used only for this pending request.</string>
+	<key>Paste verification callback…</key>
+	<string>Paste verification callback…</string>
+	<key>Pause goal</key>
+	<string>Pause goal</string>
+	<key>Paused</key>
+	<string>Paused</string>
+	<key>Paused or finished</key>
+	<string>Paused or finished</string>
+	<key>Paused · %@ of %@</key>
+	<string>Paused · %@ of %@</string>
+	<key>Permission requests</key>
+	<string>Permission requests</string>
+	<key>Permissions</key>
+	<string>Permissions</string>
+	<key>Photos did not confirm the save.</key>
+	<string>Photos did not confirm the save.</string>
+	<key>Places, products and images from this answer that you can keep in your Library.</key>
+	<string>Places, products and images from this answer that you can keep in your Library.</string>
+	<key>Plan</key>
+	<string>Plan</string>
+	<key>Plans</key>
+	<string>Plans</string>
+	<key>Play sample</key>
+	<string>Play sample</string>
+	<key>Playback is not available.</key>
+	<string>Playback is not available.</string>
+	<key>Playing · %@ of %@</key>
+	<string>Playing · %@ of %@</string>
+	<key>Port</key>
+	<string>Port</string>
+	<key>Portuguese</key>
+	<string>Portuguese</string>
+	<key>Precise location</key>
+	<string>Precise location</string>
+	<key>Prefer Auto</key>
+	<string>Prefer Auto</string>
+	<key>Preparing the PDF…</key>
+	<string>Preparing the PDF…</string>
+	<key>Preparing the request…</key>
+	<string>Preparing the request…</string>
+	<key>Preparing to send…</key>
+	<string>Preparing to send…</string>
+	<key>Preparing to send… %lu s</key>
+	<string>Preparing to send… %lu s</string>
+	<key>Preparing voice conversation…</key>
+	<string>Preparing voice conversation…</string>
+	<key>Preparing…</key>
+	<string>Preparing…</string>
+	<key>Presentation</key>
+	<string>Presentation</string>
+	<key>Presentations</key>
+	<string>Presentations</string>
+	<key>Previous 30 days</key>
+	<string>Previous 30 days</string>
+	<key>Previous 7 days</key>
+	<string>Previous 7 days</string>
+	<key>Priority</key>
+	<string>Priority</string>
+	<key>Privacy</key>
+	<string>Privacy</string>
+	<key>Privacy Portal: data requests</key>
+	<string>Privacy Portal: data requests</string>
+	<key>Privacy center</key>
+	<string>Privacy center</string>
+	<key>Pro</key>
+	<string>Pro</string>
+	<key>Products</key>
+	<string>Products</string>
+	<key>Project actions</key>
+	<string>Project actions</string>
+	<key>Project chat</key>
+	<string>Project chat</string>
+	<key>Project folder</key>
+	<string>Project folder</string>
+	<key>Project link</key>
+	<string>Project link</string>
+	<key>Project memory changed.</key>
+	<string>Project memory changed.</string>
+	<key>Project title</key>
+	<string>Project title</string>
+	<key>Projects you open by link appear here until you log out.</key>
+	<string>Projects you open by link appear here until you log out.</string>
+	<key>Protection</key>
+	<string>Protection</string>
+	<key>QR code recognized, but its connection format is unsupported.</key>
+	<string>QR code recognized, but its connection format is unsupported.</string>
+	<key>Question</key>
+	<string>Question</string>
+	<key>Questions and actions</key>
+	<string>Questions and actions</string>
+	<key>Queued…</key>
+	<string>Queued…</string>
+	<key>Rated helpful</key>
+	<string>Rated helpful</string>
+	<key>Rated not helpful</key>
+	<string>Rated not helpful</string>
+	<key>Read again</key>
+	<string>Read again</string>
+	<key>Read aloud</key>
+	<string>Read aloud</string>
+	<key>Read connected computers</key>
+	<string>Read connected computers</string>
+	<key>Read files</key>
+	<string>Read files</string>
+	<key>Read only</key>
+	<string>Read only</string>
+	<key>Read project memory again</key>
+	<string>Read project memory again</string>
+	<key>Read the task again to get its current permission settings.</key>
+	<string>Read the task again to get its current permission settings.</string>
+	<key>Read the task history to restore the connection.</key>
+	<string>Read the task history to restore the connection.</string>
+	<key>Ready to send</key>
+	<string>Ready to send</string>
+	<key>Ready to send · %@</key>
+	<string>Ready to send · %@</string>
+	<key>Reasoning depth</key>
+	<string>Reasoning depth</string>
+	<key>Reasoning summary</key>
+	<string>Reasoning summary</string>
+	<key>Receiving response…</key>
+	<string>Receiving response…</string>
+	<key>Recent</key>
+	<string>Recent</string>
+	<key>Recipient</key>
+	<string>Recipient</string>
+	<key>Reconnect</key>
+	<string>Reconnect</string>
+	<key>Record</key>
+	<string>Record</string>
+	<key>Record up to %lu seconds. Transcription starts separately; send your message from the chat.</key>
+	<string>Record up to %lu seconds.</string>
+	<key>Recording stopped. Tap Transcribe to submit it for transcription.</key>
+	<string>Recording stopped. Tap Transcribe to submit it for transcription.</string>
+	<key>Recovery</key>
+	<string>Recovery</string>
+	<key>Refresh</key>
+	<string>Refresh</string>
+	<key>Refresh connection authorization</key>
+	<string>Refresh connection authorization</string>
+	<key>Refresh connection authorization, then connect again.</key>
+	<string>Refresh connection authorization, then connect again.</string>
+	<key>Refresh history</key>
+	<string>Refresh history</string>
+	<key>Regenerate</key>
+	<string>Regenerate</string>
+	<key>Region is not set.</key>
+	<string>Region is not set.</string>
+	<key>Remove ChatGPT X's temporary files from this iPhone?</key>
+	<string>Remove ChatGPT X's temporary files from this iPhone?</string>
+	<key>Remove from Library</key>
+	<string>Remove from Library</string>
+	<key>Remove from favorites</key>
+	<string>Remove from favorites</string>
+	<key>Remove from message</key>
+	<string>Remove from message</string>
+	<key>Remove goal</key>
+	<string>Remove goal</string>
+	<key>Remove image</key>
+	<string>Remove image</string>
+	<key>Remove protection</key>
+	<string>Remove protection</string>
+	<key>Remove protection? The chat returns to the chat list and search, and follows your usual memory settings again.</key>
+	<string>Remove protection? The chat returns to the chat list and search, and follows your usual memory settings again.</string>
+	<key>Remove skill</key>
+	<string>Remove skill</string>
+	<key>Remove the access of «%@»?</key>
+	<string>Remove the access of «%@»?</string>
+	<key>Remove the access of «%@»? The app will no longer see your account information.</key>
+	<string>Remove the access of «%@»? The app will no longer see your account information.</string>
+	<key>Remove this goal?</key>
+	<string>Remove this goal?</string>
+	<key>Remove this source from the project? The file stays in your Library.</key>
+	<string>Remove this source from the project? The file stays in your Library.</string>
+	<key>Remove worktree</key>
+	<string>Remove worktree</string>
+	<key>Remove «%@» from your apps? ChatGPT can no longer use it.</key>
+	<string>Remove «%@» from your apps? ChatGPT can no longer use it.</string>
+	<key>Removed from Library.</key>
+	<string>Removed from Library.</string>
+	<key>Removed from favorites.</key>
+	<string>Removed from favorites.</string>
+	<key>Removed from the project.</key>
+	<string>Removed from the project.</string>
+	<key>Removes the saved session only on this iPhone</key>
+	<string>Removes the saved session only on this iPhone</string>
+	<key>Rename file</key>
+	<string>Rename file</string>
+	<key>Rename folder</key>
+	<string>Rename folder</string>
+	<key>Renamed.</key>
+	<string>Renamed.</string>
+	<key>Rename…</key>
+	<string>Rename…</string>
+	<key>Renew session</key>
+	<string>Renew session</string>
+	<key>Renewal</key>
+	<string>Renewal</string>
+	<key>Renewing the session does not send messages. Logging out disconnects only ChatGPT X.</key>
+	<string>Logging out signs out only this app.</string>
+	<key>Repeat</key>
+	<string>Repeat</string>
+	<key>Replace…</key>
+	<string>Replace…</string>
+	<key>Report sent.</key>
+	<string>Report sent.</string>
+	<key>Report…</key>
+	<string>Report…</string>
+	<key>Request a copy of your ChatGPT data? A download link will be sent to the e-mail address of your account.</key>
+	<string>Request a copy of your ChatGPT data? A download link will be sent to the e-mail address of your account.</string>
+	<key>Request export</key>
+	<string>Request export</string>
+	<key>Request is no longer active.</key>
+	<string>Request is no longer active.</string>
+	<key>Research finished. Open the chat to read the report.</key>
+	<string>Research finished. Open the chat to read the report.</string>
+	<key>Research report as PDF</key>
+	<string>Research report as PDF</string>
+	<key>Research status</key>
+	<string>Research status</string>
+	<key>Reset the PIN on the ChatGPT website? There you confirm with your password, and every locked chat is deleted. ChatGPT X sends nothing and cannot see the result until you check again.</key>
+	<string>Reset the PIN on chatgpt.com? Every locked chat will be deleted.</string>
+	<key>Reset the PIN? All locked chats are deleted for good. You confirm it on the ChatGPT website with your account password first.</key>
+	<string>Reset the PIN? All locked chats are deleted for good. You confirm it on the ChatGPT website with your account password first.</string>
+	<key>Resets</key>
+	<string>Resets</string>
+	<key>Resetting the PIN deletes every locked chat.</key>
+	<string>Resetting the PIN deletes every locked chat.</string>
+	<key>Resource</key>
+	<string>Resource</string>
+	<key>Response saved in ChatGPT.</key>
+	<string>Response saved in ChatGPT.</string>
+	<key>Response stopped</key>
+	<string>Response stopped</string>
+	<key>Restore</key>
+	<string>Restore</string>
+	<key>Restore session</key>
+	<string>Restore session</string>
+	<key>Restored.</key>
+	<string>Restored.</string>
+	<key>Restoring session…</key>
+	<string>Restoring session…</string>
+	<key>Result unknown</key>
+	<string>Result unknown</string>
+	<key>Results</key>
+	<string>Results</string>
+	<key>Results may be incomplete: no answer from %@.</key>
+	<string>Results may be incomplete: no answer from %@.</string>
+	<key>Results may be incomplete: some sources did not answer.</key>
+	<string>Results may be incomplete: some sources did not answer.</string>
+	<key>Resume goal</key>
+	<string>Resume goal</string>
+	<key>Retry previous send</key>
+	<string>Retry previous send</string>
+	<key>Retry transcription</key>
+	<string>Retry transcription</string>
+	<key>Return from archive</key>
+	<string>Return from archive</string>
+	<key>Return this chat from the archive?</key>
+	<string>Return this chat from the archive?</string>
+	<key>Review changes</key>
+	<string>Review changes</string>
+	<key>Review comment</key>
+	<string>Review comment</string>
+	<key>Review important actions</key>
+	<string>Review important actions</string>
+	<key>Review the text. Inserting will add it to the message field.</key>
+	<string>Review the text. Inserting will add it to the message field.</string>
+	<key>ChatGPT X cannot check this folder, so it cannot move items into it.</key>
+	<string>ChatGPT X cannot check this folder, so it cannot move items into it.</string>
+	<key>ChatGPT X cannot confirm that this setting may be changed for your account, so it is shown read-only. You can change it in the web version.</key>
+	<string>Read-only here. Change it on chatgpt.com.</string>
+	<key>ChatGPT X cannot confirm your recent sign-in for this request. Continue on the web.</key>
+	<string>ChatGPT X cannot confirm your recent sign-in for this request. Continue on the web.</string>
+	<key>ChatGPT X cannot edit this schedule. It is kept exactly as it is.</key>
+	<string>ChatGPT X cannot edit this schedule. It is kept exactly as it is.</string>
+	<key>ChatGPT X cannot list your projects: the service has no such request in this build. Paste a project link from the web version (chatgpt.com/g/…/project).</key>
+	<string>Paste a project link from chatgpt.com to open it.</string>
+	<key>ChatGPT X cannot open this source now.</key>
+	<string>ChatGPT X cannot open this source now.</string>
+	<key>ChatGPT X cannot start a chat with a GPT.</key>
+	<string>ChatGPT X cannot start a chat with a GPT.</string>
+	<key>ChatGPT X does not read the iPhone's location. This setting is for the service.</key>
+	<string>ChatGPT X does not read the iPhone's location. This setting is for the service.</string>
+	<key>ChatGPT X has no voice conversations. These settings are saved to your ChatGPT account and apply in other ChatGPT apps.</key>
+	<string>These settings apply to all your ChatGPT apps.</string>
+	<key>ChatGPT X only prepares the letter. Mail opens it; you check and send it there.</key>
+	<string>ChatGPT X only prepares the letter. Mail opens it; you check and send it there.</string>
+	<key>ChatGPT X shows no live voice screen. The transcript appears where the voice conversation is shown.</key>
+	<string>The transcript appears in the chat.</string>
+	<key>Run %lu</key>
+	<string>Run %lu</string>
+	<key>Run now</key>
+	<string>Run now</string>
+	<key>Run «%@» now? The result appears in the task's chat.</key>
+	<string>Run «%@» now? The result appears in the task's chat.</string>
+	<key>Running on the service. Check the status yourself; it is not polled automatically.</key>
+	<string>Running on the service.</string>
+	<key>Russian</key>
+	<string>Russian</string>
+	<key>Safari</key>
+	<string>Safari</string>
+	<key>Sample</key>
+	<string>Sample</string>
+	<key>Sandbox access</key>
+	<string>Sandbox access</string>
+	<key>Save goal</key>
+	<string>Save goal</string>
+	<key>Save image to Photos</key>
+	<string>Save image to Photos</string>
+	<key>Save instructions</key>
+	<string>Save instructions</string>
+	<key>Save this answer to your Library? (Saved answers of long chats may not all be listed.)</key>
+	<string>Save this answer to your Library?</string>
+	<key>Save this answer to your Library? The saved copy keeps the answer as it is now.</key>
+	<string>Save this answer to your Library? The saved copy keeps the answer as it is now.</string>
+	<key>Save to Library</key>
+	<string>Save to Library</string>
+	<key>Save to Library…</key>
+	<string>Save to Library…</string>
+	<key>Saved</key>
+	<string>Saved</string>
+	<key>Saved answers</key>
+	<string>Saved answers</string>
+	<key>Saved answers, places, products and other saved items are listed here; ChatGPT X opens only files from favorites.</key>
+	<string>Only files open from favorites.</string>
+	<key>Saved items</key>
+	<string>Saved items</string>
+	<key>Saved items…</key>
+	<string>Saved items…</string>
+	<key>Saved memory</key>
+	<string>Saved memory</string>
+	<key>Saved to Library.</key>
+	<string>Saved to Library.</string>
+	<key>Saved to Photos.</key>
+	<string>Saved to Photos.</string>
+	<key>Saved.</key>
+	<string>Saved.</string>
+	<key>Saving login…</key>
+	<string>Saving login…</string>
+	<key>Saving to Photos…</key>
+	<string>Saving to Photos…</string>
+	<key>Saving…</key>
+	<string>Saving…</string>
+	<key>Say what is wrong. ChatGPT uses your correction from now on.</key>
+	<string>Say what is wrong. ChatGPT uses your correction from now on.</string>
+	<key>Scanned pages</key>
+	<string>Scanned pages</string>
+	<key>Schedule</key>
+	<string>Schedule</string>
+	<key>Scheduled</key>
+	<string>Scheduled</string>
+	<key>Search GPTs</key>
+	<string>Search GPTs</string>
+	<key>Search again</key>
+	<string>Search again</string>
+	<key>Search apps</key>
+	<string>Search apps</string>
+	<key>Search files</key>
+	<string>Search files</string>
+	<key>Search in %@</key>
+	<string>Search in %@</string>
+	<key>Search in Library</key>
+	<string>Search in Library</string>
+	<key>Search in chats</key>
+	<string>Search in chats</string>
+	<key>Search in this folder</key>
+	<string>Search in this folder</string>
+	<key>Search looks through one page of projects at a time. Show more to look further.</key>
+	<string>Search looks through one page of projects at a time. Show more to look further.</string>
+	<key>Search memories</key>
+	<string>Search memories</string>
+	<key>Search results</key>
+	<string>Search results</string>
+	<key>Search the web automatically</key>
+	<string>Search the web automatically</string>
+	<key>Searching starts when you stop typing.</key>
+	<string>Searching starts when you stop typing.</string>
+	<key>Searching the web…</key>
+	<string>Searching the web…</string>
+	<key>Security</key>
+	<string>Security</string>
+	<key>Select in text</key>
+	<string>Select Text</string>
+	<key>Send again</key>
+	<string>Send again</string>
+	<key>Send report</key>
+	<string>Send report</string>
+	<key>Send this conversation with the report</key>
+	<string>Send this conversation with the report</string>
+	<key>Sending the request…</key>
+	<string>Sending the request…</string>
+	<key>Sent · waiting for confirmation</key>
+	<string>Sent · waiting for confirmation</string>
+	<key>Service order</key>
+	<string>Service order</string>
+	<key>Services</key>
+	<string>Services</string>
+	<key>Services are connected and reconnected in the web version; ChatGPT X does not change connections.</key>
+	<string>Connect services on chatgpt.com.</string>
+	<key>Session</key>
+	<string>Session</string>
+	<key>Session active</key>
+	<string>Session active</string>
+	<key>Session active on this iPhone</key>
+	<string>Session active on this iPhone</string>
+	<key>Session renewal is available</key>
+	<string>Session renewal is available</string>
+	<key>Set</key>
+	<string>Set</string>
+	<key>Share image</key>
+	<string>Share image</string>
+	<key>Share link…</key>
+	<string>Share link…</string>
+	<key>Shared chat</key>
+	<string>Shared chat</string>
+	<key>Shared link · read only · %lu messages</key>
+	<string>Shared link · read only · %lu messages</string>
+	<key>Shared with me</key>
+	<string>Shared with me</string>
+	<key>Show all</key>
+	<string>Show all</string>
+	<key>Show all apps</key>
+	<string>Show all apps</string>
+	<key>Show as grid</key>
+	<string>Show as grid</string>
+	<key>Show as list</key>
+	<string>Show as list</string>
+	<key>Show transcript</key>
+	<string>Show transcript</string>
+	<key>Showing: %@ · %@.</key>
+	<string>Showing: %@ · %@.</string>
+	<key>Shown for reference. You can change this in the web version.</key>
+	<string>Shown for reference. You can change this in the web version.</string>
+	<key>Shown on this screen only. The next message starts a separate conversation.</key>
+	<string>Shown on this screen only. The next message starts a separate conversation.</string>
+	<key>Side</key>
+	<string>Side</string>
+	<key>Sign in again on the web</key>
+	<string>Sign in again on the web</string>
+	<key>Sign in to the app again</key>
+	<string>Sign in to the app again</string>
+	<key>Sign out everywhere</key>
+	<string>Sign out everywhere</string>
+	<key>Sign out everywhere, including this iPhone? Every session ends and you will need to sign in again here too.</key>
+	<string>Sign out everywhere, including this iPhone? Every session ends and you will need to sign in again here too.</string>
+	<key>Sign out everywhere, including this iPhone? You will need to sign in again.</key>
+	<string>Sign out everywhere, including this iPhone? You will need to sign in again.</string>
+	<key>Sign out on this device</key>
+	<string>Sign out on this device</string>
+	<key>Sign out on «%@»? That device will need to sign in again.</key>
+	<string>Sign out on «%@»? That device will need to sign in again.</string>
+	<key>Sign-in</key>
+	<string>Sign-in</string>
+	<key>Signed out everywhere.</key>
+	<string>Signed out everywhere.</string>
+	<key>Signed out on that device.</key>
+	<string>Signed out on that device.</string>
+	<key>Signed out · trusted device</key>
+	<string>Signed out · trusted device</string>
+	<key>Signs out on every device, this iPhone included. You will need to sign in again.</key>
+	<string>Signs out on every device, this iPhone included. You will need to sign in again.</string>
+	<key>Since HEAD</key>
+	<string>Since HEAD</string>
+	<key>Size</key>
+	<string>Size</string>
+	<key>Skills</key>
+	<string>Skills</string>
+	<key>Small</key>
+	<string>Small</string>
+	<key>Smaller</key>
+	<string>Smaller</string>
+	<key>Sort</key>
+	<string>Sort</string>
+	<key>Sort by name</key>
+	<string>Sort by name</string>
+	<key>Sorted by name within each page the service returns.</key>
+	<string>Sorted by name within each page the service returns.</string>
+	<key>Source language</key>
+	<string>Source language</string>
+	<key>Source removed.</key>
+	<string>Source removed.</string>
+	<key>Source: %@</key>
+	<string>Source: %@</string>
+	<key>Spanish</key>
+	<string>Spanish</string>
+	<key>Speak naturally. You can interrupt by speaking.</key>
+	<string>Speak naturally. You can interrupt by speaking.</string>
+	<key>Speed</key>
+	<string>Speed</string>
+	<key>Spreadsheets</key>
+	<string>Spreadsheets</string>
+	<key>Staged changes</key>
+	<string>Staged changes</string>
+	<key>Standard</key>
+	<string>Standard</string>
+	<key>Start a chat</key>
+	<string>Start a chat</string>
+	<key>Start a new chat that continues from this message? This chat stays as it is.</key>
+	<string>Start a new chat that continues from this message? This chat stays as it is.</string>
+	<key>State</key>
+	<string>State</string>
+	<key>Status unknown</key>
+	<string>Status unknown</string>
+	<key>Still running. You can check again in %@ s.</key>
+	<string>Still running. You can check again in %@ s.</string>
+	<key>Stop recording</key>
+	<string>Stop recording</string>
+	<key>Stop research</key>
+	<string>Stop research</string>
+	<key>Stop trusting</key>
+	<string>Stop trusting</string>
+	<key>Stop trusting «%@»? It will need full verification at its next sign-in.</key>
+	<string>Stop trusting «%@»? It will need full verification at its next sign-in.</string>
+	<key>Storage</key>
+	<string>Storage</string>
+	<key>Study</key>
+	<string>Study</string>
+	<key>Style</key>
+	<string>Style</string>
+	<key>Subagent</key>
+	<string>Subagent</string>
+	<key>Subagent history</key>
+	<string>Subagent history</string>
+	<key>Subagents</key>
+	<string>Subagents</string>
+	<key>Subject</key>
+	<string>Subject</string>
+	<key>Suggested next request</key>
+	<string>Suggested next request</string>
+	<key>Suggestions</key>
+	<string>Suggestions</string>
+	<key>Switch to standard voice</key>
+	<string>Switch to standard voice</string>
+	<key>Switch to standard voice? Your voice mode setting changes to Standard.</key>
+	<string>Switch to standard voice? Your voice mode setting changes to Standard.</string>
+	<key>Switched to standard voice.</key>
+	<string>Switched to standard voice.</string>
+	<key>Sync</key>
+	<string>Sync</string>
+	<key>Tap Load history or start a new chat.</key>
+	<string>Tap Load history or start a new chat.</string>
+	<key>Tap a device to sign it out. Signing out ends its session there.</key>
+	<string>Tap a device to sign it out. Signing out ends its session there.</string>
+	<key>Tap a memory to delete it or keep it a priority.</key>
+	<string>Tap a memory to delete it or keep it a priority.</string>
+	<key>Tap a memory to delete it.</key>
+	<string>Tap a memory to delete it.</string>
+	<key>Tap a memory to keep it a priority.</key>
+	<string>Tap a memory to keep it a priority.</string>
+	<key>Tap an app to remove its access.</key>
+	<string>Tap an app to remove its access.</string>
+	<key>Tap an example to put it into a new chat with this GPT. It is sent only when you tap Send.</key>
+	<string>Tap an example to start a chat.</string>
+	<key>Tap the orb to resume</key>
+	<string>Tap the orb to resume</string>
+	<key>Tap to reconnect. Your last message will not be sent again.</key>
+	<string>Tap to reconnect. Your last message will not be sent again.</string>
+	<key>Task</key>
+	<string>Task</string>
+	<key>Task request</key>
+	<string>Task request</string>
+	<key>Task title</key>
+	<string>Task title</string>
+	<key>Tasks</key>
+	<string>Tasks</string>
+	<key>Tasks run on the service; the result appears in the task's chat. iOS 6 gets no notification: you see it when you open the app.</key>
+	<string>Results appear in the task's chat.</string>
+	<key>Temporary chat is off</key>
+	<string>Temporary chat is off</string>
+	<key>Temporary chat is on</key>
+	<string>Temporary chat is on</string>
+	<key>Temporary files</key>
+	<string>Temporary files</string>
+	<key>Temporary files removed.</key>
+	<string>Temporary files removed.</string>
+	<key>Text inserted into the message field. Send it from the chat when you are ready.</key>
+	<string>Text inserted into the message field. Send it from the chat when you are ready.</string>
+	<key>Text size</key>
+	<string>Text size</string>
+	<key>Thanks for the rating.</key>
+	<string>Thanks for the rating.</string>
+	<key>The Codex connection changed. Open it again.</key>
+	<string>The Codex connection changed. Open it again.</string>
+	<key>The PDF was prepared but could not be handed to other apps.</key>
+	<string>The PDF was prepared but could not be handed to other apps.</string>
+	<key>The PIN is being reset: locked chats are being deleted. Check again later.</key>
+	<string>The PIN is being reset: locked chats are being deleted. Check again later.</string>
+	<key>The PIN reset has started.</key>
+	<string>The PIN reset has started.</string>
+	<key>The PIN was changed.</key>
+	<string>The PIN was changed.</string>
+	<key>The PIN was created.</key>
+	<string>The PIN was created.</string>
+	<key>The PIN was not changed.</key>
+	<string>The PIN was not changed.</string>
+	<key>The PIN was reset. Locked chats were deleted.</key>
+	<string>The PIN was reset. Locked chats were deleted.</string>
+	<key>The answer could not be matched. Read it again.</key>
+	<string>The answer could not be matched. Read it again.</string>
+	<key>The answer is incomplete</key>
+	<string>The answer is incomplete</string>
+	<key>The answer was found in the chat.</key>
+	<string>The answer was found in the chat.</string>
+	<key>The answer was not received completely</key>
+	<string>The answer was not received completely</string>
+	<key>The app mention is no longer in the text. Mention the app again or turn the mode off.</key>
+	<string>The app mention is no longer in the text. Mention the app again or turn the mode off.</string>
+	<key>The app you mention helps with the next message. It may read what you write in it.</key>
+	<string>The app you mention helps with the next message. It may read what you write in it.</string>
+	<key>The camera is unavailable. Enter the connection code instead.</key>
+	<string>The camera is unavailable. Enter the connection code instead.</string>
+	<key>The change was saved and read back from the service.</key>
+	<string>The change was saved and read back from the service.</string>
+	<key>The chat is back in the list.</key>
+	<string>The chat is back in the list.</string>
+	<key>The chat is locked.</key>
+	<string>The chat is locked.</string>
+	<key>The computer enforces this managed policy.</key>
+	<string>The computer enforces this managed policy.</string>
+	<key>The confirmation on the website was not completed. Nothing was reset.</key>
+	<string>The confirmation on the website was not completed. Nothing was reset.</string>
+	<key>The connection dropped after sending. Check the conversation history before sending again.</key>
+	<string>The connection dropped after sending. Check the conversation history before sending again.</string>
+	<key>The connection ended before the service confirmed the change. It is not sent again. Check the current state?</key>
+	<string>The connection ended before the service confirmed the change. It is not sent again. Check the current state?</string>
+	<key>The connection ended before the service confirmed the request. It is not sent again.</key>
+	<string>The connection ended before the service confirmed the request. It is not sent again.</string>
+	<key>The connection timed out.</key>
+	<string>The connection timed out.</string>
+	<key>The connection was interrupted.</key>
+	<string>The connection was interrupted.</string>
+	<key>The current file stays in the message until the new one is ready.</key>
+	<string>The current file stays in the message until the new one is ready.</string>
+	<key>The data changed or another request is running. Read it again first.</key>
+	<string>The data changed or another request is running. Read it again first.</string>
+	<key>The destination folder could not be checked.</key>
+	<string>The destination folder could not be checked.</string>
+	<key>The destination must be clean. Untracked files must be added first. Nothing is committed or pushed.</key>
+	<string>The destination must be clean. Untracked files must be added first. Nothing is committed or pushed.</string>
+	<key>The device is no longer trusted.</key>
+	<string>The device is no longer trusted.</string>
+	<key>The device list was out of date and has been read again. Choose the device again.</key>
+	<string>The device list was out of date and has been read again. Choose the device again.</string>
+	<key>The download result is unknown. It is not repeated.</key>
+	<string>The download result is unknown. It is not repeated.</string>
+	<key>The draft changed. Open the suggestions again.</key>
+	<string>The draft changed. Open the suggestions again.</string>
+	<key>The file could not be removed from the message.</key>
+	<string>The file could not be removed from the message.</string>
+	<key>The file has expired.</key>
+	<string>The file has expired.</string>
+	<key>The file is larger than %@ and was not attached.</key>
+	<string>The file is larger than %@ and was not attached.</string>
+	<key>The file is no longer available on this iPhone or on the service.</key>
+	<string>The file is no longer available on this iPhone or on the service.</string>
+	<key>The file is not downloaded or uploaded again. It is checked once more right before sending.</key>
+	<string>The file is not downloaded or uploaded again. It is checked once more right before sending.</string>
+	<key>The file is ready but was not added to the message. Tap it to try again.</key>
+	<string>The file is ready but was not added to the message. Tap it to try again.</string>
+	<key>The icon is too long.</key>
+	<string>The icon is too long.</string>
+	<key>The image could not be prepared for sharing.</key>
+	<string>The image could not be prepared for sharing.</string>
+	<key>The image download has an unknown result. It is not repeated.</key>
+	<string>The image download has an unknown result. It is not repeated.</string>
+	<key>The image is no longer available.</key>
+	<string>The image is no longer available.</string>
+	<key>The instructions are too long.</key>
+	<string>The instructions are too long.</string>
+	<key>The instructions were saved.</key>
+	<string>The instructions were saved.</string>
+	<key>The language changes after a restart.</key>
+	<string>The language changes after a restart.</string>
+	<key>The language you speak in voice conversations. Automatic lets ChatGPT detect it.</key>
+	<string>The language you speak in voice conversations. Automatic lets ChatGPT detect it.</string>
+	<key>The last PIN reset did not finish. Locked chats may still exist.</key>
+	<string>The last PIN reset did not finish. Locked chats may still exist.</string>
+	<key>The last result is unconfirmed. Reconnect checks the existing send without sending it again.</key>
+	<string>The last result is unconfirmed. Reconnect checks the existing send without sending it again.</string>
+	<key>The letter could not be prepared.</key>
+	<string>The letter could not be prepared.</string>
+	<key>The link may have been created. It is not created again; check your shared links in the web version.</key>
+	<string>The link may have been created. It is not created again; check your shared links in the web version.</string>
+	<key>The list comes from the account; models it does not offer are not shown.</key>
+	<string>The list comes from the account; models it does not offer are not shown.</string>
+	<key>The login page could not load. Check your connection and try again.</key>
+	<string>The login page could not load. Check your connection and try again.</string>
+	<key>The message field already has a draft. Add the link's text at its end?</key>
+	<string>The message field already has a draft. Add the link's text at its end?</string>
+	<key>The message is too long.</key>
+	<string>The message is too long.</string>
+	<key>The message was not sent. Sending again is safe: it will be sent once.</key>
+	<string>The message was not sent. Sending again is safe: it will be sent once.</string>
+	<key>The message was not sent. Your text is still in the message field.</key>
+	<string>The message was not sent. Your text is still in the message field.</string>
+	<key>The microphone is on. Tap Stop recording.</key>
+	<string>The microphone is on. Tap Stop recording.</string>
+	<key>The model menu in a chat (tap the title) also chooses the model for the next message.</key>
+	<string>You can also change the model from the chat title.</string>
+	<key>The name cannot contain slashes or line breaks.</key>
+	<string>The name cannot contain slashes or line breaks.</string>
+	<key>The name is too long.</key>
+	<string>The name is too long.</string>
+	<key>The pages were not discarded.</key>
+	<string>The pages were not discarded.</string>
+	<key>The password and a code from your authenticator app are entered only on the service page.</key>
+	<string>The password and a code from your authenticator app are entered only on the service page.</string>
+	<key>The password is entered only on the service page. ChatGPT X keeps the session in this iPhone's Keychain.</key>
+	<string>The password is entered only on the service page. ChatGPT X keeps the session in this iPhone's Keychain.</string>
+	<key>The photo may already be saved. It is not saved again; check Photos.</key>
+	<string>The photo may already be saved. It is not saved again; check Photos.</string>
+	<key>The previous attempt has an unknown result. It is not sent again.</key>
+	<string>The previous attempt has an unknown result. It is not sent again.</string>
+	<key>The previous attempt has an unknown result. It is not sent again; check the chat first.</key>
+	<string>The previous attempt has an unknown result. It is not sent again; check the chat first.</string>
+	<key>The previous pairing result is unconfirmed. Read connected computers before trying another code. The same code will not be sent again.</key>
+	<string>The previous pairing result is unconfirmed. Read connected computers before trying another code. The same code will not be sent again.</string>
+	<key>The previous request has an unknown result. It is not sent again.</key>
+	<string>The previous request has an unknown result. It is not sent again.</string>
+	<key>The previously chosen model option is no longer offered, so the default is used.</key>
+	<string>The previously chosen model option is no longer offered, so the default is used.</string>
+	<key>The project could not be read.</key>
+	<string>The project could not be read.</string>
+	<key>The project was created.</key>
+	<string>The project was created.</string>
+	<key>The project was deleted.</key>
+	<string>The project was deleted.</string>
+	<key>The project was saved.</key>
+	<string>The project was saved.</string>
+	<key>The recognition result is unknown. It is not repeated, so the recording is not uploaded twice. Cancel deletes it.</key>
+	<string>The recognition result is unknown. It is not repeated, so the recording is not uploaded twice. Cancel deletes it.</string>
+	<key>The request is too long.</key>
+	<string>The request is too long.</string>
+	<key>The request was not sent.</key>
+	<string>The request was not sent.</string>
+	<key>The request was started, but its result is not known yet.</key>
+	<string>The request was started, but its result is not known yet.</string>
+	<key>The research failed on the service.</key>
+	<string>The research failed on the service.</string>
+	<key>The research has already finished.</key>
+	<string>The research has already finished.</string>
+	<key>The response format is not supported yet.</key>
+	<string>The response format is not supported yet.</string>
+	<key>The response stop was not confirmed.</key>
+	<string>The response stop was not confirmed.</string>
+	<key>The result is still unknown. Nothing was sent again.</key>
+	<string>The result is still unknown. Nothing was sent again.</string>
+	<key>The result is unconfirmed. Read again before making another change.</key>
+	<string>The result is unconfirmed. Read again before making another change.</string>
+	<key>The result is unconfirmed. Read the task history before sending again.</key>
+	<string>The result is unconfirmed. Read the task history before sending again.</string>
+	<key>The result is unknown. It is not sent again.</key>
+	<string>The result is unknown. It is not sent again.</string>
+	<key>The result is unknown. It is not sent again; check it before continuing.</key>
+	<string>The result is unknown. It is not sent again; check it before continuing.</string>
+	<key>The result is unknown. It is not sent again; tap Check.</key>
+	<string>The result is unknown. It is not sent again; tap Check.</string>
+	<key>The result is unknown. It is not sent again; the PIN state below is read from the service.</key>
+	<string>The result is unknown. It is not sent again; the PIN state below is read from the service.</string>
+	<key>The result of the change is unknown. It is not sent again; check the current state.</key>
+	<string>The result of the change is unknown. It is not sent again; check the current state.</string>
+	<key>The result of the request is not known yet.</key>
+	<string>The result of the request is not known yet.</string>
+	<key>The sample could not be played.</key>
+	<string>The sample could not be played.</string>
+	<key>The schedule was changed.</key>
+	<string>The schedule was changed.</string>
+	<key>The send result is unknown. Check it before sending again.</key>
+	<string>The send result is unknown. Check it before sending again.</string>
+	<key>The service accepted the change, but it was not read back yet.</key>
+	<string>The service accepted the change, but it was not read back yet.</string>
+	<key>The service accepted the request to delete your account. ChatGPT X will sign out.</key>
+	<string>The service accepted the request to delete your account. ChatGPT X will sign out.</string>
+	<key>The service accepted the stop request. It may take a moment to stop.</key>
+	<string>The service accepted the stop request. It may take a moment to stop.</string>
+	<key>The service accepted your export request.</key>
+	<string>The service accepted your export request.</string>
+	<key>The service accepted your export request. The download link will arrive by e-mail when the export is ready.</key>
+	<string>The service accepted your export request. The download link will arrive by e-mail when the export is ready.</string>
+	<key>The service asked us to wait. No action was repeated.</key>
+	<string>The service asked us to wait. No action was repeated.</string>
+	<key>The service asks you to sign in again first. Sign in on the web, then make the request again.</key>
+	<string>The service asks you to sign in again first. Sign in on the web, then make the request again.</string>
+	<key>The service asks you to verify your phone number first. Continue on the web.</key>
+	<string>The service asks you to verify your phone number first. Continue on the web.</string>
+	<key>The service confirmed your export request. The download link will arrive by e-mail.</key>
+	<string>The service confirmed your export request. The download link will arrive by e-mail.</string>
+	<key>The service did not accept the request.</key>
+	<string>The service did not accept the request.</string>
+	<key>The service did not make this change.</key>
+	<string>The service did not make this change.</string>
+	<key>The service did not name its default model, so the chosen model stays.</key>
+	<string>The service did not name its default model, so the chosen model stays.</string>
+	<key>The service did not respond. Check your connection and log in again.</key>
+	<string>The service did not respond. Check your connection and log in again.</string>
+	<key>The service does not report how full memory is.</key>
+	<string>The service does not report how full memory is.</string>
+	<key>The service finished the request.</key>
+	<string>The service finished the request.</string>
+	<key>The service has not confirmed this change yet. It is not sent again. Check the current state?</key>
+	<string>The service has not confirmed this change yet. It is not sent again. Check the current state?</string>
+	<key>The service has temporarily restricted access. Do not send again now.</key>
+	<string>The service has temporarily restricted access. Do not send again now.</string>
+	<key>The service is processing the file…</key>
+	<string>The service is processing the file…</string>
+	<key>The service offered no reasons.</key>
+	<string>The service offered no reasons.</string>
+	<key>The service reports no memory settings for this account.</key>
+	<string>The service reports no memory settings for this account.</string>
+	<key>The service returned no GPTs.</key>
+	<string>The service returned no GPTs.</string>
+	<key>The service returned no apps.</key>
+	<string>The service returned no apps.</string>
+	<key>The service returned no models.</key>
+	<string>The service returned no models.</string>
+	<key>The session changed. Open this screen again.</key>
+	<string>The session changed. Open this screen again.</string>
+	<key>The session changed. Reopen the conversation.</key>
+	<string>The session changed. Reopen the conversation.</string>
+	<key>The session failed validation. Log in again.</key>
+	<string>The session failed validation. Log in again.</string>
+	<key>The session has expired. Your draft and chats are safe.</key>
+	<string>The session has expired. Your draft and chats are safe.</string>
+	<key>The session is unavailable. Open Session to restore your login.</key>
+	<string>The session is unavailable. Open Session to restore your login.</string>
+	<key>The state of the PIN reset is unknown. Check again later.</key>
+	<string>The state of the PIN reset is unknown. Check again later.</string>
+	<key>The status is not available.</key>
+	<string>The status is not available.</string>
+	<key>The stop request has an unknown result. It is not sent again.</key>
+	<string>The stop request has an unknown result. It is not sent again.</string>
+	<key>The task is active.</key>
+	<string>The task is active.</string>
+	<key>The task is paused.</key>
+	<string>The task is paused.</string>
+	<key>The task was created.</key>
+	<string>The task was created.</string>
+	<key>The task was created. Check its goal before changing it again.</key>
+	<string>The task was created. Check its goal before changing it again.</string>
+	<key>The task was deleted.</key>
+	<string>The task was deleted.</string>
+	<key>The task was saved.</key>
+	<string>The task was saved.</string>
+	<key>The task was started. The result appears in its chat.</key>
+	<string>The task was started. The result appears in its chat.</string>
+	<key>The text is too long.</key>
+	<string>The text is too long.</string>
+	<key>The title is too long.</key>
+	<string>The title is too long.</string>
+	<key>The transcription result is unknown. Uploading the recording again is disabled.</key>
+	<string>The transcription result is unknown. Uploading the recording again is disabled.</string>
+	<key>The translation was interrupted. It is not repeated automatically.</key>
+	<string>The translation was interrupted. It is not repeated automatically.</string>
+	<key>The unsent message keeps its files until you send it again or send a new message.</key>
+	<string>The unsent message keeps its files until you send it again or send a new message.</string>
+	<key>The unsent message keeps its options and files until you send it again or send a new message.</key>
+	<string>The unsent message keeps its options and files until you send it again or send a new message.</string>
+	<key>The upload is still unconfirmed. Its bytes were not sent again.</key>
+	<string>The upload is still unconfirmed. Its bytes were not sent again.</string>
+	<key>The upload result is unknown. It is not repeated automatically: remove the file or replace it with a new copy.</key>
+	<string>The upload result is unknown. It is not repeated automatically: remove the file or replace it with a new copy.</string>
+	<key>The uploaded file has expired. Replace it with a new copy.</key>
+	<string>The uploaded file has expired. Replace it with a new copy.</string>
+	<key>The voice took too long to prepare. Try again later.</key>
+	<string>The voice took too long to prepare. Try again later.</string>
+	<key>The web search may still have run. It was not repeated; check your chats before searching again.</key>
+	<string>The web search may still have run. It was not repeated; check your chats before searching again.</string>
+	<key>The web search result is unknown. It was not repeated.</key>
+	<string>The web search result is unknown. It was not repeated.</string>
+	<key>The website could not be opened. Nothing was reset.</key>
+	<string>The website could not be opened. Nothing was reset.</string>
+	<key>These instructions cannot be changed from ChatGPT X.</key>
+	<string>These instructions cannot be changed from ChatGPT X.</string>
+	<key>These pages open in Safari. Requests made there are not tracked in ChatGPT X.</key>
+	<string>These pages open in Safari. Requests made there are not tracked in ChatGPT X.</string>
+	<key>These steps happen on the ChatGPT website in Safari. ChatGPT X does not see your codes or password.</key>
+	<string>These steps open on chatgpt.com.</string>
+	<key>Thinking effort</key>
+	<string>Thinking effort</string>
+	<key>Thinking mini</key>
+	<string>Thinking mini</string>
+	<key>This GPT can contact these external services.</key>
+	<string>This GPT can contact these external services.</string>
+	<key>This GPT can contact these external services. Allowing or blocking them happens on the ChatGPT website; ChatGPT X changes nothing here.</key>
+	<string>This GPT can contact these services. Manage them on chatgpt.com.</string>
+	<key>This GPT can contact these external services. Their permissions are managed in the web version.</key>
+	<string>This GPT can contact these external services. Their permissions are managed in the web version.</string>
+	<key>This GPT is not available for chats on this account.</key>
+	<string>This GPT is not available for chats on this account.</string>
+	<key>This account cannot change it from ChatGPT X.</key>
+	<string>This account cannot change it from ChatGPT X.</string>
+	<key>This action is not possible in the current state.</key>
+	<string>This action is not possible in the current state.</string>
+	<key>This answer did not use your memory.</key>
+	<string>This answer did not use your memory.</string>
+	<key>This answer does not wait for questions or actions.</key>
+	<string>This answer does not wait for questions or actions.</string>
+	<key>This answer is saved in your Library.</key>
+	<string>This answer is saved in your Library.</string>
+	<key>This answer is too long to read aloud (over 3 minutes).</key>
+	<string>This answer is too long to read aloud (over 3 minutes).</string>
+	<key>This app needs a ChatGPT app on a computer. It is not available on iPhone.</key>
+	<string>This app needs a ChatGPT app on a computer. It is not available on iPhone.</string>
+	<key>This change cannot be checked now.</key>
+	<string>This change cannot be checked now.</string>
+	<key>This change cannot be sent now.</key>
+	<string>This change cannot be sent now.</string>
+	<key>This chat arrived in an unknown format.</key>
+	<string>This chat arrived in an unknown format.</string>
+	<key>This chat has an unsent message. Send or clear it, then open the link again.</key>
+	<string>This chat has an unsent message. Send or clear it, then open the link again.</string>
+	<key>This chat has no messages.</key>
+	<string>This chat has no messages.</string>
+	<key>This chat is not ready yet. Wait until it is loaded.</key>
+	<string>This chat is not ready yet. Wait until it is loaded.</string>
+	<key>This chat is not saved in your history and is not used for training. It disappears when you leave it.</key>
+	<string>This chat is not saved in your history and is not used for training. It disappears when you leave it.</string>
+	<key>This collection is empty.</key>
+	<string>This collection is empty.</string>
+	<key>This connection method is not available yet.</key>
+	<string>This connection method is not available yet.</string>
+	<key>This connection uses your signed-in account. Device pairing is unavailable on iOS 6.</key>
+	<string>This connection uses your signed-in account. Device pairing is unavailable on iOS 6.</string>
+	<key>This exact translation may already have run, so it is not sent again. Change the text or the language.</key>
+	<string>This exact translation may already have run, so it is not sent again. Change the text or the language.</string>
+	<key>This file cannot be added to a message from ChatGPT X (only your own ready documents up to 8 MB).</key>
+	<string>This file can't be attached here.</string>
+	<key>This file cannot be added to favorites.</key>
+	<string>This file cannot be added to favorites.</string>
+	<key>This file cannot be attached.</key>
+	<string>This file cannot be attached.</string>
+	<key>This file opens in the ChatGPT web version.</key>
+	<string>This file opens in the ChatGPT web version.</string>
+	<key>This folder is empty.</key>
+	<string>This folder is empty.</string>
+	<key>This function is not available in this build.</key>
+	<string>This function is not available in this build.</string>
+	<key>This iPhone</key>
+	<string>This iPhone</string>
+	<key>This iPhone is signed out too. Sign in again to keep using ChatGPT.</key>
+	<string>This iPhone is signed out too. Sign in again to keep using ChatGPT.</string>
+	<key>This image is too large. Choose a smaller image.</key>
+	<string>This image is too large. Choose a smaller image.</string>
+	<key>This is an account setting of the service. ChatGPT X never reads the iPhone's location.</key>
+	<string>This is an account setting. The app never reads your location.</string>
+	<key>This is how answers look. **Bold**, lists and code follow the same size.</key>
+	<string>This is how answers look. **Bold**, lists and code follow the same size.</string>
+	<key>This is larger than the allowed size.</key>
+	<string>This is larger than the allowed size.</string>
+	<key>This is not a project link.</key>
+	<string>This is not a project link.</string>
+	<key>This item cannot be changed from ChatGPT X: it is shared with you, comes from a connected source or is managed by the service.</key>
+	<string>This item can't be changed here.</string>
+	<key>This item cannot be moved from ChatGPT X.</key>
+	<string>This item cannot be moved from ChatGPT X.</string>
+	<key>This item cannot be read now.</key>
+	<string>This item cannot be read now.</string>
+	<key>This item is in Trash. Restore it from Trash first.</key>
+	<string>This item is in Trash. Restore it from Trash first.</string>
+	<key>This kind of request is not supported in ChatGPT X.</key>
+	<string>This kind of request is not supported in ChatGPT X.</string>
+	<key>This link cannot be opened.</key>
+	<string>This link cannot be opened.</string>
+	<key>This link is not supported by ChatGPT X.</key>
+	<string>This link is not supported by ChatGPT X.</string>
+	<key>This memory is now a priority.</key>
+	<string>This memory is now a priority.</string>
+	<key>This message cannot be edited now.</key>
+	<string>This message cannot be edited now.</string>
+	<key>This mode sends text only. Remove the files first.</key>
+	<string>This mode sends text only. Remove the files first.</string>
+	<key>This page cannot be opened.</key>
+	<string>This page cannot be opened.</string>
+	<key>This project cannot be changed from ChatGPT X.</key>
+	<string>This project cannot be changed from ChatGPT X.</string>
+	<key>This project is shared. ChatGPT X does not change shared projects.</key>
+	<string>This project is shared. ChatGPT X does not change shared projects.</string>
+	<key>This reason cannot be sent from ChatGPT X.</key>
+	<string>This reason cannot be sent from ChatGPT X.</string>
+	<key>This removes the saved setup from this iPhone. Existing server pairings are not revoked.</key>
+	<string>This removes the saved setup from this iPhone. Existing server pairings are not revoked.</string>
+	<key>This request was already made. It is not sent again.</key>
+	<string>This request was already made. It is not sent again.</string>
+	<key>This resource is not text. It is kept in the task.</key>
+	<string>This resource is not text. It is kept in the task.</string>
+	<key>This result opens in the ChatGPT web version.</key>
+	<string>This result opens in the ChatGPT web version.</string>
+	<key>This schedule cannot be changed in ChatGPT X.</key>
+	<string>This schedule cannot be changed in ChatGPT X.</string>
+	<key>This send was already attempted. Check its result first.</key>
+	<string>This send was already attempted. Check its result first.</string>
+	<key>This skill is not approved for installation.</key>
+	<string>This skill is not approved for installation.</string>
+	<key>This source is not available on this iPhone.</key>
+	<string>This source is not available on this iPhone.</string>
+	<key>This suggestion opens a feature that is not available here.</key>
+	<string>This suggestion opens a feature that is not available here.</string>
+	<key>This task cannot be changed from ChatGPT X.</key>
+	<string>This task cannot be changed from ChatGPT X.</string>
+	<key>This task item is not shown on iPhone yet — it is saved in the task.</key>
+	<string>This task item is not shown on iPhone yet — it is saved in the task.</string>
+	<key>This task runs when its condition is met. Its schedule cannot be changed in ChatGPT X.</key>
+	<string>This task runs when its condition is met.</string>
+	<key>Timing</key>
+	<string>Timing</string>
+	<key>To put a favorite file into a folder, open it and choose Move to folder.</key>
+	<string>To put a favorite file into a folder, open it and choose Move to folder.</string>
+	<key>Token budget (optional)</key>
+	<string>Token budget (optional)</string>
+	<key>Tokens used: %@ · Time: %@ s</key>
+	<string>Tokens used: %@ · Time: %@ s</string>
+	<key>Tomorrow</key>
+	<string>Tomorrow</string>
+	<key>Too many wrong PINs. The service allows a new try in %lu min.</key>
+	<string>Too many wrong PINs. The service allows a new try in %lu min.</string>
+	<key>Tool mode is off</key>
+	<string>Tool mode is off</string>
+	<key>Tool questions</key>
+	<string>Tool questions</string>
+	<key>Touch and hold the text to select a passage.</key>
+	<string>Touch and hold the text to select a passage.</string>
+	<key>Transcribe</key>
+	<string>Transcribe</string>
+	<key>Transcribing recording…</key>
+	<string>Transcribing recording…</string>
+	<key>Transcript</key>
+	<string>Transcript</string>
+	<key>Transfer</key>
+	<string>Transfer</string>
+	<key>Transfer tracked changes to</key>
+	<string>Transfer tracked changes to</string>
+	<key>Transfer tracked changes?</key>
+	<string>Transfer tracked changes?</string>
+	<key>Transfer tracked changes…</key>
+	<string>Transfer tracked changes…</string>
+	<key>Translate</key>
+	<string>Translate</string>
+	<key>Translation</key>
+	<string>Translation</string>
+	<key>Translation ready</key>
+	<string>Translation ready</string>
+	<key>Trash</key>
+	<string>Trash</string>
+	<key>Trash emptied.</key>
+	<string>Trash emptied.</string>
+	<key>Trash is empty.</key>
+	<string>Trash is empty.</string>
+	<key>Trust</key>
+	<string>Trust</string>
+	<key>Trusted</key>
+	<string>Trusted</string>
+	<key>Turkish</key>
+	<string>Turkish</string>
+	<key>Turn off</key>
+	<string>Turn off</string>
+	<key>Turn off «%@»? ChatGPT stops using it until you turn it on again.</key>
+	<string>Turn off «%@»? ChatGPT stops using it until you turn it on again.</string>
+	<key>Turn on</key>
+	<string>Turn on</string>
+	<key>Turn on «%@»? ChatGPT can then use it in your chats.</key>
+	<string>Turn on «%@»? ChatGPT can then use it in your chats.</string>
+	<key>Turned off</key>
+	<string>Turned off</string>
+	<key>Turned off by your admin</key>
+	<string>Turned off by your admin</string>
+	<key>Turned on</key>
+	<string>Turned on</string>
+	<key>Turns on the iPhone microphone</key>
+	<string>Turns on the iPhone microphone</string>
+	<key>Two-step verification</key>
+	<string>Two-step verification</string>
+	<key>Two-step verification cannot be changed while advanced account security is on.</key>
+	<string>Two-step verification cannot be changed while advanced account security is on.</string>
+	<key>Type</key>
+	<string>Type</string>
+	<key>Type DELETE to confirm</key>
+	<string>Type DELETE to confirm</string>
+	<key>Type the word DELETE in capital letters.</key>
+	<string>Type the word DELETE in capital letters.</string>
+	<key>Type your first message.</key>
+	<string>Type your first message.</string>
+	<key>Type: %@</key>
+	<string>Type: %@</string>
+	<key>Ukrainian</key>
+	<string>Ukrainian</string>
+	<key>Uncommitted changes</key>
+	<string>Uncommitted changes</string>
+	<key>Under 18</key>
+	<string>Under 18</string>
+	<key>Unknown device</key>
+	<string>Unknown device</string>
+	<key>Unknown server key</key>
+	<string>Unknown server key</string>
+	<key>Unknown source</key>
+	<string>Unknown source</string>
+	<key>Up to %lu files · %@ each</key>
+	<string>Up to %lu files · %@ each</string>
+	<key>Up to %lu files, %@ each. These are this app's limits; the service may set its own.</key>
+	<string>Up to %lu files, %@ each.</string>
+	<key>Up to 1,500 characters. The service may have its own limits.</key>
+	<string>Up to 1,500 characters. The service may have its own limits.</string>
+	<key>Updated</key>
+	<string>Updated</string>
+	<key>Updates were interrupted. Check the send result before continuing.</key>
+	<string>Updates were interrupted. Check the send result before continuing.</string>
+	<key>Updates were interrupted. The response may still be running on the server.</key>
+	<string>Updates were interrupted. The response may still be running on the server.</string>
+	<key>Uploaded but not added to the message.</key>
+	<string>Uploaded but not added to the message.</string>
+	<key>Uploaded by you</key>
+	<string>Uploaded by you</string>
+	<key>Uploading · %lu%%</key>
+	<string>Uploading · %lu%%</string>
+	<key>Usage limit reached</key>
+	<string>Usage limit reached</string>
+	<key>Usage resets</key>
+	<string>Usage resets</string>
+	<key>Use Library files in answers</key>
+	<string>Use Library files in answers</string>
+	<key>Use Log in or Restore session</key>
+	<string>Use Log in or Restore session</string>
+	<key>Use a recovery code</key>
+	<string>Use a recovery code</string>
+	<key>Use default</key>
+	<string>Use default</string>
+	<key>Use in answers</key>
+	<string>Use in answers</string>
+	<key>Use only this project's memory</key>
+	<string>Use only this project's memory</string>
+	<key>Use personalization</key>
+	<string>Use personalization</string>
+	<key>Use this computer</key>
+	<string>Use this computer</string>
+	<key>Use this folder</key>
+	<string>Use this folder</string>
+	<key>Use this voice</key>
+	<string>Use this voice</string>
+	<key>Use your default setting for this connection?</key>
+	<string>Use your default setting for this connection?</string>
+	<key>Use «%@» for all apps without their own setting?</key>
+	<string>Use «%@» for all apps without their own setting?</string>
+	<key>Use «%@» for this connection?</key>
+	<string>Use «%@» for this connection?</string>
+	<key>Verification callback</key>
+	<string>Verification callback</string>
+	<key>Verification could not finish on this iPhone. Your chat session is unchanged.</key>
+	<string>Verification could not finish on this iPhone. Your chat session is unchanged.</string>
+	<key>Verification on a computer</key>
+	<string>Verification on a computer</string>
+	<key>Voice conversation</key>
+	<string>Voice conversation</string>
+	<key>Voice ended because the account changed.</key>
+	<string>Voice ended because the account changed.</string>
+	<key>Voice is turned off for this account.</key>
+	<string>Voice is turned off for this account.</string>
+	<key>Voice limit</key>
+	<string>Voice limit</string>
+	<key>Voice limit reached</key>
+	<string>Voice limit reached</string>
+	<key>Voice limits</key>
+	<string>Voice limits</string>
+	<key>Voice mode saved.</key>
+	<string>Voice mode saved.</string>
+	<key>Voice paused</key>
+	<string>Voice paused</string>
+	<key>Voice saved.</key>
+	<string>Voice saved.</string>
+	<key>Wait for the current turn to finish before sending images.</key>
+	<string>Wait for the current turn to finish before sending images.</string>
+	<key>Wait until the files are ready, or remove the ones that were not uploaded.</key>
+	<string>Wait until the files are ready, or remove the ones that were not uploaded.</string>
+	<key>Wait until the image is ready.</key>
+	<string>Wait until the image is ready.</string>
+	<key>Waiting</key>
+	<string>Waiting</string>
+	<key>Waiting for the answer…</key>
+	<string>Waiting for the answer…</string>
+	<key>Web search</key>
+	<string>Web search</string>
+	<key>Web search is off</key>
+	<string>Web search is off</string>
+	<key>Web search is on for the next message</key>
+	<string>Web search is on for the next message</string>
+	<key>Web search sends text only. Remove the files or turn web search off.</key>
+	<string>Web search sends text only. Remove the files or turn web search off.</string>
+	<key>What ChatGPT remembered and used for this answer. Tap one to rate it or correct it.</key>
+	<string>Memories used for this answer.</string>
+	<key>What can I help with?</key>
+	<string>What can I help with?</string>
+	<key>What happened? (optional)</key>
+	<string>What happened? (optional)</string>
+	<key>What should ChatGPT call you?</key>
+	<string>What should ChatGPT call you?</string>
+	<key>What should ChatGPT do?</key>
+	<string>What should ChatGPT do?</string>
+	<key>What should Codex plan?</key>
+	<string>What should Codex plan?</string>
+	<key>When a condition is met</key>
+	<string>When a condition is met</string>
+	<key>When apps act for you</key>
+	<string>When apps act for you</string>
+	<key>When memory is full, ChatGPT keeps the most relevant memories in use. Priority memories stay in use.</key>
+	<string>When memory is full, ChatGPT keeps the most relevant memories in use. Priority memories stay in use.</string>
+	<key>When on, chats in this project use only memories from this project.</key>
+	<string>When on, chats in this project use only memories from this project.</string>
+	<key>Where to make the changes</key>
+	<string>Where to make the changes</string>
+	<key>Where to run</key>
+	<string>Where to run</string>
+	<key>While a chat is locked, ChatGPT does not add to memory from it. A chat unlocked again follows your usual settings.</key>
+	<string>While a chat is locked, ChatGPT does not add to memory from it. A chat unlocked again follows your usual settings.</string>
+	<key>Why are you reporting this chat?</key>
+	<string>Why are you reporting this chat?</string>
+	<key>Wingman</key>
+	<string>Wingman</string>
+	<key>With full access, this app acts for you without asking, including changing and sending things. Allow full access?</key>
+	<string>With full access, this app acts for you without asking, including changing and sending things. Allow full access?</string>
+	<key>Work does longer tasks with files, spreadsheets and documents. Choose the model for the next message.</key>
+	<string>Work handles longer tasks with files and documents.</string>
+	<key>Work is not available on this account.</key>
+	<string>Work is not available on this account.</string>
+	<key>Work is off</key>
+	<string>Work is off</string>
+	<key>Work is on for the next message</key>
+	<string>Work is on for the next message</string>
+	<key>Work plan</key>
+	<string>Work plan</string>
+	<key>Work started.</key>
+	<string>Work started.</string>
+	<key>Work · %@</key>
+	<string>Work · %@</string>
+	<key>Working</key>
+	<string>Working</string>
+	<key>Working files</key>
+	<string>Working files</string>
+	<key>Working tree</key>
+	<string>Working tree</string>
+	<key>Working tree is clean</key>
+	<string>Working tree is clean</string>
+	<key>Write files</key>
+	<string>Write files</string>
+	<key>Write the correction first.</key>
+	<string>Write the correction first.</string>
+	<key>Writing the answer…</key>
+	<string>Writing the answer…</string>
+	<key>Wrong PIN</key>
+	<string>Wrong PIN</string>
+	<key>You are logged in to ChatGPT</key>
+	<string>You are logged in to ChatGPT</string>
+	<key>You can change this in the web version.</key>
+	<string>You can change this in the web version.</string>
+	<key>You can continue the conversation.</key>
+	<string>You can continue the conversation.</string>
+	<key>You can mention up to 16 apps in one message.</key>
+	<string>You can mention up to 16 apps in one message.</string>
+	<key>You logged out of ChatGPT X. Your chats remain in your account.</key>
+	<string>You logged out of ChatGPT X. Your chats remain in your account.</string>
+	<key>You may need to log in again later</key>
+	<string>You may need to log in again later</string>
+	<key>You own a workspace. Transfer its ownership on the web before you delete the account.</key>
+	<string>You own a workspace. Transfer its ownership on the web before you delete the account.</string>
+	<key>You stay in this chat.</key>
+	<string>You stay in this chat.</string>
+	<key>Your ChatGPT account and history on an iPhone with iOS 6.</key>
+	<string>Your ChatGPT account and history on an iPhone with iOS 6.</string>
+	<key>Your account is deleted. ChatGPT X will sign out.</key>
+	<string>Your account is deleted. ChatGPT X will sign out.</string>
+	<key>Your account needs an e-mail address first. Continue on the web.</key>
+	<string>Your account needs an e-mail address first. Continue on the web.</string>
+	<key>Your admin turned this app off.</key>
+	<string>Your admin turned this app off.</string>
+	<key>Your conversations will appear here.</key>
+	<string>Your conversations will appear here.</string>
+	<key>Your data</key>
+	<string>Your data</string>
+	<key>Your default: %@</key>
+	<string>Your default: %@</string>
+	<key>Your history is empty. Start a new chat.</key>
+	<string>Your history is empty. Start a new chat.</string>
+	<key>Your instructions</key>
+	<string>Your instructions</string>
+	<key>Your login and saved session stay on this iPhone.</key>
+	<string>Your session is stored on this iPhone.</string>
+	<key>Your message</key>
+	<string>Your message</string>
+	<key>Your organization manages this account. Ask its administrator.</key>
+	<string>Your organization manages this account. Ask its administrator.</string>
+	<key>Your sign-in is confirmed. Delete every locked chat and reset the PIN now?</key>
+	<string>Your sign-in is confirmed. Delete every locked chat and reset the PIN now?</string>
+	<key>Your uploaded and created files appear here.</key>
+	<string>Your uploaded and created files appear here.</string>
+	<key>Yours</key>
+	<string>Yours</string>
+	<key>[Image: %@]</key>
+	<string>[Image: %@]</string>
+	<key>iPhone key</key>
+	<string>iPhone key</string>
+	<key>in use</key>
+	<string>in use</string>
+	<key>no caption</key>
+	<string>no caption</string>
+	<key>not added to memory</key>
+	<string>not added to memory</string>
+	<key>this app</key>
+	<string>this app</string>
+	<key>this chat</key>
+	<string>this chat</string>
+	<key>«%@» is moved here.</key>
+	<string>«%@» is moved here.</string>
+	<key>“Default” uses the account’s default model and the service’s default thinking effort.</key>
+	<string>“Default” uses your account’s defaults.</string>
+	<key>Voice ended</key>
+	<string>Voice ended</string>
+	<key>No computer selected</key>
+	<string>No computer selected</string>
+	<key>Not connected</key>
+	<string>Not connected</string>
+	<key>Choose a computer or the cloud</key>
+	<string>Choose a computer or the cloud</string>
+	<key>Codex runs tasks on your computer or in the cloud. This iPhone shows the progress and asks you only when a decision is needed.</key>
+	<string>Codex runs tasks on your computer or in the cloud.</string>
+	<key>Side menu</key>
+	<string>Side menu</string>
+	<key>Show in the menu</key>
+	<string>Show in the menu</string>
+	<key>%lu of %lu</key>
+	<string>%lu of %lu</string>
+	<key>New chat and your chats are always in the menu. A hidden section keeps its content; turn it on here to bring it back.</key>
+	<string>New chat and your chats always stay in the menu.</string>
+	<key>%@ MB</key>
+	<string>%@ MB</string>
+	<key>Account</key>
+	<string>Account</string>
+	<key>Actions</key>
+	<string>Actions</string>
+	<key>Allow</key>
+	<string>Allow</string>
+	<key>Allow once</key>
+	<string>Allow once</string>
+	<key>App language</key>
+	<string>App language</string>
+	<key>Appearance</key>
+	<string>Appearance</string>
+	<key>Apply</key>
+	<string>Apply</string>
+	<key>Apps</key>
+	<string>Apps</string>
+	<key>Apps with access</key>
+	<string>Apps with access</string>
+	<key>Archive</key>
+	<string>Archive</string>
+	<key>Authenticator app</key>
+	<string>Authenticator app</string>
+	<key>Base style and tone</key>
+	<string>Base style and tone</string>
+	<key>Camera</key>
+	<string>Camera</string>
+	<key>Cancel</key>
+	<string>Cancel</string>
+	<key>Cancel request</key>
+	<string>Cancel request</string>
+	<key>Characteristics</key>
+	<string>Characteristics</string>
+	<key>Chart</key>
+	<string>Chart</string>
+	<key>Chat</key>
+	<string>Chat</string>
+	<key>Chats</key>
+	<string>Chats</string>
+	<key>Clear</key>
+	<string>Clear</string>
+	<key>Code block</key>
+	<string>Code block</string>
+	<key>Connect</key>
+	<string>Connect</string>
+	<key>Connected source</key>
+	<string>Connected source</string>
+	<key>Connecting…</key>
+	<string>Connecting…</string>
+	<key>Content</key>
+	<string>Content</string>
+	<key>Continue</key>
+	<string>Continue</string>
+	<key>Continue with Google</key>
+	<string>Continue with Google</string>
+	<key>Conversation starters</key>
+	<string>Conversation starters</string>
+	<key>Copied</key>
+	<string>Copied</string>
+	<key>Copy code</key>
+	<string>Copy code</string>
+	<key>Copy link</key>
+	<string>Copy link</string>
+	<key>Copy text</key>
+	<string>Copy text</string>
+	<key>Create image</key>
+	<string>Create image</string>
+	<key>Custom instructions</key>
+	<string>Custom instructions</string>
+	<key>Custom schedule</key>
+	<string>Custom schedule</string>
+	<key>Dark</key>
+	<string>Dark</string>
+	<key>Data controls</key>
+	<string>Data controls</string>
+	<key>Date</key>
+	<string>Date</string>
+	<key>Deep research</key>
+	<string>Deep research</string>
+	<key>Delete</key>
+	<string>Delete</string>
+	<key>Delete account</key>
+	<string>Delete account</string>
+	<key>Delete link</key>
+	<string>Delete link</string>
+	<key>Delete project</key>
+	<string>Delete project</string>
+	<key>Deny</key>
+	<string>Deny</string>
+	<key>Details</key>
+	<string>Details</string>
+	<key>Detect language</key>
+	<string>Detect language</string>
+	<key>Dictation</key>
+	<string>Dictation</string>
+	<key>Disconnect</key>
+	<string>Disconnect</string>
+	<key>Done</key>
+	<string>Done</string>
+	<key>Downloading…</key>
+	<string>Downloading…</string>
+	<key>Edit message</key>
+	<string>Edit message</string>
+	<key>Edit project</key>
+	<string>Edit project</string>
+	<key>Export data</key>
+	<string>Export data</string>
+	<key>File</key>
+	<string>File</string>
+	<key>Files</key>
+	<string>Files</string>
+	<key>History</key>
+	<string>History</string>
+	<key>Image</key>
+	<string>Image</string>
+	<key>Images</key>
+	<string>Images</string>
+	<key>Improve the model for everyone</key>
+	<string>Improve the model for everyone</string>
+	<key>Instructions</key>
+	<string>Instructions</string>
+	<key>Library</key>
+	<string>Library</string>
+	<key>Light</key>
+	<string>Light</string>
+	<key>Link copied</key>
+	<string>Link copied</string>
+	<key>Loading…</key>
+	<string>Loading…</string>
+	<key>Lock chat</key>
+	<string>Lock chat</string>
+	<key>Log in</key>
+	<string>Log in</string>
+	<key>Log out</key>
+	<string>Log out</string>
+	<key>Memory</key>
+	<string>Memory</string>
+	<key>Message</key>
+	<string>Message</string>
+	<key>Mode</key>
+	<string>Mode</string>
+	<key>Model</key>
+	<string>Model</string>
+	<key>More</key>
+	<string>More</string>
+	<key>More about you</key>
+	<string>More about you</string>
+	<key>My GPTs</key>
+	<string>My GPTs</string>
+	<key>Name</key>
+	<string>Name</string>
+	<key>New chat</key>
+	<string>New chat</string>
+	<key>New project</key>
+	<string>New project</string>
+	<key>New task</key>
+	<string>New task</string>
+	<key>No</key>
+	<string>No</string>
+	<key>Off</key>
+	<string>Off</string>
+	<key>On</key>
+	<string>On</string>
+	<key>Open link</key>
+	<string>Open link</string>
+	<key>Other</key>
+	<string>Other</string>
+	<key>Personalization</key>
+	<string>Personalization</string>
+	<key>Phone number</key>
+	<string>Phone number</string>
+	<key>Photos</key>
+	<string>Photos</string>
+	<key>Pin</key>
+	<string>Pin</string>
+	<key>Pinned</key>
+	<string>Pinned</string>
+	<key>Places</key>
+	<string>Places</string>
+	<key>Project</key>
+	<string>Project</string>
+	<key>Project files</key>
+	<string>Project files</string>
+	<key>Projects</key>
+	<string>Projects</string>
+	<key>Reference chat history</key>
+	<string>Reference chat history</string>
+	<key>Remove</key>
+	<string>Remove</string>
+	<key>Remove access</key>
+	<string>Remove access</string>
+	<key>Remove connection</key>
+	<string>Remove connection</string>
+	<key>Remove from project</key>
+	<string>Remove from project</string>
+	<key>Rename</key>
+	<string>Rename</string>
+	<key>Rename chat</key>
+	<string>Rename chat</string>
+	<key>Report</key>
+	<string>Report</string>
+	<key>Retry</key>
+	<string>Retry</string>
+	<key>Return</key>
+	<string>Return</string>
+	<key>Save</key>
+	<string>Save</string>
+	<key>Save profile</key>
+	<string>Save profile</string>
+	<key>Saved memories</key>
+	<string>Saved memories</string>
+	<key>Search</key>
+	<string>Search</string>
+	<key>Search chats</key>
+	<string>Search chats</string>
+	<key>Search projects</key>
+	<string>Search projects</string>
+	<key>Searching…</key>
+	<string>Searching…</string>
+	<key>Select all</key>
+	<string>Select all</string>
+	<key>Send</key>
+	<string>Send</string>
+	<key>Sending…</key>
+	<string>Sending…</string>
+	<key>Share</key>
+	<string>Share</string>
+	<key>Share link</key>
+	<string>Share link</string>
+	<key>Share text</key>
+	<string>Share text</string>
+	<key>Shared with you</key>
+	<string>Shared with you</string>
+	<key>Show</key>
+	<string>Show</string>
+	<key>Show more</key>
+	<string>Show more</string>
+	<key>Sign in</key>
+	<string>Sign in</string>
+	<key>Source</key>
+	<string>Source</string>
+	<key>Sources</key>
+	<string>Sources</string>
+	<key>Spreadsheet</key>
+	<string>Spreadsheet</string>
+	<key>Status</key>
+	<string>Status</string>
+	<key>Stop</key>
+	<string>Stop</string>
+	<key>Stop generating</key>
+	<string>Stop generating</string>
+	<key>Target language</key>
+	<string>Target language</string>
+	<key>Temporary chat</key>
+	<string>Temporary chat</string>
+	<key>Text</key>
+	<string>Text</string>
+	<key>Thinking</key>
+	<string>Thinking</string>
+	<key>Thinking…</key>
+	<string>Thinking…</string>
+	<key>Time zone</key>
+	<string>Time zone</string>
+	<key>Title</key>
+	<string>Title</string>
+	<key>To</key>
+	<string>To</string>
+	<key>Today</key>
+	<string>Today</string>
+	<key>Tools</key>
+	<string>Tools</string>
+	<key>Try again</key>
+	<string>Try again</string>
+	<key>Unknown</key>
+	<string>Unknown</string>
+	<key>Unpin</key>
+	<string>Unpin</string>
+	<key>Untitled</key>
+	<string>Untitled</string>
+	<key>Verify age</key>
+	<string>Verify age</string>
+	<key>Video</key>
+	<string>Video</string>
+	<key>Voice</key>
+	<string>Voice</string>
+	<key>Voice mode</key>
+	<string>Voice mode</string>
+	<key>Voice unavailable</key>
+	<string>Voice unavailable</string>
+	<key>Web</key>
+	<string>Web</string>
+	<key>Work</key>
+	<string>Work</string>
+	<key>Workspace</key>
+	<string>Workspace</string>
+	<key>Yes</key>
+	<string>Yes</string>
+	<key>Yesterday</key>
+	<string>Yesterday</string>
+	<key>You</key>
+	<string>You</string>
+	<key>Unofficial app. Not affiliated with OpenAI.</key>
+	<string>Unofficial app. Not affiliated with OpenAI.</string>
+	<key>About</key>
+	<string>About</string>
+	<key>Source code on GitHub</key>
+	<string>Source code on GitHub</string>
+	<key>ChatGPT X %@ (build %@). Unofficial app, not affiliated with OpenAI.</key>
+	<string>ChatGPT X %@ (build %@). Unofficial app, not affiliated with OpenAI.</string>
+</dict>
+</plist>

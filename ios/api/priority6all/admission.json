@@ -1,0 +1,799 @@
+{
+ "schema": 1,
+ "scope": "Product composition admission of API6 for the stage-6 screens. candidate_read runs only on an explicit user action and is unverified service data; handoff opens a first-party page with completed:false; local stays on the iPhone; user_action is an explicit source-backed inventory requiring user confirmation and real provider owner/eligibility/auth prerequisites. It never claims live verification. Unknown operations remain denied. Only live_verified has actual live evidence.",
+ "operations": {
+  "account.auth.emailCode": {
+   "tier": "handoff",
+   "module": "6e"
+  },
+  "account.auth.mfaPush": {
+   "tier": "handoff",
+   "module": "6e"
+  },
+  "account.auth.passwordReset": {
+   "tier": "handoff",
+   "module": "6e"
+  },
+  "account.auth.phone": {
+   "tier": "handoff",
+   "module": "6e"
+  },
+  "account.auth.recoveryCode": {
+   "tier": "handoff",
+   "module": "6e"
+  },
+  "account.auth.signup": {
+   "tier": "handoff",
+   "module": "6e"
+  },
+  "account.sessions.list": {
+   "tier": "candidate_read",
+   "module": "6e"
+  },
+  "account.sessions.reconcile": {
+   "tier": "candidate_read",
+   "module": "6e"
+  },
+  "account.sessions.revoke": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6e/contracts.json",
+   "module": "6e"
+  },
+  "account.sessions.revokeAll": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6e/contracts.json",
+   "module": "6e"
+  },
+  "catalog.reconcile": {
+   "tier": "local",
+   "module": "6c"
+  },
+  "composer.mentions.list": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "composer.mentions.send": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "configuration.operation.reconcile": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "connectors.catalog": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "connectors.disable": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "connectors.disconnect": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "connectors.enable": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "connectors.get": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "connectors.install": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "connectors.installed": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "connectors.operation.reconcile": {
+   "tier": "local",
+   "module": "6b"
+  },
+  "connectors.permissions.default.get": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "connectors.permissions.default.set": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "connectors.permissions.get": {
+   "tier": "candidate_read",
+   "note": "POST list_accessible is a read",
+   "module": "6b"
+  },
+  "connectors.permissions.set": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "connectors.remove": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "connectors.settings.get": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "conversations.branch": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6a/contracts.json",
+   "module": "6a"
+  },
+  "conversations.report": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6a/contracts.json",
+   "module": "6a"
+  },
+  "conversations.reportReasons": {
+   "tier": "candidate_read",
+   "module": "6a"
+  },
+  "gpts.actions.get": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "gpts.category": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "gpts.explore": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "gpts.get": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "gpts.personal": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "gpts.search": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "gpts.send": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "library.autoContext.get": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.autoContext.update": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.browse": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.entity.move": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.entity.set": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.entity.status": {
+   "tier": "candidate_read",
+   "note": "POST status lookup",
+   "module": "6c"
+  },
+  "library.favorite.set": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.favorite.status": {
+   "tier": "candidate_read",
+   "note": "POST status lookup",
+   "module": "6c"
+  },
+  "library.favoriteFolders.list": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.favorites.list": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.folder.create": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.folder.path": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.mounted.browse": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.mounted.capabilities": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.mounted.roots": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.mounted.search": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.node.delete": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.node.deleteForever": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.node.get": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.node.move": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.node.rename": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.node.restore": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.response.move": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.response.set": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.responses.list": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "library.trash.empty": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "library.trash.list": {
+   "tier": "candidate_read",
+   "note": "POST listing",
+   "module": "6c"
+  },
+  "library.view.get": {
+   "tier": "local",
+   "module": "6c"
+  },
+  "library.view.set": {
+   "tier": "local",
+   "module": "6c"
+  },
+  "locked.access.clear": {
+   "tier": "local",
+   "module": "6a"
+  },
+  "locked.conversations.get": {
+   "tier": "candidate_read",
+   "module": "6a"
+  },
+  "locked.conversations.list": {
+   "tier": "candidate_read",
+   "module": "6a"
+  },
+  "locked.conversations.lock": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6a/contracts.json",
+   "module": "6a"
+  },
+  "locked.conversations.unlock": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6a/contracts.json",
+   "module": "6a"
+  },
+  "locked.memory": {
+   "tier": "candidate_read",
+   "module": "6a"
+  },
+  "locked.pin.change": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6a/contracts.json",
+   "module": "6a"
+  },
+  "locked.pin.create": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6a/contracts.json",
+   "module": "6a"
+  },
+  "locked.pin.reset": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6a/contracts.json",
+   "module": "6a"
+  },
+  "locked.pin.resetChallenge": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6a/contracts.json",
+   "module": "6a"
+  },
+  "locked.pin.verify": {
+   "tier": "candidate_read",
+   "note": "PIN check opens a short server grant; no account data changes (server lockout applies)",
+   "module": "6a"
+  },
+  "locked.reconcile": {
+   "tier": "candidate_read",
+   "module": "6a"
+  },
+  "locked.status": {
+   "tier": "candidate_read",
+   "module": "6a"
+  },
+  "memories.capacity": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "memories.citations": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "memories.correctCitation": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "memories.delete": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "memories.deleteAll": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "memories.feedback": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "memories.list": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "memories.management.get": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "memories.management.update": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "memories.prioritize": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "memories.reconcile": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "memories.search": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "modelControls.autoPreference.get": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "modelControls.autoPreference.set": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "modelControls.catalog": {
+   "tier": "candidate_read",
+   "module": "6f"
+  },
+  "modelControls.newDraft": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "modelControls.select": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "modelControls.send": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6f/contracts.json",
+   "module": "6f"
+  },
+  "preferences.advanced.get": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "preferences.reconcile": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "preferences.setAutoWebSearch": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "preferences.setImageCreation": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "privacy.appsAccess.list": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "privacy.appsAccess.revoke": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "privacy.deleteAccount": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "privacy.exportData": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "privacy.locationControls.get": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "privacy.locationControls.reconcile": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "privacy.locationControls.update": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "privacy.operationStatus": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "projects.create": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "projects.delete": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "projects.detail": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "projects.instructions.update": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "projects.list": {
+   "tier": "candidate_read",
+   "module": "6c"
+  },
+  "projects.update": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6c/contracts.json",
+   "module": "6c"
+  },
+  "research.exportPDF": {
+   "tier": "candidate_read",
+   "note": "renders an existing research answer as a PDF into the private vault",
+   "module": "6f"
+  },
+  "scanDraft.discard": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "scanDraft.keep": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "scanDraft.leave": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "scanDraft.status": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "search.global": {
+   "tier": "candidate_read",
+   "note": "POST search query",
+   "module": "6f"
+  },
+  "tasks.create": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "tasks.delete": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "tasks.get": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "tasks.list": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "tasks.reconcile": {
+   "tier": "candidate_read",
+   "module": "6d"
+  },
+  "tasks.runNow": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "tasks.setEnabled": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "tasks.setSchedule": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "tasks.update": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6d/contracts.json",
+   "module": "6d"
+  },
+  "voice.catalog.list": {
+   "tier": "candidate_read",
+   "module": "6f"
+  },
+  "voice.catalog.select": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6f/contracts.json",
+   "module": "6f"
+  },
+  "voice.languages.list": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "voice.languages.select": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6f/contracts.json",
+   "module": "6f"
+  },
+  "voice.modes.list": {
+   "tier": "candidate_read",
+   "module": "6f"
+  },
+  "voice.modes.select": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6f/contracts.json",
+   "module": "6f"
+  },
+  "voice.preview.start": {
+   "tier": "candidate_read",
+   "module": "6f"
+  },
+  "voice.preview.status": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "voice.preview.stop": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "voice.settings.get": {
+   "tier": "candidate_read",
+   "module": "6f"
+  },
+  "voice.transcript.get": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "voice.transcript.set": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "voice.usage.get": {
+   "tier": "local",
+   "module": "6f"
+  },
+  "voice.usage.useStandard": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6f/contracts.json",
+   "module": "6f"
+  },
+  "work.handoff.accept": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "work.handoff.decline": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  },
+  "work.handoff.get": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "work.models": {
+   "tier": "candidate_read",
+   "module": "6b"
+  },
+  "work.send": {
+   "tier": "user_action",
+   "requiresUserAction": true,
+   "requiresConfirmation": true,
+   "source": "support/priority6b/contracts.json",
+   "module": "6b"
+  }
+ }
+}

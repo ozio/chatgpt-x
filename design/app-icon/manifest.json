@@ -1,0 +1,126 @@
+{
+  "name": "ChatGPT iOS 6 \u2014 Tumblr glass with pronounced logo shadow",
+  "revision": 4,
+  "selectedVariant": "02-tumblr-strong-shadow",
+  "master": "ChatGPT-iOS6.vectorcraft",
+  "bareMaster": "marks/Bare-marks.vectorcraft",
+  "renderer": "VectorCraft MCP",
+  "exports": [
+    {
+      "file": "icon-29.png",
+      "pixels": [
+        29,
+        29
+      ],
+      "sha256": "8cda18fb1207e15b926aac4c4d37d4c1aa07b32d2b66f236cc7de8d09c3d8294",
+      "opaque": true
+    },
+    {
+      "file": "icon-57.png",
+      "pixels": [
+        57,
+        57
+      ],
+      "sha256": "615e4bb1daadcc24599d411c5186f32b30dd01b449771f699b53a4587e270297",
+      "opaque": true
+    },
+    {
+      "file": "icon-58.png",
+      "pixels": [
+        58,
+        58
+      ],
+      "sha256": "ba7837026fc95f63fe2c5b192e02b24ea7a845af4de3ae4b059b55cee80cd8e7",
+      "opaque": true
+    },
+    {
+      "file": "icon-114.png",
+      "pixels": [
+        114,
+        114
+      ],
+      "sha256": "c173e88d147b6cd7599b9f98856e188c0766a001f2c0a288e6f626ab712716ab",
+      "opaque": true
+    },
+    {
+      "file": "icon-144.png",
+      "pixels": [
+        144,
+        144
+      ],
+      "sha256": "960efe7db02642f4718113fe215288f3723f3608bf8a42d70625c87e98e08aa4",
+      "opaque": true
+    },
+    {
+      "file": "icon-192.png",
+      "pixels": [
+        192,
+        192
+      ],
+      "sha256": "629ae6d456ce07d3365d3f131257b967ca06967d60b241a3f0d9e39c3d2a44c6",
+      "opaque": true
+    },
+    {
+      "file": "icon-512.png",
+      "pixels": [
+        512,
+        512
+      ],
+      "sha256": "4074a311d0c086b20ec170efab634ee7228994c303ab4e6b70b5b9c9a3e46902",
+      "opaque": true
+    },
+    {
+      "file": "icon-1024.png",
+      "pixels": [
+        1024,
+        1024
+      ],
+      "sha256": "8fa9e2c184aa26f3a52bf9dc4bd4030b181ad2ccc1b8af5c3fa7b54155f1e13c",
+      "opaque": true
+    }
+  ],
+  "bundleIcons": {
+    "57": "Icon-Tumblr.png",
+    "114": "Icon-Tumblr@2x.png",
+    "29": "Icon-Tumblr-Small.png",
+    "58": "Icon-Tumblr-Small@2x.png"
+  },
+  "bareMarks": [
+    {
+      "file": "rc-mark-debossed-light@2x.png",
+      "pixels": [
+        288,
+        288
+      ],
+      "sha256": "11bc6a4322fa75e44f8b85a1398507ecd7131553b6e5fb40c95d457b466e82f6",
+      "transparent": true
+    },
+    {
+      "file": "rc-mark-debossed-dark@2x.png",
+      "pixels": [
+        288,
+        288
+      ],
+      "sha256": "a0182fe21179e28e965a76ea698e3c2552d84f2e9a922bcaa10bc01d8a2f5b80",
+      "transparent": true
+    },
+    {
+      "file": "rc-mark-embossed-emerald@2x.png",
+      "pixels": [
+        288,
+        288
+      ],
+      "sha256": "675272ea0cc18ed678fcebef7eba05a1d582937b05a0bfa2c69333227d33c61b",
+      "transparent": true
+    },
+    {
+      "file": "rc-mark-embossed-white@2x.png",
+      "pixels": [
+        288,
+        288
+      ],
+      "sha256": "5535fe0e457694902eb65ee048104b6d870d8c35ed8224b914dea2e3aee4613c",
+      "transparent": true
+    }
+  ]
+}

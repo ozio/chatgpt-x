@@ -1,0 +1,2886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> It is not repeated automatically.</key>
+	<string> Автоматического повтора нет.</string>
+	<key> The send result is unknown.</key>
+	<string> Результат отправки неизвестен.</string>
+	<key> · Code</key>
+	<string> · Код</string>
+	<key> · Continued</key>
+	<string> · Продолжение</string>
+	<key> · Link</key>
+	<string> · Ссылка</string>
+	<key>%@ (default)</key>
+	<string>%@ (по умолчанию)</string>
+	<key>%@ (optional)</key>
+	<string>%@ (необязательно)</string>
+	<key>%@ is on for the next message</key>
+	<string>%@ — для следующего сообщения</string>
+	<key>%@ of %@ tokens used</key>
+	<string>Использовано %@ из %@ токенов</string>
+	<key>%@ · locked</key>
+	<string>%@ · заблокировано</string>
+	<key>%@ · on this iPhone</key>
+	<string>%@ · на этом iPhone</string>
+	<key>%@ · priority</key>
+	<string>%@ · приоритет</string>
+	<key>%lu KB</key>
+	<string>%lu КБ</string>
+	<key>%lu bytes</key>
+	<string>%lu байт</string>
+	<key>%lu images — not shown in a locked chat; they stay in the chat.</key>
+	<string>Изображений: %lu — не показываются в закрытом чате; они сохранены в чате.</string>
+	<key>%lu parts of this message that ChatGPT X cannot show — they stay in the chat.</key>
+	<string>Частей сообщения, которые ChatGPT X не может показать: %lu — они сохранены в чате.</string>
+	<key>%lu runs · %@</key>
+	<string>Запусков: %lu · %@</string>
+	<key>(not read back yet)</key>
+	<string>(ещё не проверено)</string>
+	<key>A 4-digit PIN protects locked chats on the service. ChatGPT X never stores it.</key>
+	<string>PIN из 4 цифр защищает закрытые чаты на сервисе. ChatGPT X его не хранит.</string>
+	<key>A file is no longer available. Remove it or replace it with a new copy.</key>
+	<string>Файл больше недоступен. Уберите его или замените новой копией.</string>
+	<key>A folder cannot be moved into a folder inside it.</key>
+	<string>Папку нельзя переместить во вложенную в неё папку.</string>
+	<key>A folder cannot be moved into itself.</key>
+	<string>Папку нельзя переместить в саму себя.</string>
+	<key>A forgotten PIN can be reset in the web version. It deletes every locked chat.</key>
+	<string>Забытый PIN можно сбросить в веб-версии. Это удалит все закрытые чаты.</string>
+	<key>A forgotten PIN is reset on the ChatGPT website. It deletes every locked chat.</key>
+	<string>Забытый PIN сбрасывается на сайте ChatGPT. Это удаляет все закрытые чаты.</string>
+	<key>A part of this message that ChatGPT X cannot show — it stays in the chat.</key>
+	<string>Часть сообщения, которую ChatGPT X не может показать, — она сохранена в чате.</string>
+	<key>A separate web search, not part of this conversation. The service may keep it as its own chat.</key>
+	<string>Выполняется как отдельный поиск.</string>
+	<key>A subscription bought through the App Store must be cancelled separately.</key>
+	<string>Подписку, оформленную через App Store, нужно отменить отдельно.</string>
+	<key>A text preview is unavailable for this file.</key>
+	<string>Для этого файла текстовый предпросмотр недоступен.</string>
+	<key>About you</key>
+	<string>О вас</string>
+	<key>Access</key>
+	<string>Доступ</string>
+	<key>Access removed.</key>
+	<string>Доступ отозван.</string>
+	<key>Account settings</key>
+	<string>Настройки аккаунта</string>
+	<key>Accounts of other services that your apps use. Open one to see its state, permissions or disconnect it.</key>
+	<string>Аккаунты, которые используют ваши приложения.</string>
+	<key>Action permissions on the website…</key>
+	<string>Разрешения действий на сайте…</string>
+	<key>Active</key>
+	<string>Активна</string>
+	<key>Active tasks</key>
+	<string>Активные</string>
+	<key>Add a computer…</key>
+	<string>Добавить компьютер…</string>
+	<key>Add image</key>
+	<string>Добавить изображение</string>
+	<key>Add screenshot</key>
+	<string>Добавить снимок экрана</string>
+	<key>Add the images again after reconnecting.</key>
+	<string>После восстановления связи добавьте изображения заново.</string>
+	<key>Add the public key to ~/.ssh/authorized_keys on the computer. The private key never leaves this iPhone.</key>
+	<string>Добавьте открытый ключ в ~/.ssh/authorized_keys на компьютере. Закрытый ключ не покидает iPhone.</string>
+	<key>Add to favorites</key>
+	<string>Добавить в избранное</string>
+	<key>Add to message</key>
+	<string>Добавить в сообщение</string>
+	<key>Add to the draft</key>
+	<string>Добавить к черновику</string>
+	<key>Added to favorites.</key>
+	<string>Добавлено в избранное.</string>
+	<key>Added to the message. Nothing is sent until you tap Send.</key>
+	<string>Добавлено в сообщение. Ничего не отправится, пока вы не нажмёте «Отправить».</string>
+	<key>Adding sources needs files uploaded in this session; removing a source does not delete the file from your Library.</key>
+	<string>Файл останется в библиотеке, даже если убрать его из источников.</string>
+	<key>Adding to the message…</key>
+	<string>Добавляю в сообщение…</string>
+	<key>Adds the file to the message. Nothing is sent.</key>
+	<string>Добавляет файл в сообщение. Ничего не отправляется.</string>
+	<key>Adult</key>
+	<string>Взрослый</string>
+	<key>Advanced</key>
+	<string>Расширенный</string>
+	<key>Advanced account security</key>
+	<string>Расширенная защита аккаунта</string>
+	<key>After</key>
+	<string>После</string>
+	<key>Age</key>
+	<string>Возраст</string>
+	<key>Age group</key>
+	<string>Возрастная группа</string>
+	<key>Age or birth date verified</key>
+	<string>Возраст или дата рождения подтверждены</string>
+	<key>All</key>
+	<string>Все</string>
+	<key>All apps</key>
+	<string>Все приложения</string>
+	<key>All memories deleted.</key>
+	<string>Все воспоминания удалены.</string>
+	<key>All sources</key>
+	<string>Все источники</string>
+	<key>All tasks</key>
+	<string>Все задачи</string>
+	<key>All text is selected. Tap Copy in the selection menu.</key>
+	<string>Выделен весь текст. Нажмите «Копировать» в меню выделения.</string>
+	<key>All types</key>
+	<string>Все типы</string>
+	<key>Allow command prefix: %@</key>
+	<string>Разрешить команды: %@</string>
+	<key>Allow full access</key>
+	<string>Разрешить полный доступ</string>
+	<key>Allow sending this conversation with the report first.</key>
+	<string>Сначала разрешите отправить этот разговор вместе с жалобой.</string>
+	<key>Allow this action once? %@</key>
+	<string>Разрешить это действие один раз? %@</string>
+	<key>Also search projects and files</key>
+	<string>Искать также в проектах и файлах</string>
+	<key>Always allow %@</key>
+	<string>Всегда разрешать %@</string>
+	<key>Always ask</key>
+	<string>Всегда спрашивать</string>
+	<key>Always deny %@</key>
+	<string>Всегда запрещать %@</string>
+	<key>An earlier attempt has an unknown result. It is not sent again; check it first.</key>
+	<string>Результат предыдущей попытки неизвестен. Она не отправляется повторно; сначала проверьте её.</string>
+	<key>An earlier attempt of this change has an unknown result. It is not sent again. Check the current state?</key>
+	<string>Результат прошлой попытки этого изменения неизвестен. Повторно оно не отправляется. Проверить текущее состояние?</string>
+	<key>An export is already being prepared. Wait for its e-mail before you request another one.</key>
+	<string>Экспорт уже готовится. Дождитесь письма, прежде чем запрашивать новый.</string>
+	<key>Analysis results</key>
+	<string>Результаты анализа</string>
+	<key>Answer element</key>
+	<string>Элемент ответа</string>
+	<key>Answering from ChatGPT X is not enabled yet; answer in the web version.</key>
+	<string>Ответить из ChatGPT X пока нельзя — ответьте в веб-версии.</string>
+	<key>Answers</key>
+	<string>Ответы</string>
+	<key>App</key>
+	<string>Приложение</string>
+	<key>App installed.</key>
+	<string>Приложение установлено.</string>
+	<key>App mention</key>
+	<string>Упоминание приложения</string>
+	<key>App name</key>
+	<string>Название приложения</string>
+	<key>App permissions</key>
+	<string>Разрешения приложений</string>
+	<key>App removed.</key>
+	<string>Приложение удалено.</string>
+	<key>App turned off.</key>
+	<string>Приложение выключено.</string>
+	<key>App turned on.</key>
+	<string>Приложение включено.</string>
+	<key>Applies after a restart. Chats are not translated.</key>
+	<string>После перезапуска. Чаты не переводятся.</string>
+	<key>Applies to apps that do not have their own setting.</key>
+	<string>Действует для приложений без собственной настройки.</string>
+	<key>Applies to this connection only.</key>
+	<string>Действует только для этого подключения.</string>
+	<key>Approval prompts: %@</key>
+	<string>Запросы подтверждения: %@</string>
+	<key>Approve on another device</key>
+	<string>Подтвердить на другом устройстве</string>
+	<key>Apps act without asking. Use only with apps you trust.</key>
+	<string>Приложения действуют без вопросов. Только для приложений, которым вы доверяете.</string>
+	<key>Apps ask before they change or send anything.</key>
+	<string>Приложения спрашивают, прежде чем что-то изменить или отправить.</string>
+	<key>Apps ask you before every action.</key>
+	<string>Приложения спрашивают перед каждым действием.</string>
+	<key>Apps ask you to review important actions.</key>
+	<string>Приложения просят проверить важные действия.</string>
+	<key>Apps let ChatGPT use other services in your chats. Open an app to see what you can do with it.</key>
+	<string>Приложения дают ChatGPT доступ к другим сервисам.</string>
+	<key>Archive (collection)</key>
+	<string>Архив</string>
+	<key>As on the iPhone</key>
+	<string>Как на iPhone</string>
+	<key>Ask anything. The answer appears as it is written.</key>
+	<string>Спросите что угодно.</string>
+	<key>Ask before changes</key>
+	<string>Спрашивать перед изменениями</string>
+	<key>Ask before untrusted actions</key>
+	<string>Спрашивать перед недоверенными действиями</string>
+	<key>Ask the service to stop this research? Work already done may stay.</key>
+	<string>Попросить сервис остановить исследование? Уже сделанное может остаться.</string>
+	<key>Ask when needed</key>
+	<string>Спрашивать при необходимости</string>
+	<key>Asks ChatGPT to stop the response</key>
+	<string>Запрашивает остановку ответа в ChatGPT</string>
+	<key>Audio</key>
+	<string>Аудио</string>
+	<key>Authorize connection</key>
+	<string>Подтверждение подключения</string>
+	<key>Auto</key>
+	<string>Авто</string>
+	<key>Auto is not available for this account.</key>
+	<string>Режим «Авто» недоступен для этого аккаунта.</string>
+	<key>Auto is not in use for the next message.</key>
+	<string>Для следующего сообщения «Авто» не используется.</string>
+	<key>Auto picks a model for each message.</key>
+	<string>«Авто» выбирает модель для каждого сообщения.</string>
+	<key>Automatic</key>
+	<string>Автоматически</string>
+	<key>Availability</key>
+	<string>Доступность</string>
+	<key>Available</key>
+	<string>Доступно</string>
+	<key>Bcc</key>
+	<string>Скрытая копия</string>
+	<key>Before</key>
+	<string>До</string>
+	<key>Binary file</key>
+	<string>Двоичный файл</string>
+	<key>Branch into a new chat</key>
+	<string>Ответвить в новый чат</string>
+	<key>Budget exhausted</key>
+	<string>Бюджет исчерпан</string>
+	<key>Buying is on the web page.</key>
+	<string>Покупка — на веб-странице.</string>
+	<key>Can be installed</key>
+	<string>Можно установить</string>
+	<key>Catalogue for %@</key>
+	<string>Каталог для %@</string>
+	<key>Cc</key>
+	<string>Копия</string>
+	<key>Change</key>
+	<string>Изменить</string>
+	<key>Change PIN</key>
+	<string>Сменить PIN</string>
+	<key>Change e-mail</key>
+	<string>Сменить e-mail</string>
+	<key>Change password</key>
+	<string>Сменить пароль</string>
+	<key>Change permissions?</key>
+	<string>Изменить разрешения?</string>
+	<key>Change schedule…</key>
+	<string>Изменить расписание…</string>
+	<key>Changes</key>
+	<string>Изменения</string>
+	<key>Changes to this project are not available: ChatGPT X cannot confirm your user and workspace for it.</key>
+	<string>Этот проект нельзя изменить здесь.</string>
+	<key>Changes to this task are not available.</key>
+	<string>Изменение этой задачи недоступно.</string>
+	<key>Chat actions</key>
+	<string>Действия с чатом</string>
+	<key>Chat archived.</key>
+	<string>Чат в архиве.</string>
+	<key>Chat pinned.</key>
+	<string>Чат закреплён.</string>
+	<key>Chat renamed.</key>
+	<string>Чат переименован.</string>
+	<key>Chat returned.</key>
+	<string>Чат возвращён.</string>
+	<key>Chat unpinned.</key>
+	<string>Чат откреплён.</string>
+	<key>ChatGPT account</key>
+	<string>Аккаунт ChatGPT</string>
+	<key>ChatGPT can look at files in your Library when they help with an answer.</key>
+	<string>ChatGPT может обращаться к файлам вашей библиотеки, когда они помогают с ответом.</string>
+	<key>ChatGPT confirmed that the response stopped.</key>
+	<string>ChatGPT подтвердил остановку ответа.</string>
+	<key>ChatGPT confirmed that the response stopped. Check that the conversation was saved.</key>
+	<string>ChatGPT подтвердил остановку ответа. Проверьте сохранение разговора.</string>
+	<key>ChatGPT could not finish the response.</key>
+	<string>ChatGPT не смог завершить ответ.</string>
+	<key>ChatGPT decides when an answer needs a fresh search.</key>
+	<string>ChatGPT решает, когда для ответа нужен свежий поиск.</string>
+	<key>ChatGPT follows these instructions in every chat of this project. Up to 16,000 characters.</key>
+	<string>ChatGPT следует этим инструкциям в каждом чате проекта. До 16 000 символов.</string>
+	<key>ChatGPT has not saved any memories yet.</key>
+	<string>ChatGPT пока ничего не запомнил.</string>
+	<key>ChatGPT login</key>
+	<string>Вход в ChatGPT</string>
+	<key>ChatGPT prepares a copy of your account data and sends a download link to the e-mail address of your account. Preparing it can take a while.</key>
+	<string>ChatGPT подготовит копию данных аккаунта и пришлёт ссылку для скачивания на e-mail аккаунта. Подготовка может занять время.</string>
+	<key>ChatGPT response</key>
+	<string>Ответ ChatGPT</string>
+	<key>ChatGPT suggests doing this task in Work mode.</key>
+	<string>ChatGPT предлагает выполнить эту задачу в режиме Work.</string>
+	<key>ChatGPT uses these tools when an answer needs them.</key>
+	<string>ChatGPT использует эти инструменты, когда они нужны для ответа.</string>
+	<key>Chats · %lu</key>
+	<string>Чаты · %lu</string>
+	<key>Chats, recordings and downloads stay.</key>
+	<string>Чаты, записи и загрузки остаются.</string>
+	<key>Check</key>
+	<string>Проверить</string>
+	<key>Check again</key>
+	<string>Проверить снова</string>
+	<key>Check age status again</key>
+	<string>Проверить возраст ещё раз</string>
+	<key>Check and renew</key>
+	<string>Проверить и обновить</string>
+	<key>Check availability</key>
+	<string>Проверить доступность</string>
+	<key>Check in history</key>
+	<string>Проверить в истории</string>
+	<key>Check result</key>
+	<string>Проверить результат</string>
+	<key>Check status</key>
+	<string>Проверить статус</string>
+	<key>Check the PIN change</key>
+	<string>Проверить изменение PIN</string>
+	<key>Check the connection code.</key>
+	<string>Проверьте код подключения.</string>
+	<key>Check the form values.</key>
+	<string>Проверьте значения в форме.</string>
+	<key>Check the updated state</key>
+	<string>Проверьте обновлённое состояние</string>
+	<key>Check upload</key>
+	<string>Проверить загрузку</string>
+	<key>Check worktree state</key>
+	<string>Проверить состояние worktree</string>
+	<key>Check your message and try again.</key>
+	<string>Проверьте сообщение и повторите действие.</string>
+	<key>Check «%@».</key>
+	<string>Проверьте «%@».</string>
+	<key>Checking session…</key>
+	<string>Проверяем сессию…</string>
+	<key>Checking the file…</key>
+	<string>Проверяю файл…</string>
+	<key>Checking…</key>
+	<string>Проверяю…</string>
+	<key>Chinese</key>
+	<string>Китайский</string>
+	<key>Choose Read aloud again from the answer menu.</key>
+	<string>Снова выберите «Прочитать вслух» в меню ответа.</string>
+	<key>Choose a conversation or start a new chat.</key>
+	<string>Выберите разговор или начните новый.</string>
+	<key>Choose a new PIN.</key>
+	<string>Придумайте новый PIN.</string>
+	<key>Choose a reason first.</key>
+	<string>Сначала выберите причину.</string>
+	<key>Choose a short name using letters, digits, hyphen or underscore.</key>
+	<string>Введите короткое имя: буквы, цифры, дефис или подчёркивание.</string>
+	<key>Choose a time in the future.</key>
+	<string>Выберите время в будущем.</string>
+	<key>Choose a time zone.</key>
+	<string>Выберите часовой пояс.</string>
+	<key>Choose at least one day of the week.</key>
+	<string>Выберите хотя бы один день недели.</string>
+	<key>Choose folder…</key>
+	<string>Выбрать папку…</string>
+	<key>Choose image</key>
+	<string>Выберите изображение</string>
+	<key>Choose this model in the chat's model menu to use it there.</key>
+	<string>Чтобы использовать эту модель в чате, выберите её в меню моделей чата.</string>
+	<key>Choose when the task runs.</key>
+	<string>Выберите, когда запускать задачу.</string>
+	<key>Chooses the model for the next messages</key>
+	<string>Выбирает модель для следующих сообщений</string>
+	<key>Choosing the file…</key>
+	<string>Выбор файла…</string>
+	<key>Choosing the model…</key>
+	<string>Выбираем модель…</string>
+	<key>Clear rating</key>
+	<string>Убрать оценку</string>
+	<key>Clear temporary files</key>
+	<string>Удалить временные файлы</string>
+	<key>Cloud</key>
+	<string>Облако</string>
+	<key>Cloud environments</key>
+	<string>Облачные окружения</string>
+	<key>Cloud tasks</key>
+	<string>Облачные задачи</string>
+	<key>Code block copied.</key>
+	<string>Блок кода скопирован.</string>
+	<key>Code block. </key>
+	<string>Блок кода. </string>
+	<key>Codex</key>
+	<string>Codex</string>
+	<key>Codex asks before actions the computer does not already trust.</key>
+	<string>Codex спрашивает перед действиями, которые компьютер ещё не считает доверенными.</string>
+	<key>Codex asks for network access</key>
+	<string>Codex просит доступ в сеть</string>
+	<key>Codex asks when it needs access beyond the current permissions.</key>
+	<string>Codex спрашивает, когда требуется доступ за пределами текущих разрешений.</string>
+	<key>Codex authorization could not finish. Close verification and start connecting again.</key>
+	<string>Не удалось завершить авторизацию Codex. Закройте проверку и начните подключение заново.</string>
+	<key>Codex authorization failed. %@: %@. Close verification and start connecting again. No request was repeated.</key>
+	<string>Ошибка авторизации Codex. %@: %@. Закройте проверку и начните подключение заново. Повторная отправка не выполнялась.</string>
+	<key>Codex could not accept this request. Check the values and the connection.</key>
+	<string>Codex не принял запрос. Проверьте значения и подключение.</string>
+	<key>Codex could not verify this session. Check Account before connecting again.</key>
+	<string>Codex не подтвердил сессию. Проверьте аккаунт перед новым подключением.</string>
+	<key>Codex is unavailable. Your draft is kept.</key>
+	<string>Codex недоступен. Черновик сохранён.</string>
+	<key>Codex is waiting for permission</key>
+	<string>Codex ждёт разрешения</string>
+	<key>Codex task</key>
+	<string>Задача Codex</string>
+	<key>Codex will not ask for approval. The computer still enforces its access restrictions.</key>
+	<string>Codex не будет запрашивать подтверждения. Ограничения доступа на компьютере сохраняются.</string>
+	<key>Command rules</key>
+	<string>Правила команд</string>
+	<key>Commands</key>
+	<string>Команды</string>
+	<key>Comment</key>
+	<string>Комментарий</string>
+	<key>Commit</key>
+	<string>Коммит</string>
+	<key>Compare</key>
+	<string>Сравнить</string>
+	<key>Compare changes</key>
+	<string>Сравнить изменения</string>
+	<key>Compare plans in Safari</key>
+	<string>Сравнить планы в Safari</string>
+	<key>Compare with commit…</key>
+	<string>Сравнить с коммитом…</string>
+	<key>Complete goal</key>
+	<string>Завершить цель</string>
+	<key>Complete my draft</key>
+	<string>Дополнить черновик</string>
+	<key>Completed</key>
+	<string>Завершено</string>
+	<key>Computer</key>
+	<string>Компьютер</string>
+	<key>Computer paired</key>
+	<string>Компьютер привязан</string>
+	<key>Computers</key>
+	<string>Компьютеры</string>
+	<key>Confirm it is you</key>
+	<string>Подтвердить, что это вы</string>
+	<key>Confirm on the website.</key>
+	<string>Подтвердите на сайте.</string>
+	<key>Confirm to lock the chat.</key>
+	<string>Подтвердите, чтобы закрыть чат.</string>
+	<key>Connected</key>
+	<string>Подключено</string>
+	<key>Connected accounts</key>
+	<string>Подключённые аккаунты</string>
+	<key>Connected sources</key>
+	<string>Подключённые источники</string>
+	<key>Connected sources are read-only here: files are not downloaded, copied or attached.</key>
+	<string>Подключённые источники здесь только для чтения.</string>
+	<key>Connecting and sending…</key>
+	<string>Открываем подключение и отправляем…</string>
+	<key>Connection</key>
+	<string>Подключение</string>
+	<key>Connection %lu</key>
+	<string>Подключение %lu</string>
+	<key>Connection code</key>
+	<string>Код подключения</string>
+	<key>Connection restored</key>
+	<string>Связь восстановлена</string>
+	<key>Connections</key>
+	<string>Подключения</string>
+	<key>Continue in Safari.</key>
+	<string>Продолжите в Safari.</string>
+	<key>Continue in Safari. Nothing was reset in ChatGPT X; tap Check again when you return.</key>
+	<string>Продолжите в Safari, затем нажмите «Проверить снова».</string>
+	<key>Continue in Safari. Then come back and sign in here.</key>
+	<string>Продолжите в Safari. Затем вернитесь и войдите здесь.</string>
+	<key>Continue in Work?</key>
+	<string>Продолжить в Work?</string>
+	<key>Continue on the web</key>
+	<string>Продолжить в веб-версии</string>
+	<key>Continue this task in Work with:</key>
+	<string>Продолжить задачу в Work с моделью:</string>
+	<key>Continue with Google on the service page. A code from your authenticator app is entered there too.</key>
+	<string>Продолжите вход через Google на странице сервиса. Код из приложения-аутентификатора вводится там же.</string>
+	<key>Conversation</key>
+	<string>Разговор</string>
+	<key>Copy Markdown</key>
+	<string>Копировать Markdown</string>
+	<key>Copy public key</key>
+	<string>Скопировать открытый ключ</string>
+	<key>Copy verification link</key>
+	<string>Скопировать ссылку проверки</string>
+	<key>Correct this memory</key>
+	<string>Исправить воспоминание</string>
+	<key>Correct this…</key>
+	<string>Исправить…</string>
+	<key>Correction sent.</key>
+	<string>Исправление отправлено.</string>
+	<key>Could not complete the request. Check your connection and the operation result.</key>
+	<string>Не удалось завершить запрос. Проверьте соединение и результат операции.</string>
+	<key>Could not open ChatGPT X. Restart the app.</key>
+	<string>Не удалось открыть ChatGPT X. Перезапустите приложение.</string>
+	<key>Could not open login.</key>
+	<string>Не удалось открыть вход.</string>
+	<key>Could not prepare the image. Choose it again.</key>
+	<string>Не удалось подготовить изображение. Выберите его заново.</string>
+	<key>Could not read this conversation.</key>
+	<string>Не удалось прочитать этот разговор.</string>
+	<key>Could not retrieve the session. Check your connection and log in again.</key>
+	<string>Не удалось получить сессию. Проверьте соединение и повторите вход.</string>
+	<key>Could not save state on this iPhone. Check the result before sending again.</key>
+	<string>Не удалось сохранить состояние на iPhone. Проверьте результат перед новой отправкой.</string>
+	<key>Could not save your login on this iPhone. Try again.</key>
+	<string>Не удалось сохранить вход на iPhone. Попробуйте ещё раз.</string>
+	<key>Could not start login.</key>
+	<string>Не удалось начать вход.</string>
+	<key>Could not start login. Try again.</key>
+	<string>Не удалось начать вход. Попробуйте ещё раз.</string>
+	<key>Could not verify login. Check your connection and try again.</key>
+	<string>Не удалось проверить вход. Проверьте соединение и попробуйте ещё раз.</string>
+	<key>Could not verify the session. Log in again.</key>
+	<string>Не удалось проверить сессию. Войдите снова.</string>
+	<key>Create</key>
+	<string>Создать</string>
+	<key>Create a PIN</key>
+	<string>Создать PIN</string>
+	<key>Create a PIN first. Locked chats open only with it.</key>
+	<string>Сначала создайте PIN. Закрытые чаты открываются только с ним.</string>
+	<key>Create an account</key>
+	<string>Создать аккаунт</string>
+	<key>Create e-mail from answer…</key>
+	<string>Создать письмо из ответа…</string>
+	<key>Create images</key>
+	<string>Создание изображений</string>
+	<key>Created</key>
+	<string>По дате создания</string>
+	<key>Created by ChatGPT</key>
+	<string>Созданные ChatGPT</string>
+	<key>Created by me</key>
+	<string>Созданные мной</string>
+	<key>Current branch</key>
+	<string>Текущая ветка</string>
+	<key>Data analysis</key>
+	<string>Анализ данных</string>
+	<key>Day of the month</key>
+	<string>День месяца</string>
+	<key>Days of the week</key>
+	<string>Дни недели</string>
+	<key>Default</key>
+	<string>По умолчанию</string>
+	<key>Default model</key>
+	<string>Модель по умолчанию</string>
+	<key>Delete all memories</key>
+	<string>Удалить все воспоминания</string>
+	<key>Delete all saved memories? ChatGPT will forget everything it has saved about you. This cannot be undone.</key>
+	<string>Удалить все сохранённые воспоминания? ChatGPT забудет всё, что сохранил о вас. Это нельзя отменить.</string>
+	<key>Delete chat</key>
+	<string>Удалить чат</string>
+	<key>Delete everything in Trash forever? This cannot be undone.</key>
+	<string>Навсегда удалить всё содержимое корзины? Это нельзя отменить.</string>
+	<key>Delete forever</key>
+	<string>Удалить навсегда</string>
+	<key>Delete locked chats and reset</key>
+	<string>Удалить закрытые чаты и сбросить</string>
+	<key>Delete memory</key>
+	<string>Удалить воспоминание</string>
+	<key>Delete recording</key>
+	<string>Удалить запись</string>
+	<key>Delete requested.</key>
+	<string>Удаление запрошено.</string>
+	<key>Delete task</key>
+	<string>Удалить задачу</string>
+	<key>Delete the project «%@»? It is deleted from your ChatGPT account and cannot be restored in ChatGPT X.</key>
+	<string>Удалить проект «%@»? Он будет удалён из вашего аккаунта ChatGPT, и восстановить его в ChatGPT X нельзя.</string>
+	<key>Delete the task «%@»? It will no longer run.</key>
+	<string>Удалить задачу «%@»? Она больше не будет запускаться.</string>
+	<key>Delete this chat from your account? This cannot be undone here.</key>
+	<string>Удалить этот чат из аккаунта? Здесь это не отменить.</string>
+	<key>Delete this link? People who have it can no longer open the chat.</key>
+	<string>Удалить ссылку? Те, у кого она есть, больше не смогут открыть чат.</string>
+	<key>Delete this memory? ChatGPT will no longer use it.</key>
+	<string>Удалить это воспоминание? ChatGPT больше не будет его учитывать.</string>
+	<key>Delete this memory? ChatGPT will no longer use it. This cannot be undone.</key>
+	<string>Удалить это воспоминание? ChatGPT больше не будет его использовать. Это нельзя отменить.</string>
+	<key>Delete your ChatGPT account permanently? Your chats, memories and settings will be removed. This cannot be undone.</key>
+	<string>Удалить аккаунт ChatGPT навсегда? Чаты, воспоминания и настройки будут удалены. Это нельзя отменить.</string>
+	<key>Delete «%@» forever? This cannot be undone.</key>
+	<string>Навсегда удалить «%@»? Это нельзя отменить.</string>
+	<key>Delete «%@»?</key>
+	<string>Удалить «%@»?</string>
+	<key>Deleted forever.</key>
+	<string>Удалено навсегда.</string>
+	<key>Deleting your ChatGPT account is permanent and cannot be undone. Your chats, memories and settings are removed with it.</key>
+	<string>Удаление аккаунта ChatGPT окончательно и необратимо. Вместе с ним удаляются чаты, воспоминания и настройки.</string>
+	<key>Delivery not confirmed</key>
+	<string>Отправка не подтверждена</string>
+	<key>Delivery not confirmed · tap “?”</key>
+	<string>Отправка не подтверждена · коснитесь «?»</string>
+	<key>Details unavailable</key>
+	<string>Сведения недоступны</string>
+	<key>Device check</key>
+	<string>Проверка устройства</string>
+	<key>Device verification is unavailable on iOS 6.</key>
+	<string>Проверка устройства недоступна на iOS 6.</string>
+	<key>Devices and sessions</key>
+	<string>Устройства и сеансы</string>
+	<key>Dictation text</key>
+	<string>Текст диктовки</string>
+	<key>Discard</key>
+	<string>Не сохранять</string>
+	<key>Discard pages</key>
+	<string>Удалить страницы</string>
+	<key>Discard your changes?</key>
+	<string>Отменить изменения?</string>
+	<key>Disconnect this account from «%@»? ChatGPT can no longer use it until you connect it again on the web.</key>
+	<string>Отключить этот аккаунт от «%@»? ChatGPT не сможет его использовать, пока вы снова не подключите его в веб-версии.</string>
+	<key>Disconnected.</key>
+	<string>Отключено.</string>
+	<key>Do not ask for approvals</key>
+	<string>Не запрашивать подтверждения</string>
+	<key>Document</key>
+	<string>Документ</string>
+	<key>Documents</key>
+	<string>Документы</string>
+	<key>Download %@</key>
+	<string>Скачать %@</string>
+	<key>Downloading the image to this iPhone…</key>
+	<string>Скачиваю изображение на iPhone…</string>
+	<key>E-mail</key>
+	<string>Письмо</string>
+	<key>E-mail and password</key>
+	<string>E-mail и пароль</string>
+	<key>E-mail code</key>
+	<string>Код по e-mail</string>
+	<key>E-mail…</key>
+	<string>Письмо…</string>
+	<key>Earlier</key>
+	<string>Раньше</string>
+	<key>Earlier chat</key>
+	<string>Прошлый чат</string>
+	<key>Earlier output is kept in the task.</key>
+	<string>Предыдущий вывод сохранён в задаче.</string>
+	<key>Edit project…</key>
+	<string>Изменить проект…</string>
+	<key>Edit task</key>
+	<string>Изменить задачу</string>
+	<key>Edit the text before inserting it into your message</key>
+	<string>Исправьте текст перед вставкой в сообщение</string>
+	<key>Edit…</key>
+	<string>Изменить…</string>
+	<key>Elsewhere</key>
+	<string>В других местах</string>
+	<key>Elsewhere · %lu</key>
+	<string>В других местах · %lu</string>
+	<key>Emoji (optional)</key>
+	<string>Эмодзи (необязательно)</string>
+	<key>Empty Trash</key>
+	<string>Очистить корзину</string>
+	<key>Empty code block</key>
+	<string>Пустой блок кода</string>
+	<key>Emptying Trash deletes every file in it forever, including files not shown yet.</key>
+	<string>Очистка корзины навсегда удаляет все файлы в ней, в том числе ещё не показанные.</string>
+	<key>English</key>
+	<string>Английский</string>
+	<key>Enter a message of up to 16,000 characters.</key>
+	<string>Введите сообщение до 16 000 символов.</string>
+	<key>Enter a name.</key>
+	<string>Введите имя.</string>
+	<key>Enter a project title.</key>
+	<string>Введите название проекта.</string>
+	<key>Enter a search query of up to 16,000 characters.</key>
+	<string>Введите запрос для поиска — до 16 000 символов.</string>
+	<key>Enter connection code</key>
+	<string>Ввести код подключения</string>
+	<key>Enter the full 40-character commit hash.</key>
+	<string>Введите полный хеш коммита из 40 символов.</string>
+	<key>Enter up to 16,000 characters to translate.</key>
+	<string>Введите для перевода до 16 000 символов.</string>
+	<key>Enter what ChatGPT should do.</key>
+	<string>Напишите, что должен сделать ChatGPT.</string>
+	<key>Enter your PIN to lock «%@».</key>
+	<string>Введите PIN, чтобы закрыть «%@».</string>
+	<key>Enter your current PIN.</key>
+	<string>Введите текущий PIN.</string>
+	<key>Enter your e-mail and password on the service page. A code from your authenticator app is entered there too.</key>
+	<string>Введите e-mail и пароль на странице сервиса. Код из приложения-аутентификатора вводится там же.</string>
+	<key>Entered in Safari. ChatGPT X does not see them.</key>
+	<string>Вводится в Safari.</string>
+	<key>Environment</key>
+	<string>Окружение</string>
+	<key>Environment selected</key>
+	<string>Окружение выбрано</string>
+	<key>Environments</key>
+	<string>Окружения</string>
+	<key>Every day</key>
+	<string>Каждый день</string>
+	<key>Every day at %@</key>
+	<string>Каждый день в %@</string>
+	<key>Every month</key>
+	<string>Каждый месяц</string>
+	<key>Every month on day %d at %@</key>
+	<string>Каждый месяц %d-го числа в %@</string>
+	<key>Every week</key>
+	<string>Каждую неделю</string>
+	<key>Every week on %@ at %@</key>
+	<string>Каждую неделю: %@, в %@</string>
+	<key>Exact time</key>
+	<string>Точное время</string>
+	<key>Examples</key>
+	<string>Примеры</string>
+	<key>Extra protection from sensitive content</key>
+	<string>Дополнительная защита от чувствительного контента</string>
+	<key>Failed</key>
+	<string>Ошибка</string>
+	<key>Favorite folders</key>
+	<string>Папки избранного</string>
+	<key>Favorites</key>
+	<string>Избранное</string>
+	<key>File mentioned</key>
+	<string>Файл добавлен в сообщение</string>
+	<key>File type</key>
+	<string>Тип файла</string>
+	<key>File «%@»%@ — it stays in the chat.</key>
+	<string>Файл «%@»%@ — сохранён в чате.</string>
+	<key>Files and folders</key>
+	<string>Файлы и папки</string>
+	<key>Files in Trash can be restored.</key>
+	<string>Файлы из корзины можно восстановить.</string>
+	<key>Files in Trash can be restored. Folders in Trash cannot be restored or deleted from ChatGPT X.</key>
+	<string>Файлы из корзины можно восстановить.</string>
+	<key>Files in this chat</key>
+	<string>Файлы этого чата</string>
+	<key>Files of this chat appear here.</key>
+	<string>Здесь появятся файлы этого чата.</string>
+	<key>Files you opened in ChatGPT X from other apps (“Open in…”). Choosing one only adds it to the message; nothing is sent.</key>
+	<string>Файлы, открытые в ChatGPT X из других приложений.</string>
+	<key>Fill in «%@».</key>
+	<string>Заполните «%@».</string>
+	<key>Filters and view</key>
+	<string>Фильтры и вид</string>
+	<key>Finish dictation before listening.</key>
+	<string>Сначала закончите диктовку.</string>
+	<key>Finish the current message first.</key>
+	<string>Сначала завершите текущее сообщение.</string>
+	<key>Finished</key>
+	<string>Завершённые</string>
+	<key>Finishing login…</key>
+	<string>Завершаем вход…</string>
+	<key>First connection to this computer. Compare the fingerprint with ssh-keygen -lf on the computer.</key>
+	<string>Первое подключение к этому компьютеру. Сверьте отпечаток с выводом ssh-keygen -lf на компьютере.</string>
+	<key>Fix this review comment.</key>
+	<string>Исправь это замечание ревью.</string>
+	<key>Flexible time</key>
+	<string>Гибкое время</string>
+	<key>Folder</key>
+	<string>Папка</string>
+	<key>Folder created.</key>
+	<string>Папка создана.</string>
+	<key>Folder details</key>
+	<string>О папке</string>
+	<key>Folders</key>
+	<string>Папки</string>
+	<key>Folders, filters and search</key>
+	<string>Папки, фильтры и поиск</string>
+	<key>For this session</key>
+	<string>Для этой сессии</string>
+	<key>Forget</key>
+	<string>Забыть</string>
+	<key>Forget local setup?</key>
+	<string>Забыть локальную настройку?</string>
+	<key>Forget local setup…</key>
+	<string>Забыть локальную настройку…</string>
+	<key>Forgot PIN…</key>
+	<string>Забыли PIN…</string>
+	<key>Forgot PIN… (on the website)</key>
+	<string>Забыли PIN… (на сайте)</string>
+	<key>Forgot password</key>
+	<string>Забыли пароль</string>
+	<key>Found · %lu</key>
+	<string>Найдено · %lu</string>
+	<key>French</key>
+	<string>Французский</string>
+	<key>From Library</key>
+	<string>Из библиотеки</string>
+	<key>Full access</key>
+	<string>Полный доступ</string>
+	<key>GPT</key>
+	<string>GPT</string>
+	<key>German</key>
+	<string>Немецкий</string>
+	<key>Goal</key>
+	<string>Цель</string>
+	<key>Goal and budget</key>
+	<string>Цель и бюджет</string>
+	<key>Groups</key>
+	<string>Группы</string>
+	<key>Helpful</key>
+	<string>Полезно</string>
+	<key>History appears after the session is restored.</key>
+	<string>История появится после восстановления сессии.</string>
+	<key>History arrived in an unknown format. Try loading it again later.</key>
+	<string>История пришла в неизвестном формате. Повторите загрузку позже.</string>
+	<key>Host</key>
+	<string>Хост</string>
+	<key>Hour</key>
+	<string>Час</string>
+	<key>How should ChatGPT answer in this project?</key>
+	<string>Как ChatGPT должен отвечать в этом проекте?</string>
+	<key>Icon</key>
+	<string>Значок</string>
+	<key>Image %lu</key>
+	<string>Изображение %lu</string>
+	<key>Image creation is locked for this account.</key>
+	<string>Создание изображений заблокировано для этого аккаунта.</string>
+	<key>Image saved in the task</key>
+	<string>Изображение сохранено в задаче</string>
+	<key>Image — not shown in a locked chat; it stays in the chat.</key>
+	<string>Изображение — не показывается в закрытом чате; оно сохранено в чате.</string>
+	<key>Implement the approved plan.</key>
+	<string>Реализуй согласованный план.</string>
+	<key>In Trash since</key>
+	<string>В корзине с</string>
+	<key>In favorites</key>
+	<string>В избранном</string>
+	<key>Insert into message</key>
+	<string>Вставить в сообщение</string>
+	<key>Inserts text without sending the message</key>
+	<string>Вставляет текст без отправки сообщения</string>
+	<key>Install</key>
+	<string>Установить</string>
+	<key>Install skill</key>
+	<string>Подключить навык</string>
+	<key>Install «%@»? ChatGPT can then use it in your chats.</key>
+	<string>Установить «%@»? Тогда ChatGPT сможет использовать его в ваших чатах.</string>
+	<key>Installation</key>
+	<string>Установка</string>
+	<key>Installed</key>
+	<string>Установлено</string>
+	<key>Installed by default</key>
+	<string>Установлено по умолчанию</string>
+	<key>Instant</key>
+	<string>Быстрый</string>
+	<key>Instructions…</key>
+	<string>Инструкции…</string>
+	<key>Interrupted</key>
+	<string>Прервано</string>
+	<key>It is already in this folder.</key>
+	<string>Он уже в этой папке.</string>
+	<key>It is no longer available.</key>
+	<string>Больше недоступно.</string>
+	<key>It may have been applied; it is not repeated.</key>
+	<string>Возможно, оно уже выполнено; повтора нет.</string>
+	<key>Italian</key>
+	<string>Итальянский</string>
+	<key>Japanese</key>
+	<string>Японский</string>
+	<key>Keep memory inside this project</key>
+	<string>Память только внутри проекта</string>
+	<key>Keep pages</key>
+	<string>Оставить страницы</string>
+	<key>Keep this memory a priority</key>
+	<string>Сделать воспоминание приоритетным</string>
+	<key>Keep working in this chat without Work mode?</key>
+	<string>Продолжить в этом чате без режима Work?</string>
+	<key>Korean</key>
+	<string>Корейский</string>
+	<key>Language</key>
+	<string>Язык</string>
+	<key>Language name: English</key>
+	<string>English</string>
+	<key>Language name: Russian</key>
+	<string>Русский</string>
+	<key>Language saved.</key>
+	<string>Язык сохранён.</string>
+	<key>Large</key>
+	<string>Крупный</string>
+	<key>Larger</key>
+	<string>Крупнее</string>
+	<key>Later</key>
+	<string>Позже</string>
+	<key>Leave empty for no token budget.</key>
+	<string>Оставьте поле пустым, чтобы не ограничивать бюджет токенов.</string>
+	<key>Leave empty to mention the first line.</key>
+	<string>Оставьте поле пустым, чтобы указать первую строку.</string>
+	<key>Library (no folder)</key>
+	<string>Библиотека (без папки)</string>
+	<key>Library files will be used in answers.</key>
+	<string>Файлы библиотеки будут использоваться в ответах.</string>
+	<key>Library files will not be used in answers.</key>
+	<string>Файлы библиотеки не будут использоваться в ответах.</string>
+	<key>Line</key>
+	<string>Строка</string>
+	<key>Line number</key>
+	<string>Номер строки</string>
+	<key>Link deleted.</key>
+	<string>Ссылка удалена.</string>
+	<key>Load earlier messages</key>
+	<string>Показать ранние сообщения</string>
+	<key>Load history</key>
+	<string>Загрузить историю</string>
+	<key>Loading conversation…</key>
+	<string>Загружаем разговор…</string>
+	<key>Loading history…</key>
+	<string>Загружаем историю…</string>
+	<key>Loading models…</key>
+	<string>Загружаю модели…</string>
+	<key>Loading the shared chat…</key>
+	<string>Загружаю опубликованный чат…</string>
+	<key>Location</key>
+	<string>Расположение</string>
+	<key>Lock chat…</key>
+	<string>Закрыть чат…</string>
+	<key>Lock «%@»? It moves to Locked chats, is hidden from the chat list and search, and new messages in it are not added to memory.</key>
+	<string>Закрыть «%@»? Чат перейдёт в «Закрытые чаты», скроется из списка чатов и поиска, а новые сообщения в нём не будут добавляться в память.</string>
+	<key>Locked chat</key>
+	<string>Закрытый чат</string>
+	<key>Locked chat · read only · %lu messages</key>
+	<string>Закрытый чат · только чтение · сообщений: %lu</string>
+	<key>Locked chats</key>
+	<string>Закрытые чаты</string>
+	<key>Locked chats are hidden from the chat list and search.</key>
+	<string>Закрытые чаты скрыты из списка и поиска.</string>
+	<key>Log out of ChatGPT X</key>
+	<string>Выйти из ChatGPT X</string>
+	<key>Log out of ChatGPT X on this iPhone? The session and recordings are removed from the device. Chats stay in your account.</key>
+	<string>Выйти из ChatGPT X? Чаты останутся в аккаунте.</string>
+	<key>Login</key>
+	<string>Логин</string>
+	<key>Login did not complete. Try again.</key>
+	<string>Вход не завершён. Попробуйте ещё раз.</string>
+	<key>Login later</key>
+	<string>Позже нужен вход</string>
+	<key>Login required</key>
+	<string>Требуется вход</string>
+	<key>Login requires Web Port to be enabled. Restart ChatGPT X after enabling it.</key>
+	<string>Для входа нужен включённый Web Port. После включения перезапустите ChatGPT X.</string>
+	<key>Login was cancelled. You can try again.</key>
+	<string>Вход отменён. Можно попробовать снова.</string>
+	<key>Lost access to two-step verification</key>
+	<string>Нет доступа к двухэтапной проверке</string>
+	<key>Mail is not set up on this iPhone.</key>
+	<string>На этом iPhone не настроена «Почта».</string>
+	<key>Mail opened with the letter. It is sent only from Mail.</key>
+	<string>«Почта» открыта с письмом. Отправляется оно только из «Почты».</string>
+	<key>Manage memories automatically</key>
+	<string>Управлять воспоминаниями автоматически</string>
+	<key>Managed permissions</key>
+	<string>Управляемые разрешения</string>
+	<key>Managed policy %lu</key>
+	<string>Управляемая политика %lu</string>
+	<key>Manually over SSH</key>
+	<string>Вручную по SSH</string>
+	<key>Memory deleted.</key>
+	<string>Воспоминание удалено.</string>
+	<key>Memory in search</key>
+	<string>Память в поиске</string>
+	<key>Memory is %d%% full</key>
+	<string>Память заполнена на %d%%</string>
+	<key>Memory is almost full. Delete what ChatGPT no longer needs to remember.</key>
+	<string>Память почти заполнена. Удалите то, что ChatGPT больше не нужно помнить.</string>
+	<key>Memory used</key>
+	<string>Использованная память</string>
+	<key>Mention</key>
+	<string>В задачу</string>
+	<key>Mention an app</key>
+	<string>Упомянуть приложение</string>
+	<key>Message copied.</key>
+	<string>Сообщение скопировано.</string>
+	<key>Message for Codex</key>
+	<string>Сообщение для Codex</string>
+	<key>Message text</key>
+	<string>Текст сообщения</string>
+	<key>Minute</key>
+	<string>Минута</string>
+	<key>Model family</key>
+	<string>Семейство</string>
+	<key>Model selected.</key>
+	<string>Модель выбрана.</string>
+	<key>Models</key>
+	<string>Модели</string>
+	<key>Month: %@ · year: %@</key>
+	<string>Месяц: %@ · год: %@</string>
+	<key>More about this reason</key>
+	<string>Подробнее об этой причине</string>
+	<key>More files match. Refine the search.</key>
+	<string>Найдены и другие файлы. Уточните поиск.</string>
+	<key>Move here</key>
+	<string>Переместить сюда</string>
+	<key>Move the folder «%@» and everything in it to Trash?</key>
+	<string>Переместить папку «%@» со всем содержимым в корзину?</string>
+	<key>Move this chat to the archive? It stays in your account.</key>
+	<string>Переместить чат в архив? Он останется в аккаунте.</string>
+	<key>Move to</key>
+	<string>Переместить в</string>
+	<key>Move to Trash</key>
+	<string>Переместить в корзину</string>
+	<key>Move to folder</key>
+	<string>Переместить в папку</string>
+	<key>Move to folder…</key>
+	<string>Переместить в папку…</string>
+	<key>Move to project</key>
+	<string>Перенести в проект</string>
+	<key>Move to project…</key>
+	<string>Перенести в проект…</string>
+	<key>Move «%@» to Trash? You can restore it from Trash.</key>
+	<string>Переместить «%@» в корзину? Его можно будет восстановить из корзины.</string>
+	<key>Moved to Trash.</key>
+	<string>Перемещено в корзину.</string>
+	<key>Moved to the project.</key>
+	<string>Перенесён в проект.</string>
+	<key>Moved.</key>
+	<string>Перемещено.</string>
+	<key>Network access for this turn</key>
+	<string>Доступ к сети на этот ход</string>
+	<key>New branch in a separate worktree</key>
+	<string>Новая ветка в отдельном worktree</string>
+	<key>New chat created.</key>
+	<string>Новый чат создан.</string>
+	<key>New chat in this project</key>
+	<string>Новый чат в проекте</string>
+	<key>New folder</key>
+	<string>Новая папка</string>
+	<key>New folder…</key>
+	<string>Новая папка…</string>
+	<key>New project…</key>
+	<string>Новый проект…</string>
+	<key>New task…</key>
+	<string>Новая задача…</string>
+	<key>New working tree</key>
+	<string>Новое рабочее дерево</string>
+	<key>Next message</key>
+	<string>Следующее сообщение</string>
+	<key>Next run</key>
+	<string>Следующий запуск</string>
+	<key>Next run: %@</key>
+	<string>Следующий запуск: %@</string>
+	<key>Next runs</key>
+	<string>Следующие запуски</string>
+	<key>No Codex tasks yet.</key>
+	<string>Задач Codex пока нет.</string>
+	<key>No accounts are connected.</key>
+	<string>Нет подключённых аккаунтов.</string>
+	<key>No apps are installed.</key>
+	<string>Нет установленных приложений.</string>
+	<key>No apps can be mentioned on this account.</key>
+	<string>В этом аккаунте нет приложений, которые можно упомянуть.</string>
+	<key>No apps have access to your account.</key>
+	<string>Ни у одного приложения нет доступа к аккаунту.</string>
+	<key>No archived chats.</key>
+	<string>Архив пуст.</string>
+	<key>No calculation was observed in this answer. The answer text is all there is.</key>
+	<string>В этом ответе вычислений нет — есть только текст ответа.</string>
+	<key>No chats in this project.</key>
+	<string>В проекте нет чатов.</string>
+	<key>No connected sources.</key>
+	<string>Нет подключённых источников.</string>
+	<key>No favorites yet.</key>
+	<string>В избранном пока пусто.</string>
+	<key>No files</key>
+	<string>Файлов нет</string>
+	<key>No files yet. In Mail, Safari or another app, tap “Open in…” and choose ChatGPT X. The file then appears here.</key>
+	<string>Файлов пока нет. Используйте «Открыть в…» в другом приложении.</string>
+	<key>No folders from connected sources.</key>
+	<string>Нет папок из подключённых источников.</string>
+	<key>No folders here.</key>
+	<string>Здесь нет папок.</string>
+	<key>No folders yet.</key>
+	<string>Папок пока нет.</string>
+	<key>No goal</key>
+	<string>Нет цели</string>
+	<key>No image was created. The answer explains why.</key>
+	<string>Изображение не создано. Причина — в ответе.</string>
+	<key>No images yet.</key>
+	<string>Изображений пока нет.</string>
+	<key>No instructions.</key>
+	<string>Инструкций нет.</string>
+	<key>No languages are available.</key>
+	<string>Нет доступных языков.</string>
+	<key>No languages available.</key>
+	<string>Языки недоступны.</string>
+	<key>No locked chats.</key>
+	<string>Нет закрытых чатов.</string>
+	<key>No locked chats. Locked chats are not set up for this account.</key>
+	<string>Закрытых чатов нет: для этого аккаунта они не настроены.</string>
+	<key>No models were received for this account.</key>
+	<string>Для этого аккаунта модели не получены.</string>
+	<key>No other devices.</key>
+	<string>Других устройств нет.</string>
+	<key>No pending operations.</key>
+	<string>Нет незавершённых операций.</string>
+	<key>No projects yet.</key>
+	<string>Проектов пока нет.</string>
+	<key>No response yet.</key>
+	<string>Ответ пока не получен.</string>
+	<key>No running commands.</key>
+	<string>Нет выполняющихся команд.</string>
+	<key>No subagents yet.</key>
+	<string>Подагентов пока нет.</string>
+	<key>No task events yet.</key>
+	<string>Событий задачи пока нет.</string>
+	<key>No tasks here.</key>
+	<string>Здесь нет задач.</string>
+	<key>No tasks yet.</key>
+	<string>Задач пока нет.</string>
+	<key>No tasks. Tasks are created in a chat with ChatGPT.</key>
+	<string>Задач нет. Задачи создаются в чате с ChatGPT.</string>
+	<key>No voice limit information yet.</key>
+	<string>Сведений о лимите голоса пока нет.</string>
+	<key>No voice limit notices.</key>
+	<string>Уведомлений о лимите голоса нет.</string>
+	<key>No voices for this mode and language.</key>
+	<string>Для этого режима и языка нет голосов.</string>
+	<key>No, thanks</key>
+	<string>Нет, спасибо</string>
+	<key>Normal</key>
+	<string>Обычный</string>
+	<key>Not available</key>
+	<string>Недоступно</string>
+	<key>Not available for this account</key>
+	<string>Недоступно для этого аккаунта</string>
+	<key>Not confirmed yet</key>
+	<string>Пока не подтверждено</string>
+	<key>Not determined</key>
+	<string>Не определён</string>
+	<key>Not downloaded: %@</key>
+	<string>Не скачан: %@</string>
+	<key>Not helpful</key>
+	<string>Бесполезно</string>
+	<key>Not installed</key>
+	<string>Не установлен</string>
+	<key>Not saved</key>
+	<string>Не сохранено</string>
+	<key>Not scheduled</key>
+	<string>Не запланирован</string>
+	<key>Not sent · tap “!”</key>
+	<string>Не отправлено · коснитесь «!»</string>
+	<key>Not set</key>
+	<string>Не задано</string>
+	<key>Not uploaded: %@</key>
+	<string>Не загружено: %@</string>
+	<key>Not uploaded: %@ The file can be uploaded again.</key>
+	<string>Не загружен: %@ Файл можно загрузить снова.</string>
+	<key>Nothing found</key>
+	<string>Ничего не найдено</string>
+	<key>Nothing found for “%@”.</key>
+	<string>Ничего не найдено по запросу «%@».</string>
+	<key>Nothing found.</key>
+	<string>Ничего не найдено.</string>
+	<key>Nothing has changed.</key>
+	<string>Ничего не изменилось.</string>
+	<key>Nothing of this kind in favorites.</key>
+	<string>В избранном нет ничего такого типа.</string>
+	<key>Nothing to show yet.</key>
+	<string>Пока ничего нет.</string>
+	<key>Nothing was recognised. No text was inserted.</key>
+	<string>Ничего не распознано. Текст не вставлен.</string>
+	<key>Nothing was reset.</key>
+	<string>Ничего не сброшено.</string>
+	<key>OAuth callback</key>
+	<string>Проверка callback OAuth</string>
+	<key>OAuth token exchange</key>
+	<string>Обмен кода OAuth на токен</string>
+	<key>OAuth token validation</key>
+	<string>Проверка токена OAuth</string>
+	<key>Occupation</key>
+	<string>Род занятий</string>
+	<key>Older events</key>
+	<string>Предыдущие события</string>
+	<key>On the service page</key>
+	<string>На странице сервиса</string>
+	<key>On weekdays</key>
+	<string>По будням</string>
+	<key>On weekdays at %@</key>
+	<string>По будням в %@</string>
+	<key>On your computer, open ChatGPT Settings → Connections → Control this Mac or PC → Add. Scan the QR code or enter its connection code.</key>
+	<string>На компьютере откройте настройки ChatGPT → Подключения → Управление этим Mac или ПК → Добавить. Отсканируйте QR-код или введите код подключения.</string>
+	<key>Once</key>
+	<string>Один раз</string>
+	<key>Once, %@</key>
+	<string>Однократно, %@</string>
+	<key>Only a clean working tree can be removed. Its branch is kept.</key>
+	<string>Можно удалить только чистое рабочее дерево. Его ветка сохранится.</string>
+	<key>Only a research report can be saved as PDF.</key>
+	<string>В PDF можно сохранить только отчёт исследования.</string>
+	<key>Only now</key>
+	<string>Только сейчас</string>
+	<key>Only the chart's description is available; the picture is not shown here.</key>
+	<string>Доступно только описание графика; само изображение здесь не показывается.</string>
+	<key>Only this project</key>
+	<string>Только этот проект</string>
+	<key>Open</key>
+	<string>Открыть</string>
+	<key>Open Session to log in to ChatGPT.</key>
+	<string>Откройте «Сессия», чтобы войти в ChatGPT.</string>
+	<key>Open a chat and start typing to add this file to a message.</key>
+	<string>Откройте чат и начните сообщение, чтобы добавить в него этот файл.</string>
+	<key>Open by link…</key>
+	<string>Открыть по ссылке…</string>
+	<key>Open chatgpt.com in a browser to continue.</key>
+	<string>Чтобы продолжить, откройте chatgpt.com в браузере.</string>
+	<key>Open conversation</key>
+	<string>Открыть разговор</string>
+	<key>Open in Mail</key>
+	<string>Открыть в «Почте»</string>
+	<key>Open in Safari</key>
+	<string>Открыть в Safari</string>
+	<key>Open text selection and copying</key>
+	<string>Открыть выделение и копирование текста</string>
+	<key>Open the link on your computer. After verification, copy the full localhost callback URL and paste it here within ten minutes.</key>
+	<string>Откройте ссылку на компьютере. После проверки скопируйте полный адрес localhost из адресной строки и вставьте его сюда в течение десяти минут.</string>
+	<key>Open this GPT on the ChatGPT website to manage its action permissions? Nothing changes in ChatGPT X.</key>
+	<string>Управлять разрешениями этого GPT на chatgpt.com?</string>
+	<key>OpenAI reviews the report together with this conversation. Nothing is sent until you tap Send report.</key>
+	<string>OpenAI рассмотрит жалобу вместе с этим разговором. Ничего не отправляется, пока вы не нажмёте «Отправить жалобу».</string>
+	<key>Opening the login page…</key>
+	<string>Открываем страницу входа…</string>
+	<key>Opening the secure login page…</key>
+	<string>Открываем безопасную страницу входа…</string>
+	<key>Opens dictation. Recording starts with a separate button</key>
+	<string>Открывает экран диктовки. Запись запускается отдельной кнопкой</string>
+	<key>Other devices</key>
+	<string>Другие устройства</string>
+	<key>Other devices stay logged in.</key>
+	<string>На других устройствах вход сохранится.</string>
+	<key>Other ways to sign in…</key>
+	<string>Другие способы входа…</string>
+	<key>PDF</key>
+	<string>PDF</string>
+	<key>PDF files</key>
+	<string>Файлы PDF</string>
+	<key>PIN</key>
+	<string>PIN</string>
+	<key>Pages</key>
+	<string>Страницы</string>
+	<key>Pages open in the ChatGPT web version.</key>
+	<string>Страницы открываются в веб-версии ChatGPT.</string>
+	<key>Pair a computer</key>
+	<string>Привязать компьютер</string>
+	<key>Paired computer</key>
+	<string>Привязанный компьютер</string>
+	<key>Pairing on this legacy iPhone is experimental. The service may reject this device. You can also connect over SSH.</key>
+	<string>Сопряжение на iOS 6 экспериментальное. Можно подключиться и по SSH.</string>
+	<key>Paste the full localhost callback URL shown after verification on your computer. It is used only for this pending request.</key>
+	<string>Вставьте полный адрес localhost из адресной строки после проверки на компьютере. Он используется только для этого запроса.</string>
+	<key>Paste verification callback…</key>
+	<string>Вставить адрес после проверки…</string>
+	<key>Pause goal</key>
+	<string>Приостановить цель</string>
+	<key>Paused</key>
+	<string>На паузе</string>
+	<key>Paused or finished</key>
+	<string>На паузе или завершённые</string>
+	<key>Paused · %@ of %@</key>
+	<string>Пауза · %@ из %@</string>
+	<key>Permission requests</key>
+	<string>Запросы разрешений</string>
+	<key>Permissions</key>
+	<string>Разрешения</string>
+	<key>Photos did not confirm the save.</key>
+	<string>«Фото» не подтвердило сохранение.</string>
+	<key>Places, products and images from this answer that you can keep in your Library.</key>
+	<string>Места, товары и изображения из этого ответа, которые можно сохранить в Библиотеке.</string>
+	<key>Plan</key>
+	<string>План</string>
+	<key>Plans</key>
+	<string>Планы</string>
+	<key>Play sample</key>
+	<string>Прослушать образец</string>
+	<key>Playback is not available.</key>
+	<string>Воспроизведение недоступно.</string>
+	<key>Playing · %@ of %@</key>
+	<string>Воспроизведение · %@ из %@</string>
+	<key>Port</key>
+	<string>Порт</string>
+	<key>Portuguese</key>
+	<string>Португальский</string>
+	<key>Precise location</key>
+	<string>Точная геопозиция</string>
+	<key>Prefer Auto</key>
+	<string>Предпочитать «Авто»</string>
+	<key>Preparing the PDF…</key>
+	<string>Подготовка PDF…</string>
+	<key>Preparing the request…</key>
+	<string>Готовлю запрос…</string>
+	<key>Preparing to send…</key>
+	<string>Подготовка отправки…</string>
+	<key>Preparing to send… %lu s</key>
+	<string>Подготовка отправки… %lu с</string>
+	<key>Preparing voice conversation…</key>
+	<string>Подготавливаю голосовой разговор…</string>
+	<key>Preparing…</key>
+	<string>Готовлю…</string>
+	<key>Presentation</key>
+	<string>Презентация</string>
+	<key>Presentations</key>
+	<string>Презентации</string>
+	<key>Previous 30 days</key>
+	<string>Последние 30 дней</string>
+	<key>Previous 7 days</key>
+	<string>Последние 7 дней</string>
+	<key>Priority</key>
+	<string>Приоритет</string>
+	<key>Privacy</key>
+	<string>Конфиденциальность</string>
+	<key>Privacy Portal: data requests</key>
+	<string>Privacy Portal: запросы о данных</string>
+	<key>Privacy center</key>
+	<string>Центр конфиденциальности</string>
+	<key>Pro</key>
+	<string>Профи</string>
+	<key>Products</key>
+	<string>Товары</string>
+	<key>Project actions</key>
+	<string>Действия с проектом</string>
+	<key>Project chat</key>
+	<string>Чат проекта</string>
+	<key>Project folder</key>
+	<string>Папка проекта</string>
+	<key>Project link</key>
+	<string>Ссылка на проект</string>
+	<key>Project memory changed.</key>
+	<string>Память проекта изменена.</string>
+	<key>Project title</key>
+	<string>Название проекта</string>
+	<key>Projects you open by link appear here until you log out.</key>
+	<string>Проекты, открытые по ссылке, появятся здесь до выхода из аккаунта.</string>
+	<key>Protection</key>
+	<string>Защита</string>
+	<key>QR code recognized, but its connection format is unsupported.</key>
+	<string>QR-код распознан, но его формат подключения пока не поддерживается.</string>
+	<key>Question</key>
+	<string>Вопрос</string>
+	<key>Questions and actions</key>
+	<string>Вопросы и действия</string>
+	<key>Queued…</key>
+	<string>В очереди…</string>
+	<key>Rated helpful</key>
+	<string>Отмечено как полезное</string>
+	<key>Rated not helpful</key>
+	<string>Отмечено как бесполезное</string>
+	<key>Read again</key>
+	<string>Прочитать снова</string>
+	<key>Read aloud</key>
+	<string>Прочитать вслух</string>
+	<key>Read connected computers</key>
+	<string>Проверить подключённые компьютеры</string>
+	<key>Read files</key>
+	<string>Чтение файлов</string>
+	<key>Read only</key>
+	<string>Только просмотр</string>
+	<key>Read project memory again</key>
+	<string>Прочитать память проекта снова</string>
+	<key>Read the task again to get its current permission settings.</key>
+	<string>Обновите задачу, чтобы получить её текущие разрешения.</string>
+	<key>Read the task history to restore the connection.</key>
+	<string>Прочитайте историю задачи, чтобы восстановить связь.</string>
+	<key>Ready to send</key>
+	<string>Готов к отправке</string>
+	<key>Ready to send · %@</key>
+	<string>Готов к отправке · %@</string>
+	<key>Reasoning depth</key>
+	<string>Глубина рассуждения</string>
+	<key>Reasoning summary</key>
+	<string>Ход рассуждений</string>
+	<key>Receiving response…</key>
+	<string>Ответ поступает…</string>
+	<key>Recent</key>
+	<string>Недавние</string>
+	<key>Recipient</key>
+	<string>Получатель</string>
+	<key>Reconnect</key>
+	<string>Восстановить связь</string>
+	<key>Record</key>
+	<string>Записать</string>
+	<key>Record up to %lu seconds. Transcription starts separately; send your message from the chat.</key>
+	<string>Запись до %lu секунд.</string>
+	<key>Recording stopped. Tap Transcribe to submit it for transcription.</key>
+	<string>Запись остановлена. Нажмите «Распознать», чтобы отправить её на распознавание.</string>
+	<key>Recovery</key>
+	<string>Восстановление</string>
+	<key>Refresh</key>
+	<string>Обновить</string>
+	<key>Refresh connection authorization</key>
+	<string>Обновить допуск подключения</string>
+	<key>Refresh connection authorization, then connect again.</key>
+	<string>Обновите допуск подключения, затем подключитесь снова.</string>
+	<key>Refresh history</key>
+	<string>Обновить историю</string>
+	<key>Regenerate</key>
+	<string>Перегенерировать</string>
+	<key>Region is not set.</key>
+	<string>Регион не задан.</string>
+	<key>Remove ChatGPT X's temporary files from this iPhone?</key>
+	<string>Удалить временные файлы ChatGPT X с этого iPhone?</string>
+	<key>Remove from Library</key>
+	<string>Удалить из Библиотеки</string>
+	<key>Remove from favorites</key>
+	<string>Убрать из избранного</string>
+	<key>Remove from message</key>
+	<string>Убрать из сообщения</string>
+	<key>Remove goal</key>
+	<string>Удалить цель</string>
+	<key>Remove image</key>
+	<string>Удалить изображение</string>
+	<key>Remove protection</key>
+	<string>Снять защиту</string>
+	<key>Remove protection? The chat returns to the chat list and search, and follows your usual memory settings again.</key>
+	<string>Снять защиту? Чат вернётся в список чатов и поиск и снова будет следовать обычным настройкам памяти.</string>
+	<key>Remove skill</key>
+	<string>Удалить навык</string>
+	<key>Remove the access of «%@»?</key>
+	<string>Отозвать доступ «%@»?</string>
+	<key>Remove the access of «%@»? The app will no longer see your account information.</key>
+	<string>Отозвать доступ «%@»? Приложение больше не будет видеть данные вашего аккаунта.</string>
+	<key>Remove this goal?</key>
+	<string>Удалить эту цель?</string>
+	<key>Remove this source from the project? The file stays in your Library.</key>
+	<string>Убрать этот источник из проекта? Файл останется в библиотеке.</string>
+	<key>Remove worktree</key>
+	<string>Удалить worktree</string>
+	<key>Remove «%@» from your apps? ChatGPT can no longer use it.</key>
+	<string>Удалить «%@» из ваших приложений? ChatGPT больше не сможет его использовать.</string>
+	<key>Removed from Library.</key>
+	<string>Удалено из Библиотеки.</string>
+	<key>Removed from favorites.</key>
+	<string>Убрано из избранного.</string>
+	<key>Removed from the project.</key>
+	<string>Убран из проекта.</string>
+	<key>Removes the saved session only on this iPhone</key>
+	<string>Удаляет сохранённую сессию только на этом iPhone</string>
+	<key>Rename file</key>
+	<string>Переименовать файл</string>
+	<key>Rename folder</key>
+	<string>Переименовать папку</string>
+	<key>Renamed.</key>
+	<string>Переименовано.</string>
+	<key>Rename…</key>
+	<string>Переименовать…</string>
+	<key>Renew session</key>
+	<string>Обновить сессию</string>
+	<key>Renewal</key>
+	<string>Обновление</string>
+	<key>Renewing the session does not send messages. Logging out disconnects only ChatGPT X.</key>
+	<string>Выход завершает сеанс только в этом приложении.</string>
+	<key>Repeat</key>
+	<string>Повтор</string>
+	<key>Replace…</key>
+	<string>Заменить…</string>
+	<key>Report sent.</key>
+	<string>Жалоба отправлена.</string>
+	<key>Report…</key>
+	<string>Пожаловаться…</string>
+	<key>Request a copy of your ChatGPT data? A download link will be sent to the e-mail address of your account.</key>
+	<string>Запросить копию данных ChatGPT? Ссылка для скачивания придёт на e-mail аккаунта.</string>
+	<key>Request export</key>
+	<string>Запросить экспорт</string>
+	<key>Request is no longer active.</key>
+	<string>Запрос больше не актуален.</string>
+	<key>Research finished. Open the chat to read the report.</key>
+	<string>Исследование завершено. Откройте чат, чтобы прочитать отчёт.</string>
+	<key>Research report as PDF</key>
+	<string>Отчёт исследования в PDF</string>
+	<key>Research status</key>
+	<string>Статус исследования</string>
+	<key>Reset the PIN on the ChatGPT website? There you confirm with your password, and every locked chat is deleted. ChatGPT X sends nothing and cannot see the result until you check again.</key>
+	<string>Сбросить PIN на chatgpt.com? Все закрытые чаты будут удалены.</string>
+	<key>Reset the PIN? All locked chats are deleted for good. You confirm it on the ChatGPT website with your account password first.</key>
+	<string>Сбросить PIN? Все закрытые чаты будут удалены безвозвратно. Сначала вы подтвердите это паролем аккаунта на сайте ChatGPT.</string>
+	<key>Resets</key>
+	<string>Сбросится</string>
+	<key>Resetting the PIN deletes every locked chat.</key>
+	<string>Сброс PIN удаляет все закрытые чаты.</string>
+	<key>Resource</key>
+	<string>Ресурс</string>
+	<key>Response saved in ChatGPT.</key>
+	<string>Ответ сохранён в ChatGPT.</string>
+	<key>Response stopped</key>
+	<string>Ответ остановлен</string>
+	<key>Restore</key>
+	<string>Восстановить</string>
+	<key>Restore session</key>
+	<string>Восстановить сессию</string>
+	<key>Restored.</key>
+	<string>Восстановлено.</string>
+	<key>Restoring session…</key>
+	<string>Восстанавливаем сессию…</string>
+	<key>Result unknown</key>
+	<string>Результат неизвестен</string>
+	<key>Results</key>
+	<string>Результаты</string>
+	<key>Results may be incomplete: no answer from %@.</key>
+	<string>Результаты могут быть неполными: нет ответа от источника «%@».</string>
+	<key>Results may be incomplete: some sources did not answer.</key>
+	<string>Результаты могут быть неполными: некоторые источники не ответили.</string>
+	<key>Resume goal</key>
+	<string>Возобновить цель</string>
+	<key>Retry previous send</key>
+	<string>Повторить прошлую отправку</string>
+	<key>Retry transcription</key>
+	<string>Повторить распознавание</string>
+	<key>Return from archive</key>
+	<string>Вернуть из архива</string>
+	<key>Return this chat from the archive?</key>
+	<string>Вернуть этот чат из архива?</string>
+	<key>Review changes</key>
+	<string>Проверить изменения</string>
+	<key>Review comment</key>
+	<string>Замечание ревью</string>
+	<key>Review important actions</key>
+	<string>Проверять важные действия</string>
+	<key>Review the text. Inserting will add it to the message field.</key>
+	<string>Проверьте текст. Вставка добавит его в поле сообщения.</string>
+	<key>ChatGPT X cannot check this folder, so it cannot move items into it.</key>
+	<string>ChatGPT X не может проверить эту папку, поэтому не перемещает в неё объекты.</string>
+	<key>ChatGPT X cannot confirm that this setting may be changed for your account, so it is shown read-only. You can change it in the web version.</key>
+	<string>Здесь только просмотр. Изменить можно на chatgpt.com.</string>
+	<key>ChatGPT X cannot confirm your recent sign-in for this request. Continue on the web.</key>
+	<string>ChatGPT X не может подтвердить ваш недавний вход для этого запроса. Продолжите в веб-версии.</string>
+	<key>ChatGPT X cannot edit this schedule. It is kept exactly as it is.</key>
+	<string>ChatGPT X не может изменить это расписание. Оно сохраняется без изменений.</string>
+	<key>ChatGPT X cannot list your projects: the service has no such request in this build. Paste a project link from the web version (chatgpt.com/g/…/project).</key>
+	<string>Вставьте ссылку на проект с chatgpt.com, чтобы открыть его.</string>
+	<key>ChatGPT X cannot open this source now.</key>
+	<string>Сейчас ChatGPT X не может открыть этот источник.</string>
+	<key>ChatGPT X cannot start a chat with a GPT.</key>
+	<string>ChatGPT X не может начать чат с GPT.</string>
+	<key>ChatGPT X does not read the iPhone's location. This setting is for the service.</key>
+	<string>ChatGPT X не читает геопозицию iPhone. Это настройка сервиса.</string>
+	<key>ChatGPT X has no voice conversations. These settings are saved to your ChatGPT account and apply in other ChatGPT apps.</key>
+	<string>Эти настройки действуют во всех ваших приложениях ChatGPT.</string>
+	<key>ChatGPT X only prepares the letter. Mail opens it; you check and send it there.</key>
+	<string>ChatGPT X только готовит письмо. Его откроет «Почта» — там вы проверите и отправите его.</string>
+	<key>ChatGPT X shows no live voice screen. The transcript appears where the voice conversation is shown.</key>
+	<string>Расшифровка появится в чате.</string>
+	<key>Run %lu</key>
+	<string>Запуск %lu</string>
+	<key>Run now</key>
+	<string>Запустить сейчас</string>
+	<key>Run «%@» now? The result appears in the task's chat.</key>
+	<string>Запустить «%@» сейчас? Результат появится в чате задачи.</string>
+	<key>Running on the service. Check the status yourself; it is not polled automatically.</key>
+	<string>Выполняется на сервисе.</string>
+	<key>Russian</key>
+	<string>Русский</string>
+	<key>Safari</key>
+	<string>Safari</string>
+	<key>Sample</key>
+	<string>Образец</string>
+	<key>Sandbox access</key>
+	<string>Доступ за пределы ограничений</string>
+	<key>Save goal</key>
+	<string>Сохранить цель</string>
+	<key>Save image to Photos</key>
+	<string>Сохранить изображение в «Фото»</string>
+	<key>Save instructions</key>
+	<string>Сохранить инструкции</string>
+	<key>Save this answer to your Library? (Saved answers of long chats may not all be listed.)</key>
+	<string>Сохранить ответ в библиотеку?</string>
+	<key>Save this answer to your Library? The saved copy keeps the answer as it is now.</key>
+	<string>Сохранить этот ответ в Библиотеку? Сохранённая копия останется такой, как сейчас.</string>
+	<key>Save to Library</key>
+	<string>Сохранить в Библиотеку</string>
+	<key>Save to Library…</key>
+	<string>Сохранить в Библиотеку…</string>
+	<key>Saved</key>
+	<string>Сохранено</string>
+	<key>Saved answers</key>
+	<string>Сохранённые ответы</string>
+	<key>Saved answers, places, products and other saved items are listed here; ChatGPT X opens only files from favorites.</key>
+	<string>Из избранного открываются только файлы.</string>
+	<key>Saved items</key>
+	<string>Сохранённые элементы</string>
+	<key>Saved items…</key>
+	<string>Сохранённые элементы…</string>
+	<key>Saved memory</key>
+	<string>Сохранённая память</string>
+	<key>Saved to Library.</key>
+	<string>Сохранено в Библиотеку.</string>
+	<key>Saved to Photos.</key>
+	<string>Сохранено в «Фото».</string>
+	<key>Saved.</key>
+	<string>Сохранено.</string>
+	<key>Saving login…</key>
+	<string>Сохраняем вход…</string>
+	<key>Saving to Photos…</key>
+	<string>Сохраняю в «Фото»…</string>
+	<key>Saving…</key>
+	<string>Сохраняю…</string>
+	<key>Say what is wrong. ChatGPT uses your correction from now on.</key>
+	<string>Напишите, что неверно. ChatGPT будет учитывать ваше исправление.</string>
+	<key>Scanned pages</key>
+	<string>Отсканированные страницы</string>
+	<key>Schedule</key>
+	<string>Расписание</string>
+	<key>Scheduled</key>
+	<string>Запланированные</string>
+	<key>Search GPTs</key>
+	<string>Поиск GPT</string>
+	<key>Search again</key>
+	<string>Искать снова</string>
+	<key>Search apps</key>
+	<string>Поиск приложений</string>
+	<key>Search files</key>
+	<string>Поиск файлов</string>
+	<key>Search in %@</key>
+	<string>Поиск в %@</string>
+	<key>Search in Library</key>
+	<string>Поиск в библиотеке</string>
+	<key>Search in chats</key>
+	<string>Поиск по чатам</string>
+	<key>Search in this folder</key>
+	<string>Поиск в этой папке</string>
+	<key>Search looks through one page of projects at a time. Show more to look further.</key>
+	<string>Поиск просматривает проекты по одной странице. Нажмите «Показать ещё», чтобы искать дальше.</string>
+	<key>Search memories</key>
+	<string>Поиск по воспоминаниям</string>
+	<key>Search results</key>
+	<string>Результаты поиска</string>
+	<key>Search the web automatically</key>
+	<string>Автоматический поиск в интернете</string>
+	<key>Searching starts when you stop typing.</key>
+	<string>Поиск начнётся, когда вы перестанете печатать.</string>
+	<key>Searching the web…</key>
+	<string>Ищу в интернете…</string>
+	<key>Security</key>
+	<string>Безопасность</string>
+	<key>Select in text</key>
+	<string>Выделить</string>
+	<key>Send again</key>
+	<string>Отправить ещё раз</string>
+	<key>Send report</key>
+	<string>Отправить жалобу</string>
+	<key>Send this conversation with the report</key>
+	<string>Отправить этот разговор вместе с жалобой</string>
+	<key>Sending the request…</key>
+	<string>Отправка запроса…</string>
+	<key>Sent · waiting for confirmation</key>
+	<string>Отправлено · ждём подтверждения</string>
+	<key>Service order</key>
+	<string>Порядок сервиса</string>
+	<key>Services</key>
+	<string>Сервисы</string>
+	<key>Services are connected and reconnected in the web version; ChatGPT X does not change connections.</key>
+	<string>Сервисы подключаются на chatgpt.com.</string>
+	<key>Session</key>
+	<string>Сессия</string>
+	<key>Session active</key>
+	<string>Сессия активна</string>
+	<key>Session active on this iPhone</key>
+	<string>Сессия активна на этом iPhone</string>
+	<key>Session renewal is available</key>
+	<string>Обновление сессии доступно</string>
+	<key>Set</key>
+	<string>Задан</string>
+	<key>Share image</key>
+	<string>Отправить изображение</string>
+	<key>Share link…</key>
+	<string>Поделиться ссылкой…</string>
+	<key>Shared chat</key>
+	<string>Опубликованный чат</string>
+	<key>Shared link · read only · %lu messages</key>
+	<string>Ссылка · только чтение · сообщений: %lu</string>
+	<key>Shared with me</key>
+	<string>Доступные мне</string>
+	<key>Show all</key>
+	<string>Показать все</string>
+	<key>Show all apps</key>
+	<string>Показать все приложения</string>
+	<key>Show as grid</key>
+	<string>Показать сеткой</string>
+	<key>Show as list</key>
+	<string>Показать списком</string>
+	<key>Show transcript</key>
+	<string>Показывать расшифровку</string>
+	<key>Showing: %@ · %@.</key>
+	<string>Показаны: %@ · %@.</string>
+	<key>Shown for reference. You can change this in the web version.</key>
+	<string>Показано для справки. Изменить можно в веб-версии.</string>
+	<key>Shown on this screen only. The next message starts a separate conversation.</key>
+	<string>Показано только на этом экране. Следующее сообщение начнёт отдельный разговор.</string>
+	<key>Side</key>
+	<string>Сторона</string>
+	<key>Sign in again on the web</key>
+	<string>Войти заново в веб-версии</string>
+	<key>Sign in to the app again</key>
+	<string>Нужно снова войти в приложение</string>
+	<key>Sign out everywhere</key>
+	<string>Выйти везде</string>
+	<key>Sign out everywhere, including this iPhone? Every session ends and you will need to sign in again here too.</key>
+	<string>Выйти везде, включая этот iPhone? Все сеансы завершатся, и здесь тоже понадобится войти заново.</string>
+	<key>Sign out everywhere, including this iPhone? You will need to sign in again.</key>
+	<string>Выйти везде, включая этот iPhone? Понадобится войти заново.</string>
+	<key>Sign out on this device</key>
+	<string>Выйти на этом устройстве</string>
+	<key>Sign out on «%@»? That device will need to sign in again.</key>
+	<string>Выйти на «%@»? На том устройстве понадобится войти заново.</string>
+	<key>Sign-in</key>
+	<string>Вход</string>
+	<key>Signed out everywhere.</key>
+	<string>Выполнен выход везде.</string>
+	<key>Signed out on that device.</key>
+	<string>Выполнен выход на том устройстве.</string>
+	<key>Signed out · trusted device</key>
+	<string>Вход не выполнен · доверенное устройство</string>
+	<key>Signs out on every device, this iPhone included. You will need to sign in again.</key>
+	<string>Выход на всех устройствах, включая этот iPhone. Понадобится войти заново.</string>
+	<key>Since HEAD</key>
+	<string>От HEAD</string>
+	<key>Size</key>
+	<string>Размер</string>
+	<key>Skills</key>
+	<string>Навыки</string>
+	<key>Small</key>
+	<string>Мелкий</string>
+	<key>Smaller</key>
+	<string>Мельче</string>
+	<key>Sort</key>
+	<string>Сортировка</string>
+	<key>Sort by name</key>
+	<string>Сортировать по имени</string>
+	<key>Sorted by name within each page the service returns.</key>
+	<string>Сортировка по имени — внутри каждой страницы, которую возвращает сервис.</string>
+	<key>Source language</key>
+	<string>Исходный язык</string>
+	<key>Source removed.</key>
+	<string>Источник убран.</string>
+	<key>Source: %@</key>
+	<string>Источник: %@</string>
+	<key>Spanish</key>
+	<string>Испанский</string>
+	<key>Speak naturally. You can interrupt by speaking.</key>
+	<string>Говорите как обычно. Чтобы перебить ответ, начните говорить.</string>
+	<key>Speed</key>
+	<string>Скорость</string>
+	<key>Spreadsheets</key>
+	<string>Таблицы</string>
+	<key>Staged changes</key>
+	<string>Добавленное в индекс</string>
+	<key>Standard</key>
+	<string>Стандартный</string>
+	<key>Start a chat</key>
+	<string>Начать чат</string>
+	<key>Start a new chat that continues from this message? This chat stays as it is.</key>
+	<string>Начать новый чат, продолжающий это сообщение? Этот чат останется без изменений.</string>
+	<key>State</key>
+	<string>Состояние</string>
+	<key>Status unknown</key>
+	<string>Состояние неизвестно</string>
+	<key>Still running. You can check again in %@ s.</key>
+	<string>Ещё выполняется. Проверить снова можно через %@ с.</string>
+	<key>Stop recording</key>
+	<string>Остановить запись</string>
+	<key>Stop research</key>
+	<string>Остановить исследование</string>
+	<key>Stop trusting</key>
+	<string>Перестать доверять</string>
+	<key>Stop trusting «%@»? It will need full verification at its next sign-in.</key>
+	<string>Перестать доверять «%@»? При следующем входе на нём понадобится полная проверка.</string>
+	<key>Storage</key>
+	<string>Хранилище</string>
+	<key>Study</key>
+	<string>Учёба</string>
+	<key>Style</key>
+	<string>Стиль</string>
+	<key>Subagent</key>
+	<string>Подагент</string>
+	<key>Subagent history</key>
+	<string>История подагента</string>
+	<key>Subagents</key>
+	<string>Подагенты</string>
+	<key>Subject</key>
+	<string>Тема</string>
+	<key>Suggested next request</key>
+	<string>Следующий запрос</string>
+	<key>Suggestions</key>
+	<string>Подсказки</string>
+	<key>Switch to standard voice</key>
+	<string>Перейти на стандартный голос</string>
+	<key>Switch to standard voice? Your voice mode setting changes to Standard.</key>
+	<string>Перейти на стандартный голос? Настройка голосового режима сменится на «Стандартный».</string>
+	<key>Switched to standard voice.</key>
+	<string>Включён стандартный голос.</string>
+	<key>Sync</key>
+	<string>Синхронизация</string>
+	<key>Tap Load history or start a new chat.</key>
+	<string>Нажмите «Загрузить историю» или начните новый чат.</string>
+	<key>Tap a device to sign it out. Signing out ends its session there.</key>
+	<string>Нажмите на устройство, чтобы выйти на нём. Выход завершает его сеанс.</string>
+	<key>Tap a memory to delete it or keep it a priority.</key>
+	<string>Нажмите на воспоминание, чтобы удалить его или сделать приоритетным.</string>
+	<key>Tap a memory to delete it.</key>
+	<string>Коснитесь воспоминания, чтобы удалить его.</string>
+	<key>Tap a memory to keep it a priority.</key>
+	<string>Нажмите на воспоминание, чтобы сделать его приоритетным.</string>
+	<key>Tap an app to remove its access.</key>
+	<string>Коснитесь приложения, чтобы отозвать его доступ.</string>
+	<key>Tap an example to put it into a new chat with this GPT. It is sent only when you tap Send.</key>
+	<string>Коснитесь примера, чтобы начать чат.</string>
+	<key>Tap the orb to resume</key>
+	<string>Нажмите на шар, чтобы продолжить</string>
+	<key>Tap to reconnect. Your last message will not be sent again.</key>
+	<string>Нажмите для восстановления связи. Последнее сообщение не будет отправлено повторно.</string>
+	<key>Task</key>
+	<string>Задача</string>
+	<key>Task request</key>
+	<string>Запрос</string>
+	<key>Task title</key>
+	<string>Название задачи</string>
+	<key>Tasks</key>
+	<string>Задачи</string>
+	<key>Tasks run on the service; the result appears in the task's chat. iOS 6 gets no notification: you see it when you open the app.</key>
+	<string>Результат появится в чате задачи.</string>
+	<key>Temporary chat is off</key>
+	<string>Временный чат выключен</string>
+	<key>Temporary chat is on</key>
+	<string>Временный чат включён</string>
+	<key>Temporary files</key>
+	<string>Временные файлы</string>
+	<key>Temporary files removed.</key>
+	<string>Временные файлы удалены.</string>
+	<key>Text inserted into the message field. Send it from the chat when you are ready.</key>
+	<string>Текст вставлен в поле сообщения. Отправьте его из чата, когда будете готовы.</string>
+	<key>Text size</key>
+	<string>Размер текста</string>
+	<key>Thanks for the rating.</key>
+	<string>Спасибо за оценку.</string>
+	<key>The Codex connection changed. Open it again.</key>
+	<string>Подключение Codex изменилось. Откройте его заново.</string>
+	<key>The PDF was prepared but could not be handed to other apps.</key>
+	<string>PDF подготовлен, но его не удалось передать другим приложениям.</string>
+	<key>The PIN is being reset: locked chats are being deleted. Check again later.</key>
+	<string>Идёт сброс PIN: закрытые чаты удаляются. Проверьте позже.</string>
+	<key>The PIN reset has started.</key>
+	<string>Сброс PIN начат.</string>
+	<key>The PIN was changed.</key>
+	<string>PIN изменён.</string>
+	<key>The PIN was created.</key>
+	<string>PIN создан.</string>
+	<key>The PIN was not changed.</key>
+	<string>PIN не изменён.</string>
+	<key>The PIN was reset. Locked chats were deleted.</key>
+	<string>PIN сброшен. Закрытые чаты удалены.</string>
+	<key>The answer could not be matched. Read it again.</key>
+	<string>Не удалось сопоставить ответ. Прочитайте снова.</string>
+	<key>The answer is incomplete</key>
+	<string>Ответ не завершён</string>
+	<key>The answer was found in the chat.</key>
+	<string>Ответ найден в чате.</string>
+	<key>The answer was not received completely</key>
+	<string>Ответ получен не полностью</string>
+	<key>The app mention is no longer in the text. Mention the app again or turn the mode off.</key>
+	<string>Упоминания приложения больше нет в тексте. Упомяните приложение снова или выключите режим.</string>
+	<key>The app you mention helps with the next message. It may read what you write in it.</key>
+	<string>Упомянутое приложение поможет со следующим сообщением. Оно может прочитать то, что вы в нём пишете.</string>
+	<key>The camera is unavailable. Enter the connection code instead.</key>
+	<string>Камера недоступна. Введите код подключения.</string>
+	<key>The change was saved and read back from the service.</key>
+	<string>Изменение сохранено и подтверждено повторным чтением.</string>
+	<key>The chat is back in the list.</key>
+	<string>Чат снова в списке.</string>
+	<key>The chat is locked.</key>
+	<string>Чат закрыт.</string>
+	<key>The computer enforces this managed policy.</key>
+	<string>Эта управляемая политика применяется на компьютере.</string>
+	<key>The confirmation on the website was not completed. Nothing was reset.</key>
+	<string>Подтверждение на сайте не завершено. Ничего не сброшено.</string>
+	<key>The connection dropped after sending. Check the conversation history before sending again.</key>
+	<string>Связь оборвалась после отправки. Проверьте историю разговора, прежде чем отправлять снова.</string>
+	<key>The connection ended before the service confirmed the change. It is not sent again. Check the current state?</key>
+	<string>Соединение прервалось до подтверждения сервисом. Повторно изменение не отправляется. Проверить текущее состояние?</string>
+	<key>The connection ended before the service confirmed the request. It is not sent again.</key>
+	<string>Соединение прервалось до того, как сервис подтвердил запрос. Повторно он не отправляется.</string>
+	<key>The connection timed out.</key>
+	<string>Время ожидания ответа истекло.</string>
+	<key>The connection was interrupted.</key>
+	<string>Соединение прервано.</string>
+	<key>The current file stays in the message until the new one is ready.</key>
+	<string>Текущий файл остаётся в сообщении, пока новый не будет готов.</string>
+	<key>The data changed or another request is running. Read it again first.</key>
+	<string>Данные изменились или выполняется другой запрос. Сначала прочитайте их снова.</string>
+	<key>The destination folder could not be checked.</key>
+	<string>Не удалось проверить папку назначения.</string>
+	<key>The destination must be clean. Untracked files must be added first. Nothing is committed or pushed.</key>
+	<string>Рабочее дерево назначения должно быть чистым. Сначала добавьте неотслеживаемые файлы в Git. Коммиты и отправка не выполняются.</string>
+	<key>The device is no longer trusted.</key>
+	<string>Устройство больше не доверенное.</string>
+	<key>The device list was out of date and has been read again. Choose the device again.</key>
+	<string>Список устройств устарел и прочитан заново. Выберите устройство ещё раз.</string>
+	<key>The download result is unknown. It is not repeated.</key>
+	<string>Результат скачивания неизвестен. Повтора нет.</string>
+	<key>The draft changed. Open the suggestions again.</key>
+	<string>Черновик изменился. Откройте подсказки снова.</string>
+	<key>The file could not be removed from the message.</key>
+	<string>Не удалось убрать файл из сообщения.</string>
+	<key>The file has expired.</key>
+	<string>Срок хранения файла истёк.</string>
+	<key>The file is larger than %@ and was not attached.</key>
+	<string>Файл больше %@ и не прикреплён.</string>
+	<key>The file is no longer available on this iPhone or on the service.</key>
+	<string>Файл больше недоступен на этом iPhone или в сервисе.</string>
+	<key>The file is not downloaded or uploaded again. It is checked once more right before sending.</key>
+	<string>Файл не скачивается и не загружается заново. Перед отправкой он проверяется ещё раз.</string>
+	<key>The file is ready but was not added to the message. Tap it to try again.</key>
+	<string>Файл готов, но не добавлен в сообщение. Нажмите на него, чтобы попробовать снова.</string>
+	<key>The icon is too long.</key>
+	<string>Значок слишком длинный.</string>
+	<key>The image could not be prepared for sharing.</key>
+	<string>Не удалось подготовить изображение для отправки.</string>
+	<key>The image download has an unknown result. It is not repeated.</key>
+	<string>Результат скачивания изображения неизвестен. Повтора нет.</string>
+	<key>The image is no longer available.</key>
+	<string>Изображение больше недоступно.</string>
+	<key>The instructions are too long.</key>
+	<string>Инструкции слишком длинные.</string>
+	<key>The instructions were saved.</key>
+	<string>Инструкции сохранены.</string>
+	<key>The language changes after a restart.</key>
+	<string>Язык сменится после перезапуска.</string>
+	<key>The language you speak in voice conversations. Automatic lets ChatGPT detect it.</key>
+	<string>Язык, на котором вы говорите в голосовых разговорах. «Автоматически» — ChatGPT определит его сам.</string>
+	<key>The last PIN reset did not finish. Locked chats may still exist.</key>
+	<string>Последний сброс PIN не завершился. Закрытые чаты могли сохраниться.</string>
+	<key>The last result is unconfirmed. Reconnect checks the existing send without sending it again.</key>
+	<string>Результат последней отправки не подтверждён. Восстановление проверит её без повторной отправки.</string>
+	<key>The letter could not be prepared.</key>
+	<string>Не удалось подготовить письмо.</string>
+	<key>The link may have been created. It is not created again; check your shared links in the web version.</key>
+	<string>Возможно, ссылка уже создана. Повторно она не создаётся — проверьте опубликованные ссылки в веб-версии.</string>
+	<key>The list comes from the account; models it does not offer are not shown.</key>
+	<string>Список приходит из аккаунта; моделей, которых он не предлагает, здесь нет.</string>
+	<key>The login page could not load. Check your connection and try again.</key>
+	<string>Страница входа не загрузилась. Проверьте соединение и попробуйте ещё раз.</string>
+	<key>The message field already has a draft. Add the link's text at its end?</key>
+	<string>В поле уже есть черновик. Добавить текст из ссылки в его конец?</string>
+	<key>The message is too long.</key>
+	<string>Сообщение слишком длинное.</string>
+	<key>The message was not sent. Sending again is safe: it will be sent once.</key>
+	<string>Сообщение не отправлено. Повторная отправка безопасна: оно уйдёт один раз.</string>
+	<key>The message was not sent. Your text is still in the message field.</key>
+	<string>Сообщение не отправлено. Текст сохранён в поле ввода.</string>
+	<key>The microphone is on. Tap Stop recording.</key>
+	<string>Микрофон включён. Нажмите «Остановить запись».</string>
+	<key>The model menu in a chat (tap the title) also chooses the model for the next message.</key>
+	<string>Модель можно сменить и из заголовка чата.</string>
+	<key>The name cannot contain slashes or line breaks.</key>
+	<string>Имя не может содержать косые черты или переносы строк.</string>
+	<key>The name is too long.</key>
+	<string>Имя слишком длинное.</string>
+	<key>The pages were not discarded.</key>
+	<string>Страницы не удалены.</string>
+	<key>The password and a code from your authenticator app are entered only on the service page.</key>
+	<string>Пароль и код из приложения-аутентификатора вводятся только на странице сервиса.</string>
+	<key>The password is entered only on the service page. ChatGPT X keeps the session in this iPhone's Keychain.</key>
+	<string>Пароль вводится только на странице сервиса. ChatGPT X хранит сессию в Связке ключей этого iPhone.</string>
+	<key>The photo may already be saved. It is not saved again; check Photos.</key>
+	<string>Возможно, фото уже сохранено. Повторно не сохраняется — проверьте «Фото».</string>
+	<key>The previous attempt has an unknown result. It is not sent again.</key>
+	<string>Результат предыдущей попытки неизвестен. Повторно она не отправляется.</string>
+	<key>The previous attempt has an unknown result. It is not sent again; check the chat first.</key>
+	<string>Результат предыдущей попытки неизвестен. Повторно она не отправляется — сначала проверьте чат.</string>
+	<key>The previous pairing result is unconfirmed. Read connected computers before trying another code. The same code will not be sent again.</key>
+	<string>Результат предыдущей привязки не подтверждён. Проверьте подключённые компьютеры перед вводом другого кода. Тот же код не будет отправлен повторно.</string>
+	<key>The previous request has an unknown result. It is not sent again.</key>
+	<string>Результат предыдущего запроса неизвестен. Повторно он не отправляется.</string>
+	<key>The previously chosen model option is no longer offered, so the default is used.</key>
+	<string>Выбранный ранее вариант модели больше не предлагается, поэтому используется вариант по умолчанию.</string>
+	<key>The project could not be read.</key>
+	<string>Проект прочитать не удалось.</string>
+	<key>The project was created.</key>
+	<string>Проект создан.</string>
+	<key>The project was deleted.</key>
+	<string>Проект удалён.</string>
+	<key>The project was saved.</key>
+	<string>Проект сохранён.</string>
+	<key>The recognition result is unknown. It is not repeated, so the recording is not uploaded twice. Cancel deletes it.</key>
+	<string>Результат распознавания неизвестен. Повтора нет, чтобы запись не загрузилась дважды. «Отмена» удалит её.</string>
+	<key>The request is too long.</key>
+	<string>Запрос слишком длинный.</string>
+	<key>The request was not sent.</key>
+	<string>Запрос не отправлен.</string>
+	<key>The request was started, but its result is not known yet.</key>
+	<string>Запрос начат, но его результат пока неизвестен.</string>
+	<key>The research failed on the service.</key>
+	<string>Исследование завершилось ошибкой на сервисе.</string>
+	<key>The research has already finished.</key>
+	<string>Исследование уже завершено.</string>
+	<key>The response format is not supported yet.</key>
+	<string>Этот формат ответа пока не поддерживается.</string>
+	<key>The response stop was not confirmed.</key>
+	<string>Остановка ответа не подтверждена.</string>
+	<key>The result is still unknown. Nothing was sent again.</key>
+	<string>Результат по-прежнему неизвестен. Повторно ничего не отправлено.</string>
+	<key>The result is unconfirmed. Read again before making another change.</key>
+	<string>Результат не подтверждён. Обновите состояние перед следующим изменением.</string>
+	<key>The result is unconfirmed. Read the task history before sending again.</key>
+	<string>Результат не подтверждён. Прочитайте историю задачи перед новой отправкой.</string>
+	<key>The result is unknown. It is not sent again.</key>
+	<string>Результат неизвестен. Повторно не отправляется.</string>
+	<key>The result is unknown. It is not sent again; check it before continuing.</key>
+	<string>Результат неизвестен. Повторно ничего не отправляется — проверьте перед тем, как продолжить.</string>
+	<key>The result is unknown. It is not sent again; tap Check.</key>
+	<string>Результат неизвестен. Повторно ничего не отправляется — нажмите «Проверить».</string>
+	<key>The result is unknown. It is not sent again; the PIN state below is read from the service.</key>
+	<string>Результат неизвестен. Запрос не отправляется повторно; состояние PIN ниже прочитано у сервиса.</string>
+	<key>The result of the change is unknown. It is not sent again; check the current state.</key>
+	<string>Результат изменения неизвестен. Повторно оно не отправляется — проверьте текущее состояние.</string>
+	<key>The result of the request is not known yet.</key>
+	<string>Результат запроса пока неизвестен.</string>
+	<key>The sample could not be played.</key>
+	<string>Образец воспроизвести не удалось.</string>
+	<key>The schedule was changed.</key>
+	<string>Расписание изменено.</string>
+	<key>The send result is unknown. Check it before sending again.</key>
+	<string>Результат отправки пока неизвестен. Проверьте его перед новой отправкой.</string>
+	<key>The service accepted the change, but it was not read back yet.</key>
+	<string>Сервис принял изменение, но повторно оно ещё не прочитано.</string>
+	<key>The service accepted the request to delete your account. ChatGPT X will sign out.</key>
+	<string>Сервис принял запрос на удаление аккаунта. ChatGPT X выйдет из аккаунта.</string>
+	<key>The service accepted the stop request. It may take a moment to stop.</key>
+	<string>Сервис принял запрос на остановку. Остановка может занять время.</string>
+	<key>The service accepted your export request.</key>
+	<string>Сервис принял запрос на экспорт.</string>
+	<key>The service accepted your export request. The download link will arrive by e-mail when the export is ready.</key>
+	<string>Сервис принял запрос на экспорт. Когда экспорт будет готов, ссылка для скачивания придёт по e-mail.</string>
+	<key>The service asked us to wait. No action was repeated.</key>
+	<string>Сервис попросил подождать. Действие не повторялось.</string>
+	<key>The service asks you to sign in again first. Sign in on the web, then make the request again.</key>
+	<string>Сервис просит сначала войти заново. Войдите в веб-версии, затем повторите запрос.</string>
+	<key>The service asks you to verify your phone number first. Continue on the web.</key>
+	<string>Сервис просит сначала подтвердить номер телефона. Продолжите в веб-версии.</string>
+	<key>The service confirmed your export request. The download link will arrive by e-mail.</key>
+	<string>Сервис подтвердил запрос на экспорт. Ссылка для скачивания придёт по e-mail.</string>
+	<key>The service did not accept the request.</key>
+	<string>Сервис не принял запрос.</string>
+	<key>The service did not make this change.</key>
+	<string>Сервис не выполнил это изменение.</string>
+	<key>The service did not name its default model, so the chosen model stays.</key>
+	<string>Сервис не указал модель по умолчанию, поэтому выбранная модель остаётся.</string>
+	<key>The service did not respond. Check your connection and log in again.</key>
+	<string>Сервис не ответил. Проверьте соединение и повторите вход.</string>
+	<key>The service does not report how full memory is.</key>
+	<string>Сервис не сообщает, насколько заполнена память.</string>
+	<key>The service finished the request.</key>
+	<string>Сервис завершил запрос.</string>
+	<key>The service has not confirmed this change yet. It is not sent again. Check the current state?</key>
+	<string>Сервис пока не подтвердил это изменение. Повторно оно не отправляется. Проверить текущее состояние?</string>
+	<key>The service has temporarily restricted access. Do not send again now.</key>
+	<string>Сервис временно ограничил доступ. Не повторяйте отправку сейчас.</string>
+	<key>The service is processing the file…</key>
+	<string>Сервис обрабатывает файл…</string>
+	<key>The service offered no reasons.</key>
+	<string>Сервис не предложил причин.</string>
+	<key>The service reports no memory settings for this account.</key>
+	<string>Сервис не сообщает настроек памяти для этого аккаунта.</string>
+	<key>The service returned no GPTs.</key>
+	<string>Сервис не вернул ни одного GPT.</string>
+	<key>The service returned no apps.</key>
+	<string>Сервис не вернул ни одного приложения.</string>
+	<key>The service returned no models.</key>
+	<string>Сервис не вернул ни одной модели.</string>
+	<key>The session changed. Open this screen again.</key>
+	<string>Сессия изменилась. Откройте этот экран снова.</string>
+	<key>The session changed. Reopen the conversation.</key>
+	<string>Сессия изменилась. Откройте разговор заново.</string>
+	<key>The session failed validation. Log in again.</key>
+	<string>Сессия не прошла проверку. Войдите ещё раз.</string>
+	<key>The session has expired. Your draft and chats are safe.</key>
+	<string>Сессия истекла. Черновик и чаты на месте.</string>
+	<key>The session is unavailable. Open Session to restore your login.</key>
+	<string>Сессия недоступна. Откройте «Сессия» и восстановите вход.</string>
+	<key>The state of the PIN reset is unknown. Check again later.</key>
+	<string>Состояние сброса PIN неизвестно. Проверьте позже.</string>
+	<key>The status is not available.</key>
+	<string>Статус недоступен.</string>
+	<key>The stop request has an unknown result. It is not sent again.</key>
+	<string>Результат запроса на остановку неизвестен. Повторно он не отправляется.</string>
+	<key>The task is active.</key>
+	<string>Задача активна.</string>
+	<key>The task is paused.</key>
+	<string>Задача на паузе.</string>
+	<key>The task was created.</key>
+	<string>Задача создана.</string>
+	<key>The task was created. Check its goal before changing it again.</key>
+	<string>Задача создана. Проверьте её цель перед следующим изменением.</string>
+	<key>The task was deleted.</key>
+	<string>Задача удалена.</string>
+	<key>The task was saved.</key>
+	<string>Задача сохранена.</string>
+	<key>The task was started. The result appears in its chat.</key>
+	<string>Задача запущена. Результат появится в её чате.</string>
+	<key>The text is too long.</key>
+	<string>Текст слишком длинный.</string>
+	<key>The title is too long.</key>
+	<string>Название слишком длинное.</string>
+	<key>The transcription result is unknown. Uploading the recording again is disabled.</key>
+	<string>Результат распознавания неизвестен. Повторная загрузка записи отключена.</string>
+	<key>The translation was interrupted. It is not repeated automatically.</key>
+	<string>Перевод прерван. Автоматического повтора нет.</string>
+	<key>The unsent message keeps its files until you send it again or send a new message.</key>
+	<string>Неотправленное сообщение сохраняет свои файлы, пока вы не отправите его снова или не отправите новое.</string>
+	<key>The unsent message keeps its options and files until you send it again or send a new message.</key>
+	<string>Неотправленное сообщение сохраняет свои настройки и файлы, пока вы не отправите его снова или не отправите новое.</string>
+	<key>The upload is still unconfirmed. Its bytes were not sent again.</key>
+	<string>Загрузка пока не подтверждена. Файл не отправлялся повторно.</string>
+	<key>The upload result is unknown. It is not repeated automatically: remove the file or replace it with a new copy.</key>
+	<string>Результат загрузки неизвестен. Автоматического повтора нет: уберите файл или замените его новой копией.</string>
+	<key>The uploaded file has expired. Replace it with a new copy.</key>
+	<string>Срок хранения загруженного файла истёк. Замените его новой копией.</string>
+	<key>The voice took too long to prepare. Try again later.</key>
+	<string>Озвучка готовилась слишком долго. Попробуйте позже.</string>
+	<key>The web search may still have run. It was not repeated; check your chats before searching again.</key>
+	<string>Поиск мог всё же выполниться. Он не повторялся; проверьте чаты, прежде чем искать снова.</string>
+	<key>The web search result is unknown. It was not repeated.</key>
+	<string>Результат поиска в интернете неизвестен. Поиск не повторялся.</string>
+	<key>The website could not be opened. Nothing was reset.</key>
+	<string>Не удалось открыть сайт. Ничего не сброшено.</string>
+	<key>These instructions cannot be changed from ChatGPT X.</key>
+	<string>Эти инструкции нельзя изменить из ChatGPT X.</string>
+	<key>These pages open in Safari. Requests made there are not tracked in ChatGPT X.</key>
+	<string>Эти страницы открываются в Safari. Запросы, отправленные там, ChatGPT X не отслеживает.</string>
+	<key>These steps happen on the ChatGPT website in Safari. ChatGPT X does not see your codes or password.</key>
+	<string>Эти шаги открываются на chatgpt.com.</string>
+	<key>Thinking effort</key>
+	<string>Глубина размышления</string>
+	<key>Thinking mini</key>
+	<string>Думаю (мини)</string>
+	<key>This GPT can contact these external services.</key>
+	<string>Этот GPT может обращаться к этим внешним сервисам.</string>
+	<key>This GPT can contact these external services. Allowing or blocking them happens on the ChatGPT website; ChatGPT X changes nothing here.</key>
+	<string>Этот GPT обращается к этим сервисам. Управлять ими можно на chatgpt.com.</string>
+	<key>This GPT can contact these external services. Their permissions are managed in the web version.</key>
+	<string>Этот GPT может обращаться к этим внешним сервисам. Их разрешения настраиваются в веб-версии.</string>
+	<key>This GPT is not available for chats on this account.</key>
+	<string>Этот GPT недоступен для чатов в этом аккаунте.</string>
+	<key>This account cannot change it from ChatGPT X.</key>
+	<string>Из ChatGPT X этот аккаунт изменить это не может.</string>
+	<key>This action is not possible in the current state.</key>
+	<string>Сейчас это действие невозможно.</string>
+	<key>This answer did not use your memory.</key>
+	<string>Этот ответ не использовал вашу память.</string>
+	<key>This answer does not wait for questions or actions.</key>
+	<string>Этот ответ не ждёт ответов на вопросы или подтверждений.</string>
+	<key>This answer is saved in your Library.</key>
+	<string>Этот ответ сохранён в Библиотеке.</string>
+	<key>This answer is too long to read aloud (over 3 minutes).</key>
+	<string>Этот ответ слишком длинный для чтения вслух (больше 3 минут).</string>
+	<key>This app needs a ChatGPT app on a computer. It is not available on iPhone.</key>
+	<string>Этому приложению нужен ChatGPT на компьютере. На iPhone оно недоступно.</string>
+	<key>This change cannot be checked now.</key>
+	<string>Сейчас это изменение проверить нельзя.</string>
+	<key>This change cannot be sent now.</key>
+	<string>Сейчас это изменение отправить нельзя.</string>
+	<key>This chat arrived in an unknown format.</key>
+	<string>Чат пришёл в неизвестном формате.</string>
+	<key>This chat has an unsent message. Send or clear it, then open the link again.</key>
+	<string>В этом чате есть неотправленное сообщение. Отправьте или очистите его, затем откройте ссылку снова.</string>
+	<key>This chat has no messages.</key>
+	<string>В этом чате нет сообщений.</string>
+	<key>This chat is not ready yet. Wait until it is loaded.</key>
+	<string>Чат ещё не готов. Дождитесь загрузки.</string>
+	<key>This chat is not saved in your history and is not used for training. It disappears when you leave it.</key>
+	<string>Этот чат не сохраняется в истории и не используется для обучения. Он исчезнет, когда вы его покинете.</string>
+	<key>This collection is empty.</key>
+	<string>Эта подборка пуста.</string>
+	<key>This connection method is not available yet.</key>
+	<string>Этот способ подключения пока недоступен.</string>
+	<key>This connection uses your signed-in account. Device pairing is unavailable on iOS 6.</key>
+	<string>Подключение использует ваш аккаунт. Привязка устройства недоступна на iOS 6.</string>
+	<key>This exact translation may already have run, so it is not sent again. Change the text or the language.</key>
+	<string>Такой же перевод мог уже выполниться, поэтому повторно он не отправляется. Измените текст или язык.</string>
+	<key>This file cannot be added to a message from ChatGPT X (only your own ready documents up to 8 MB).</key>
+	<string>Этот файл нельзя прикрепить здесь.</string>
+	<key>This file cannot be added to favorites.</key>
+	<string>Этот файл нельзя добавить в избранное.</string>
+	<key>This file cannot be attached.</key>
+	<string>Этот файл нельзя прикрепить.</string>
+	<key>This file opens in the ChatGPT web version.</key>
+	<string>Этот файл открывается в веб-версии ChatGPT.</string>
+	<key>This folder is empty.</key>
+	<string>Эта папка пуста.</string>
+	<key>This function is not available in this build.</key>
+	<string>Эта функция в этой сборке недоступна.</string>
+	<key>This iPhone</key>
+	<string>Этот iPhone</string>
+	<key>This iPhone is signed out too. Sign in again to keep using ChatGPT.</key>
+	<string>На этом iPhone вы тоже вышли. Войдите снова, чтобы продолжить пользоваться ChatGPT.</string>
+	<key>This image is too large. Choose a smaller image.</key>
+	<string>Это изображение слишком большое. Выберите изображение поменьше.</string>
+	<key>This is an account setting of the service. ChatGPT X never reads the iPhone's location.</key>
+	<string>Это настройка аккаунта. Приложение не читает ваше местоположение.</string>
+	<key>This is how answers look. **Bold**, lists and code follow the same size.</key>
+	<string>Так выглядят ответы. **Жирный** текст, списки и код меняются вместе с ним.</string>
+	<key>This is larger than the allowed size.</key>
+	<string>Превышен допустимый размер.</string>
+	<key>This is not a project link.</key>
+	<string>Это не ссылка на проект.</string>
+	<key>This item cannot be changed from ChatGPT X: it is shared with you, comes from a connected source or is managed by the service.</key>
+	<string>Этот элемент нельзя изменить здесь.</string>
+	<key>This item cannot be moved from ChatGPT X.</key>
+	<string>Этот объект нельзя переместить из ChatGPT X.</string>
+	<key>This item cannot be read now.</key>
+	<string>Сейчас не удаётся прочитать этот объект.</string>
+	<key>This item is in Trash. Restore it from Trash first.</key>
+	<string>Этот объект в корзине. Сначала восстановите его из корзины.</string>
+	<key>This kind of request is not supported in ChatGPT X.</key>
+	<string>Такой запрос ChatGPT X не поддерживает.</string>
+	<key>This link cannot be opened.</key>
+	<string>Эту ссылку нельзя открыть.</string>
+	<key>This link is not supported by ChatGPT X.</key>
+	<string>ChatGPT X не поддерживает эту ссылку.</string>
+	<key>This memory is now a priority.</key>
+	<string>Воспоминание теперь приоритетное.</string>
+	<key>This message cannot be edited now.</key>
+	<string>Это сообщение сейчас нельзя изменить.</string>
+	<key>This mode sends text only. Remove the files first.</key>
+	<string>Этот режим отправляет только текст. Сначала уберите файлы.</string>
+	<key>This page cannot be opened.</key>
+	<string>Эту страницу открыть не удалось.</string>
+	<key>This project cannot be changed from ChatGPT X.</key>
+	<string>Этот проект нельзя изменить из ChatGPT X.</string>
+	<key>This project is shared. ChatGPT X does not change shared projects.</key>
+	<string>Этот проект общий. ChatGPT X не меняет общие проекты.</string>
+	<key>This reason cannot be sent from ChatGPT X.</key>
+	<string>Эту причину нельзя отправить из ChatGPT X.</string>
+	<key>This removes the saved setup from this iPhone. Existing server pairings are not revoked.</key>
+	<string>Сохранённая настройка удалится с этого iPhone. Существующие привязки на сервере не отзываются.</string>
+	<key>This request was already made. It is not sent again.</key>
+	<string>Этот запрос уже был. Повторно он не отправляется.</string>
+	<key>This resource is not text. It is kept in the task.</key>
+	<string>Этот ресурс не текстовый. Он сохранён в задаче.</string>
+	<key>This result opens in the ChatGPT web version.</key>
+	<string>Этот результат открывается в веб-версии ChatGPT.</string>
+	<key>This schedule cannot be changed in ChatGPT X.</key>
+	<string>Это расписание нельзя изменить в ChatGPT X.</string>
+	<key>This send was already attempted. Check its result first.</key>
+	<string>Эта отправка уже выполнялась. Сначала проверьте её результат.</string>
+	<key>This skill is not approved for installation.</key>
+	<string>Этот навык не одобрен для подключения.</string>
+	<key>This source is not available on this iPhone.</key>
+	<string>Этот источник недоступен на этом iPhone.</string>
+	<key>This suggestion opens a feature that is not available here.</key>
+	<string>Эта подсказка открывает функцию, недоступную здесь.</string>
+	<key>This task cannot be changed from ChatGPT X.</key>
+	<string>Эту задачу нельзя изменить из ChatGPT X.</string>
+	<key>This task item is not shown on iPhone yet — it is saved in the task.</key>
+	<string>Этот элемент задачи пока не показывается на iPhone — он сохранён в задаче.</string>
+	<key>This task runs when its condition is met. Its schedule cannot be changed in ChatGPT X.</key>
+	<string>Задача запускается, когда выполнено условие.</string>
+	<key>Timing</key>
+	<string>Время запуска</string>
+	<key>To put a favorite file into a folder, open it and choose Move to folder.</key>
+	<string>Чтобы положить избранный файл в папку, откройте его и выберите «Переместить в папку».</string>
+	<key>Token budget (optional)</key>
+	<string>Бюджет токенов (необязательно)</string>
+	<key>Tokens used: %@ · Time: %@ s</key>
+	<string>Потрачено токенов: %@ · Время: %@ с</string>
+	<key>Tomorrow</key>
+	<string>Завтра</string>
+	<key>Too many wrong PINs. The service allows a new try in %lu min.</key>
+	<string>Слишком много неверных PIN. Сервис разрешит новую попытку через %lu мин.</string>
+	<key>Tool mode is off</key>
+	<string>Режим инструмента выключен</string>
+	<key>Tool questions</key>
+	<string>Вопросы инструментов</string>
+	<key>Touch and hold the text to select a passage.</key>
+	<string>Удерживайте текст для выделения фрагмента.</string>
+	<key>Transcribe</key>
+	<string>Распознать</string>
+	<key>Transcribing recording…</key>
+	<string>Распознаём запись…</string>
+	<key>Transcript</key>
+	<string>Расшифровка</string>
+	<key>Transfer</key>
+	<string>Перенести</string>
+	<key>Transfer tracked changes to</key>
+	<string>Куда перенести изменения отслеживаемых файлов</string>
+	<key>Transfer tracked changes?</key>
+	<string>Перенести изменения отслеживаемых файлов?</string>
+	<key>Transfer tracked changes…</key>
+	<string>Перенести изменения…</string>
+	<key>Translate</key>
+	<string>Перевести</string>
+	<key>Translation</key>
+	<string>Перевод</string>
+	<key>Translation ready</key>
+	<string>Перевод готов</string>
+	<key>Trash</key>
+	<string>Корзина</string>
+	<key>Trash emptied.</key>
+	<string>Корзина очищена.</string>
+	<key>Trash is empty.</key>
+	<string>Корзина пуста.</string>
+	<key>Trust</key>
+	<string>Доверять</string>
+	<key>Trusted</key>
+	<string>Доверенное</string>
+	<key>Turkish</key>
+	<string>Турецкий</string>
+	<key>Turn off</key>
+	<string>Выключить</string>
+	<key>Turn off «%@»? ChatGPT stops using it until you turn it on again.</key>
+	<string>Выключить «%@»? ChatGPT не будет его использовать, пока вы снова его не включите.</string>
+	<key>Turn on</key>
+	<string>Включить</string>
+	<key>Turn on «%@»? ChatGPT can then use it in your chats.</key>
+	<string>Включить «%@»? Тогда ChatGPT сможет использовать его в ваших чатах.</string>
+	<key>Turned off</key>
+	<string>Выключено</string>
+	<key>Turned off by your admin</key>
+	<string>Выключено администратором</string>
+	<key>Turned on</key>
+	<string>Включено</string>
+	<key>Turns on the iPhone microphone</key>
+	<string>Включает микрофон iPhone</string>
+	<key>Two-step verification</key>
+	<string>Двухэтапная проверка</string>
+	<key>Two-step verification cannot be changed while advanced account security is on.</key>
+	<string>Двухэтапную проверку нельзя изменить, пока включена расширенная защита аккаунта.</string>
+	<key>Type</key>
+	<string>Тип</string>
+	<key>Type DELETE to confirm</key>
+	<string>Введите DELETE для подтверждения</string>
+	<key>Type the word DELETE in capital letters.</key>
+	<string>Введите слово DELETE заглавными латинскими буквами.</string>
+	<key>Type your first message.</key>
+	<string>Введите первое сообщение.</string>
+	<key>Type: %@</key>
+	<string>Тип: %@</string>
+	<key>Ukrainian</key>
+	<string>Украинский</string>
+	<key>Uncommitted changes</key>
+	<string>Незакоммиченные изменения</string>
+	<key>Under 18</key>
+	<string>Младше 18</string>
+	<key>Unknown device</key>
+	<string>Неизвестное устройство</string>
+	<key>Unknown server key</key>
+	<string>Неизвестный ключ сервера</string>
+	<key>Unknown source</key>
+	<string>Неизвестный источник</string>
+	<key>Up to %lu files · %@ each</key>
+	<string>До %lu файлов · до %@ на файл</string>
+	<key>Up to %lu files, %@ each. These are this app's limits; the service may set its own.</key>
+	<string>До %lu файлов, до %@ каждый.</string>
+	<key>Up to 1,500 characters. The service may have its own limits.</key>
+	<string>До 1500 символов. У сервиса могут быть свои ограничения.</string>
+	<key>Updated</key>
+	<string>Изменён</string>
+	<key>Updates were interrupted. Check the send result before continuing.</key>
+	<string>Наблюдение прервано. Проверьте результат отправки перед продолжением.</string>
+	<key>Updates were interrupted. The response may still be running on the server.</key>
+	<string>Наблюдение прервано. Это не означает остановку ответа на сервере.</string>
+	<key>Uploaded but not added to the message.</key>
+	<string>Загружен, но не добавлен в сообщение.</string>
+	<key>Uploaded by you</key>
+	<string>Загруженные вами</string>
+	<key>Uploading · %lu%%</key>
+	<string>Загрузка · %lu%%</string>
+	<key>Usage limit reached</key>
+	<string>Достигнут лимит использования</string>
+	<key>Usage resets</key>
+	<string>Сбросы лимитов</string>
+	<key>Use Library files in answers</key>
+	<string>Использовать файлы библиотеки в ответах</string>
+	<key>Use Log in or Restore session</key>
+	<string>Используйте «Войти» или «Восстановить»</string>
+	<key>Use a recovery code</key>
+	<string>Код восстановления</string>
+	<key>Use default</key>
+	<string>По умолчанию</string>
+	<key>Use in answers</key>
+	<string>Использование в ответах</string>
+	<key>Use only this project's memory</key>
+	<string>Использовать только память проекта</string>
+	<key>Use personalization</key>
+	<string>Использовать персонализацию</string>
+	<key>Use this computer</key>
+	<string>Использовать компьютер</string>
+	<key>Use this folder</key>
+	<string>Выбрать эту папку</string>
+	<key>Use this voice</key>
+	<string>Выбрать этот голос</string>
+	<key>Use your default setting for this connection?</key>
+	<string>Использовать вашу настройку по умолчанию для этого подключения?</string>
+	<key>Use «%@» for all apps without their own setting?</key>
+	<string>Использовать «%@» для всех приложений без собственной настройки?</string>
+	<key>Use «%@» for this connection?</key>
+	<string>Использовать «%@» для этого подключения?</string>
+	<key>Verification callback</key>
+	<string>Адрес после проверки</string>
+	<key>Verification could not finish on this iPhone. Your chat session is unchanged.</key>
+	<string>Не удалось завершить проверку на этом iPhone. Сессия чата сохранена.</string>
+	<key>Verification on a computer</key>
+	<string>Проверка на компьютере</string>
+	<key>Voice conversation</key>
+	<string>Голосовой разговор</string>
+	<key>Voice ended because the account changed.</key>
+	<string>Голосовой разговор завершён из-за смены аккаунта.</string>
+	<key>Voice is turned off for this account.</key>
+	<string>Голос выключен для этого аккаунта.</string>
+	<key>Voice limit</key>
+	<string>Лимит голоса</string>
+	<key>Voice limit reached</key>
+	<string>Лимит голоса исчерпан</string>
+	<key>Voice limits</key>
+	<string>Лимиты голоса</string>
+	<key>Voice mode saved.</key>
+	<string>Голосовой режим сохранён.</string>
+	<key>Voice paused</key>
+	<string>Разговор на паузе</string>
+	<key>Voice saved.</key>
+	<string>Голос сохранён.</string>
+	<key>Wait for the current turn to finish before sending images.</key>
+	<string>Перед отправкой изображений дождитесь завершения текущего ответа.</string>
+	<key>Wait until the files are ready, or remove the ones that were not uploaded.</key>
+	<string>Дождитесь готовности файлов или уберите те, что не загрузились.</string>
+	<key>Wait until the image is ready.</key>
+	<string>Дождитесь готовности изображения.</string>
+	<key>Waiting</key>
+	<string>Ожидание</string>
+	<key>Waiting for the answer…</key>
+	<string>Ожидание ответа…</string>
+	<key>Web search</key>
+	<string>Поиск в интернете</string>
+	<key>Web search is off</key>
+	<string>Поиск в интернете выключен</string>
+	<key>Web search is on for the next message</key>
+	<string>Поиск в интернете включён для следующего сообщения</string>
+	<key>Web search sends text only. Remove the files or turn web search off.</key>
+	<string>Поиск в интернете отправляет только текст. Уберите файлы или выключите поиск.</string>
+	<key>What ChatGPT remembered and used for this answer. Tap one to rate it or correct it.</key>
+	<string>Воспоминания, использованные в ответе.</string>
+	<key>What can I help with?</key>
+	<string>Чем могу помочь?</string>
+	<key>What happened? (optional)</key>
+	<string>Что произошло? (необязательно)</string>
+	<key>What should ChatGPT call you?</key>
+	<string>Как ChatGPT к вам обращаться?</string>
+	<key>What should ChatGPT do?</key>
+	<string>Что должен сделать ChatGPT?</string>
+	<key>What should Codex plan?</key>
+	<string>Что должен спланировать Codex?</string>
+	<key>When a condition is met</key>
+	<string>При выполнении условия</string>
+	<key>When apps act for you</key>
+	<string>Когда приложения действуют за вас</string>
+	<key>When memory is full, ChatGPT keeps the most relevant memories in use. Priority memories stay in use.</key>
+	<string>Когда память заполнена, ChatGPT использует самые важные воспоминания. Приоритетные остаются в работе.</string>
+	<key>When on, chats in this project use only memories from this project.</key>
+	<string>Если включено, чаты этого проекта используют только воспоминания из этого проекта.</string>
+	<key>Where to make the changes</key>
+	<string>Где вносить изменения</string>
+	<key>Where to run</key>
+	<string>Где выполнять</string>
+	<key>While a chat is locked, ChatGPT does not add to memory from it. A chat unlocked again follows your usual settings.</key>
+	<string>Пока чат закрыт, ChatGPT не пополняет из него память. Открытый снова чат учитывает обычные настройки.</string>
+	<key>Why are you reporting this chat?</key>
+	<string>Почему вы жалуетесь на этот чат?</string>
+	<key>Wingman</key>
+	<string>Wingman</string>
+	<key>With full access, this app acts for you without asking, including changing and sending things. Allow full access?</key>
+	<string>С полным доступом это приложение действует за вас без вопросов, в том числе что-то изменяет и отправляет. Разрешить полный доступ?</string>
+	<key>Work does longer tasks with files, spreadsheets and documents. Choose the model for the next message.</key>
+	<string>Work справляется с долгими задачами с файлами и документами.</string>
+	<key>Work is not available on this account.</key>
+	<string>Режим Work недоступен в этом аккаунте.</string>
+	<key>Work is off</key>
+	<string>Режим Work выключен</string>
+	<key>Work is on for the next message</key>
+	<string>Режим Work включён для следующего сообщения</string>
+	<key>Work plan</key>
+	<string>План работы</string>
+	<key>Work started.</key>
+	<string>Work запущен.</string>
+	<key>Work · %@</key>
+	<string>Work · %@</string>
+	<key>Working</key>
+	<string>Выполняется</string>
+	<key>Working files</key>
+	<string>Рабочие файлы</string>
+	<key>Working tree</key>
+	<string>Рабочее дерево</string>
+	<key>Working tree is clean</key>
+	<string>Рабочее дерево чистое</string>
+	<key>Write files</key>
+	<string>Запись файлов</string>
+	<key>Write the correction first.</key>
+	<string>Сначала напишите исправление.</string>
+	<key>Writing the answer…</key>
+	<string>Пишет ответ…</string>
+	<key>Wrong PIN</key>
+	<string>Неверный PIN</string>
+	<key>You are logged in to ChatGPT</key>
+	<string>Вы вошли в ChatGPT</string>
+	<key>You can change this in the web version.</key>
+	<string>Изменить это можно в веб-версии.</string>
+	<key>You can continue the conversation.</key>
+	<string>Можно продолжить разговор.</string>
+	<key>You can mention up to 16 apps in one message.</key>
+	<string>В одном сообщении можно упомянуть до 16 приложений.</string>
+	<key>You logged out of ChatGPT X. Your chats remain in your account.</key>
+	<string>Вы вышли из ChatGPT X. Чаты остались в аккаунте.</string>
+	<key>You may need to log in again later</key>
+	<string>Позже может потребоваться новый вход</string>
+	<key>You own a workspace. Transfer its ownership on the web before you delete the account.</key>
+	<string>Вы владелец рабочего пространства. Передайте права владельца в веб-версии, прежде чем удалять аккаунт.</string>
+	<key>You stay in this chat.</key>
+	<string>Вы остаётесь в этом чате.</string>
+	<key>Your ChatGPT account and history on an iPhone with iOS 6.</key>
+	<string>Ваш аккаунт ChatGPT и вся история — на iPhone с iOS 6.</string>
+	<key>Your account is deleted. ChatGPT X will sign out.</key>
+	<string>Аккаунт удалён. ChatGPT X выйдет из аккаунта.</string>
+	<key>Your account needs an e-mail address first. Continue on the web.</key>
+	<string>Сначала в аккаунт нужно добавить e-mail. Продолжите в веб-версии.</string>
+	<key>Your admin turned this app off.</key>
+	<string>Администратор отключил это приложение.</string>
+	<key>Your conversations will appear here.</key>
+	<string>Здесь появятся ваши разговоры.</string>
+	<key>Your data</key>
+	<string>Ваши данные</string>
+	<key>Your default: %@</key>
+	<string>Ваша настройка по умолчанию: %@</string>
+	<key>Your history is empty. Start a new chat.</key>
+	<string>История пуста. Начните новый чат.</string>
+	<key>Your instructions</key>
+	<string>Ваши инструкции</string>
+	<key>Your login and saved session stay on this iPhone.</key>
+	<string>Сеанс хранится на этом iPhone.</string>
+	<key>Your message</key>
+	<string>Ваше сообщение</string>
+	<key>Your organization manages this account. Ask its administrator.</key>
+	<string>Этим аккаунтом управляет организация. Обратитесь к её администратору.</string>
+	<key>Your sign-in is confirmed. Delete every locked chat and reset the PIN now?</key>
+	<string>Вход подтверждён. Удалить все закрытые чаты и сбросить PIN сейчас?</string>
+	<key>Your uploaded and created files appear here.</key>
+	<string>Здесь появятся загруженные и созданные вами файлы.</string>
+	<key>Yours</key>
+	<string>Ваш</string>
+	<key>[Image: %@]</key>
+	<string>[Изображение: %@]</string>
+	<key>iPhone key</key>
+	<string>Ключ iPhone</string>
+	<key>in use</key>
+	<string>используется</string>
+	<key>no caption</key>
+	<string>без подписи</string>
+	<key>not added to memory</key>
+	<string>не добавляется в память</string>
+	<key>this app</key>
+	<string>это приложение</string>
+	<key>this chat</key>
+	<string>этот чат</string>
+	<key>«%@» is moved here.</key>
+	<string>«%@» будет перемещён сюда.</string>
+	<key>“Default” uses the account’s default model and the service’s default thinking effort.</key>
+	<string>«По умолчанию» — настройки вашего аккаунта.</string>
+	<key>Voice ended</key>
+	<string>Разговор завершён</string>
+	<key>No computer selected</key>
+	<string>Компьютер не выбран</string>
+	<key>Not connected</key>
+	<string>Не подключено</string>
+	<key>Choose a computer or the cloud</key>
+	<string>Выберите компьютер или облако</string>
+	<key>Codex runs tasks on your computer or in the cloud. This iPhone shows the progress and asks you only when a decision is needed.</key>
+	<string>Codex выполняет задачи на вашем компьютере или в облаке.</string>
+	<key>Side menu</key>
+	<string>Боковое меню</string>
+	<key>Show in the menu</key>
+	<string>Показывать в меню</string>
+	<key>%lu of %lu</key>
+	<string>%lu из %lu</string>
+	<key>New chat and your chats are always in the menu. A hidden section keeps its content; turn it on here to bring it back.</key>
+	<string>«Новый чат» и ваши чаты всегда остаются в меню.</string>
+	<key>%@ MB</key>
+	<string>%@ МБ</string>
+	<key>Account</key>
+	<string>Учётная запись</string>
+	<key>Actions</key>
+	<string>Действия</string>
+	<key>Allow</key>
+	<string>Разрешить</string>
+	<key>Allow once</key>
+	<string>Разрешить один раз</string>
+	<key>App language</key>
+	<string>Язык приложения</string>
+	<key>Appearance</key>
+	<string>Внешний вид</string>
+	<key>Apply</key>
+	<string>Применить</string>
+	<key>Apps</key>
+	<string>Приложения</string>
+	<key>Apps with access</key>
+	<string>Приложения с доступом</string>
+	<key>Archive</key>
+	<string>Архив</string>
+	<key>Authenticator app</key>
+	<string>Приложение-аутентификатор</string>
+	<key>Base style and tone</key>
+	<string>Стиль и тон</string>
+	<key>Camera</key>
+	<string>Камера</string>
+	<key>Cancel</key>
+	<string>Отменить</string>
+	<key>Cancel request</key>
+	<string>Отменить запрос</string>
+	<key>Characteristics</key>
+	<string>Черты</string>
+	<key>Chart</key>
+	<string>График</string>
+	<key>Chat</key>
+	<string>Чат</string>
+	<key>Chats</key>
+	<string>Чаты</string>
+	<key>Clear</key>
+	<string>Очистить</string>
+	<key>Code block</key>
+	<string>Блок кода</string>
+	<key>Connect</key>
+	<string>Подключить</string>
+	<key>Connected source</key>
+	<string>Подключённый источник</string>
+	<key>Connecting…</key>
+	<string>Подключение…</string>
+	<key>Content</key>
+	<string>Содержимое</string>
+	<key>Continue</key>
+	<string>Продолжить</string>
+	<key>Continue with Google</key>
+	<string>Войти через Google</string>
+	<key>Conversation starters</key>
+	<string>Примеры запросов</string>
+	<key>Copied</key>
+	<string>Скопировано</string>
+	<key>Copy code</key>
+	<string>Скопировать код</string>
+	<key>Copy link</key>
+	<string>Скопировать ссылку</string>
+	<key>Copy text</key>
+	<string>Скопировать текст</string>
+	<key>Create image</key>
+	<string>Создать изображение</string>
+	<key>Custom instructions</key>
+	<string>Свои инструкции</string>
+	<key>Custom schedule</key>
+	<string>Своё расписание</string>
+	<key>Dark</key>
+	<string>Тёмный</string>
+	<key>Data controls</key>
+	<string>Управление данными</string>
+	<key>Date</key>
+	<string>Дата</string>
+	<key>Deep research</key>
+	<string>Глубокое исследование</string>
+	<key>Delete</key>
+	<string>Удалить</string>
+	<key>Delete account</key>
+	<string>Удалить учётную запись</string>
+	<key>Delete link</key>
+	<string>Удалить ссылку</string>
+	<key>Delete project</key>
+	<string>Удалить проект</string>
+	<key>Deny</key>
+	<string>Запретить</string>
+	<key>Details</key>
+	<string>Подробнее</string>
+	<key>Detect language</key>
+	<string>Определять язык</string>
+	<key>Dictation</key>
+	<string>Диктовка</string>
+	<key>Disconnect</key>
+	<string>Отключить</string>
+	<key>Done</key>
+	<string>Готово</string>
+	<key>Downloading…</key>
+	<string>Загрузка…</string>
+	<key>Edit message</key>
+	<string>Изменить сообщение</string>
+	<key>Edit project</key>
+	<string>Изменить проект</string>
+	<key>Export data</key>
+	<string>Экспорт данных</string>
+	<key>File</key>
+	<string>Файл</string>
+	<key>Files</key>
+	<string>Файлы</string>
+	<key>History</key>
+	<string>История</string>
+	<key>Image</key>
+	<string>Изображение</string>
+	<key>Images</key>
+	<string>Изображения</string>
+	<key>Improve the model for everyone</key>
+	<string>Помогать улучшать модель</string>
+	<key>Instructions</key>
+	<string>Инструкции</string>
+	<key>Library</key>
+	<string>Библиотека</string>
+	<key>Light</key>
+	<string>Светлый</string>
+	<key>Link copied</key>
+	<string>Ссылка скопирована</string>
+	<key>Loading…</key>
+	<string>Загрузка…</string>
+	<key>Lock chat</key>
+	<string>Закрыть чат</string>
+	<key>Log in</key>
+	<string>Войти</string>
+	<key>Log out</key>
+	<string>Выйти</string>
+	<key>Memory</key>
+	<string>Память</string>
+	<key>Message</key>
+	<string>Сообщение</string>
+	<key>Mode</key>
+	<string>Режим</string>
+	<key>Model</key>
+	<string>Модель</string>
+	<key>More</key>
+	<string>Ещё</string>
+	<key>More about you</key>
+	<string>Ещё о вас</string>
+	<key>My GPTs</key>
+	<string>Мои GPT</string>
+	<key>Name</key>
+	<string>Имя</string>
+	<key>New chat</key>
+	<string>Новый чат</string>
+	<key>New project</key>
+	<string>Новый проект</string>
+	<key>New task</key>
+	<string>Новая задача</string>
+	<key>No</key>
+	<string>Нет</string>
+	<key>Off</key>
+	<string>Выкл.</string>
+	<key>On</key>
+	<string>Вкл.</string>
+	<key>Open link</key>
+	<string>Открыть ссылку</string>
+	<key>Other</key>
+	<string>Другое</string>
+	<key>Personalization</key>
+	<string>Персонализация</string>
+	<key>Phone number</key>
+	<string>Номер телефона</string>
+	<key>Photos</key>
+	<string>Фото</string>
+	<key>Pin</key>
+	<string>Закрепить</string>
+	<key>Pinned</key>
+	<string>Закреплённые</string>
+	<key>Places</key>
+	<string>Места</string>
+	<key>Project</key>
+	<string>Проект</string>
+	<key>Project files</key>
+	<string>Файлы проекта</string>
+	<key>Projects</key>
+	<string>Проекты</string>
+	<key>Reference chat history</key>
+	<string>Учитывать историю чатов</string>
+	<key>Remove</key>
+	<string>Убрать</string>
+	<key>Remove access</key>
+	<string>Отозвать доступ</string>
+	<key>Remove connection</key>
+	<string>Удалить подключение</string>
+	<key>Remove from project</key>
+	<string>Убрать из проекта</string>
+	<key>Rename</key>
+	<string>Переименовать</string>
+	<key>Rename chat</key>
+	<string>Переименовать чат</string>
+	<key>Report</key>
+	<string>Пожаловаться</string>
+	<key>Retry</key>
+	<string>Повторить</string>
+	<key>Return</key>
+	<string>Вернуть</string>
+	<key>Save</key>
+	<string>Сохранить</string>
+	<key>Save profile</key>
+	<string>Сохранить профиль</string>
+	<key>Saved memories</key>
+	<string>Сохранённые воспоминания</string>
+	<key>Search</key>
+	<string>Поиск</string>
+	<key>Search chats</key>
+	<string>Поиск чатов</string>
+	<key>Search projects</key>
+	<string>Поиск проектов</string>
+	<key>Searching…</key>
+	<string>Поиск…</string>
+	<key>Select all</key>
+	<string>Выбрать всё</string>
+	<key>Send</key>
+	<string>Отправить</string>
+	<key>Sending…</key>
+	<string>Отправка…</string>
+	<key>Share</key>
+	<string>Поделиться</string>
+	<key>Share link</key>
+	<string>Поделиться ссылкой</string>
+	<key>Share text</key>
+	<string>Поделиться текстом</string>
+	<key>Shared with you</key>
+	<string>Доступно вам</string>
+	<key>Show</key>
+	<string>Показать</string>
+	<key>Show more</key>
+	<string>Показать ещё</string>
+	<key>Sign in</key>
+	<string>Войти</string>
+	<key>Source</key>
+	<string>Источник</string>
+	<key>Sources</key>
+	<string>Источники</string>
+	<key>Spreadsheet</key>
+	<string>Таблица</string>
+	<key>Status</key>
+	<string>Статус</string>
+	<key>Stop</key>
+	<string>Остановить</string>
+	<key>Stop generating</key>
+	<string>Остановить ответ</string>
+	<key>Target language</key>
+	<string>Язык перевода</string>
+	<key>Temporary chat</key>
+	<string>Временный чат</string>
+	<key>Text</key>
+	<string>Текст</string>
+	<key>Thinking</key>
+	<string>Размышление</string>
+	<key>Thinking…</key>
+	<string>Размышляю…</string>
+	<key>Time zone</key>
+	<string>Часовой пояс</string>
+	<key>Title</key>
+	<string>Название</string>
+	<key>To</key>
+	<string>Кому</string>
+	<key>Today</key>
+	<string>Сегодня</string>
+	<key>Tools</key>
+	<string>Инструменты</string>
+	<key>Try again</key>
+	<string>Повторить попытку</string>
+	<key>Unknown</key>
+	<string>Неизвестно</string>
+	<key>Unpin</key>
+	<string>Открепить</string>
+	<key>Untitled</key>
+	<string>Без названия</string>
+	<key>Verify age</key>
+	<string>Подтвердить возраст</string>
+	<key>Video</key>
+	<string>Видео</string>
+	<key>Voice</key>
+	<string>Голос</string>
+	<key>Voice mode</key>
+	<string>Голосовой режим</string>
+	<key>Voice unavailable</key>
+	<string>Голос недоступен</string>
+	<key>Web</key>
+	<string>Интернет</string>
+	<key>Work</key>
+	<string>Работа</string>
+	<key>Workspace</key>
+	<string>Рабочее пространство</string>
+	<key>Yes</key>
+	<string>Да</string>
+	<key>Yesterday</key>
+	<string>Вчера</string>
+	<key>You</key>
+	<string>Вы</string>
+	<key>Unofficial app. Not affiliated with OpenAI.</key>
+	<string>Неофициальное приложение. Не связано с OpenAI.</string>
+	<key>About</key>
+	<string>О приложении</string>
+	<key>Source code on GitHub</key>
+	<string>Исходный код на GitHub</string>
+	<key>ChatGPT X %@ (build %@). Unofficial app, not affiliated with OpenAI.</key>
+	<string>ChatGPT X %@ (сборка %@). Неофициальное приложение, не связано с OpenAI.</string>
+</dict>
+</plist>

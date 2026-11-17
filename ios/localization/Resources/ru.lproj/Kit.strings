@@ -1,0 +1,2110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>  ✓ an expired link is refused (4 ms)</key>
+	<string>  ✓ просроченная ссылка не пускает (4 ms)</string>
+	<key> Sources %lu</key>
+	<string> Источники %lu</string>
+	<key>## Saturday plan
+Morning — **Kremlin** and *Kul Sharif* Mosque, afternoon — Bauman Street. Details at [kazan.travel](https://kazan.travel).
+
+### What to bring
+- comfortable shoes
+- `power bank` 10,000 mAh
+- umbrella: rain is forecast
+
+1. Kremlin — 2 h
+2. Lunch in the Old Quarter
+3. Kazanka embankment
+
+&gt; Mosque entry is free, but a headscarf is required.
+
+| Place | Time | Price |
+|---|---|---|
+| Kremlin | 2 h | 0 ₽ |
+| Chak-Chak Museum | 1 h | 500 ₽ |
+
+```python
+# trip budget
+costs = [500, 1200, 800]
+print("Total:", sum(costs))
+```
+Have a nice trip!</key>
+	<string>## План на субботу
+Утром — **Кремль** и мечеть *Кул-Шариф*, днём — улица Баумана. Подробности на [kazan.travel](https://kazan.travel).
+
+### Что взять
+- удобную обувь
+- `power bank` на 10 000 мА·ч
+- зонт: обещают дождь
+
+1. Кремль — 2 ч
+2. Обед в слободе
+3. Набережная Казанки
+
+&gt; Вход в мечеть свободный, но нужен платок.
+
+| Место | Время | Цена |
+|---|---|---|
+| Кремль | 2 ч | 0 ₽ |
+| Музей чак-чака | 1 ч | 500 ₽ |
+
+```python
+# бюджет поездки
+costs = [500, 1200, 800]
+print("Итого:", sum(costs))
+```
+Хорошей поездки!</string>
+	<key>### Summary
+The market is growing for the third year in a row: demand is shifting to city models with a **500–700 Wh** battery.
+
+### Key figures
+- sales: +18% YoY
+- average price: 92,000 ₽
+- online sales share: 41%
+
+### What matters to buyers
+1. Range of at least 60 km
+2. Removable battery
+3. Service nearby
+
+&gt; Data from public retailer reports and industry reviews.</key>
+	<string>### Кратко
+Рынок растёт третий год подряд: спрос смещается к городским моделям с батареей **500–700 Вт·ч**.
+
+### Ключевые цифры
+- продажи: +18 % за год
+- средний чек: 92 000 ₽
+- доля онлайн-продаж: 41 %
+
+### Что важно покупателю
+1. Запас хода не меньше 60 км
+2. Съёмная батарея
+3. Сервис рядом с домом
+
+&gt; Данные — из открытых отчётов продавцов и отраслевых обзоров.</string>
+	<key>%@ s</key>
+	<string>%@ с</string>
+	<key>%@, remove mode</key>
+	<string>%@, убрать режим</string>
+	<key>%@: %d of 4 entered</key>
+	<string>%@: введено %d из 4</string>
+	<key>%d of %d</key>
+	<string>%d из %d</string>
+	<key>%d p.</key>
+	<string>%d стр.</string>
+	<key>%lu of %lu</key>
+	<string>%lu из %lu</string>
+	<key>0.5×</key>
+	<string>0,5×</string>
+	<key>1.2 MB · yesterday</key>
+	<string>1,2 МБ · вчера</string>
+	<key>1.5×</key>
+	<string>1,5×</string>
+	<key>16 cores</key>
+	<string>16 ядер</string>
+	<key>1×</key>
+	<string>1×</string>
+	<key>2 KB · a month ago</key>
+	<string>2 КБ · месяц назад</string>
+	<key>2 h ago</key>
+	<string>2 ч назад</string>
+	<key>2026 hybrid bike ratings</key>
+	<string>Рейтинг гибридов 2026</string>
+	<key>2×</key>
+	<string>2×</string>
+	<key>3000 JPY</key>
+	<string>3000 JPY</string>
+	<key>4 cores</key>
+	<string>4 ядра</string>
+	<key>4 digits. A forgotten PIN cannot be recovered — only reset along with locked chats.</key>
+	<string>4 цифры. Восстановить PIN нельзя — только сбросить вместе с закрытыми чатами.</string>
+	<key>40 pt tiles</key>
+	<string>Плитки 40 pt</string>
+	<key>44 pt buttons (RCButton)</key>
+	<string>Кнопки 44 pt (RCButton)</string>
+	<key>50–100K RUB</key>
+	<string>50–100 тыс. ₽</string>
+	<key>6 messages · today, 14:20</key>
+	<string>6 сообщений · сегодня, 14:20</string>
+	<key>640 KB · a week ago</key>
+	<string>640 КБ · неделю назад</string>
+	<key>820 KB</key>
+	<string>820 КБ</string>
+	<key>84 KB · 3 days ago</key>
+	<string>84 КБ · 3 дня назад</string>
+	<key>A cloud environment clones the repository and runs the task without your computer.</key>
+	<string>Облачное окружение клонирует репозиторий и выполняет задачу без вашего компьютера.</string>
+	<key>A tool's access request uses the ordinary permission card with the server tile.</key>
+	<string>Запрос доступа от инструмента — та же карточка разрешения с плиткой сервера.</string>
+	<key>A warm jacket and waterproof shoes.</key>
+	<string>Тёплую куртку и непромокаемую обувь.</string>
+	<key>API 7 settings screens appear from stage 7.</key>
+	<string>Экраны настроек API 7 появляются с этапа 7.</string>
+	<key>AS</key>
+	<string>АС</string>
+	<key>Above the history</key>
+	<string>Над историей</string>
+	<key>Access to registry.npmjs.org for this task</key>
+	<string>Доступ к registry.npmjs.org для этой задачи</string>
+	<key>Account</key>
+	<string>Аккаунт</string>
+	<key>Account and settings, %@</key>
+	<string>Аккаунт и настройки, %@</string>
+	<key>Account header</key>
+	<string>Шапка аккаунта</string>
+	<key>Account header (plan — stage 7)</key>
+	<string>Шапка аккаунта (план — этап 7)</string>
+	<key>Action</key>
+	<string>Действие</string>
+	<key>Action → placeholder before stage 7</key>
+	<string>Действие → заглушка до этапа 7</string>
+	<key>Actions</key>
+	<string>Действия</string>
+	<key>Active</key>
+	<string>Активные</string>
+	<key>Add</key>
+	<string>Добавить</string>
+	<key>Add a computer…</key>
+	<string>Добавить компьютер…</string>
+	<key>Add a dark theme to settings</key>
+	<string>Добавить тёмную тему в настройки</string>
+	<key>Add the public key to ~/.ssh/authorized_keys on the computer. The private key never leaves this iPhone.</key>
+	<string>Добавьте открытый ключ в ~/.ssh/authorized_keys на компьютере. Закрытый ключ не покидает iPhone.</string>
+	<key>Add to message</key>
+	<string>Добавить к сообщению</string>
+	<key>Added</key>
+	<string>Добавлен</string>
+	<key>After logout</key>
+	<string>После выхода</string>
+	<key>Alexey Smirnov</key>
+	<string>Алексей Смирнов</string>
+	<key>All</key>
+	<string>Все</string>
+	<key>Allow</key>
+	<string>Разрешить</string>
+	<key>Allowed</key>
+	<string>Разрешено</string>
+	<key>Allowed — event created</key>
+	<string>Разрешено — событие создано</string>
+	<key>Allow…</key>
+	<string>Разрешить…</string>
+	<key>Always allowed for registry.npmjs.org</key>
+	<string>Разрешено всегда для registry.npmjs.org</string>
+	<key>Always ask</key>
+	<string>Спрашивать всегда</string>
+	<key>Always for registry.npmjs.org</key>
+	<string>Всегда для registry.npmjs.org</string>
+	<key>An offline computer continues its tasks when it comes back.</key>
+	<string>Компьютер не в сети продолжит задачи, когда появится.</string>
+	<key>Analyzing the question</key>
+	<string>Разбираю вопрос</string>
+	<key>Anna Smirnova</key>
+	<string>Анна Смирнова</string>
+	<key>Answer</key>
+	<string>Ответить</string>
+	<key>Answer in Russian.</key>
+	<string>Отвечай по-русски.</string>
+	<key>Answer parts</key>
+	<string>Части ответа</string>
+	<key>Answer sources</key>
+	<string>Источники ответа</string>
+	<key>Answer stopped</key>
+	<string>Ответ остановлен</string>
+	<key>Answer style</key>
+	<string>Стиль ответов</string>
+	<key>Answer text size</key>
+	<string>Размер текста ответов</string>
+	<key>Answer will be sent as a message</key>
+	<string>Ответ отправится как сообщение</string>
+	<key>Answers</key>
+	<string>Ответы</string>
+	<key>Answers sooner, uses the limit faster</key>
+	<string>Отвечает раньше, расходует лимит быстрее</string>
+	<key>Anyone with the link can read this conversation. Messages added after the link is created are not included.</key>
+	<string>Любой, у кого есть ссылка, сможет прочитать этот разговор. Новые сообщения после создания ссылки в неё не попадут.</string>
+	<key>App action</key>
+	<string>Действие приложения</string>
+	<key>App action (stage 7)</key>
+	<string>Действие приложения (этап 7)</string>
+	<key>Appearance (stage 7+)</key>
+	<string>Оформление (этап 7+)</string>
+	<key>Archive</key>
+	<string>Архивировать</string>
+	<key>Archive (action)</key>
+	<string>В архив</string>
+	<key>Archive (tab)</key>
+	<string>Архив</string>
+	<key>Archived</key>
+	<string>В архиве</string>
+	<key>Archived tasks keep their history; «Restore» in the task menu.</key>
+	<string>Задачи в архиве сохраняют историю; «Вернуть» — в меню задачи.</string>
+	<key>Around freezing and sleet tomorrow.</key>
+	<string>Завтра около нуля и мокрый снег.</string>
+	<key>Ask anything. The answer appears as it is written.</key>
+	<string>Спросите что угодно.</string>
+	<key>Asks Codex to fix this comment in the task</key>
+	<string>Просит Codex исправить это замечание в задаче</string>
+	<key>At stage 10 Markdown is not rendered: formatting symbols are stripped and text reads as plain.</key>
+	<string>На этапе 10 Markdown не рисуется: служебные символы убраны, текст читается как обычный.</string>
+	<key>At this stage chat deletion is not available yet: rows do not respond to swiping.</key>
+	<string>На этом этапе удаления чатов ещё нет: строки не реагируют на свайп.</string>
+	<key>Attachments and dictation use the chat's «+» sheet and RCDictationView in the task composer.</key>
+	<string>Вложения и диктовка — тот же «+» и RCDictationView, что в чате, в поле сообщения задачи.</string>
+	<key>Attachments and versions (stage 8+)</key>
+	<string>Вложения и версии (этап 8+)</string>
+	<key>Audio</key>
+	<string>Аудио</string>
+	<key>Auto</key>
+	<string>Авто</string>
+	<key>Bad result</key>
+	<string>Плохой результат</string>
+	<key>Banners</key>
+	<string>Плашки</string>
+	<key>Before every command</key>
+	<string>Перед каждой командой</string>
+	<key>Block %ld is copied by the app</key>
+	<string>Блок %ld копирует приложение</string>
+	<key>Borscht recipe</key>
+	<string>Рецепт борща</string>
+	<key>Branch for a new task</key>
+	<string>Ветка для новой задачи</string>
+	<key>Browser check — running</key>
+	<string>Проверка в браузерах — выполняется</string>
+	<key>Build time, s</key>
+	<string>Время сборки, с</string>
+	<key>Build timing — 9.1 s → 1.6 s</key>
+	<string>Замеры сборки — 9,1 с → 1,6 с</string>
+	<key>Busy → done</key>
+	<string>Занят → готово</string>
+	<key>By community</key>
+	<string>Автор: сообщество</string>
+	<key>By example.com</key>
+	<string>Автор: example.com</string>
+	<key>CSS build faster than 2 s</key>
+	<string>Сборка CSS быстрее 2 с</string>
+	<key>CSS comparison — identical</key>
+	<string>Сравнение CSS — идентичен</string>
+	<key>Cafe “Skazka”</key>
+	<string>Кафе «Сказка»</string>
+	<key>Camera</key>
+	<string>Камера</string>
+	<key>Cancel</key>
+	<string>Отмена</string>
+	<key>Cancel, failure, attachments (API 8)</key>
+	<string>Отмена, сбой, вложения (API 8)</string>
+	<key>Capture at least one page</key>
+	<string>Снимите хотя бы одну страницу</string>
+	<key>Capture page</key>
+	<string>Снять страницу</string>
+	<key>Cc:</key>
+	<string>Копия:</string>
+	<key>Cells and selection</key>
+	<string>Ячейки и выбор</string>
+	<key>Change</key>
+	<string>Изменить</string>
+	<key>Changed files</key>
+	<string>Изменённые файлы</string>
+	<key>Changed files: %lu</key>
+	<string>Изменено файлов: %lu</string>
+	<key>Changes</key>
+	<string>Изменения</string>
+	<key>Chart</key>
+	<string>График</string>
+	<key>Chart (stage 7)</key>
+	<string>График (этап 7)</string>
+	<key>Chart → placeholder before stage 7</key>
+	<string>График → заглушка до этапа 7</string>
+	<key>Chart. %@</key>
+	<string>График. %@</string>
+	<key>Chat</key>
+	<string>Чат</string>
+	<key>Chat link</key>
+	<string>Ссылка на чат</string>
+	<key>Chat link — from stage 7</key>
+	<string>Ссылка на чат — с этапа 7</string>
+	<key>Chat “Trip plan”</key>
+	<string>Чат «План поездки»</string>
+	<key>Chats</key>
+	<string>Чаты</string>
+	<key>Chats locked with a PIN are hidden from the list and search.</key>
+	<string>Чаты, закрытые PIN-кодом, не видны в списке и поиске.</string>
+	<key>Check again</key>
+	<string>Проверить снова</string>
+	<key>Check iPhone</key>
+	<string>Проверить iPhone</string>
+	<key>Check in history</key>
+	<string>Проверить в истории</string>
+	<key>Checking chat → create</key>
+	<string>Проверяю чат → создать</string>
+	<key>Checking saved login</key>
+	<string>Проверка сохранённого входа</string>
+	<key>Checking the chat</key>
+	<string>Проверяю чат</string>
+	<key>Checking the chat…</key>
+	<string>Проверяю чат…</string>
+	<key>Checking the file…</key>
+	<string>Проверяю файл…</string>
+	<key>Checking the saved login…</key>
+	<string>Проверяю сохранённый вход…</string>
+	<key>Checking travel time from the airport</key>
+	<string>Сверяю время в пути из аэропорта</string>
+	<key>Checking with the service</key>
+	<string>Проверка на сервере</string>
+	<key>Checking…</key>
+	<string>Проверка…</string>
+	<key>Choice</key>
+	<string>Выбор</string>
+	<key>Choosing…</key>
+	<string>Выбираю…</string>
+	<key>Clarifying questions</key>
+	<string>Уточняющие вопросы</string>
+	<key>Clarifying questions (stage 7)</key>
+	<string>Уточняющие вопросы (этап 7)</string>
+	<key>Clarifying questions: per-question answers</key>
+	<string>Уточняющие вопросы: ответы по вопросам</string>
+	<key>Clear temporary files</key>
+	<string>Удалить временные файлы</string>
+	<key>Close</key>
+	<string>Закрыть</string>
+	<key>Close menu</key>
+	<string>Закрыть меню</string>
+	<key>Close player</key>
+	<string>Закрыть плеер</string>
+	<key>Close showcase</key>
+	<string>Закрыть витрину</string>
+	<key>Cloud</key>
+	<string>Облако</string>
+	<key>Cloud machine</key>
+	<string>Облачный компьютер</string>
+	<key>Code copied</key>
+	<string>Код скопирован</string>
+	<key>Code: the app copies it (blockIndex)</key>
+	<string>Код: копирует приложение (blockIndex)</string>
+	<key>Codex asked for permission</key>
+	<string>Codex запрашивал разрешение</string>
+	<key>Codex asks</key>
+	<string>Codex спрашивает</string>
+	<key>Codex asks before every command and change.</key>
+	<string>Codex спрашивает перед каждой командой и изменением.</string>
+	<key>Codex asks for network access</key>
+	<string>Codex просит доступ в сеть</string>
+	<key>Codex is waiting for permission</key>
+	<string>Codex ждёт разрешения</string>
+	<key>Codex is working…</key>
+	<string>Codex работает…</string>
+	<key>Codex never asks. Use only on a separate machine.</key>
+	<string>Codex ничего не спрашивает. Используйте только на отдельной машине.</string>
+	<key>Codex passcode</key>
+	<string>Код Codex</string>
+	<key>Codex runs commands and changes files in your projects. Confirm once that this iPhone belongs to your account. The device key stays in the iPhone keychain.</key>
+	<string>Codex запускает команды и меняет файлы в ваших проектах. Один раз подтвердим, что этот iPhone принадлежит вашему аккаунту. Ключ устройства хранится в связке ключей iPhone.</string>
+	<key>Codex settings</key>
+	<string>Настройки Codex</string>
+	<key>Codex tasks</key>
+	<string>Задачи Codex</string>
+	<key>Codex will not run this action</key>
+	<string>Codex не выполнит это действие</string>
+	<key>Codex works where your account started it. The iPhone shows progress and stops a task only where your decision is needed.</key>
+	<string>Codex работает там, где его запустил ваш аккаунт. iPhone показывает ход работы и останавливает задачу только там, где нужно ваше решение.</string>
+	<key>Codex · review</key>
+	<string>Codex · ревью</string>
+	<key>Codex, tier 2</key>
+	<string>Codex, уровень 2</string>
+	<key>Codex, tier 3</key>
+	<string>Codex, уровень 3</string>
+	<key>Codex: task history</key>
+	<string>Codex: история задачи</string>
+	<key>Codex: tier 2</key>
+	<string>Codex: уровень 2</string>
+	<key>Codex: tier 3</key>
+	<string>Codex: уровень 3</string>
+	<key>Collapsed</key>
+	<string>Свёрнуто</string>
+	<key>Command</key>
+	<string>Команда</string>
+	<key>Commands</key>
+	<string>Команды</string>
+	<key>Compared data and verified dates</key>
+	<string>Сравнил данные и проверил даты</string>
+	<key>Completed answer</key>
+	<string>Готовый ответ</string>
+	<key>Components</key>
+	<string>Компоненты</string>
+	<key>Composer</key>
+	<string>Поле ввода</string>
+	<key>Computer</key>
+	<string>Компьютер</string>
+	<key>Computer screen</key>
+	<string>Экран компьютера</string>
+	<key>Computers</key>
+	<string>Компьютеры</string>
+	<key>Connect</key>
+	<string>Подключить</string>
+	<key>Connected</key>
+	<string>Подключено</string>
+	<key>Connected · SSH</key>
+	<string>Подключён · SSH</string>
+	<key>Connected · SSH · 192.168.1.20</key>
+	<string>Подключён · SSH · 192.168.1.20</string>
+	<key>Connection dropped after sending. The message may have arrived.</key>
+	<string>Связь оборвалась после отправки. Сообщение могло дойти.</string>
+	<key>Connection not secure, </key>
+	<string>Соединение не защищено, </string>
+	<key>Connection restored · events loaded: 3</key>
+	<string>Связь восстановлена · загружено событий: 3</string>
+	<key>Connections</key>
+	<string>Подключения</string>
+	<key>Continue</key>
+	<string>Продолжить</string>
+	<key>Continue answer</key>
+	<string>Продолжить ответ</string>
+	<key>Contract translation</key>
+	<string>Перевод договора</string>
+	<key>Conversation</key>
+	<string>Разговор</string>
+	<key>Conversation saved in chat</key>
+	<string>Разговор сохранён в чате</string>
+	<key>Copied</key>
+	<string>Скопировано</string>
+	<key>Copied: %d chars</key>
+	<string>Скопировано: %d симв.</string>
+	<key>Copies the selection or all the text</key>
+	<string>Копирует выделенный фрагмент или весь текст</string>
+	<key>Copy</key>
+	<string>Копировать</string>
+	<key>Copy code</key>
+	<string>Скопировать код</string>
+	<key>Copy link</key>
+	<string>Скопировать ссылку</string>
+	<key>Copy public key</key>
+	<string>Скопировать открытый ключ</string>
+	<key>Could not check chat</key>
+	<string>Не удалось проверить чат</string>
+	<key>Could not check the chat</key>
+	<string>Не удалось проверить чат</string>
+	<key>Could not check the chat. Nothing was published.</key>
+	<string>Не удалось проверить чат. Ничего не опубликовано.</string>
+	<key>Could not create</key>
+	<string>Не удалось создать</string>
+	<key>Could not create the link</key>
+	<string>Ссылку создать не удалось</string>
+	<key>Could not log in. Try again.</key>
+	<string>Не удалось войти. Попробуйте ещё раз.</string>
+	<key>Could not play.</key>
+	<string>Не удалось воспроизвести.</string>
+	<key>Could not refresh chat history.</key>
+	<string>Не удалось обновить историю чатов.</string>
+	<key>Could not show the image</key>
+	<string>Не удалось показать изображение</string>
+	<key>Create PIN</key>
+	<string>Придумать PIN</string>
+	<key>Create a PIN</key>
+	<string>Придумайте PIN</string>
+	<key>Create image</key>
+	<string>Создать изображение</string>
+	<key>Create link</key>
+	<string>Создать ссылку</string>
+	<key>Created issue #212</key>
+	<string>Создана задача #212</string>
+	<key>Created research plan</key>
+	<string>Составил план исследования</string>
+	<key>Creating</key>
+	<string>Создаётся</string>
+	<key>Creating image…</key>
+	<string>Создаю изображение…</string>
+	<key>Creating link…</key>
+	<string>Создаю ссылку…</string>
+	<key>Creating the device key</key>
+	<string>Создаю ключ устройства</string>
+	<key>Current branch main</key>
+	<string>Текущая ветка main</string>
+	<key>Dark</key>
+	<string>Тёмное</string>
+	<key>Dark drawer linen</key>
+	<string>Тёмный лён бокового меню</string>
+	<key>Dark drawer linen:</key>
+	<string>Тёмный лён бокового меню:</string>
+	<key>Dark variant</key>
+	<string>Тёмный вариант</string>
+	<key>Debossed</key>
+	<string>Вдавлен</string>
+	<key>Debossed mark: the empty chat (light or dark artwork by appearance, grey for a temporary chat). White embossed: welcome and launch on the dark linen; emerald: light backgrounds. The tile (icon) only in small headers.</key>
+	<string>Вдавленный знак — пустой чат (светлый и тёмный рисунок по оформлению, серый для временного). Белый выпуклый — приветствие и запуск на тёмном льне, изумрудный — для светлого фона. Плитка (иконка) — только в маленьких заголовках.</string>
+	<key>Deep research</key>
+	<string>Исследование</string>
+	<key>Default</key>
+	<string>По умолчанию</string>
+	<key>Delete</key>
+	<string>Удалить</string>
+	<key>Delete all chats</key>
+	<string>Удалить все чаты</string>
+	<key>Delete chat</key>
+	<string>Удалить чат</string>
+	<key>Delete link</key>
+	<string>Удалить ссылку</string>
+	<key>Delete page</key>
+	<string>Удалить страницу</string>
+	<key>Deleted</key>
+	<string>Удалено</string>
+	<key>Delivery not confirmed</key>
+	<string>Отправка не подтверждена</string>
+	<key>Delivery not confirmed · tap “?”</key>
+	<string>Отправка не подтверждена · коснитесь «?»</string>
+	<key>Delivery: honest states</key>
+	<string>Доставка: честные состояния</string>
+	<key>Demo: Safari is not opened</key>
+	<string>Образец: Safari не открывается</string>
+	<key>Demo: the launch screen fades into the chat.</key>
+	<string>Демонстрация: экран запуска растворяется в чат.</string>
+	<key>Demo: “Log out” flips the screen like a card.</key>
+	<string>Демонстрация: «Выйти» переворачивает экран, как карточку.</string>
+	<key>Denied</key>
+	<string>Отклонено</string>
+	<key>Denied — nothing changed</key>
+	<string>Отклонено — ничего не изменено</string>
+	<key>Deny</key>
+	<string>Отклонить</string>
+	<key>Detect</key>
+	<string>Определить</string>
+	<key>Detected: Russian</key>
+	<string>Определён: русский</string>
+	<key>Device check</key>
+	<string>Проверка устройства</string>
+	<key>Dictation</key>
+	<string>Диктовка</string>
+	<key>Dictation (stage 9+)</key>
+	<string>Диктовка (этап 9+)</string>
+	<key>Diff of one file</key>
+	<string>Diff одного файла</string>
+	<key>Diff with review notes</key>
+	<string>Diff с заметками ревью</string>
+	<key>Disabled (alpha .5)</key>
+	<string>Недоступно (alpha .5)</string>
+	<key>Document scanner (stage 6)</key>
+	<string>Сканер документов (этап 6)</string>
+	<key>Documents</key>
+	<string>Документы</string>
+	<key>Done</key>
+	<string>Готово</string>
+	<key>Done (PDF — stage 6)</key>
+	<string>Готово (PDF — этап 6)</string>
+	<key>Done · 12 min · 3 sources · 9 pp.</key>
+	<string>Готово · 12 мин · 3 источника · 9 стр.</string>
+	<key>Done · 4 min · 33 sources · 8 pp.</key>
+	<string>Готово · 4 мин · 33 источника · 8 стр.</string>
+	<key>Double-tap and hold for chat actions</key>
+	<string>Двойное касание и удержание — действия с чатом</string>
+	<key>Double-tap zooms in, single-tap hides the bars. “Edit” is stage 6.</key>
+	<string>Двойное касание увеличивает, одиночное прячет панели. «Изменить» — этап 6.</string>
+	<key>Download</key>
+	<string>Скачать</string>
+	<key>Download result unknown</key>
+	<string>Результат загрузки неизвестен</string>
+	<key>Download the updated packages</key>
+	<string>Скачать обновлённые пакеты</string>
+	<key>Downloading image…</key>
+	<string>Загружаю изображение…</string>
+	<key>Downloads and shows the image</key>
+	<string>Загружает и показывает изображение</string>
+	<key>Downloads the image again</key>
+	<string>Повторяет загрузку изображения</string>
+	<key>Drawer sections</key>
+	<string>Разделы бокового меню</string>
+	<key>Drawer: press and hold a row</key>
+	<string>Боковое меню: удержание строки</string>
+	<key>Edit</key>
+	<string>Изменить</string>
+	<key>Electric bike market in Russia</key>
+	<string>Рынок электровелосипедов в России</string>
+	<key>Email Editor</key>
+	<string>Редактор писем</string>
+	<key>Email draft</key>
+	<string>Черновик письма</string>
+	<key>Email draft (send — stage 6)</key>
+	<string>Черновик письма (отправка — этап 6)</string>
+	<key>Email draft (stage 7)</key>
+	<string>Черновик письма (этап 7)</string>
+	<key>Email to landlord</key>
+	<string>Письмо арендодателю</string>
+	<key>Email → placeholder before stage 7</key>
+	<string>Письмо → заглушка до этапа 7</string>
+	<key>Emerald</key>
+	<string>Изумруд</string>
+	<key>Empty chat</key>
+	<string>Пустой чат</string>
+	<key>Empty field</key>
+	<string>Пустое поле</string>
+	<key>Empty field + voice: the voice conversation button replaces “Send”.</key>
+	<string>Пустое поле + голос: на месте «Отпр.» кнопка голосового разговора.</string>
+	<key>Empty library</key>
+	<string>Пустая библиотека</string>
+	<key>End</key>
+	<string>Завершить</string>
+	<key>Ends the voice conversation</key>
+	<string>Заканчивает голосовой разговор</string>
+	<key>Engineer</key>
+	<string>Инженер</string>
+	<key>Enter PIN</key>
+	<string>Введите PIN</string>
+	<key>Enter code</key>
+	<string>Ввести код</string>
+	<key>Error</key>
+	<string>Ошибка</string>
+	<key>Escaped punctuation</key>
+	<string>Экранированная пунктуация</string>
+	<key>Event created</key>
+	<string>Событие создано</string>
+	<key>Expand</key>
+	<string>Развернуть</string>
+	<key>Expanded</key>
+	<string>Развёрнуто</string>
+	<key>Expired</key>
+	<string>Срок хранения истёк</string>
+	<key>Expired — download the file again</key>
+	<string>Срок хранения истёк — загрузите файл заново</string>
+	<key>Explains step by step without giving away the answer</key>
+	<string>Объясняет решение по шагам, без готовых ответов</string>
+	<key>External tool (MCP)</key>
+	<string>Внешний инструмент (MCP)</string>
+	<key>Extra High</key>
+	<string>Очень высокая</string>
+	<key>Failed — tap retries</key>
+	<string>Не удалось — нажатие повторяет</string>
+	<key>Failure with the caller's explanation (failureText)</key>
+	<string>Сбой с объяснением вызывающего (failureText)</string>
+	<key>Family A</key>
+	<string>Семейство А</string>
+	<key>Family B</key>
+	<string>Семейство Б</string>
+	<key>Fast</key>
+	<string>Быстрая</string>
+	<key>Fast and economical</key>
+	<string>Быстро и экономно</string>
+	<key>Faucet repair</key>
+	<string>Ремонт крана</string>
+	<key>Favorites</key>
+	<string>Избранное</string>
+	<key>Featured</key>
+	<string>Подборка</string>
+	<key>Feb</key>
+	<string>Фев</string>
+	<key>File</key>
+	<string>Файл</string>
+	<key>File (stage 8): Download → progress → Open</key>
+	<string>Файл (этап 8): Скачать → прогресс → Открыть</string>
+	<key>File icons (RCFileIcon): a concrete file, not the attach action</key>
+	<string>Иконки файлов (RCFileIcon): конкретный файл, а не действие «прикрепить»</string>
+	<key>File mentioned</key>
+	<string>Файл упомянут</string>
+	<key>File → placeholder before stage 8</key>
+	<string>Файл → заглушка до этапа 8</string>
+	<key>Files</key>
+	<string>Файлы</string>
+	<key>Files you send in chats will appear here.</key>
+	<string>Файлы, которые вы отправляете в чаты, появятся здесь.</string>
+	<key>Find where the code does this</key>
+	<string>Найти место в коде, где это делается</string>
+	<key>Finishes the phrase and sends it</key>
+	<string>Заканчивает фразу и отправляет её</string>
+	<key>First connection to this computer. Compare the fingerprint with ssh-keygen -lf on the computer.</key>
+	<string>Первое подключение к этому компьютеру. Сверьте отпечаток с выводом ssh-keygen -lf на компьютере.</string>
+	<key>First launch and logging out. The logo is the white embossed mark without a tile (RCBrandMarkEmbossedWhite).</key>
+	<string>Первый запуск и выход из аккаунта. Логотип — белый выпуклый знак без плитки (RCBrandMarkEmbossedWhite).</string>
+	<key>First the app reads the chat (read-only), then offers “Create link”. Retrying after an error is read-only again.</key>
+	<string>Сначала приложение читает чат (только чтение), потом предлагает «Создать ссылку». Повтор после ошибки — снова только чтение.</string>
+	<key>Fix</key>
+	<string>Исправить</string>
+	<key>Fix sign-in by link</key>
+	<string>Починить вход по ссылке</string>
+	<key>Folders</key>
+	<string>Папки</string>
+	<key>For code, default</key>
+	<string>Для кода, по умолчанию</string>
+	<key>For colleagues</key>
+	<string>Для коллег</string>
+	<key>For me</key>
+	<string>Для себя</string>
+	<key>For the city, a hybrid or city bike works well.
+
+A step-through frame is comfortable in everyday clothes, an internal gear hub needs less maintenance, and fenders and a rack are usually included.
+
+Budget: from 35,000 ₽ and up.</key>
+	<string>Для города подойдёт гибрид или городской велосипед.
+
+Рама с низкой посадкой удобна в обычной одежде, планетарная втулка требует меньше обслуживания, а крылья и багажник обычно уже в комплекте.
+
+Бюджет: от 35 000 ₽ и выше.</string>
+	<key>For the city, a hybrid or city bike works well: a step-through frame, an internal gear hub…</key>
+	<string>Для города подойдёт гибрид или городской велосипед: рама с низкой посадкой, планетарная втулка…</string>
+	<key>For what budget?</key>
+	<string>Для какого бюджета?</string>
+	<key>Fork</key>
+	<string>Ответвить</string>
+	<key>Form</key>
+	<string>Форма</string>
+	<key>Found %d sources</key>
+	<string>Нашёл %d источников</string>
+	<key>Found 33 sources</key>
+	<string>Нашёл 33 источника</string>
+	<key>Foundation</key>
+	<string>Основа</string>
+	<key>Free inside the project</key>
+	<string>В проекте без вопросов</string>
+	<key>Fri, Nov 14, 15:00</key>
+	<string>Пт, 14 ноября, 15:00</string>
+	<key>From library</key>
+	<string>Из библиотеки</string>
+	<key>From: </key>
+	<string>С языка: </string>
+	<key>Full access</key>
+	<string>Полный доступ</string>
+	<key>Full-screen editor</key>
+	<string>Полноэкранный редактор</string>
+	<key>General, for analysis and text</key>
+	<string>Общая, для анализа и текста</string>
+	<key>Gift ideas</key>
+	<string>Идеи для подарка</string>
+	<key>Glyphs (%lu, from icons.js)</key>
+	<string>Глифы (%lu, из icons.js)</string>
+	<key>Glyphs and tiles</key>
+	<string>Глифы и плитки</string>
+	<key>Goal and budget</key>
+	<string>Цель и бюджет</string>
+	<key>Goal:</key>
+	<string>Цель:</string>
+	<key>Good result</key>
+	<string>Хороший результат</string>
+	<key>Green and amber, barber-pole for indeterminate, live bar fills in 3 s. 6 pt is the size in the attachment tray.</key>
+	<string>Зелёный и янтарный, «барбер» для неопределённого, живая полоса заполняется за 3 с. 6 pt — размер в лотке вложений.</string>
+	<key>Grids</key>
+	<string>Сетки</string>
+	<key>HUD and progress</key>
+	<string>HUD и прогресс</string>
+	<key>Headings, lists, quote, table, links, and code. “Copy” on code appears at stage 7.</key>
+	<string>Заголовки, списки, цитата, таблица, ссылки и код. «Копировать» у кода появится на этапе 7.</string>
+	<key>Headings, lists, quote, table, links, and code. “Copy” on code is stage 7.</key>
+	<string>Заголовки, списки, цитата, таблица, ссылки и код. «Копировать» у кода — этап 7.</string>
+	<key>Hello!
+
+The kitchen faucet is leaking. When would be a good time to send a plumber?
+
+Thanks, Anna</key>
+	<string>Здравствуйте!
+
+На кухне течёт кран. Когда удобно прислать мастера?
+
+Спасибо, Анна</string>
+	<key>Here are the first steps: install Python 3, then create a virtual environment and</key>
+	<string>Вот первые шаги: установите Python 3, затем создайте виртуальное окружение и</string>
+	<key>Here is the draft:</key>
+	<string>Вот черновик:</string>
+	<key>Here is the image based on your description:</key>
+	<string>Вот изображение по вашему описанию:</string>
+	<key>Here is the image:</key>
+	<string>Вот изображение:</string>
+	<key>Here is the monthly sales chart:</key>
+	<string>Вот график продаж по месяцам:</string>
+	<key>Here the app displays its service sign-in page (WebView). After logging in, you return to ChatGPT X.</key>
+	<string>Здесь приложение показывает свою страницу входа сервиса (WebView). После входа вы вернётесь в ChatGPT X.</string>
+	<key>Hi! How are you?</key>
+	<string>Привет! Как дела?</string>
+	<key>High</key>
+	<string>Высокая</string>
+	<key>History notes</key>
+	<string>Отметки в истории</string>
+	<key>Hold a bubble: “Copy” (stage 9+), “Edit” (stage 8+). “!” means retry is safe; “?” means connection dropped after tap, check history only.</key>
+	<string>Удержание пузыря: «Скопировать» (этап 9+), «Изменить» (этап 8+). «!» — повтор безопасен; «?» — связь оборвалась после нажатия, только проверка истории.</string>
+	<key>Hold a card: “Copy | Select Text” (stage 9+). Action bar: copy and regenerate (8), speak and share (7), “More” (6).</key>
+	<string>Удержание карточки: «Скопировать | Выделить» (этап 9+). Панель действий: копировать и другой вариант (8), озвучить и поделиться (7), «Ещё» (6).</string>
+	<key>Hold an answer → “Select Text”. Plain text without markup, matching the chat size and appearance; “Copy” copies the selection or all text.</key>
+	<string>Удержание ответа → «Выделить». Текст без разметки, по размеру и оформлению чата; «Копировать» берёт выделенный фрагмент или весь текст.</string>
+	<key>Hooks</key>
+	<string>Hooks</string>
+	<key>Host</key>
+	<string>Хост</string>
+	<key>Host: 192.168.1.30</key>
+	<string>Хост: 192.168.1.30</string>
+	<key>How is the result?</key>
+	<string>Как результат?</string>
+	<key>How long?</key>
+	<string>Какой длины?</string>
+	<key>How much does the Moon weigh</key>
+	<string>Сколько весит Луна</string>
+	<key>How much does the Moon weigh?</key>
+	<string>Сколько весит Луна?</string>
+	<key>How should the dark theme turn on?</key>
+	<string>Как включать тёмную тему?</string>
+	<key>How to choose a bike</key>
+	<string>Как выбрать велосипед</string>
+	<key>How to choose a city bike: complete guide</key>
+	<string>Как выбрать городской велосипед: полный гид</string>
+	<key>How to connect the computer? Codex must be open on it.</key>
+	<string>Как подключить компьютер? На нём должен быть открыт Codex.</string>
+	<key>If the check fails, Codex stays closed; ordinary chats keep working.</key>
+	<string>Если проверка не пройдёт, раздел Codex останется закрытым, а обычные чаты продолжат работать.</string>
+	<key>Image</key>
+	<string>Изображение</string>
+	<key>Image %d</key>
+	<string>Изображение %d</string>
+	<key>Image (stage 7)</key>
+	<string>Изображение (этап 7)</string>
+	<key>Image from chat history:</key>
+	<string>Изображение из истории чата:</string>
+	<key>Image viewer (stage 7)</key>
+	<string>Просмотр изображения (этап 7)</string>
+	<key>Image viewer and scanner</key>
+	<string>Изображение и сканер</string>
+	<key>Image viewer — from stage 7</key>
+	<string>Просмотр изображения — с этапа 7</string>
+	<key>Image → placeholder before stage 7</key>
+	<string>Изображение → заглушка до этапа 7</string>
+	<key>Images</key>
+	<string>Изображения</string>
+	<key>Images and GPTs are stage 6; library is stage 7 (folders, favorites, and grid are stage 6).</key>
+	<string>Изображения и GPT — этап 6, библиотека — этап 7 (папки, избранное и сетка — 6).</string>
+	<key>In detail</key>
+	<string>Подробно</string>
+	<key>In project</key>
+	<string>В проекте</string>
+	<key>In the app, this opens the service sign-in page. The showcase never contacts the network.</key>
+	<string>В приложении здесь откроется страница входа сервиса. Витрина не обращается к сети.</string>
+	<key>In the project</key>
+	<string>В проекте</string>
+	<key>Input</key>
+	<string>Ввод</string>
+	<key>Instant</key>
+	<string>Быстрый</string>
+	<key>Instructions</key>
+	<string>Инструкции</string>
+	<key>Instructions apply to new chats.</key>
+	<string>Инструкции применяются к новым чатам.</string>
+	<key>Internal gear hubs — pros and cons</key>
+	<string>Планетарные втулки — плюсы и минусы</string>
+	<key>Interrupted answer</key>
+	<string>Оборванный ответ</string>
+	<key>Interrupts the answer</key>
+	<string>Перебивает ответ</string>
+	<key>Ivan</key>
+	<string>Иван</string>
+	<key>Jan</key>
+	<string>Янв</string>
+	<key>Kazan in a weekend: on Saturday — the Kremlin, Kul Sharif Mosque, and Bauman Street, and the Kazanka embankment in the evening. On Sunday — the Old Tatar Quarter and the Chak-Chak Museum.
+
+From the airport, the Aeroexpress is most convenient: about 25 minutes to the station.</key>
+	<string>Казань за выходные: в субботу — Кремль, мечеть Кул-Шариф и улица Баумана, вечером — набережная Казанки. В воскресенье — Старо-Татарская слобода и музей чак-чака.
+
+Из аэропорта удобнее всего аэроэкспресс: около 25 минут до вокзала.</string>
+	<key>Language selection and “Copy / Share” are stage 7. At stage 8 the pair is fixed: “Detect → English”.</key>
+	<string>Выбор языков и «Копировать / Поделиться» — этап 7. На этапе 8 пара фиксирована: «Определить → English».</string>
+	<key>Large</key>
+	<string>Крупный</string>
+	<key>Larger</key>
+	<string>Очень крупный</string>
+	<key>Launch</key>
+	<string>Запуск</string>
+	<key>Launch without transition (10 s)</key>
+	<string>Запуск без перехода (10 с)</string>
+	<key>Launch → chat</key>
+	<string>Запуск → чат</string>
+	<key>Launch → welcome (long restore)</key>
+	<string>Запуск → приветствие (долгое восстановление)</string>
+	<key>Lease agreement.pdf</key>
+	<string>Договор аренды.pdf</string>
+	<key>Less</key>
+	<string>Меньше</string>
+	<key>Lets Codex run this action</key>
+	<string>Codex выполнит это действие</string>
+	<key>Library</key>
+	<string>Библиотека</string>
+	<key>Library grid</key>
+	<string>Библиотека сеткой</string>
+	<key>Light</key>
+	<string>Светлое</string>
+	<key>Like the system</key>
+	<string>Как в системе</string>
+	<key>Limit reached</key>
+	<string>Лимит исчерпан</string>
+	<key>Link already created</key>
+	<string>Ссылка уже создана</string>
+	<key>Link and chat actions</key>
+	<string>Ссылка и действия с чатом</string>
+	<key>Link copied</key>
+	<string>Ссылка скопирована</string>
+	<key>Link created</key>
+	<string>Ссылка создана</string>
+	<key>Link created: open, delete</key>
+	<string>Ссылка создана: открыть, удалить</string>
+	<key>Link deleted</key>
+	<string>Ссылка удалена</string>
+	<key>Link: </key>
+	<string>Ссылка: </string>
+	<key>Links</key>
+	<string>Ссылки</string>
+	<key>Listen</key>
+	<string>Слушать</string>
+	<key>Listening</key>
+	<string>Слушаю</string>
+	<key>Locked chats</key>
+	<string>Закрытые чаты</string>
+	<key>Locked chats (stage 6)</key>
+	<string>Закрытые чаты (этап 6)</string>
+	<key>Locked chats PIN</key>
+	<string>PIN закрытых чатов</string>
+	<key>Locked chats — stage 6</key>
+	<string>Закрытые чаты — этап 6</string>
+	<key>Locked for 5 min</key>
+	<string>Блокировка на 5 мин</string>
+	<key>Log In</key>
+	<string>Вход</string>
+	<key>Log in</key>
+	<string>Войти</string>
+	<key>Log in with browser</key>
+	<string>Войти через браузер</string>
+	<key>Log out</key>
+	<string>Выйти</string>
+	<key>Login</key>
+	<string>Логин</string>
+	<key>Login error</key>
+	<string>Ошибка входа</string>
+	<key>Login opens on the ChatGPT page. Passwords and codes are entered only there — ChatGPT X never sees or stores them.</key>
+	<string>Вход открывается на странице ChatGPT. Пароль и коды вводятся только там — ChatGPT X их не видит и не хранит.</string>
+	<key>Login: alex</key>
+	<string>Логин: alex</string>
+	<key>Logout: flip to sign-in</key>
+	<string>Выход: переворот к входу</string>
+	<key>Long text</key>
+	<string>Длинный текст</string>
+	<key>Low</key>
+	<string>Низкая</string>
+	<key>MacBook Pro · snapshot</key>
+	<string>MacBook Pro · снимок</string>
+	<key>Mail, Messages…</key>
+	<string>Почта, Сообщения…</string>
+	<key>Make a trip plan:
+— Saturday: Kremlin, Kul Sharif
+— Sunday: Old Quarter
+— how to get from the airport</key>
+	<string>Составь план поездки:
+— суббота: Кремль, Кул-Шариф
+— воскресенье: слобода
+— как добраться из аэропорта</string>
+	<key>Make a weekend trip plan for Kazan</key>
+	<string>Составь план поездки в Казань на выходные</string>
+	<key>Make the change and update the tests</key>
+	<string>Внести изменение и обновить тесты</string>
+	<key>Manually over SSH</key>
+	<string>Вручную по SSH</string>
+	<key>Mar</key>
+	<string>Мар</string>
+	<key>Mark without a tile (RCBrandMark)</key>
+	<string>Знак без плитки (RCBrandMark)</string>
+	<key>Markdown (stage 9+)</key>
+	<string>Markdown (этап 9+)</string>
+	<key>Markdown and code</key>
+	<string>Markdown и код</string>
+	<key>Materials</key>
+	<string>Материалы</string>
+	<key>Math Tutor</key>
+	<string>Репетитор по математике</string>
+	<key>Medium</key>
+	<string>Средняя</string>
+	<key>Meeting with Anna</key>
+	<string>Встреча с Анной</string>
+	<key>Mention</key>
+	<string>В задачу</string>
+	<key>Message</key>
+	<string>Сообщение</string>
+	<key>Message body</key>
+	<string>Текст письма</string>
+	<key>Mic off</key>
+	<string>Микр. выкл.</string>
+	<key>Microphone</key>
+	<string>Микрофон</string>
+	<key>Microphone off</key>
+	<string>Микрофон выключен</string>
+	<key>Mode</key>
+	<string>Режим</string>
+	<key>Mode, attachments, limit (stage 8+)</key>
+	<string>Режим, вложения, лимит (этап 8+)</string>
+	<key>Model</key>
+	<string>Модель</string>
+	<key>Model choice</key>
+	<string>Выбор модели</string>
+	<key>Model choice appears from stage 8.</key>
+	<string>Выбор модели появляется с этапа 8.</string>
+	<key>Model family</key>
+	<string>Семейство</string>
+	<key>Modified</key>
+	<string>Изменён</string>
+	<key>Month: 3000 JPY · year: 30000 JPY</key>
+	<string>Месяц: 3000 JPY · год: 30000 JPY</string>
+	<key>More</key>
+	<string>Ещё</string>
+	<key>Multi-line text</key>
+	<string>Многострочный текст</string>
+	<key>My Chef</key>
+	<string>Мой повар</string>
+	<key>My GPTs</key>
+	<string>Мои GPT</string>
+	<key>Navigation</key>
+	<string>Навигация</string>
+	<key>Needs permission</key>
+	<string>Ждёт разрешения</string>
+	<key>Needs your answer</key>
+	<string>Ждёт вашего ответа</string>
+	<key>Network access</key>
+	<string>Доступ в сеть</string>
+	<key>Network and outside — ask</key>
+	<string>Сеть и всё вне проекта — с вопросом</string>
+	<key>New PIN</key>
+	<string>Новый PIN</string>
+	<key>New branch in a separate worktree</key>
+	<string>Новая ветка в отдельном worktree</string>
+	<key>New chat</key>
+	<string>Новый чат</string>
+	<key>New chat (toggle — stage 8)</key>
+	<string>Новый чат (переключатель — этап 8)</string>
+	<key>New chat in project “Vacation”. Its files and instructions are included.</key>
+	<string>Новый чат в проекте «Отпуск». Учитываются его файлы и инструкции.</string>
+	<key>New project</key>
+	<string>Новый проект</string>
+	<key>Next</key>
+	<string>Далее</string>
+	<key>No internet connection. Your draft is saved.</key>
+	<string>Нет подключения к интернету. Черновик сохранён.</string>
+	<key>No limit</key>
+	<string>Без ограничений</string>
+	<key>No network</key>
+	<string>Нет сети</string>
+	<key>Normal</key>
+	<string>Обычный</string>
+	<key>Not recognized. The recording is saved.</key>
+	<string>Не распознано. Запись сохранена.</string>
+	<key>Not sent</key>
+	<string>Не отправлено</string>
+	<key>Not sent · tap “!”</key>
+	<string>Не отправлено · коснитесь «!»</string>
+	<key>Not sent · text returned to the input field</key>
+	<string>Не отправлено · текст возвращён в поле ввода</string>
+	<key>Note.wav</key>
+	<string>Заметка.wav</string>
+	<key>Notes.txt</key>
+	<string>Заметки.txt</string>
+	<key>Nothing found</key>
+	<string>Ничего не найдено</string>
+	<key>Nothing here yet</key>
+	<string>Здесь пока пусто</string>
+	<key>Nothing selected</key>
+	<string>Ничего не выбрано</string>
+	<key>Nothing will happen without your permission</key>
+	<string>Ничего не произойдёт без вашего разрешения</string>
+	<key>Occupation</key>
+	<string>Род занятий</string>
+	<key>Off</key>
+	<string>Выключено</string>
+	<key>Office iMac</key>
+	<string>iMac в офисе</string>
+	<key>Offline</key>
+	<string>Не в сети</string>
+	<key>Offline showcase: no network, account or session. Build: OR6_UI_GALLERY=1.</key>
+	<string>Офлайн-витрина: без сети, аккаунта и сессии. Сборка: OR6_UI_GALLERY=1.</string>
+	<key>Offline · seen yesterday at 19:40</key>
+	<string>Не в сети · был вчера в 19:40</string>
+	<key>Old report.pdf</key>
+	<string>Старый отчёт.pdf</string>
+	<key>On</key>
+	<string>Включено</string>
+	<key>Only manually</key>
+	<string>Только вручную</string>
+	<key>Only now</key>
+	<string>Только сейчас</string>
+	<key>Only on a separate machine</key>
+	<string>Только на отдельной машине</string>
+	<key>Open</key>
+	<string>Открыть</string>
+	<key>Open chat with drawer</key>
+	<string>Открыть чат с меню</string>
+	<key>Open image</key>
+	<string>Открыть изображение</string>
+	<key>Open in Safari?</key>
+	<string>Открыть в Safari?</string>
+	<key>Open in…</key>
+	<string>Открыть в…</string>
+	<key>Open report</key>
+	<string>Открыть отчёт</string>
+	<key>Open snapshot</key>
+	<string>Открыть снимок</string>
+	<key>Open “+”</key>
+	<string>Открыть «+»</string>
+	<key>Open “Selection”</key>
+	<string>Открыть «Выделение»</string>
+	<key>Open “Translate”</key>
+	<string>Открыть «Перевод»</string>
+	<key>Opens from the research card: “Open report”. “Save PDF” is stage 6.</key>
+	<string>Открывается из карточки исследования: «Открыть отчёт». «Сохранить PDF» — этап 6.</string>
+	<key>Opens the ChatGPT login page</key>
+	<string>Открывает страницу входа ChatGPT</string>
+	<key>Opens the answer text selection screen.</key>
+	<string>Откроется экран выделения текста ответа.</string>
+	<key>Opens the diff</key>
+	<string>Открывает diff</string>
+	<key>Opens the diff with the review comments</key>
+	<string>Открывает diff с замечаниями ревью</string>
+	<key>Opens the link</key>
+	<string>Открывает ссылку</string>
+	<key>Opens the list of changed files</key>
+	<string>Открывает список изменённых файлов</string>
+	<key>Ordinary</key>
+	<string>Обычный</string>
+	<key>Ordinary chat</key>
+	<string>Обычный чат</string>
+	<key>PDF ready</key>
+	<string>PDF готов</string>
+	<key>PDF saved</key>
+	<string>PDF сохранён</string>
+	<key>PDF saved to Library</key>
+	<string>PDF сохранён в «Библиотеку»</string>
+	<key>PIN set</key>
+	<string>PIN установлен</string>
+	<key>Page %d</key>
+	<string>Страница %d</string>
+	<key>Page background: light linen (rc-linen-light.png). Without the PNG, components fall back to a solid color.</key>
+	<string>Фон страницы — светлый лён (rc-linen-light.png). Без PNG компоненты переходят на сплошной цвет.</string>
+	<key>Pairing code</key>
+	<string>Код сопряжения</string>
+	<key>Palette</key>
+	<string>Палитра</string>
+	<key>Part not shown at this stage</key>
+	<string>Часть, которую этап не показывает</string>
+	<key>Parts not available at the current stage are shown with a “saved in conversation” placeholder. Dark card colors are a kit extension.</key>
+	<string>Части, которых нет на текущем этапе, показываются заглушкой «сохранено в разговоре». Тёмные цвета карточек — расширение кита.</string>
+	<key>Passcode lock</key>
+	<string>Блокировка паролем</string>
+	<key>Passport scan.jpg</key>
+	<string>Скан паспорта.jpg</string>
+	<key>Pause</key>
+	<string>Пауза</string>
+	<key>Paused</key>
+	<string>Пауза</string>
+	<key>Permission</key>
+	<string>Разрешение</string>
+	<key>Permissions</key>
+	<string>Разрешения</string>
+	<key>Photo.jpg</key>
+	<string>Фото.jpg</string>
+	<key>Photos</key>
+	<string>Фото</string>
+	<key>Pills (App Store 2012)</key>
+	<string>Капсулы (App Store 2012)</string>
+	<key>Pin</key>
+	<string>Закрепить</string>
+	<key>Pinned</key>
+	<string>Закреплённые</string>
+	<key>Pinned chat</key>
+	<string>Закреплённый чат</string>
+	<key>Plan</key>
+	<string>План</string>
+	<key>Plan </key>
+	<string>План </string>
+	<key>Plan: write what to change</key>
+	<string>План: напишите, что изменить</string>
+	<key>Playback (RCPlaybackView)</key>
+	<string>Воспроизведение (RCPlaybackView)</string>
+	<key>Playback speed</key>
+	<string>Скорость воспроизведения</string>
+	<key>Player, questions, link (API 7)</key>
+	<string>Плеер, вопросы, ссылка (API 7)</string>
+	<key>Playing</key>
+	<string>Играет</string>
+	<key>Plays the file saved on this iPhone</key>
+	<string>Воспроизводит сохранённый на iPhone файл</string>
+	<key>Please make a weekend trip plan for Kazan: what to see, where to eat, and how to get from the airport.</key>
+	<string>Составь, пожалуйста, план поездки в Казань на выходные: что посмотреть, где поесть и как добраться из аэропорта.</string>
+	<key>Please postpone the rent payment by five days.</key>
+	<string>Прошу перенести оплату аренды на пять дней.</string>
+	<key>Please wait…</key>
+	<string>Подождите…</string>
+	<key>Plus</key>
+	<string>Plus</string>
+	<key>Polite, concise, and to the point</key>
+	<string>Вежливо, коротко, по делу</string>
+	<key>Poor connection</key>
+	<string>Плохая связь</string>
+	<key>Popular</key>
+	<string>Популярные</string>
+	<key>Port</key>
+	<string>Порт</string>
+	<key>Port: 22</key>
+	<string>Порт: 22</string>
+	<key>Position %@ of %@</key>
+	<string>Позиция %@ из %@</string>
+	<key>Preparing to send (live countdown)</key>
+	<string>Подготовка отправки (живой отсчёт)</string>
+	<key>Preparing to send: lamp on “Send”</key>
+	<string>Подготовка отправки: лампа на «Отпр.»</string>
+	<key>Preparing to send… %d s</key>
+	<string>Подготовка отправки… %d с</string>
+	<key>Preparing…</key>
+	<string>Подготовка…</string>
+	<key>Preview unavailable</key>
+	<string>Предпросмотр недоступен</string>
+	<key>Preview: tap → download → shown</key>
+	<string>Предпросмотр: нажмите → загрузка → показано</string>
+	<key>Price</key>
+	<string>Цена</string>
+	<key>Privacy center</key>
+	<string>Центр конфиденциальности</string>
+	<key>Pro</key>
+	<string>Профи</string>
+	<key>Profile</key>
+	<string>Профиль</string>
+	<key>Project files</key>
+	<string>Файлы проекта</string>
+	<key>Projects</key>
+	<string>Проекты</string>
+	<key>Pull to refresh</key>
+	<string>Потяните, чтобы обновить</string>
+	<key>Putting together a two-day plan</key>
+	<string>Собираю план на два дня</string>
+	<key>Python: reading CSV</key>
+	<string>Python: чтение CSV</string>
+	<key>Quarterly report.pdf</key>
+	<string>Отчёт за квартал.pdf</string>
+	<key>Questions → placeholder before stage 7</key>
+	<string>Вопросы → заглушка до этапа 7</string>
+	<key>RCChecklistViewController: family, mode, effort</key>
+	<string>RCChecklistViewController: семейство, режим, глубина</string>
+	<key>RCDictationView, RCComposerView: new properties</key>
+	<string>RCDictationView, RCComposerView: новые свойства</string>
+	<key>RCFormViewController: values, input, choice</key>
+	<string>RCFormViewController: значения, ввод, выбор</string>
+	<key>RCGlyph from the prototype</key>
+	<string>RCGlyph из прототипа</string>
+	<key>RCGridViewController: images, GPTs, library</key>
+	<string>RCGridViewController: изображения, GPT, библиотека</string>
+	<key>RCLaunchView matches the launch image (Default*.png): only the white mark in the centre, no text or spinner. It leaves once the app knows what to show: fades into the chat or raises the mark to its place on the welcome screen.</key>
+	<string>RCLaunchView повторяет картинку запуска (Default*.png): только белый знак по центру, без текста и индикатора. Уходит, когда известно, что показать: растворяется в чат или поднимает знак на место приветствия.</string>
+	<key>RCPlaybackView, RCClarifyPartView, RCShareLinkSheet</key>
+	<string>RCPlaybackView, RCClarifyPartView, RCShareLinkSheet</string>
+	<key>RCUserMessageView: bubble, attachments, versions</key>
+	<string>RCUserMessageView: пузырь, вложения, версии</string>
+	<key>RCVoiceViewController: orb</key>
+	<string>RCVoiceViewController: шар</string>
+	<key>RUB</key>
+	<string>руб.</string>
+	<key>Range</key>
+	<string>Запас хода</string>
+	<key>Rating</key>
+	<string>Оценка</string>
+	<key>Read aloud</key>
+	<string>Прочитать вслух</string>
+	<key>Read aloud mini player</key>
+	<string>Мини-плеер озвучивания</string>
+	<key>Read answers aloud</key>
+	<string>Озвучивать ответы</string>
+	<key>Read only: the service values and where to change them.</key>
+	<string>Только чтение: значения сервиса и пояснение, где их изменить.</string>
+	<key>Reading aloud</key>
+	<string>Читаю вслух</string>
+	<key>Reading the latest version of the chat. Nothing is published.</key>
+	<string>Читаю последнюю версию чата. Ничего не публикуется.</string>
+	<key>Reading, edits and commands in the project folder go without questions. Network and anything outside the project ask first.</key>
+	<string>Чтение, правки и команды в папке проекта — без вопросов. Сеть и всё за пределами проекта — с разрешения.</string>
+	<key>Reads the chat again. No link is created</key>
+	<string>Ещё раз читает чат. Ссылка не создаётся</string>
+	<key>Ready (stages 10–9)</key>
+	<string>Готов (этапы 10–9)</string>
+	<key>Ready to play</key>
+	<string>Готово к прослушиванию</string>
+	<key>Ready to send</key>
+	<string>Готов к отправке</string>
+	<key>Ready to send · 820 KB</key>
+	<string>Готов к отправке · 820 КБ</string>
+	<key>Ready: model picker (stage 8+)</key>
+	<string>Готов: выбор модели (этап 8+)</string>
+	<key>Reasoning depth</key>
+	<string>Глубина рассуждения</string>
+	<key>Recipes from what’s in your fridge</key>
+	<string>Рецепты из того, что есть в холодильнике</string>
+	<key>Recognition cancelled, recording deleted</key>
+	<string>Распознавание отменено, запись удалена</string>
+	<key>Recognizing…</key>
+	<string>Распознаю…</string>
+	<key>Recognizing… with “Cancel” (cancelsRecognition)</key>
+	<string>Распознаю… с «Отмена» (cancelsRecognition)</string>
+	<key>Reconnecting… Your last phrase is saved and will be sent once.</key>
+	<string>Переподключаюсь… Ваша последняя фраза сохранена и будет отправлена один раз.</string>
+	<key>Record → answer → read aloud.</key>
+	<string>Запись → ответ → озвучивание.</string>
+	<key>Record → answer → read aloud. Tap the orb to finish your phrase; tap during the answer to interrupt. Transcript and limits are stage 6.</key>
+	<string>Запись → ответ → озвучивание. Коснитесь шара, чтобы закончить фразу; во время ответа — чтобы перебить. Текст разговора и лимиты — этап 6.</string>
+	<key>Recording %@</key>
+	<string>Запись %@</string>
+	<key>Recording 0:07</key>
+	<string>Запись 0:07</string>
+	<key>Refreshes this conversation and its title</key>
+	<string>Обновляет этот чат и его название</string>
+	<key>Refreshing…</key>
+	<string>Обновление…</string>
+	<key>Regenerate</key>
+	<string>Другой вариант</string>
+	<key>Remind me about the meeting</key>
+	<string>Напомни про встречу</string>
+	<key>Remove %@</key>
+	<string>Убрать %@</string>
+	<key>Rename</key>
+	<string>Переименовать</string>
+	<key>Rename the auth module</key>
+	<string>Переименовать модуль auth</string>
+	<key>Rename · Pin · Archive · Delete</key>
+	<string>Переименовать · Закрепить · В архив · Удалить</string>
+	<key>Renamed</key>
+	<string>Переименовано</string>
+	<key>Repeat PIN</key>
+	<string>Повторите PIN</string>
+	<key>Replace</key>
+	<string>Заменить</string>
+	<key>Replace attachment?</key>
+	<string>Заменить вложение?</string>
+	<key>Report</key>
+	<string>Отчёт</string>
+	<key>Report a problem</key>
+	<string>Сообщить о проблеме</string>
+	<key>Report — from stage 7</key>
+	<string>Отчёт — с этапа 7</string>
+	<key>Report.pdf</key>
+	<string>Отчёт.pdf</string>
+	<key>Research in progress (stage 7)</key>
+	<string>Исследование идёт (этап 7)</string>
+	<key>Research in progress — you can close the app, the report will appear in this chat</key>
+	<string>Исследование идёт — можно закрыть приложение, отчёт появится в этом чате</string>
+	<key>Research report</key>
+	<string>Отчёт исследования</string>
+	<key>Research report (stage 7)</key>
+	<string>Отчёт исследования (этап 7)</string>
+	<key>Research → placeholder before stage 7</key>
+	<string>Исследование → заглушка до этапа 7</string>
+	<key>Restoring session…</key>
+	<string>Восстанавливаю сессию…</string>
+	<key>Result unknown — no retry</key>
+	<string>Результат неизвестен — без повтора</string>
+	<key>Result with a chart</key>
+	<string>Результат с графиком</string>
+	<key>Results</key>
+	<string>Результаты</string>
+	<key>Resume</key>
+	<string>Продолжить</string>
+	<key>Retake</key>
+	<string>Переснять</string>
+	<key>Retry</key>
+	<string>Повторить</string>
+	<key>Revenue, M RUB</key>
+	<string>Выручка, млн ₽</string>
+	<key>Review</key>
+	<string>Ревью</string>
+	<key>Rotate</key>
+	<string>Повернуть</string>
+	<key>Run the plan</key>
+	<string>Выполнить план</string>
+	<key>Run the sign-in module tests · in ~/src/shop-web</key>
+	<string>Запустить тесты модуля входа · в ~/src/shop-web</string>
+	<key>Run the tests and show the diff</key>
+	<string>Запустить тесты и показать diff</string>
+	<key>Running</key>
+	<string>Выполняются</string>
+	<key>Running…</key>
+	<string>Выполняется…</string>
+	<key>Russian</key>
+	<string>Русский</string>
+	<key>Safari</key>
+	<string>Safari</string>
+	<key>Sales are growing for the third month in a row:</key>
+	<string>Продажи растут третий месяц подряд:</string>
+	<key>Save</key>
+	<string>Сохранить</string>
+	<key>Save PDF</key>
+	<string>Сохранить PDF</string>
+	<key>Save instructions</key>
+	<string>Сохранить инструкции</string>
+	<key>Save to Photos</key>
+	<string>Сохранить в Фото</string>
+	<key>Save to Photos or share</key>
+	<string>Сохранить в Фото или поделиться</string>
+	<key>Saved memory</key>
+	<string>Сохранённая память</string>
+	<key>Saved to Photos</key>
+	<string>Сохранено в «Фото»</string>
+	<key>Saved · %@</key>
+	<string>Сохранён · %@</string>
+	<key>Saving to Photos…</key>
+	<string>Сохраняю в Фото…</string>
+	<key>Saving…</key>
+	<string>Сохраняю…</string>
+	<key>Scan</key>
+	<string>Сканирование</string>
+	<key>Scan QR code</key>
+	<string>Сканировать QR-код</string>
+	<key>Scan.png</key>
+	<string>Скан.png</string>
+	<key>Scanner — stage 6</key>
+	<string>Сканер — этап 6</string>
+	<key>Screen assembled from components</key>
+	<string>Экран, собранный из компонентов</string>
+	<key>Screens</key>
+	<string>Экраны</string>
+	<key>Search</key>
+	<string>Поиск</string>
+	<key>Search GPTs</key>
+	<string>Поиск GPT</string>
+	<key>Search chats</key>
+	<string>Поиск по чатам</string>
+	<key>Search everywhere</key>
+	<string>Поиск везде</string>
+	<key>Search library</key>
+	<string>Поиск в библиотеке</string>
+	<key>Searching for sights in Kazan</key>
+	<string>Ищу достопримечательности Казани</string>
+	<key>Searching the web</key>
+	<string>Ищу в интернете</string>
+	<key>Secure connection, </key>
+	<string>Защищённое соединение, </string>
+	<key>Segments: light and jade</key>
+	<string>Сегменты: светлые и нефритовые</string>
+	<key>Select All</key>
+	<string>Выделить всё</string>
+	<key>Select Text</key>
+	<string>Выделить</string>
+	<key>Select a passage: touch and hold a word, then drag the handles.</key>
+	<string>Выделите фрагмент: удерживайте палец на слове и двигайте маркеры.</string>
+	<key>Selected: %@</key>
+	<string>Выбрано: %@</string>
+	<key>Selection</key>
+	<string>Выделение</string>
+	<key>Selects all the text</key>
+	<string>Выделяет весь текст</string>
+	<key>Send</key>
+	<string>Отправить</string>
+	<key>Send (short composer title)</key>
+	<string>Отпр.</string>
+	<key>Send again</key>
+	<string>Отправить ещё раз</string>
+	<key>Sending your decision…</key>
+	<string>Отправляю ваше решение…</string>
+	<key>Sending…</key>
+	<string>Отправляю…</string>
+	<key>Send…</key>
+	<string>Отправить…</string>
+	<key>Sent</key>
+	<string>Отправлено</string>
+	<key>Sent to the task</key>
+	<string>Отправлено в задачу</string>
+	<key>Session expired. Your draft and chats are safe.</key>
+	<string>Сессия истекла. Черновик и чаты на месте.</string>
+	<key>Settings</key>
+	<string>Настройки</string>
+	<key>Settings form (API 7)</key>
+	<string>Форма настроек (API 7)</string>
+	<key>Share</key>
+	<string>Поделиться</string>
+	<key>Share link</key>
+	<string>Поделиться ссылкой</string>
+	<key>Shared conversation · read-only</key>
+	<string>Общий разговор · только чтение</string>
+	<key>Share…</key>
+	<string>Поделиться…</string>
+	<key>Short</key>
+	<string>Коротко</string>
+	<key>Short and to the point.</key>
+	<string>Коротко и по делу.</string>
+	<key>Should read: (tiramisu). (desu, masu). *not italic*, C:\temp; code keeps its backslash.</key>
+	<string>Должно читаться: (tiramisu). (desu, masu). *not italic*, C:\temp; в коде обратная косая черта остаётся.</string>
+	<key>Show analysis code ›</key>
+	<string>Показать код анализа ›</string>
+	<key>Show more</key>
+	<string>Показать ещё</string>
+	<key>Show my name</key>
+	<string>Показывать моё имя</string>
+	<key>Showcase</key>
+	<string>Витрина</string>
+	<key>Shown (real image)</key>
+	<string>Показано (настоящее изображение)</string>
+	<key>Shown for reference. You can change this in the web version.</key>
+	<string>Показано для справки. Изменить можно в веб-версии.</string>
+	<key>Shows more output</key>
+	<string>Показывает больше вывода</string>
+	<key>Shows only the last lines</key>
+	<string>Оставляет только последние строки</string>
+	<key>Shows the “%@” button</key>
+	<string>Показана кнопка «%@»</string>
+	<key>Side drawer</key>
+	<string>Боковое меню</string>
+	<key>Sign Up</key>
+	<string>Регистрация</string>
+	<key>Sign up</key>
+	<string>Создать аккаунт</string>
+	<key>Sign-in page</key>
+	<string>Страница входа</string>
+	<key>Sign-in page frame</key>
+	<string>Рамка страницы входа</string>
+	<key>Sign-in page with error</key>
+	<string>Страница входа с ошибкой</string>
+	<key>Signing the account request</key>
+	<string>Подписываю запрос аккаунта</string>
+	<key>Single line and read-only</key>
+	<string>Одна строка и только чтение</string>
+	<key>Skip</key>
+	<string>Пропустить</string>
+	<key>Small</key>
+	<string>Небольшой</string>
+	<key>Small controls</key>
+	<string>Мелкие элементы</string>
+	<key>Smaller</key>
+	<string>Мелкий</string>
+	<key>Sound</key>
+	<string>Звук</string>
+	<key>Sound off</key>
+	<string>Звук выкл.</string>
+	<key>Sources</key>
+	<string>Источники</string>
+	<key>Sources and share link</key>
+	<string>Источники и ссылка</string>
+	<key>Sources: %lu</key>
+	<string>Источники: %lu</string>
+	<key>Speak. When you finish, tap the orb.</key>
+	<string>Говорите. Когда закончите — коснитесь шара.</string>
+	<key>Speaking</key>
+	<string>Говорю</string>
+	<key>Speak…</key>
+	<string>Говорите…</string>
+	<key>Speed</key>
+	<string>Скорость</string>
+	<key>Speed up the CSS build</key>
+	<string>Ускорить сборку CSS</string>
+	<key>Stage (feature usefulness)</key>
+	<string>Этап (польза функций)</string>
+	<key>Stage 10 · core</key>
+	<string>Этап 10 · ядро</string>
+	<key>Stage 10: hold menu and retry are not present yet; unsent text returns to the input field.</key>
+	<string>Этап 10: меню по удержанию и повтор ещё не появились; неотправленный текст возвращается в поле ввода.</string>
+	<key>Stage 10: plain text without markup</key>
+	<string>Этап 10: текст без разметки</string>
+	<key>Stage 6 · everything</key>
+	<string>Этап 6 · всё</string>
+	<key>Stage 7 · library and tools</key>
+	<string>Этап 7 · библиотека и инструменты</string>
+	<key>Stage 8 adds search; stage 7 adds projects and library; stage 6 adds images, GPTs, tasks, locked chats, and “Search everywhere”.</key>
+	<string>С этапа 8 есть поиск; с 7 — проекты и библиотека; с 6 — изображения, GPT, задачи, закрытые чаты и «Поиск везде».</string>
+	<key>Stage 8 · model, attachments, voice</key>
+	<string>Этап 8 · модель, вложения, голос</string>
+	<key>Stage 9 · reliability and text</key>
+	<string>Этап 9 · надёжность и текст</string>
+	<key>Stages 10–9</key>
+	<string>Этапы 10–9</string>
+	<key>Stages 10–9: “New chat” and history by date, without search.</key>
+	<string>Этапы 10–9: «Новый чат» и история по датам, без поиска.</string>
+	<key>Standard</key>
+	<string>Обычная</string>
+	<key>Stop</key>
+	<string>Стоп</string>
+	<key>Stop the command</key>
+	<string>Остановить команду</string>
+	<key>Stopped</key>
+	<string>Остановлено</string>
+	<key>Stops reading aloud</key>
+	<string>Останавливает озвучивание</string>
+	<key>Stream with cursor</key>
+	<string>Поток с курсором</string>
+	<key>Streaming answer: send disabled</key>
+	<string>Идёт ответ: отправка недоступна</string>
+	<key>Streaming answer: “Stop” (stage 9+)</key>
+	<string>Идёт ответ: «Стоп» (этап 9+)</string>
+	<key>Study</key>
+	<string>Учёба</string>
+	<key>Subagents</key>
+	<string>Подагенты</string>
+	<key>Subagents · 3</key>
+	<string>Подагенты · 3</string>
+	<key>Subject:</key>
+	<string>Тема:</string>
+	<key>Swap languages</key>
+	<string>Поменять языки местами</string>
+	<key>Swipe a task left to archive it; hold it for the menu.</key>
+	<string>Смахните задачу влево, чтобы убрать в архив; удержите — меню.</string>
+	<key>Swipe to delete (stage 7)</key>
+	<string>Удаление свайпом (этап 7)</string>
+	<key>Swipe to delete — from stage 7</key>
+	<string>Удаление свайпом — с этапа 7</string>
+	<key>System + manual choice</key>
+	<string>Как в системе + ручной выбор</string>
+	<key>System controls</key>
+	<string>Системные элементы</string>
+	<key>System sheets and alerts</key>
+	<string>Системные окна</string>
+	<key>System “Open in” menu with iPhone apps.</key>
+	<string>Системное меню «Открыть в» с приложениями iPhone.</string>
+	<key>Tap a file for its status, retry or replace. ✕ removes the file from the message.</key>
+	<string>Нажмите на файл: состояние, повтор или замена. ✕ убирает файл из сообщения.</string>
+	<key>Tap the orb to interrupt</key>
+	<string>Коснитесь шара, чтобы перебить</string>
+	<key>Tap the output to show up to the last 200 lines.</key>
+	<string>Нажмите на вывод, чтобы показать до 200 последних строк.</string>
+	<key>Tap to retry</key>
+	<string>Нажмите, чтобы повторить</string>
+	<key>Tap to show</key>
+	<string>Нажмите, чтобы показать</string>
+	<key>Tapping an attachment (didTapAttachmentAtIndex, detail)</key>
+	<string>Нажатие на вложение (didTapAttachmentAtIndex, detail)</string>
+	<key>Tapping the title with ▾ opens the model picker. iOS 6 takes the status bar tint from the navigation bar.</key>
+	<string>Нажатие на заголовок с ▾ открывает выбор модели. Цвет статус-бара iOS 6 берёт от навбара.</string>
+	<key>Task actions</key>
+	<string>Действия с задачей</string>
+	<key>Task list</key>
+	<string>Список задач</string>
+	<key>Task menu</key>
+	<string>Меню задачи</string>
+	<key>Task name</key>
+	<string>Название задачи</string>
+	<key>Tasks</key>
+	<string>Задачи</string>
+	<key>Tasks and archive</key>
+	<string>Задачи и архив</string>
+	<key>Tatar</key>
+	<string>Татарча</string>
+	<key>Tell a long story</key>
+	<string>Расскажи длинную историю</string>
+	<key>Tell me how to make flourless syrniki</key>
+	<string>Подскажи как приготовить сырники без муки</string>
+	<key>Tell me how to make syrniki…</key>
+	<string>Подскажи как приготовить сырники…</string>
+	<key>Temporary</key>
+	<string>Временный</string>
+	<key>Temporary chat</key>
+	<string>Временный чат</string>
+	<key>Temporary chat (stage 8+)</key>
+	<string>Временный чат (этап 8+)</string>
+	<key>Temporary chat: graphite (stage 8+)</key>
+	<string>Временный чат: графит (этап 8+)</string>
+	<key>Terminal</key>
+	<string>Терминал</string>
+	<key>Tests for the date parser</key>
+	<string>Тесты для парсера дат</string>
+	<key>Text</key>
+	<string>Текст</string>
+	<key>Text only</key>
+	<string>Только текст</string>
+	<key>Text size</key>
+	<string>Размер текста</string>
+	<key>Text size (stage 8)</key>
+	<string>Размер текста (этап 8)</string>
+	<key>Text to select</key>
+	<string>Текст для выделения</string>
+	<key>Text to translate</key>
+	<string>Текст для перевода</string>
+	<key>Thanks</key>
+	<string>Спасибо</string>
+	<key>Thanks!</key>
+	<string>Спасибо!</string>
+	<key>The PINs do not match. Create the PIN again.</key>
+	<string>PIN-коды не совпадают. Придумайте PIN ещё раз.</string>
+	<key>The account confirmed this iPhone</key>
+	<string>Аккаунт подтвердил iPhone</string>
+	<key>The active mode (here “Web search”) is marked with a glowing white ring. Tapping the dim background or “Cancel” closes the menu.</key>
+	<string>Активный режим (здесь «Поиск в интернете») отмечен белым кольцом со свечением. Затемнение и «Отмена» закрывают меню.</string>
+	<key>The answer is incomplete</key>
+	<string>Ответ не завершён</string>
+	<key>The app creates the link. Shown here are the button states: create → creating → copy, or error with retry.</key>
+	<string>Ссылку создаёт приложение. Здесь — состояния кнопки: создать → создаю → копировать, или ошибка с повтором.</string>
+	<key>The app manages the camera and pages; without a camera, the viewfinder layout is shown.</key>
+	<string>Камеру и страницы ведёт приложение; без камеры виден макет видоискателя.</string>
+	<key>The app reports the state: the view never pretends to play.</key>
+	<string>Состояние сообщает приложение: вид не делает вид, что играет.</string>
+	<key>The app stores and verifies the PIN; the kit only shows the keypad. In this demo the valid PIN is 1234.</key>
+	<string>PIN хранит и проверяет приложение; кит только показывает клавиатуру. В образце верный PIN — 1234.</string>
+	<key>The app would retry the download</key>
+	<string>Приложение повторило бы загрузку</string>
+	<key>The cache is not reset when browserslist changes: after a browser update the CSS stays old.</key>
+	<string>Кэш не сбрасывается при смене browserslist: после обновления браузеров CSS останется старым.</string>
+	<key>The code is shown in Codex on the computer: Settings › Mobile device.</key>
+	<string>Код показан в Codex на компьютере: Настройки › Мобильное устройство.</string>
+	<key>The download is not repeated</key>
+	<string>Загрузка не повторяется</string>
+	<key>The field grows up to 118 pt; “⤢” appears on a tall field from stage 7. All fields are interactive: “+”, microphone, send.</key>
+	<string>Поле растёт до 118 pt; «⤢» появляется у высокого поля с этапа 7. Все поля живые: «+», микрофон, отправка.</string>
+	<key>The file is no longer on this iPhone.</key>
+	<string>Файл больше не найден на iPhone.</string>
+	<key>The link could not be created. Nothing was published.</key>
+	<string>Ссылку создать не удалось. Ничего не опубликовано.</string>
+	<key>The list comes from the account; models it does not offer are not shown.</key>
+	<string>Список приходит из аккаунта; моделей, которых он не предлагает, здесь нет.</string>
+	<key>The microphone in any field above starts a live simulation: recording → “Recognizing…” → text in the field.</key>
+	<string>Микрофон в любом поле выше запускает живую имитацию: запись → «Распознаю…» → текст в поле.</string>
+	<key>The page did not load. Check your connection.</key>
+	<string>Страница не загрузилась. Проверьте связь.</string>
+	<key>The passcode is asked when you open Codex. It does not lock ordinary chats.</key>
+	<string>Код-пароль спрашивается при входе в раздел Codex. Обычные чаты он не закрывает.</string>
+	<key>The real service page is the app’s WebView; here a schematic is shown instead.</key>
+	<string>Настоящая страница сервиса — WebView приложения; здесь вместо неё схема.</string>
+	<key>The report includes the task ID. Project code and files are not sent.</key>
+	<string>К отчёту приложится идентификатор задачи. Код и файлы проекта не отправляются.</string>
+	<key>The result is unknown. It is not retried, so the recording is not uploaded twice.</key>
+	<string>Результат неизвестен. Повтора нет, чтобы запись не загрузилась дважды.</string>
+	<key>The second question takes no own answer (allowFreeText NO).</key>
+	<string>Второй вопрос не принимает свой вариант (allowFreeText NO).</string>
+	<key>The service rate-limited requests. Sending will resume automatically in 2 minutes; your draft is saved.</key>
+	<string>Сервис ограничил частоту запросов. Отправка возобновится автоматически через 2 минуты; черновик сохранён.</string>
+	<key>The slider only changes the sample on this page; the global size is the toggle in the component list.</key>
+	<string>Слайдер меняет только образец на этой странице; общий размер — переключатель в списке компонентов.</string>
+	<key>The upload result is unknown. It is not retried automatically.</key>
+	<string>Результат загрузки неизвестен. Автоматического повтора нет.</string>
+	<key>Theme and buttons</key>
+	<string>Тема и кнопки</string>
+	<key>These elements appear from stage 7.</key>
+	<string>Эти элементы появляются с этапа 7.</string>
+	<key>These states appear from stage 8 (dictation cancel/retry, attachments).</key>
+	<string>Эти состояния появляются с этапа 8 (отмена/повтор диктовки, вложения).</string>
+	<key>Thinking</key>
+	<string>Думаю</string>
+	<key>Thinking effort</key>
+	<string>Глубина размышления</string>
+	<key>Thinking: reasoning steps (stage 8+)</key>
+	<string>Думает: ход рассуждения (этап 8+)</string>
+	<key>Thinking…</key>
+	<string>Думаю…</string>
+	<key>This chat won’t be saved to history or memory. A copy may be kept on servers for up to 30 days.</key>
+	<string>Этот чат не попадёт в историю и память. Копия может храниться на серверах до 30 дней.</string>
+	<key>This is how ChatGPT answers and your messages will look.</key>
+	<string>Так будут выглядеть ответы ChatGPT и ваши сообщения.</string>
+	<key>This part of the answer cannot be shown on the iPhone yet — it is saved in the conversation.</key>
+	<string>Этот элемент ответа пока не показывается на iPhone — он сохранён в разговоре.</string>
+	<key>This task item is not shown on iPhone yet — it is saved in the task.</key>
+	<string>Этот элемент задачи пока не показывается на iPhone — он сохранён в задаче.</string>
+	<key>This won’t be saved in history.</key>
+	<string>Это не попадёт в историю.</string>
+	<key>Thought for 4 s · searched the web</key>
+	<string>Думал 4 с · искал в интернете</string>
+	<key>Tier 1 shows a plan as a placeholder saved in the task.</key>
+	<string>На уровне 1 план — заглушка «сохранён в задаче».</string>
+	<key>Tier 1 shows network access as an ordinary permission; tier 2 adds «Only now» / «Always for the domain».</key>
+	<string>На уровне 1 доступ в сеть — обычное разрешение; уровень 2 добавляет «Только сейчас» / «Всегда для домена».</string>
+	<key>Title and lamp</key>
+	<string>Заголовок и лампа</string>
+	<key>To pick a bike, let me clarify:</key>
+	<string>Чтобы подобрать велосипед, уточню:</string>
+	<key>To:</key>
+	<string>Кому:</string>
+	<key>To: </key>
+	<string>На язык: </string>
+	<key>Today</key>
+	<string>Сегодня</string>
+	<key>Today’s upload limit is reached — resets at 18:40. You can send text without the attachment.</key>
+	<string>Лимит загрузок на сегодня исчерпан — обновится в 18:40. Текст можно отправить без вложения.</string>
+	<key>Too many attempts</key>
+	<string>Слишком много попыток</string>
+	<key>Too many attempts. Try again in %d min</key>
+	<string>Слишком много попыток. Повторите через %d мин</string>
+	<key>Too many attempts. Try again in %d s</key>
+	<string>Слишком много попыток. Повторите через %d с</string>
+	<key>Translate</key>
+	<string>Перевод</string>
+	<key>Translate (stage 8)</key>
+	<string>Перевод (этап 8)</string>
+	<key>Translate from</key>
+	<string>С какого языка</string>
+	<key>Translate to</key>
+	<string>На какой язык</string>
+	<key>Translate to English</key>
+	<string>Переведи на английский</string>
+	<key>Translate to English, but keep it short</key>
+	<string>Переведи на английский, но коротко</string>
+	<key>Translate — from stage 8</key>
+	<string>Перевод — с этапа 8</string>
+	<key>Translating</key>
+	<string>Перевожу</string>
+	<key>Translations are not saved in the chat history.</key>
+	<string>Перевод не сохраняется в истории чатов.</string>
+	<key>Trip budget.xlsx</key>
+	<string>Бюджет поездки.xlsx</string>
+	<key>Trip plan</key>
+	<string>План поездки</string>
+	<key>Trip plan to Kazan</key>
+	<string>План поездки в Казань</string>
+	<key>Trust</key>
+	<string>Доверять</string>
+	<key>Turn on the microphone to continue</key>
+	<string>Включите микрофон, чтобы продолжить</string>
+	<key>Turn-by-turn voice</key>
+	<string>Голос по очереди</string>
+	<key>Turn-by-turn voice (stage 8)</key>
+	<string>Голос по очереди (этап 8)</string>
+	<key>Type or paste text</key>
+	<string>Введите или вставьте текст</string>
+	<key>UIAppearance: bars, UISwitch, tables</key>
+	<string>UIAppearance: бары, UISwitch, таблицы</string>
+	<key>Unavailable</key>
+	<string>Недоступен</string>
+	<key>Under 50K RUB</key>
+	<string>До 50 тыс. ₽</string>
+	<key>Unknown server key</key>
+	<string>Неизвестный ключ сервера</string>
+	<key>Unlocked</key>
+	<string>Открыто</string>
+	<key>Up to 1,500 characters. The service may have its own limits.</key>
+	<string>До 1500 символов. У сервиса могут быть свои ограничения.</string>
+	<key>Update dependencies</key>
+	<string>Обновить зависимости</string>
+	<key>Uploading · 40%</key>
+	<string>Загрузка · 40%</string>
+	<key>Use personalization</key>
+	<string>Использовать персонализацию</string>
+	<key>User messages</key>
+	<string>Свои сообщения</string>
+	<key>Vacation</key>
+	<string>Отпуск</string>
+	<key>Values</key>
+	<string>Значения</string>
+	<key>Version %@</key>
+	<string>Версия %@</string>
+	<key>Via custom copy handler</key>
+	<string>Через свой путь копирования</string>
+	<key>Viewfinder: frame the page</key>
+	<string>Видоискатель: наведите рамку на страницу</string>
+	<key>Voice</key>
+	<string>Голос</string>
+	<key>Voice and language</key>
+	<string>Голос и язык</string>
+	<key>Voice conversation</key>
+	<string>Голосовой разговор</string>
+	<key>Voice mode limit reached. Resets tomorrow at 03:00. You can continue by text in the same chat.</key>
+	<string>Лимит голосового режима исчерпан. Сбросится завтра в 03:00. Можно продолжить текстом в этом же чате.</string>
+	<key>Voice mode unavailable</key>
+	<string>Голосовой режим недоступен</string>
+	<key>Voice settings</key>
+	<string>Настройки голоса</string>
+	<key>Voice unavailable offline</key>
+	<string>Голос недоступен без сети</string>
+	<key>Voice — from stage 8</key>
+	<string>Голос — с этапа 8</string>
+	<key>Voice: %@</key>
+	<string>Голос: %@</string>
+	<key>Waiting for answer: dots</key>
+	<string>Ждёт ответа: точки</string>
+	<key>Waiting for connection — will be sent once</key>
+	<string>Ждёт соединения — отправится один раз</string>
+	<key>Waiting for you</key>
+	<string>Ждут вас</string>
+	<key>Waiting for your decision</key>
+	<string>Ждёт вашего решения</string>
+	<key>Watercolor: lighthouse on a cliff at sunset</key>
+	<string>Акварель: маяк на скале на закате</string>
+	<key>Web search</key>
+	<string>Поиск в интернете</string>
+	<key>Weekly menu</key>
+	<string>Меню на неделю</string>
+	<key>Weight</key>
+	<string>Вес</string>
+	<key>Welcome</key>
+	<string>Приветствие</string>
+	<key>Welcome and sign-in</key>
+	<string>Приветствие и вход</string>
+	<key>What</key>
+	<string>Что</string>
+	<key>What can I help with?</key>
+	<string>Чем могу помочь?</string>
+	<key>What is in the photo?</key>
+	<string>Что на фото?</string>
+	<key>What is in these files?</key>
+	<string>Что в этих файлах?</string>
+	<key>What is in these photos?</key>
+	<string>Что на этих фото?</string>
+	<key>What is the weather in Kazan tomorrow?</key>
+	<string>Какая погода завтра в Казани?</string>
+	<key>What matters more?</key>
+	<string>Что важнее?</string>
+	<key>What should I wear?</key>
+	<string>А что надеть?</string>
+	<key>What would you like to change?</key>
+	<string>Что изменить?</string>
+	<key>When</key>
+	<string>Когда</string>
+	<key>Where</key>
+	<string>Где</string>
+	<key>Where to make the changes</key>
+	<string>Где вносить изменения</string>
+	<key>Where to run</key>
+	<string>Где выполнять</string>
+	<key>White</key>
+	<string>Белый</string>
+	<key>Who is the text for?</key>
+	<string>Для кого текст?</string>
+	<key>Will send as soon as connected</key>
+	<string>Отправлю, как только будет связь</string>
+	<key>With completed translation</key>
+	<string>С готовым переводом</string>
+	<key>With title</key>
+	<string>С заголовком</string>
+	<key>Without failureText: the kit's standard line and an active “Retry”.</key>
+	<string>Без failureText — стандартная строка кита и активный «Повторить».</string>
+	<key>Without voice, “Send” is simply disabled when the field is empty.</key>
+	<string>Без голоса «Отпр.» просто неактивна при пустом поле.</string>
+	<key>Work</key>
+	<string>Работа</string>
+	<key>Work plan</key>
+	<string>План работы</string>
+	<key>Working on parts of the task</key>
+	<string>Работают над частями задачи</string>
+	<key>Write what to change in the plan</key>
+	<string>Напишите, что изменить в плане</string>
+	<key>Writing (stream, blinking cursor)</key>
+	<string>Пишет (поток, мигающий курсор)</string>
+	<key>Writing report</key>
+	<string>Пишу отчёт</string>
+	<key>Wrong PIN</key>
+	<string>Неверный PIN</string>
+	<key>Yesterday</key>
+	<string>Вчера</string>
+	<key>You</key>
+	<string>Вы</string>
+	<key>You can attach up to 4 files to a message. Replace the last one?</key>
+	<string>К сообщению можно приложить до 4 файлов. Заменить последний?</string>
+	<key>You can continue by text in the same chat.</key>
+	<string>Можно продолжить текстом в этом же чате.</string>
+	<key>You logged out of ChatGPT X. Your history remains in your account.</key>
+	<string>Вы вышли из ChatGPT X. История осталась в аккаунте.</string>
+	<key>Your ChatGPT account and all your history on an iPhone with iOS 6.</key>
+	<string>Ваш аккаунт ChatGPT и вся история — на iPhone с iOS 6.</string>
+	<key>Your name is not shown.</key>
+	<string>Ваше имя не показывается.</string>
+	<key>Your name is visible in the link.</key>
+	<string>В ссылке видно ваше имя.</string>
+	<key>Your own answer</key>
+	<string>Свой вариант</string>
+	<key>You’re welcome! Have a nice day.</key>
+	<string>Пожалуйста! Хорошего дня.</string>
+	<key>address</key>
+	<string>адрес</string>
+	<key>after</key>
+	<string>после</string>
+	<key>before</key>
+	<string>до</string>
+	<key>budget %d %%</key>
+	<string>бюджет %d %%</string>
+	<key>budget used up</key>
+	<string>бюджет исчерпан</string>
+	<key>code</key>
+	<string>код</string>
+	<key>colors, linen, RCButton</key>
+	<string>цвета, лён, RCButton</string>
+	<key>comments: %lu</key>
+	<string>замечаний: %lu</string>
+	<key>done</key>
+	<string>выполнено</string>
+	<key>err: no network</key>
+	<string>err: нет сети</string>
+	<key>exit %ld</key>
+	<string>код %ld</string>
+	<key>failed</key>
+	<string>ошибка</string>
+	<key>files: %lu</key>
+	<string>файлов: %lu</string>
+	<key>goal, subagents, hooks, settings, files, archive</key>
+	<string>цель, подагенты, hooks, настройки, файлы, архив</string>
+	<key>hook post-run · linter · stopped the task: 2 flake8 errors · 1.2 s</key>
+	<string>hook post-run · линтер · остановил задачу: 2 ошибки flake8 · 1,2 с</string>
+	<key>hook pre-run · working copy check · passed · 0.4 s</key>
+	<string>hook pre-run · проверка рабочей копии · прошёл · 0,4 с</string>
+	<key>iPhone confirmed</key>
+	<string>iPhone подтверждён</string>
+	<key>iPhone key</key>
+	<string>Ключ iPhone</string>
+	<key>image, chart, research, email…</key>
+	<string>изображение, график, исследование, письмо…</string>
+	<key>import matplotlib.pyplot as plt
+plt.bar(["Jan","Feb","Mar"], [1.2, 1.5, 1.9])
+plt.title("Revenue, M RUB")</key>
+	<string>import matplotlib.pyplot as plt
+plt.bar(["Янв","Фев","Мар"], [1.2, 1.5, 1.9])
+plt.title("Выручка, млн ₽")</string>
+	<key>in use</key>
+	<string>используется</string>
+	<key>line %ld</key>
+	<string>строка %ld</string>
+	<key>lines added</key>
+	<string>строк добавлено</string>
+	<key>lines added: %ld, removed: %ld</key>
+	<string>строк добавлено: %ld, удалено: %ld</string>
+	<key>lines removed</key>
+	<string>строк удалено</string>
+	<key>no preference</key>
+	<string>без разницы</string>
+	<key>plan, network, MCP, review, connections, model</key>
+	<string>план, сеть, MCP, ревью, подключения, модель</string>
+	<key>query: «css build»</key>
+	<string>запрос: «css build»</string>
+	<key>running</key>
+	<string>выполняется</string>
+	<key>source</key>
+	<string>источник</string>
+	<key>sources</key>
+	<string>источников</string>
+	<key>sources (2–4)</key>
+	<string>источника</string>
+	<key>stopped</key>
+	<string>остановлено</string>
+	<key>stopped with an error</key>
+	<string>остановлена с ошибкой</string>
+	<key>tasks this week</key>
+	<string>задач за неделю</string>
+	<key>terminal, files, permission, diff (Codex tier 1)</key>
+	<string>терминал, файлы, разрешение, diff (Codex, уровень 1)</string>
+	<key>text size, segments, account, swipe</key>
+	<string>размер текста, сегменты, аккаунт, свайп</string>
+	<key>title: «Reset the CSS cache when browserslist changes»</key>
+	<string>название: «Сбрасывать кэш CSS при смене browserslist»</string>
+	<key>waiting for approval</key>
+	<string>ждёт согласия</string>
+	<key>warn: session expired</key>
+	<string>warn: сессия истекла</string>
+	<key>«Mention» adds the file to the task's next message.</key>
+	<string>«В задачу» добавляет файл в следующее сообщение задачи.</string>
+	<key>“+” appears from stage 8 (camera, photos, files, web search). At stages 10–9 there is nothing to the left of the input field.</key>
+	<string>«+» появляется с этапа 8 (камера, фото, файлы, поиск в интернете). На этапах 10–9 слева от поля ввода ничего нет.</string>
+	<key>“+” menu</key>
+	<string>Меню «+»</string>
+	<key>“+” menu for the current stage</key>
+	<string>Меню «+» для текущего этапа</string>
+	<key>“Calendar” wants to create an event</key>
+	<string>«Календарь» хочет создать событие</string>
+	<key>“Cancel” stops the app's recognition and deletes the recording; “Done” is hidden until the result.</key>
+	<string>«Отмена» прерывает распознавание приложения и удаляет запись; «Готово» скрыто до результата.</string>
+	<key>“Copied”</key>
+	<string>«Скопировано»</string>
+	<key>“Default” uses the account’s default model and the service’s default thinking effort.</key>
+	<string>«По умолчанию» — модель по умолчанию для аккаунта и стандартная глубина размышления сервиса.</string>
+	<key>“Select Text”</key>
+	<string>«Выделить»</string>
+	<key>“Select Text” (stage 9)</key>
+	<string>«Выделить» (этап 9)</string>
+	<key>“Select Text” — from stage 9</key>
+	<string>«Выделить» — с этапа 9</string>
+	<key>“Share link” (stage 7)</key>
+	<string>«Поделиться ссылкой» (этап 7)</string>
+	<key>“Sources” (stage 8)</key>
+	<string>«Источники» (этап 8)</string>
+	<key>“Sources” — from stage 8</key>
+	<string>«Источники» — с этапа 8</string>
+	<key>… %lu earlier lines</key>
+	<string>… ещё %lu строк выше</string>
+	<key>… %lu more lines</key>
+	<string>… ещё %lu стр.</string>
+	<key>☰ or swiping the navbar right opens the drawer; tapping or swiping the screen back closes it. “Close showcase” or the account row at the bottom returns here.</key>
+	<string>☰ или сдвиг навбара вправо открывает меню; касание или сдвиг экрана назад — закрывает. Строка «Закрыть витрину» или аккаунт внизу возвращают сюда.</string>
+	<key>Viewfinder: frame the QR code</key>
+	<string>Видоискатель: наведите на QR-код</string>
+	<key>Unofficial app. Not affiliated with OpenAI.</key>
+	<string>Неофициальное приложение. Не связано с OpenAI.</string>
+	<key>You logged out.</key>
+	<string>Вы вышли.</string>
+</dict>
+</plist>

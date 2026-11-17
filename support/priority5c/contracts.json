@@ -1,0 +1,1315 @@
+{
+  "schemaVersion": 1,
+  "types": {
+    "API5CCard": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "front": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1600
+        },
+        "back": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1600
+        }
+      },
+      "required": [
+        "id",
+        "front",
+        "back"
+      ],
+      "additionalProperties": false
+    },
+    "API5CArtifact": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "enum": [
+            1
+          ]
+        },
+        "artifact_type": {
+          "enum": [
+            "flashcards"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5CCard"
+          },
+          "maxItems": 100,
+          "minItems": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "artifact_type",
+        "title",
+        "cards"
+      ],
+      "additionalProperties": false
+    },
+    "API5CDeck": {
+      "type": "object",
+      "properties": {
+        "deckId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "artifact": {
+          "$ref": "#/types/API5CArtifact"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "readOnly": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "deckId",
+        "artifact",
+        "version",
+        "readOnly"
+      ],
+      "additionalProperties": false
+    },
+    "API5CGridCard": {
+      "type": "object",
+      "properties": {
+        "card": {
+          "$ref": "#/types/API5CCard"
+        },
+        "outcome": {
+          "enum": [
+            "known",
+            "missed",
+            "unreviewed"
+          ]
+        }
+      },
+      "required": [
+        "card",
+        "outcome"
+      ],
+      "additionalProperties": false
+    },
+    "API5CGrid": {
+      "type": "object",
+      "properties": {
+        "deckId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5CGridCard"
+          },
+          "maxItems": 100,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "deckId",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API5CDraft": {
+      "type": "object",
+      "properties": {
+        "draftId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "deckId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "card": {
+          "$ref": "#/types/API5CCard"
+        },
+        "remove": {
+          "type": "boolean"
+        },
+        "expectedVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "draftId",
+        "deckId",
+        "card",
+        "remove",
+        "expectedVersion"
+      ],
+      "additionalProperties": false
+    },
+    "API5CSession": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "deckId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "maxItems": 100,
+          "minItems": 1
+        },
+        "index": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "flipped": {
+          "type": "boolean"
+        },
+        "reverse": {
+          "type": "boolean"
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cardId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "outcome": {
+                "enum": [
+                  "known",
+                  "missed"
+                ]
+              }
+            },
+            "required": [
+              "cardId",
+              "outcome"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100,
+          "minItems": 0
+        },
+        "complete": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "sessionId",
+        "deckId",
+        "order",
+        "index",
+        "flipped",
+        "reverse",
+        "reviews",
+        "complete"
+      ],
+      "additionalProperties": false
+    },
+    "API5CWriteReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "acknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "resourceId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "operationId",
+        "acknowledged",
+        "verified",
+        "resourceId"
+      ],
+      "additionalProperties": false
+    },
+    "API5CLanguage": {
+      "type": "object",
+      "properties": {
+        "blockId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "intent": {
+          "enum": [
+            "pronunciation",
+            "translation"
+          ]
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32768
+        },
+        "pronunciationHint": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 4096
+        },
+        "pronunciationLanguage": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "sourceText": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 32768
+        },
+        "speakingTip": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 4096
+        },
+        "savedDeckId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "canSave": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "blockId",
+        "intent",
+        "content",
+        "pronunciationHint",
+        "pronunciationLanguage",
+        "sourceText",
+        "speakingTip",
+        "savedDeckId",
+        "canSave"
+      ],
+      "additionalProperties": false
+    },
+    "API5CSuggestions": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1024
+              },
+              "prompt": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 32768
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "imageAvailable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "prompt",
+              "section",
+              "imageAvailable"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API5CQueue": {
+      "type": "object",
+      "properties": {
+        "queueId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "offered",
+            "accepting",
+            "queued",
+            "inProgress",
+            "succeeded",
+            "failed",
+            "expired"
+          ]
+        },
+        "isGIF": {
+          "type": "boolean"
+        },
+        "expiresAt": {
+          "type": [
+            "string",
+            "number",
+            "null"
+          ],
+          "maxLength": 64,
+          "minimum": 0,
+          "maximum": 4102444800
+        }
+      },
+      "required": [
+        "queueId",
+        "state",
+        "isGIF",
+        "expiresAt"
+      ],
+      "additionalProperties": false
+    },
+    "API5CStartScreen": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 3
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "maxItems": 4,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "value",
+        "options"
+      ],
+      "additionalProperties": false
+    },
+    "API5CSpelling": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "study.deck.load",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "deckId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "deckId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CDeck"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.flashcards_grid"
+    },
+    {
+      "id": "study.deck.grid",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "deckId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "filter": {
+            "enum": [
+              "all",
+              "reviewed",
+              "missed",
+              "unreviewed"
+            ]
+          }
+        },
+        "required": [
+          "deckId",
+          "filter"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CGrid"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.flashcards_grid"
+    },
+    {
+      "id": "study.card.draft",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "deckId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "card": {
+            "$ref": "#/types/API5CCard"
+          },
+          "remove": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "deckId",
+          "draftId",
+          "card",
+          "remove"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CDraft"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_edit"
+    },
+    {
+      "id": "study.card.draft.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "draftId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CDraft"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.flashcards_edit"
+    },
+    {
+      "id": "study.card.save",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "draftId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CWriteReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_edit"
+    },
+    {
+      "id": "study.card.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CWriteReceipt"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.flashcards_edit"
+    },
+    {
+      "id": "study.session.start",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "blockId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "cardIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "maxItems": 100,
+            "minItems": 1
+          },
+          "reverse": {
+            "type": "boolean"
+          },
+          "shuffle": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "sessionId",
+          "blockId",
+          "cardIds",
+          "reverse",
+          "shuffle"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSession"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "study.session.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "sessionId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSession"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "study.session.undo",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "sessionId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSession"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "study.session.shuffle",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "sessionId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSession"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "study.session.orientation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "reverse": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "sessionId",
+          "reverse"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSession"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "study.session.flip",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "sessionId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSession"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "study.session.rate",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "outcome": {
+            "enum": [
+              "known",
+              "missed"
+            ]
+          }
+        },
+        "required": [
+          "sessionId",
+          "outcome"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSession"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "study.session.restart",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "mode": {
+            "enum": [
+              "all",
+              "missed"
+            ]
+          }
+        },
+        "required": [
+          "sessionId",
+          "mode"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSession"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "study.session.save",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "sessionId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CWriteReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "study.session.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CWriteReceipt"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.flashcards_study"
+    },
+    {
+      "id": "language.block.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "blockId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "blockId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CLanguage"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.language_block"
+    },
+    {
+      "id": "language.block.translate",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "blockId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "targetLanguage": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "blockId",
+          "targetLanguage"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "blockId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32768
+          }
+        },
+        "required": [
+          "blockId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.language_block"
+    },
+    {
+      "id": "language.flashcards.save",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "blockId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "blockId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CWriteReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.tools.language_flashcards"
+    },
+    {
+      "id": "language.flashcards.open",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "blockId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "blockId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CDeck"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.language_flashcards"
+    },
+    {
+      "id": "language.flashcards.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CWriteReceipt"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.tools.language_flashcards"
+    },
+    {
+      "id": "images.suggestions.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "section": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "section"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSuggestions"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.images.suggestions"
+    },
+    {
+      "id": "images.deferred.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "queueId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "queueId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CQueue"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.images.deferred_generation"
+    },
+    {
+      "id": "images.deferred.accept",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "queueId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "queueId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CWriteReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.images.deferred_generation"
+    },
+    {
+      "id": "images.deferred.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CWriteReceipt"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.images.deferred_generation"
+    },
+    {
+      "id": "preferences.start_screen.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CStartScreen"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.preferences.start_screen"
+    },
+    {
+      "id": "preferences.start_screen.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CStartScreen"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.preferences.start_screen"
+    },
+    {
+      "id": "preferences.spelling.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSpelling"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5c.preferences.spelling"
+    },
+    {
+      "id": "preferences.spelling.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5CSpelling"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5c.preferences.spelling"
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "tools.flashcards_grid",
+      "operations": [
+        "study.deck.load",
+        "study.deck.grid"
+      ]
+    },
+    {
+      "featureId": "tools.flashcards_edit",
+      "operations": [
+        "study.card.draft",
+        "study.card.draft.get",
+        "study.card.save",
+        "study.card.reconcile"
+      ]
+    },
+    {
+      "featureId": "tools.flashcards_study",
+      "operations": [
+        "study.session.start",
+        "study.session.get",
+        "study.session.undo",
+        "study.session.shuffle",
+        "study.session.orientation",
+        "study.session.flip",
+        "study.session.rate",
+        "study.session.restart",
+        "study.session.save",
+        "study.session.reconcile"
+      ]
+    },
+    {
+      "featureId": "tools.language_block",
+      "operations": [
+        "language.block.get",
+        "language.block.translate"
+      ]
+    },
+    {
+      "featureId": "tools.language_flashcards",
+      "operations": [
+        "language.flashcards.save",
+        "language.flashcards.open",
+        "language.flashcards.reconcile"
+      ]
+    },
+    {
+      "featureId": "images.suggestions",
+      "operations": [
+        "images.suggestions.list"
+      ]
+    },
+    {
+      "featureId": "images.deferred_generation",
+      "operations": [
+        "images.deferred.get",
+        "images.deferred.accept",
+        "images.deferred.reconcile"
+      ]
+    },
+    {
+      "featureId": "preferences.start_screen",
+      "operations": [
+        "preferences.start_screen.get",
+        "preferences.start_screen.set"
+      ]
+    },
+    {
+      "featureId": "preferences.spelling",
+      "operations": [
+        "preferences.spelling.get",
+        "preferences.spelling.set"
+      ]
+    }
+  ]
+}

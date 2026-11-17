@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API7Share": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "currentNode": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "workspaceOnly": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "currentNode",
+        "workspaceOnly"
+      ],
+      "additionalProperties": false
+    },
+    "API7Receipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "conversationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "action": {
+          "enum": [
+            "rename",
+            "archive",
+            "unarchive",
+            "delete",
+            "pin",
+            "share"
+          ]
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000
+        },
+        "archived": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "pinned": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "deleteRequested": {
+          "type": "boolean"
+        },
+        "share": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 36,
+              "maxLength": 36
+            },
+            "url": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "currentNode": {
+              "type": "string",
+              "minLength": 36,
+              "maxLength": 36
+            },
+            "workspaceOnly": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "id",
+            "url",
+            "currentNode",
+            "workspaceOnly"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "operationId",
+        "conversationId",
+        "action",
+        "serverAcknowledged",
+        "verified",
+        "title",
+        "archived",
+        "pinned",
+        "deleteRequested",
+        "share"
+      ],
+      "additionalProperties": false
+    },
+    "API7Summary": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "pinned": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "archived",
+        "pinned"
+      ],
+      "additionalProperties": false
+    },
+    "API7Page": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API7Summary"
+          },
+          "minItems": 0,
+          "maxItems": 50
+        },
+        "nextOffset": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 10000
+        }
+      },
+      "required": [
+        "items",
+        "nextOffset"
+      ],
+      "additionalProperties": false
+    },
+    "API7SharedView": {
+      "type": "object",
+      "properties": {
+        "shareId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "conversation": {
+          "$ref": "#/types/Conversation"
+        },
+        "readOnly": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "shareId",
+        "conversation",
+        "readOnly"
+      ],
+      "additionalProperties": false
+    },
+    "API7Code": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 16000
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "text",
+        "language"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "conversations.rename",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7Receipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation/id/{conversationId}/rename"
+      },
+      "notes": "One explicit write. Acknowledgment and readback verification are separate; no automatic replay. Delete preserves artifact deletion defaults."
+    },
+    {
+      "id": "conversations.archive",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7Receipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/conversation/{conversationId}"
+      },
+      "notes": "One explicit write. Acknowledgment and readback verification are separate; no automatic replay. Delete preserves artifact deletion defaults."
+    },
+    {
+      "id": "conversations.unarchive",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7Receipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/conversation/{conversationId}"
+      },
+      "notes": "One explicit write. Acknowledgment and readback verification are separate; no automatic replay. Delete preserves artifact deletion defaults."
+    },
+    {
+      "id": "conversations.delete",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7Receipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/conversation/id/{conversationId}"
+      },
+      "notes": "One explicit write. Acknowledgment and readback verification are separate; no automatic replay. Delete preserves artifact deletion defaults."
+    },
+    {
+      "id": "conversations.pin",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "pinned": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "pinned"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7Receipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/conversation/{conversationId}"
+      },
+      "notes": "One explicit write. Acknowledgment and readback verification are separate; no automatic replay. Delete preserves artifact deletion defaults."
+    },
+    {
+      "id": "archives.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "offset",
+          "limit"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7Page"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversations?is_archived=true&offset={offset}&limit={limit}&order=updated"
+      },
+      "notes": "Bounded archive page. The API exposes numeric offsets, never URLs."
+    },
+    {
+      "id": "pins.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/API7Summary"
+            },
+            "minItems": 0,
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/pins?item_type=conversation"
+      },
+      "notes": "Conversation pins only; no gizmo or project substitution."
+    },
+    {
+      "id": "conversations.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7Receipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversation/{recordedConversationId}"
+      },
+      "notes": "Read-only comparison with the immutable journal target. Uncertain share creation without a known share ID cannot be replayed or reconciled by creating again."
+    },
+    {
+      "id": "shares.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "currentNode": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "publish": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "currentNode",
+          "publish"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7Receipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/share/v2/create"
+      },
+      "notes": "Requires publish:true. Anonymous snapshot at the exact node. No fallback to legacy create/PATCH/post, no automatic publication during reading."
+    },
+    {
+      "id": "shares.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "shareId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "shareId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7SharedView"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/share/{shareId}"
+      },
+      "notes": "Read-only bounded conversation graph, interpreted as data. Unsupported shared-post/workspace routes fail closed."
+    },
+    {
+      "id": "content.copyCode",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "messageId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "markdown": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 16000
+          },
+          "codeBlockIndex": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          }
+        },
+        "required": [
+          "messageId",
+          "markdown",
+          "codeBlockIndex"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7Code"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Local exact code payload from the existing Foundation renderer. Does not write the clipboard."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "chat.rename",
+      "usefulness": 7,
+      "title": "Переименование чата",
+      "operations": [
+        "conversations.rename"
+      ]
+    },
+    {
+      "featureId": "chat.archive",
+      "usefulness": 7,
+      "title": "Архивирование чата",
+      "operations": [
+        "conversations.archive"
+      ]
+    },
+    {
+      "featureId": "chat.unarchive",
+      "usefulness": 7,
+      "title": "Возврат из архива",
+      "operations": [
+        "archives.list",
+        "conversations.unarchive"
+      ]
+    },
+    {
+      "featureId": "chat.delete",
+      "usefulness": 7,
+      "title": "Удаление чата",
+      "operations": [
+        "conversations.delete"
+      ]
+    },
+    {
+      "featureId": "chat.pin",
+      "usefulness": 7,
+      "title": "Закрепление разговоров",
+      "operations": [
+        "pins.list",
+        "conversations.pin"
+      ]
+    },
+    {
+      "featureId": "chat.share_link",
+      "usefulness": 7,
+      "title": "Публикация ссылки на разговор",
+      "operations": [
+        "shares.create"
+      ]
+    },
+    {
+      "featureId": "chat.shared_view",
+      "usefulness": 7,
+      "title": "Просмотр опубликованного разговора",
+      "operations": [
+        "shares.get"
+      ]
+    },
+    {
+      "featureId": "chat.copy_code",
+      "usefulness": 7,
+      "title": "Копирование блока кода",
+      "operations": [
+        "content.copyCode"
+      ]
+    }
+  ],
+  "excluded": {
+    "chat.shared_link_delete": "No deletion/revocation method was recovered in the selected saved frontend sources; not implemented or admitted."
+  }
+}

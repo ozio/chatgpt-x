@@ -1,0 +1,1406 @@
+{
+  "sourceExcludedSubactions": [
+    {
+      "featureId": "chat.group_invite",
+      "subaction": "incoming_legacy_join",
+      "reason": "source_proven_retired",
+      "proof": ".artifacts/api-priority5a-20261111/invitation-retirement.json"
+    }
+  ],
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API5AReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "serverAcknowledged",
+        "verified",
+        "completed"
+      ],
+      "additionalProperties": false
+    },
+    "API5APinResult": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "groupId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        },
+        "state": {
+          "enum": [
+            "completed",
+            "rejected"
+          ]
+        },
+        "reason": {
+          "enum": [
+            null,
+            "pin_limit_reached"
+          ]
+        }
+      },
+      "required": [
+        "operationId",
+        "groupId",
+        "serverAcknowledged",
+        "verified",
+        "completed",
+        "state",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "API5AMarkdown": {
+      "type": "object",
+      "properties": {
+        "markdown": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 65536
+        }
+      },
+      "required": [
+        "markdown"
+      ],
+      "additionalProperties": false
+    },
+    "API5AMember": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 256
+        },
+        "username": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "role": {
+          "enum": [
+            "user",
+            "assistant",
+            "system",
+            "unknown"
+          ]
+        },
+        "blocked": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "username",
+        "role",
+        "blocked"
+      ],
+      "additionalProperties": false
+    },
+    "API5AGroup": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 512
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5AMember"
+          },
+          "maxItems": 100
+        },
+        "membershipStatus": {
+          "enum": [
+            "active",
+            "outgoing_request",
+            "incoming_request",
+            "hidden_active",
+            "hidden_incoming_request",
+            "unknown"
+          ]
+        },
+        "pinned": {
+          "type": "boolean"
+        },
+        "instructions": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 16384
+        },
+        "shouldAutoRespond": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "members",
+        "membershipStatus",
+        "pinned",
+        "instructions",
+        "shouldAutoRespond"
+      ],
+      "additionalProperties": false
+    },
+    "API5AGroupWrite": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "groupId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "groupId",
+        "serverAcknowledged",
+        "verified",
+        "completed"
+      ],
+      "additionalProperties": false
+    },
+    "API5AGroupPage": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5AGroup"
+          },
+          "maxItems": 50
+        },
+        "nextCursor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1024
+        }
+      },
+      "required": [
+        "items",
+        "nextCursor"
+      ],
+      "additionalProperties": false
+    },
+    "API5AMembers": {
+      "type": "object",
+      "properties": {
+        "groupId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5AMember"
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "groupId",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API5AInstructions": {
+      "type": "object",
+      "properties": {
+        "groupId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "instructions": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 16384
+        },
+        "personalInstructionsShared": {
+          "enum": [
+            false
+          ]
+        }
+      },
+      "required": [
+        "groupId",
+        "instructions",
+        "personalInstructionsShared"
+      ],
+      "additionalProperties": false
+    },
+    "API5AMemory": {
+      "type": "object",
+      "properties": {
+        "groupId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "contextScope": {
+          "enum": [
+            "group"
+          ]
+        },
+        "personalMemoryShared": {
+          "enum": [
+            false
+          ]
+        },
+        "personalInstructionsShared": {
+          "enum": [
+            false
+          ]
+        },
+        "instructions": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 16384
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5AMember"
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "groupId",
+        "contextScope",
+        "personalMemoryShared",
+        "personalInstructionsShared",
+        "instructions",
+        "members"
+      ],
+      "additionalProperties": false
+    },
+    "API5AInvite": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "groupId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "inviteHandle": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "groupId",
+        "inviteHandle",
+        "serverAcknowledged",
+        "verified",
+        "completed"
+      ],
+      "additionalProperties": false
+    },
+    "API5ASuggestion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 1024
+        },
+        "description": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 4000
+        },
+        "prompt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 16384
+        },
+        "destination": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 128
+        },
+        "autoSend": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "prompt",
+        "destination",
+        "autoSend"
+      ],
+      "additionalProperties": false
+    },
+    "API5ASuggestions": {
+      "type": "object",
+      "properties": {
+        "catalogId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5ASuggestion"
+          },
+          "maxItems": 100
+        },
+        "uiStyle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "catalogId",
+        "items",
+        "uiStyle"
+      ],
+      "additionalProperties": false
+    },
+    "API5ASelection": {
+      "type": "object",
+      "properties": {
+        "suggestionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "prompt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 16384
+        },
+        "destination": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 128
+        },
+        "requiresUserAction": {
+          "enum": [
+            true
+          ]
+        },
+        "sent": {
+          "enum": [
+            false
+          ]
+        }
+      },
+      "required": [
+        "suggestionId",
+        "prompt",
+        "destination",
+        "requiresUserAction",
+        "sent"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "chat.copyMarkdown",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "markdown": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 65536
+          }
+        },
+        "required": [
+          "markdown"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AMarkdown"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "LOCAL",
+        "pathTemplate": null
+      },
+      "notes": "Return the exact already-loaded Markdown without rendering or clipboard side effects."
+    },
+    {
+      "id": "chat.feedback.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "rating": {
+            "enum": [
+              "thumbsUp",
+              "thumbsDown"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 4000
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "maxItems": 32
+          },
+          "consentToSendFeedback": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "messageId",
+          "rating",
+          "text",
+          "tags",
+          "consentToSendFeedback"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation/message_feedback"
+      },
+      "notes": "Source SInZ legacy feedback contract; one rating plus detailed text/tags, explicit user consent."
+    },
+    {
+      "id": "chat.feedback.clear",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "messageId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/conversation/message_feedback"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "name": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 512
+          },
+          "memberIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "maxItems": 99
+          }
+        },
+        "required": [
+          "operationId",
+          "name",
+          "memberIds"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupWrite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms"
+      },
+      "notes": "Source GROUP_DM; nonce is canonical operationId. Empty member list supports creation with an invite link."
+    },
+    {
+      "id": "groups.convert",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "memberIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "maxItems": 99
+          },
+          "consentToShareHistory": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "memberIds",
+          "consentToShareHistory"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupWrite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms"
+      },
+      "notes": "with_conversation_id creates a server group containing the chosen existing conversation; personal memory remains private."
+    },
+    {
+      "id": "groups.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          },
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 1024
+          }
+        },
+        "required": [
+          "limit",
+          "cursor"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupPage"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "groupId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroup"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.members",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "groupId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AMembers"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.instructions.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "groupId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AInstructions"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.memory",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "groupId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AMemory"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.members.add",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "memberIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "maxItems": 99
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId",
+          "memberIds"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupWrite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}/members"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.leave",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupWrite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}/leave"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.delete",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "confirm": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId",
+          "confirm"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupWrite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}"
+      },
+      "notes": "Native deleteRoom removes the room according to server permissions; no local list substitute."
+    },
+    {
+      "id": "groups.instructions.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "instructions": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 16384
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId",
+          "instructions"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupWrite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}"
+      },
+      "notes": "assistant_personality belongs to the group, never user_system_messages."
+    },
+    {
+      "id": "groups.rename",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupWrite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.pin",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "pinned": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId",
+          "pinned"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5APinResult"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST|DELETE",
+        "pathTemplate": "/backend-api/pins/calpico_room/{room_id}"
+      },
+      "notes": "Native calpico_room item type and canonical RILR global pins route. Source429 maximum-pinned-items detail is pin_limit_reached; no local count or guessed fixed maximum."
+    },
+    {
+      "id": "groups.invite.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AInvite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}/group_link"
+      },
+      "notes": "Share URL stays in the private native host; public DTO has an opaque current-context handle."
+    },
+    {
+      "id": "groups.invite.reset",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AInvite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}/group_link"
+      },
+      "notes": "Share URL stays in the private native host; public DTO has an opaque current-context handle."
+    },
+    {
+      "id": "groups.invite.delete",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupWrite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}/group_link"
+      },
+      "notes": ""
+    },
+    {
+      "id": "groups.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "groupId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "command": {
+            "enum": [
+              "chat.feedback.set",
+              "chat.feedback.clear",
+              "groups.create",
+              "groups.convert",
+              "groups.members.add",
+              "groups.leave",
+              "groups.delete",
+              "groups.instructions.set",
+              "groups.rename",
+              "groups.pin",
+              "groups.invite.create",
+              "groups.invite.reset",
+              "groups.invite.delete"
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "groupId",
+          "command"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5AGroupWrite"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/calpico/chatgpt/rooms/{room_id}"
+      },
+      "notes": "Read-only exact private scoped witness and original plan; missing dynamic create IDs stay uncertain. Never infer by title or replay a write."
+    },
+    {
+      "id": "compose.suggestions",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5ASuggestions"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/prompt_library/"
+      },
+      "notes": "Original native PromptLibraryResponse; catalog is privately bound to current account/context."
+    },
+    {
+      "id": "compose.suggestions.select",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "catalogId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "suggestionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "catalogId",
+          "suggestionId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5ASelection"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "LOCAL",
+        "pathTemplate": null
+      },
+      "notes": "Select an exact current server item and return its unsent prefill or inherent destination; no automatic send, connector install, or navigation."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "chat.copy_markdown",
+      "title": "Копирование Markdown",
+      "usefulness": 5,
+      "operations": [
+        "chat.copyMarkdown"
+      ]
+    },
+    {
+      "featureId": "chat.feedback",
+      "title": "Оценка ответа и обратная связь",
+      "usefulness": 5,
+      "operations": [
+        "chat.feedback.set",
+        "chat.feedback.clear"
+      ]
+    },
+    {
+      "featureId": "chat.group_create",
+      "title": "Групповой разговор",
+      "usefulness": 5,
+      "operations": [
+        "groups.create",
+        "groups.convert",
+        "groups.get",
+        "groups.list",
+        "groups.reconcile"
+      ]
+    },
+    {
+      "featureId": "chat.group_invite",
+      "title": "Приглашение в группу по ссылке",
+      "usefulness": 5,
+      "operations": [
+        "groups.invite.create",
+        "groups.invite.reset",
+        "groups.invite.delete"
+      ]
+    },
+    {
+      "featureId": "chat.group_members",
+      "title": "Участники группы",
+      "usefulness": 5,
+      "operations": [
+        "groups.members",
+        "groups.members.add"
+      ]
+    },
+    {
+      "featureId": "chat.group_leave",
+      "title": "Выход из группового разговора",
+      "usefulness": 5,
+      "operations": [
+        "groups.leave",
+        "groups.delete"
+      ]
+    },
+    {
+      "featureId": "chat.group_instructions",
+      "title": "Инструкции для группы",
+      "usefulness": 5,
+      "operations": [
+        "groups.instructions.get",
+        "groups.instructions.set"
+      ]
+    },
+    {
+      "featureId": "chat.group_memory",
+      "title": "Общий контекст группы",
+      "usefulness": 5,
+      "operations": [
+        "groups.memory"
+      ]
+    },
+    {
+      "featureId": "chat.group_pin",
+      "title": "Закрепление групп",
+      "usefulness": 5,
+      "operations": [
+        "groups.pin"
+      ]
+    },
+    {
+      "featureId": "chat.group_rename",
+      "title": "Переименование группы",
+      "usefulness": 5,
+      "operations": [
+        "groups.rename"
+      ]
+    },
+    {
+      "featureId": "compose.suggestions",
+      "title": "Подсказки для начала разговора",
+      "usefulness": 5,
+      "operations": [
+        "compose.suggestions",
+        "compose.suggestions.select"
+      ]
+    }
+  ]
+}

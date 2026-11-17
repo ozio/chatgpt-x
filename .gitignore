@@ -1,0 +1,19 @@
+# Private local state: device profile, sessions, build inputs and outputs
+.private/
+.artifacts/
+.context/
+node_modules/
+__pycache__/
+*.pyc
+build/
+.theos/
+packages/
+*.ipa
+*.deb
+*.key
+*.pem
+*.p12
+*.o
+*.Td
+.stamp
+.DS_Store

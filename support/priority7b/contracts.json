@@ -1,0 +1,745 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API7BPersonalization": {
+      "type": "object",
+      "properties": {
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        },
+        "enabled": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "instructions": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 0,
+          "maxLength": 1500
+        },
+        "nickname": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 0,
+          "maxLength": 1500
+        },
+        "occupation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 0,
+          "maxLength": 1500
+        },
+        "about": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 0,
+          "maxLength": 1500
+        },
+        "personality": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 0,
+          "maxLength": 64
+        },
+        "traits": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "level": {
+                "enum": [
+                  "less",
+                  "default",
+                  "more"
+                ]
+              }
+            },
+            "required": [
+              "key",
+              "level"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 64
+        }
+      },
+      "required": [
+        "revision",
+        "enabled",
+        "instructions",
+        "nickname",
+        "occupation",
+        "about",
+        "personality",
+        "traits"
+      ],
+      "additionalProperties": false
+    },
+    "API7BMemory": {
+      "type": "object",
+      "properties": {
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        },
+        "mode": {
+          "enum": [
+            "legacy",
+            "unified",
+            "unavailable"
+          ]
+        },
+        "enabled": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "history": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "search": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "enabledLocked": {
+          "type": "boolean"
+        },
+        "historyLocked": {
+          "type": "boolean"
+        },
+        "searchLocked": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "revision",
+        "mode",
+        "enabled",
+        "history",
+        "search",
+        "enabledLocked",
+        "historyLocked",
+        "searchLocked"
+      ],
+      "additionalProperties": false
+    },
+    "API7BPersonalities": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "description": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 2000
+              }
+            },
+            "required": [
+              "key",
+              "label",
+              "description"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 64
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API7BTraits": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "levels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "enum": [
+                        "less",
+                        "default",
+                        "more"
+                      ]
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256
+                    },
+                    "description": {
+                      "type": "string",
+                      "minLength": 0,
+                      "maxLength": 2000
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "label",
+                    "description"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 3
+              }
+            },
+            "required": [
+              "key",
+              "label",
+              "levels"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API7BReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "category": {
+          "enum": [
+            "personalization",
+            "memory"
+          ]
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "completedSteps": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        }
+      },
+      "required": [
+        "operationId",
+        "category",
+        "serverAcknowledged",
+        "verified",
+        "completedSteps"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "personalization.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BPersonalization"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/user_system_messages",
+        "method": "GET"
+      },
+      "notes": "Nullable absent fields never become false/default. Revision is a client preflight fingerprint, not server CAS."
+    },
+    {
+      "id": "personalities.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BPersonalities"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/personality_types",
+        "method": "GET"
+      },
+      "notes": "Use server keys; no hardcoded personality catalogue."
+    },
+    {
+      "id": "traits.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BTraits"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/personality_trait_types",
+        "method": "GET"
+      },
+      "notes": "Skip explicitly deprecated entries; retain only declared supported levels."
+    },
+    {
+      "id": "instructions.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "changes": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 1500
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "changes"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/user_system_messages",
+        "method": "PATCH"
+      },
+      "notes": "Nonempty partial update; omitted fields untouched; empty string explicitly clears."
+    },
+    {
+      "id": "profile.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "changes": {
+            "type": "object",
+            "properties": {
+              "nickname": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 1500
+              },
+              "occupation": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 1500
+              },
+              "about": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 1500
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "changes"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/user_system_messages",
+        "method": "PATCH"
+      },
+      "notes": "Nickname/occupation/about map to name/role/other_user_message; one explicit PATCH."
+    },
+    {
+      "id": "personality.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "key"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/user_system_messages",
+        "method": "PATCH"
+      },
+      "notes": "Validate key against fresh server catalog, then enabled:true and personality_type_selection."
+    },
+    {
+      "id": "traits.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64
+                },
+                "level": {
+                  "enum": [
+                    "less",
+                    "default",
+                    "more"
+                  ]
+                }
+              },
+              "required": [
+                "key",
+                "level"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 32
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "changes"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/user_system_messages",
+        "method": "PATCH"
+      },
+      "notes": "Validate catalog keys/levels, preserve other traits, enable personalization. default resets a selected trait."
+    },
+    {
+      "id": "memory.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BMemory"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/user",
+        "method": "GET"
+      },
+      "notes": "Distinguish unified m3m from legacy sunshine/moonshine. Workspace eligibility is a separately bound trusted policy."
+    },
+    {
+      "id": "memory.setEnabled",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "allowRelatedChanges": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "enabled",
+          "allowRelatedChanges"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/account_user_setting?feature={feature}&value={boolean}",
+        "method": "PATCH"
+      },
+      "notes": "Fresh read/policy/lock validation. Source-derived related changes require explicit consent; at most three single-shot sequential writes, no rollback or replay."
+    },
+    {
+      "id": "memory.setHistory",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/account_user_setting?feature=moonshine&value={boolean}",
+        "method": "PATCH"
+      },
+      "notes": "Legacy only, saved memory must be enabled, history must be eligible/unlocked. Unified mode has no inferred independent history switch."
+    },
+    {
+      "id": "settings.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/{journalCategoryReadRoute}",
+        "method": "GET"
+      },
+      "notes": "Read-only comparison of every saved intended field; partial or ambiguous updates remain uncertain. Never resume remaining writes."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "preferences.instructions",
+      "title": "Пользовательские инструкции",
+      "usefulness": 7,
+      "operations": [
+        "personalization.get",
+        "instructions.update"
+      ]
+    },
+    {
+      "featureId": "preferences.profile",
+      "title": "Профиль персонализации",
+      "usefulness": 7,
+      "operations": [
+        "personalization.get",
+        "profile.update"
+      ]
+    },
+    {
+      "featureId": "preferences.personality",
+      "title": "Базовый стиль и тон",
+      "usefulness": 7,
+      "operations": [
+        "personalities.list",
+        "personality.update"
+      ]
+    },
+    {
+      "featureId": "preferences.characteristics",
+      "title": "Характеристики ответов",
+      "usefulness": 7,
+      "operations": [
+        "traits.list",
+        "traits.update"
+      ]
+    },
+    {
+      "featureId": "memory.enable",
+      "title": "Сохранённая память: включение",
+      "usefulness": 7,
+      "operations": [
+        "memory.get",
+        "memory.setEnabled"
+      ]
+    },
+    {
+      "featureId": "memory.history_reference",
+      "title": "Использование истории разговоров",
+      "usefulness": 7,
+      "operations": [
+        "memory.get",
+        "memory.setHistory"
+      ]
+    }
+  ]
+}

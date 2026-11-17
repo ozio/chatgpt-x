@@ -1,0 +1,859 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API7EPrivacy": {
+      "type": "object",
+      "properties": {
+        "revision": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        },
+        "trainingText": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "trainingAudio": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "trainingVideo": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "sensitiveContent": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "trainingTextLocked": {
+          "type": "boolean"
+        },
+        "trainingAudioLocked": {
+          "type": "boolean"
+        },
+        "trainingVideoLocked": {
+          "type": "boolean"
+        },
+        "sensitiveContentLocked": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "revision",
+        "trainingText",
+        "trainingAudio",
+        "trainingVideo",
+        "sensitiveContent",
+        "trainingTextLocked",
+        "trainingAudioLocked",
+        "trainingVideoLocked",
+        "sensitiveContentLocked"
+      ],
+      "additionalProperties": false
+    },
+    "API7EAge": {
+      "type": "object",
+      "properties": {
+        "ageGroup": {
+          "enum": [
+            "teen",
+            "adult",
+            "unsure"
+          ]
+        },
+        "hasVerifiedAgeOrDOB": {
+          "type": "boolean"
+        },
+        "canVerifyAge": {
+          "type": "boolean"
+        },
+        "showVerificationSetting": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "ageGroup",
+        "hasVerifiedAgeOrDOB",
+        "canVerifyAge",
+        "showVerificationSetting"
+      ],
+      "additionalProperties": false
+    },
+    "API7ESecurity": {
+      "type": "object",
+      "properties": {
+        "mfaEnabled": {
+          "type": "boolean"
+        },
+        "advancedSecurity": {
+          "type": "boolean"
+        },
+        "mfaManagementAllowed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "mfaEnabled",
+        "advancedSecurity",
+        "mfaManagementAllowed"
+      ],
+      "additionalProperties": false
+    },
+    "API7EHandoff": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "enum": [
+            "open_browser"
+          ]
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "completed": {
+          "enum": [
+            false
+          ]
+        },
+        "requiresExistingAccount": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "action",
+        "purpose",
+        "url",
+        "completed",
+        "requiresExistingAccount"
+      ],
+      "additionalProperties": false
+    },
+    "API7EPrivacyCenter": {
+      "type": "object",
+      "properties": {
+        "settings": {
+          "$ref": "#/types/API7EPrivacy"
+        },
+        "age": {
+          "$ref": "#/types/API7EAge"
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "privacy_request",
+                  "privacy_policy",
+                  "manage_privacy"
+                ]
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2048
+              }
+            },
+            "required": [
+              "kind",
+              "url"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "settings",
+        "age",
+        "resources"
+      ],
+      "additionalProperties": false
+    },
+    "API7EPlans": {
+      "type": "object",
+      "properties": {
+        "countryCode": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "currencyCode": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "minorUnitExponent": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 6
+        },
+        "items": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "properties": {
+              "plan": {
+                "enum": [
+                  "free",
+                  "go",
+                  "plus",
+                  "prolite",
+                  "pro",
+                  "promax",
+                  "business",
+                  "business_prolite"
+                ]
+              },
+              "monthlyAmount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1000000000000
+              },
+              "yearlyAmount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1000000000000
+              }
+            },
+            "required": [
+              "plan",
+              "monthlyAmount",
+              "yearlyAmount"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "eligibilityVerified": {
+          "enum": [
+            false
+          ]
+        },
+        "browserURL": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        }
+      },
+      "required": [
+        "countryCode",
+        "currencyCode",
+        "minorUnitExponent",
+        "items",
+        "eligibilityVerified",
+        "browserURL"
+      ],
+      "additionalProperties": false
+    },
+    "API7EReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "category": {
+          "enum": [
+            "privacy"
+          ]
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "completedSteps": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        }
+      },
+      "required": [
+        "operationId",
+        "category",
+        "serverAcknowledged",
+        "verified",
+        "completedSteps"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "privacy.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EPrivacy"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/user",
+        "method": "GET"
+      },
+      "notes": "Only explicit booleans become state. Missing settings are null; revisions are client preflight fingerprints, not server CAS."
+    },
+    {
+      "id": "privacy.training.setText",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/account_user_setting?feature=training_allowed&value={boolean}",
+        "method": "PATCH"
+      },
+      "notes": "Fresh read, lock checks and durable journal precede one-shot writes. No retry or automatic rollback."
+    },
+    {
+      "id": "privacy.training.setMedia",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "audio": {
+            "type": "boolean"
+          },
+          "video": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "audio",
+          "video"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/account_user_setting?feature={feature}&value={boolean}",
+        "method": "PATCH"
+      },
+      "notes": "voice_training_allowed/video_training_allowed from original native keypath getters. Explicit audio/video selection; source-derived prerequisites and locks are enforced, and every intended field is reconciled read-only."
+    },
+    {
+      "id": "safety.sensitiveContent.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "expectedRevision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "expectedRevision",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/account_user_setting?feature=3VyEPC5dTP_model_instructions_enabled&value={boolean}",
+        "method": "PATCH"
+      },
+      "notes": "Never infers safety status from age. Missing or locked controls cannot be mutated."
+    },
+    {
+      "id": "privacy.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/user",
+        "method": "GET"
+      },
+      "notes": "Compare every saved desired field; never resume or retry an uncertain write."
+    },
+    {
+      "id": "safety.ageStatus",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EAge"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/settings/is_adult",
+        "method": "GET"
+      },
+      "notes": "Preserve teen/adult/unsure; canVerifyAge follows the recovered frontend mapping. Unknown age never becomes adult."
+    },
+    {
+      "id": "security.policy",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7ESecurity"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/accounts/mfa_info",
+        "method": "GET"
+      },
+      "notes": "Sequentially read /accounts/mfa_info and /accounts/security_settings/info; advanced_protection_mode_enabled disables MFA management. Expose policy state only, never secrets, factor identifiers, recovery codes or credentials."
+    },
+    {
+      "id": "subscription.plans",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "countryCode": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2
+          }
+        },
+        "required": [
+          "countryCode"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EPlans"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/checkout_pricing_config/configs/{country_code}",
+        "method": "GET"
+      },
+      "notes": "Decode reported country/currency catalogue for free/go/plus/prolite/pro/promax/business/business_prolite, monthly/yearly amounts and minor-unit exponent. Missing prices remain null; eligibility and final billing are not asserted."
+    },
+    {
+      "id": "privacy.center",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EPrivacyCenter"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/{settings/user,settings/is_adult}",
+        "method": "GET"
+      },
+      "notes": "Sequentially decode current training/safety flags and age state; retain exact first-party privacy resource links. No secrets or synthesized eligibility."
+    },
+    {
+      "id": "security.reauthenticate",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/settings/security",
+        "method": "BROWSER_HANDOFF"
+      },
+      "notes": "Returns an exact first-party entry URL for reauthentication; completed is always false. The browser owns interaction and sensitive credentials; no account change or verification is asserted."
+    },
+    {
+      "id": "security.passwordChange",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/settings/security",
+        "method": "BROWSER_HANDOFF"
+      },
+      "notes": "Returns an exact first-party entry URL for password_change; completed is always false. The browser owns interaction and sensitive credentials; no account change or verification is asserted."
+    },
+    {
+      "id": "security.emailChange",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/settings/account",
+        "method": "BROWSER_HANDOFF"
+      },
+      "notes": "Returns an exact first-party entry URL for email_change; completed is always false. The browser owns interaction and sensitive credentials; no account change or verification is asserted."
+    },
+    {
+      "id": "security.mfaSetup",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/settings/security",
+        "method": "BROWSER_HANDOFF"
+      },
+      "notes": "Returns an exact first-party entry URL for mfa_setup; completed is always false. The browser owns interaction and sensitive credentials; no account change or verification is asserted."
+    },
+    {
+      "id": "security.recovery",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/auth/login",
+        "method": "BROWSER_HANDOFF"
+      },
+      "notes": "Returns an exact first-party entry URL for mfa_recovery; completed is always false. The browser owns interaction and sensitive credentials; no account change or verification is asserted."
+    },
+    {
+      "id": "privacy.openCenter",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/privacy-center",
+        "method": "BROWSER_HANDOFF"
+      },
+      "notes": "Returns an exact first-party entry URL for privacy_center; completed is always false. The browser owns interaction and sensitive credentials; no account change or verification is asserted."
+    },
+    {
+      "id": "privacy.requestsHelp",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "https://privacy.openai.com/",
+        "method": "BROWSER_HANDOFF"
+      },
+      "notes": "Returns an exact first-party entry URL for privacy_request; completed is always false. The browser owns interaction and sensitive credentials; no account change or verification is asserted."
+    },
+    {
+      "id": "safety.ageVerify",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/settings/age",
+        "method": "BROWSER_HANDOFF"
+      },
+      "notes": "Returns an exact first-party entry URL for age_verification; completed is always false. The browser owns interaction and sensitive credentials; no account change or verification is asserted."
+    },
+    {
+      "id": "subscription.openPlans",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7EHandoff"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/plans",
+        "method": "BROWSER_HANDOFF"
+      },
+      "notes": "Returns an exact first-party entry URL for compare_plans; completed is always false. The browser owns interaction and sensitive credentials; no account change or verification is asserted."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "account.security.reauth",
+      "title": "Повторное подтверждение перед изменениями",
+      "usefulness": 7,
+      "operations": [
+        "security.reauthenticate"
+      ]
+    },
+    {
+      "featureId": "account.security.password_change",
+      "title": "Смена пароля",
+      "usefulness": 7,
+      "operations": [
+        "security.passwordChange"
+      ]
+    },
+    {
+      "featureId": "account.security.email_change",
+      "title": "Изменение email",
+      "usefulness": 7,
+      "operations": [
+        "security.emailChange"
+      ]
+    },
+    {
+      "featureId": "account.security.mfa_setup",
+      "title": "Добавление и удаление authenticator MFA",
+      "usefulness": 7,
+      "operations": [
+        "security.policy",
+        "security.mfaSetup"
+      ]
+    },
+    {
+      "featureId": "account.security.recovery",
+      "title": "Восстановление доступа при потере MFA",
+      "usefulness": 7,
+      "operations": [
+        "security.recovery"
+      ]
+    },
+    {
+      "featureId": "account.security.mfa_policy",
+      "title": "Недоступные MFA-настройки при Advanced Security",
+      "usefulness": 7,
+      "operations": [
+        "security.policy",
+        "security.mfaSetup"
+      ]
+    },
+    {
+      "featureId": "subscription.plans",
+      "title": "Просмотр планов и сравнение",
+      "usefulness": 7,
+      "operations": [
+        "subscription.plans",
+        "subscription.openPlans"
+      ]
+    },
+    {
+      "featureId": "privacy.center",
+      "title": "Центр приватности",
+      "usefulness": 7,
+      "operations": [
+        "privacy.center",
+        "privacy.get",
+        "privacy.openCenter"
+      ]
+    },
+    {
+      "featureId": "privacy.training.text",
+      "title": "Использование чатов для улучшения моделей",
+      "usefulness": 7,
+      "operations": [
+        "privacy.get",
+        "privacy.training.setText",
+        "privacy.reconcile"
+      ]
+    },
+    {
+      "featureId": "privacy.training.audio_video",
+      "title": "Обучение на аудио и видео",
+      "usefulness": 7,
+      "operations": [
+        "privacy.get",
+        "privacy.training.setMedia",
+        "privacy.reconcile"
+      ]
+    },
+    {
+      "featureId": "privacy.requests_help",
+      "title": "Privacy Portal и запрос о данных",
+      "usefulness": 7,
+      "operations": [
+        "privacy.requestsHelp"
+      ]
+    },
+    {
+      "featureId": "safety.age_status",
+      "title": "Возрастной статус и дополнительные ограничения",
+      "usefulness": 7,
+      "operations": [
+        "safety.ageStatus"
+      ]
+    },
+    {
+      "featureId": "safety.age_verify",
+      "title": "Проверка возраста",
+      "usefulness": 7,
+      "operations": [
+        "safety.ageStatus",
+        "safety.ageVerify"
+      ]
+    },
+    {
+      "featureId": "safety.sensitive_content",
+      "title": "Дополнительные ограничения чувствительного контента",
+      "usefulness": 7,
+      "operations": [
+        "privacy.get",
+        "safety.sensitiveContent.set",
+        "privacy.reconcile"
+      ]
+    }
+  ]
+}

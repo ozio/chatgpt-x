@@ -1,0 +1,1165 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {},
+  "operations": [
+    {
+      "id": "security.sms.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "enrolledCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 32
+          }
+        },
+        "required": [
+          "enabled",
+          "available",
+          "enrolledCount"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "security.sms.open",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "open_browser"
+            ]
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "sms_mfa",
+              "advanced_security"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "requiresUserSelection": {
+            "type": "boolean"
+          },
+          "completed": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "flowStarted": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "sensitiveInputInBrowser": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action",
+          "purpose",
+          "url",
+          "requiresUserSelection",
+          "completed",
+          "flowStarted",
+          "sensitiveInputInBrowser"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "security.advanced.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "advancedProtectionEnabled": {
+            "type": "boolean"
+          },
+          "eligible": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "advancedProtectionEnabled",
+          "eligible"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "security.advanced.open",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "open_browser"
+            ]
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "sms_mfa",
+              "advanced_security"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "requiresUserSelection": {
+            "type": "boolean"
+          },
+          "completed": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "flowStarted": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "sensitiveInputInBrowser": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action",
+          "purpose",
+          "url",
+          "requiresUserSelection",
+          "completed",
+          "flowStarted",
+          "sensitiveInputInBrowser"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "security.history.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "cursor"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256
+                },
+                "type": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "timestampSeconds": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 253402300799
+                },
+                "device": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 512
+                },
+                "location": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 512
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "timestampSeconds",
+                "device",
+                "location"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 20
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "items",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "security.recommendations.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 3
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "workspaces.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 256
+                },
+                "structure": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64
+                },
+                "accessible": {
+                  "type": "boolean"
+                },
+                "deactivated": {
+                  "type": "boolean"
+                },
+                "residencyRegion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "isFedramp": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "structure",
+                "accessible",
+                "deactivated",
+                "residencyRegion",
+                "isFedramp"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "workspaces.select",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "workspaceId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "workspaceId",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "selectedWorkspaceId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "selected": {
+            "type": "boolean"
+          },
+          "contextRebindRequired": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "selectedWorkspaceId",
+          "selected",
+          "contextRebindRequired"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": true,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "workspaces.createPersonal",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "acknowledged",
+              "verified",
+              "uncertain"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "resourceId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "command",
+          "state",
+          "verified",
+          "resourceId"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": true,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "ads.settings.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "personalizationEnabled": {
+            "type": "boolean"
+          },
+          "personalizationUnavailable": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "personalizationEnabled",
+          "personalizationUnavailable"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "ads.personalization.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "acknowledged",
+              "verified",
+              "uncertain"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "resourceId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "command",
+          "state",
+          "verified",
+          "resourceId"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": true,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "ads.history.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "cursor"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "brand": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 512
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                "occurredAt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "action": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              },
+              "required": [
+                "brand",
+                "title",
+                "occurredAt",
+                "action"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "items",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "ads.topics.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "cursor"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "content": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                }
+              },
+              "required": [
+                "content"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "items",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "ads.data.delete",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "acknowledged",
+              "verified",
+              "uncertain"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "resourceId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "command",
+          "state",
+          "verified",
+          "resourceId"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": true,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "account5.operationStatus",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "dispatching",
+              "completed",
+              "rejected",
+              "uncertain"
+            ]
+          },
+          "receipt": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "operationId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 36
+              },
+              "command": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "acknowledged",
+                  "verified",
+                  "uncertain"
+                ]
+              },
+              "verified": {
+                "type": "boolean"
+              },
+              "resourceId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "required": [
+              "operationId",
+              "command",
+              "state",
+              "verified",
+              "resourceId"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "operationId",
+          "command",
+          "state",
+          "receipt"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "ads.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "acknowledged",
+              "verified",
+              "uncertain"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "resourceId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "command",
+          "state",
+          "verified",
+          "resourceId"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    },
+    {
+      "id": "workspaces.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "acknowledged",
+              "verified",
+              "uncertain"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "resourceId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "command",
+          "state",
+          "verified",
+          "resourceId"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutating": false,
+      "requires": [
+        "authenticated"
+      ],
+      "capability": "explicit_native_admission"
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "account.security.mfa_sms",
+      "title": "Добавление SMS MFA и резервного телефона",
+      "usefulness": 5,
+      "operations": [
+        "security.sms.get",
+        "security.sms.open"
+      ]
+    },
+    {
+      "featureId": "account.security.advanced",
+      "title": "Расширенная защита аккаунта",
+      "usefulness": 5,
+      "operations": [
+        "security.advanced.get",
+        "security.advanced.open"
+      ]
+    },
+    {
+      "featureId": "account.security.history",
+      "title": "Журнал действий безопасности",
+      "usefulness": 5,
+      "operations": [
+        "security.history.list"
+      ]
+    },
+    {
+      "featureId": "account.security.recommendations",
+      "title": "Рекомендации по защите",
+      "usefulness": 5,
+      "operations": [
+        "security.recommendations.get"
+      ]
+    },
+    {
+      "featureId": "workspace.select",
+      "title": "Выбор рабочего пространства",
+      "usefulness": 5,
+      "operations": [
+        "workspaces.list",
+        "workspaces.select"
+      ]
+    },
+    {
+      "featureId": "workspace.personal_create",
+      "title": "Создание личного workspace",
+      "usefulness": 5,
+      "operations": [
+        "workspaces.createPersonal",
+        "workspaces.reconcile"
+      ]
+    },
+    {
+      "featureId": "privacy.ads_personalization",
+      "title": "Персонализация рекламы",
+      "usefulness": 5,
+      "operations": [
+        "ads.settings.get",
+        "ads.personalization.set",
+        "ads.reconcile"
+      ]
+    },
+    {
+      "featureId": "privacy.ads_history",
+      "title": "История и темы рекламы",
+      "usefulness": 5,
+      "operations": [
+        "ads.history.list",
+        "ads.topics.list"
+      ]
+    },
+    {
+      "featureId": "privacy.ads_delete",
+      "title": "Удаление рекламных данных",
+      "usefulness": 5,
+      "operations": [
+        "ads.data.delete",
+        "ads.reconcile"
+      ]
+    }
+  ]
+}

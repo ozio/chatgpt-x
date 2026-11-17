@@ -1,0 +1,32 @@
+{
+  "features": {
+    "codex.goals": 7,
+    "codex.approval-policy": 7,
+    "codex.files": 7,
+    "codex.worktree": 7,
+    "codex.attachments": 7,
+    "codex.subagents": 7
+  },
+  "methods": {
+    "thread/goal/get": [
+      "ThreadGoalGetParams",
+      "ThreadGoalGetResponse"
+    ],
+    "thread/goal/set": [
+      "ThreadGoalSetParams",
+      "ThreadGoalSetResponse"
+    ],
+    "thread/goal/clear": [
+      "ThreadGoalClearParams",
+      "ThreadGoalClearResponse"
+    ],
+    "configRequirements/read": [
+      null,
+      "ConfigRequirementsReadResponse"
+    ]
+  },
+  "notifications": [
+    "thread/goal/updated",
+    "thread/goal/cleared"
+  ]
+}

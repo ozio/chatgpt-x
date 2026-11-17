@@ -1,0 +1,1209 @@
+{
+  "schemaVersion": 1,
+  "types": {
+    "API4BStep": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 2048
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 8192
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "in_progress",
+            "completed"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "API4BAutomation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "instructions": {
+          "type": "string",
+          "maxLength": 32768
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "kind": {
+          "enum": [
+            "goal",
+            "routine"
+          ]
+        },
+        "role": {
+          "enum": [
+            "owner",
+            "editor",
+            "reader"
+          ]
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API4BStep"
+          },
+          "maxItems": 100
+        },
+        "planFileId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128,
+          "minLength": 1
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128,
+          "minLength": 1
+        },
+        "aeonId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128,
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "active",
+            "paused",
+            "completed"
+          ]
+        },
+        "nextRunTimes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "maxItems": 16
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "instructions",
+        "enabled",
+        "kind",
+        "role",
+        "steps",
+        "planFileId",
+        "conversationId",
+        "aeonId",
+        "status",
+        "nextRunTimes"
+      ],
+      "additionalProperties": false
+    },
+    "API4BSkill": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 256,
+          "minLength": 1
+        },
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 16384
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "inMyList": {
+          "type": "boolean"
+        },
+        "creatorId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 256,
+          "minLength": 1
+        },
+        "canRead": {
+          "type": "boolean"
+        },
+        "safety": {
+          "enum": [
+            "allowed",
+            "needsReview",
+            "blocked"
+          ]
+        },
+        "surfaces": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "chat",
+              "tpp"
+            ]
+          },
+          "maxItems": 2
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 512,
+            "minLength": 1
+          },
+          "maxItems": 128
+        },
+        "system": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "displayName",
+        "description",
+        "enabled",
+        "inMyList",
+        "creatorId",
+        "canRead",
+        "safety",
+        "surfaces",
+        "files",
+        "system"
+      ],
+      "additionalProperties": false
+    },
+    "API4BReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "maxLength": 36,
+          "minLength": 1
+        },
+        "command": {
+          "enum": [
+            "skills.install",
+            "skills.remove"
+          ]
+        },
+        "skillId": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "command",
+        "skillId",
+        "enabled",
+        "serverAcknowledged",
+        "verified"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "compose.autocomplete.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "inputText": {
+            "type": "string",
+            "maxLength": 512,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "inputText"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "referenceId": {
+                  "type": "string",
+                  "maxLength": 36,
+                  "minLength": 1
+                },
+                "text": {
+                  "type": "string",
+                  "maxLength": 2048,
+                  "minLength": 1
+                },
+                "source": {
+                  "enum": [
+                    "index"
+                  ]
+                }
+              },
+              "required": [
+                "referenceId",
+                "text",
+                "source"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 10
+          },
+          "inputText": {
+            "type": "string",
+            "maxLength": 512,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "items",
+          "inputText"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "compose.autocomplete.select",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "referenceId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "inputText": {
+            "type": "string",
+            "maxLength": 512,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "referenceId",
+          "inputText"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 2048,
+            "minLength": 1
+          },
+          "inputText": {
+            "type": "string",
+            "maxLength": 512,
+            "minLength": 1
+          },
+          "chosenSuggestion": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "autocomplete"
+                ]
+              },
+              "source": {
+                "enum": [
+                  "INDEX"
+                ]
+              },
+              "user_input": {
+                "type": "string",
+                "maxLength": 512,
+                "minLength": 1
+              },
+              "index": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9
+              }
+            },
+            "required": [
+              "type",
+              "source",
+              "user_input",
+              "index"
+            ],
+            "additionalProperties": false
+          },
+          "completed": {
+            "type": "boolean"
+          },
+          "submitted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "text",
+          "inputText",
+          "chosenSuggestion",
+          "completed",
+          "submitted"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "skills.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "enum": [
+              "installed",
+              "created",
+              "shared-personal",
+              "workspace-shared"
+            ]
+          }
+        },
+        "required": [
+          "scope"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/API4BSkill"
+            },
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "skills.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "skillId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "skillId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API4BSkill"
+      },
+      "events": []
+    },
+    {
+      "id": "skills.install",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "skillId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "operationId",
+          "skillId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API4BReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "skills.remove",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "skillId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "operationId",
+          "skillId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API4BReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "skills.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API4BReceipt"
+      },
+      "events": []
+    },
+    {
+      "id": "api4b.operationStatus",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "command": {
+            "enum": [
+              "skills.install",
+              "skills.remove",
+              "tasks.goals.create"
+            ]
+          },
+          "state": {
+            "enum": [
+              "dispatching",
+              "uncertain",
+              "completed",
+              "rejected"
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "command",
+          "state"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.goals.prepare",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1
+          },
+          "instructions": {
+            "type": "string",
+            "maxLength": 32768
+          },
+          "emoji": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 64,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "title",
+          "instructions",
+          "emoji"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "maxLength": 35000,
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 64,
+            "minLength": 1
+          },
+          "mode": {
+            "enum": [
+              "new_chat"
+            ]
+          },
+          "completed": {
+            "type": "boolean"
+          },
+          "submitted": {
+            "type": "boolean"
+          },
+          "goalCreated": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "prompt",
+          "title",
+          "icon",
+          "mode",
+          "completed",
+          "submitted",
+          "goalCreated"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.goals.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1
+          },
+          "instructions": {
+            "type": "string",
+            "maxLength": 14000
+          },
+          "emoji": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 64,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "operationId",
+          "title",
+          "instructions",
+          "emoji"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "command": {
+            "enum": [
+              "tasks.goals.create"
+            ]
+          },
+          "state": {
+            "enum": [
+              "completed"
+            ]
+          },
+          "conversationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "userMessageId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "assistantMessageId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "persisted": {
+            "type": "boolean"
+          },
+          "submitted": {
+            "type": "boolean"
+          },
+          "goalCreationVerified": {
+            "type": "boolean"
+          },
+          "goalId": {
+            "enum": [
+              null
+            ]
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "operationId",
+          "command",
+          "state",
+          "conversationId",
+          "userMessageId",
+          "assistantMessageId",
+          "persisted",
+          "submitted",
+          "goalCreationVerified",
+          "goalId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.goals.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "command": {
+            "enum": [
+              "tasks.goals.create"
+            ]
+          },
+          "state": {
+            "enum": [
+              "completed"
+            ]
+          },
+          "conversationId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "userMessageId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "assistantMessageId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1
+          },
+          "persisted": {
+            "type": "boolean"
+          },
+          "submitted": {
+            "type": "boolean"
+          },
+          "goalCreationVerified": {
+            "type": "boolean"
+          },
+          "goalId": {
+            "enum": [
+              null
+            ]
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "operationId",
+          "command",
+          "state",
+          "conversationId",
+          "userMessageId",
+          "assistantMessageId",
+          "persisted",
+          "submitted",
+          "goalCreationVerified",
+          "goalId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.routines.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "enum": [
+              "active",
+              "paused",
+              "completed"
+            ]
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "filter",
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/API4BAutomation"
+            },
+            "maxItems": 25
+          },
+          "nextPageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "items",
+          "nextPageToken"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.goals.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "automationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API4BAutomation"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.plan.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "automationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API4BAutomation"
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.goals.instructions",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "automationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "instructions": {
+            "type": "string",
+            "maxLength": 32768
+          }
+        },
+        "required": [
+          "automationId",
+          "instructions"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.goals.progress",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "automationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "active",
+              "paused",
+              "completed"
+            ]
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/API4BStep"
+            },
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "automationId",
+          "enabled",
+          "status",
+          "steps"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.goals.files",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "automationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "maxLength": 128,
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string",
+                  "maxLength": 512,
+                  "minLength": 1
+                },
+                "kind": {
+                  "enum": [
+                    "file"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "kind"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 1
+          }
+        },
+        "required": [
+          "automationId",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    },
+    {
+      "id": "tasks.plan.openConversation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "automationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "automationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "conversationId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "mode": {
+            "enum": [
+              "existing_chat"
+            ]
+          },
+          "completed": {
+            "type": "boolean"
+          },
+          "opened": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "automationId",
+          "conversationId",
+          "mode",
+          "completed",
+          "opened"
+        ],
+        "additionalProperties": false
+      },
+      "events": []
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "compose.autocomplete",
+      "operations": [
+        "compose.autocomplete.get",
+        "compose.autocomplete.select"
+      ]
+    },
+    {
+      "featureId": "tools.skills",
+      "operations": [
+        "skills.list",
+        "skills.get",
+        "skills.install",
+        "skills.remove",
+        "skills.reconcile",
+        "api4b.operationStatus"
+      ]
+    },
+    {
+      "featureId": "tasks.goals",
+      "operations": [
+        "tasks.goals.create",
+        "tasks.goals.reconcile",
+        "api4b.operationStatus",
+        "tasks.goals.prepare",
+        "tasks.goals.get",
+        "tasks.goals.instructions",
+        "tasks.goals.progress",
+        "tasks.goals.files"
+      ]
+    },
+    {
+      "featureId": "tasks.routines",
+      "operations": [
+        "tasks.routines.list"
+      ]
+    },
+    {
+      "featureId": "tasks.plan",
+      "operations": [
+        "tasks.plan.get",
+        "tasks.plan.openConversation"
+      ]
+    }
+  ]
+}

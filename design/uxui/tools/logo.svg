@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- ChatGPT X icon: an original "spark in a speech bubble" on a dark glossy iOS 6 tile.
+       Eight straight rounded rays of alternating length around a white core: deliberately
+       unlike any third-party logo (no interlaced loops, no wordmark). -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a5a53"/>
+      <stop offset=".48" stop-color="#22302a"/>
+      <stop offset="1" stop-color="#0c1310"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".46" r=".58">
+      <stop offset="0" stop-color="#3fd68f" stop-opacity=".32"/>
+      <stop offset=".7" stop-color="#3fd68f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bub" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dfe9e4"/>
+    </linearGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fe0a0"/>
+      <stop offset=".55" stop-color="#22a866"/>
+      <stop offset="1" stop-color="#0f7a47"/>
+    </linearGradient>
+    <radialGradient id="core" cx=".42" cy=".38" r=".7">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d6f5e4"/>
+    </radialGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".04"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dy="11"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".6"/></feComponentTransfer>
+      <feFlood flood-color="#000"/>
+      <feComposite operator="in" in2="SourceAlpha"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sh2" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dy="3"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".35"/></feComponentTransfer>
+      <feFlood flood-color="#0b3d26"/>
+      <feComposite operator="in" in2="SourceAlpha"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <rect width="512" height="512" fill="url(#glow)"/>
+  <!-- fine linen weave, like the app's iOS 6 materials -->
+  <g opacity=".05" stroke="#ffffff" stroke-width="2">
+    <path d="M0 64H512M0 128H512M0 192H512M0 256H512M0 320H512M0 384H512M0 448H512"/>
+  </g>
+
+  <!-- speech bubble, tail low on the left -->
+  <g filter="url(#sh)">
+    <path d="M256 92c-104 0-176 64-176 146 0 52 29 96 76 122-4 30-20 56-46 76 50-4 88-22 112-48 11 2 22 2 34 2 104 0 176-64 176-152S360 92 256 92z" fill="url(#bub)"/>
+  </g>
+  <path d="M256 104c-96 0-162 58-162 132" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+
+  <!-- spark: four long and four short straight rays with round caps, white core -->
+  <g filter="url(#sh2)" transform="translate(256 232)" stroke="url(#ray)" stroke-linecap="round" fill="none">
+    <path d="M0 -40V-96M0 40V96M-40 0H-96M40 0H96" stroke-width="30"/>
+    <path d="M28 -28L58 -58M28 28L58 58M-28 28L-58 58M-28 -28L-58 -58" stroke-width="24"/>
+    <circle r="24" fill="url(#core)" stroke="#22a866" stroke-width="6"/>
+  </g>
+
+  <!-- iOS 6 icon gloss -->
+  <path d="M0 0H512V218C420 252 340 262 256 262S92 252 0 218Z" fill="url(#gloss)"/>
+</svg>

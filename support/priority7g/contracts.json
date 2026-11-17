@@ -1,0 +1,1359 @@
+{
+  "schemaVersion": 1,
+  "types": {
+    "API7GEditor": {
+      "type": "object",
+      "properties": {
+        "draftId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 200000
+        },
+        "selectionStart": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 200000
+        },
+        "selectionLength": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 200000
+        },
+        "expanded": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "draftId",
+        "text",
+        "selectionStart",
+        "selectionLength",
+        "expanded"
+      ],
+      "additionalProperties": false
+    },
+    "API7GEmail": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "sender": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 254
+        },
+        "to": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 254
+          },
+          "minItems": 0,
+          "maxItems": 20
+        },
+        "cc": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 254
+          },
+          "minItems": 0,
+          "maxItems": 20
+        },
+        "bcc": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 254
+          },
+          "minItems": 0,
+          "maxItems": 20
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 1000
+        },
+        "body": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 32000
+        }
+      },
+      "required": [
+        "id",
+        "sender",
+        "to",
+        "cc",
+        "bcc",
+        "subject",
+        "body"
+      ],
+      "additionalProperties": false
+    },
+    "API7GPreferences": {
+      "type": "object",
+      "properties": {
+        "theme": {
+          "enum": [
+            "light",
+            "dark",
+            "system"
+          ]
+        },
+        "language": {
+          "enum": [
+            "en",
+            "ru",
+            "system"
+          ]
+        },
+        "effectiveTheme": {
+          "enum": [
+            "light",
+            "dark"
+          ]
+        },
+        "effectiveLanguage": {
+          "enum": [
+            "en",
+            "ru"
+          ]
+        },
+        "systemThemeAvailable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "theme",
+        "language",
+        "effectiveTheme",
+        "effectiveLanguage",
+        "systemThemeAvailable"
+      ],
+      "additionalProperties": false
+    },
+    "API7GTranscript": {
+      "type": "object",
+      "properties": {
+        "recordingId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "idle",
+            "connecting",
+            "recording",
+            "finishing",
+            "completed",
+            "failed",
+            "cancelled"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 16000
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "final": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "recordingId",
+        "state",
+        "text",
+        "visible",
+        "sequence",
+        "final"
+      ],
+      "additionalProperties": false
+    },
+    "API7GPlayback": {
+      "type": "object",
+      "properties": {
+        "assetId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "state": {
+          "enum": [
+            "idle",
+            "playing",
+            "paused",
+            "stopped",
+            "failed"
+          ]
+        },
+        "position": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 180
+        },
+        "duration": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 180
+        },
+        "rate": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 2
+        }
+      },
+      "required": [
+        "assetId",
+        "state",
+        "position",
+        "duration",
+        "rate"
+      ],
+      "additionalProperties": false
+    },
+    "API7GTranslation": {
+      "type": "object",
+      "properties": {
+        "sourceLanguage": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 16
+        },
+        "targetLanguage": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 16
+        }
+      },
+      "required": [
+        "sourceLanguage",
+        "targetLanguage"
+      ],
+      "additionalProperties": false
+    },
+    "API7GCache": {
+      "type": "object",
+      "properties": {
+        "bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 268435456
+        },
+        "files": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 128
+        },
+        "cleared": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "bytes",
+        "files",
+        "cleared"
+      ],
+      "additionalProperties": false
+    },
+    "API7GShareText": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 32000
+        },
+        "mediaType": {
+          "enum": [
+            "text/plain"
+          ]
+        }
+      },
+      "required": [
+        "text",
+        "mediaType"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "composer.editor.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "text": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 200000
+          },
+          "selectionStart": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 200000
+          },
+          "selectionLength": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 200000
+          },
+          "expanded": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "draftId",
+          "text",
+          "selectionStart",
+          "selectionLength",
+          "expanded"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GEditor"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "composer.editor.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "draftId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GEditor"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "emailDraft.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "sender": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 254
+          },
+          "to": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 254
+            },
+            "minItems": 0,
+            "maxItems": 20
+          },
+          "cc": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 254
+            },
+            "minItems": 0,
+            "maxItems": 20
+          },
+          "bcc": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 254
+            },
+            "minItems": 0,
+            "maxItems": 20
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 1000
+          },
+          "body": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 32000
+          }
+        },
+        "required": [
+          "id",
+          "sender",
+          "to",
+          "cc",
+          "bcc",
+          "subject",
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GEmail"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "emailDraft.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GEmail"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "emailDraft.prepare",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200000
+          },
+          "sent": {
+            "enum": [
+              false
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "url",
+          "sent"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "translation.languages",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 16
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              },
+              "required": [
+                "code",
+                "name"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 1024
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "translation.configure",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "sourceLanguage": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16
+          },
+          "targetLanguage": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16
+          }
+        },
+        "required": [
+          "sourceLanguage",
+          "targetLanguage"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GTranslation"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "translation.swapLanguages",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GTranslation"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "translation.copy",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 32000
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GShareText"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "translation.share",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 32000
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GShareText"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "dictation.stream.start",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "recordingId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "language": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 16
+          },
+          "visible": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "recordingId",
+          "language",
+          "visible"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GTranscript"
+      },
+      "events": [
+        {
+          "name": "transcript",
+          "schema": {
+            "$ref": "#/types/API7GTranscript"
+          }
+        }
+      ],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "dictation.stream.stop",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "recordingId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "recordingId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GTranscript"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "dictation.stream.cancel",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "recordingId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "recordingId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GTranscript"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "dictation.stream.status",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "recordingId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "recordingId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GTranscript"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "dictation.stream.visibility",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "recordingId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "visible": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "recordingId",
+          "visible"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GTranscript"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "playback.start",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "assetId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "assetId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "playback.pause",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "playback.resume",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "playback.retry",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "playback.stop",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "playback.status",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "playback.rate",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "rate": {
+            "enum": [
+              0.5,
+              1,
+              1.5,
+              2
+            ]
+          }
+        },
+        "required": [
+          "rate"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPlayback"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "images.export",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "assetIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "minItems": 1,
+            "maxItems": 4
+          },
+          "destination": {
+            "enum": [
+              "photos",
+              "share"
+            ]
+          }
+        },
+        "required": [
+          "assetIds",
+          "destination"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/Asset"
+            },
+            "minItems": 1,
+            "maxItems": 4
+          },
+          "saved": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "token",
+          "items",
+          "saved",
+          "completed"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "routes.resolve",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "destination": {
+            "enum": [
+              "home",
+              "conversation",
+              "project",
+              "compose"
+            ]
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "projectId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "text": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "destination",
+          "conversationId",
+          "projectId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "clientPreferences.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPreferences"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "clientPreferences.theme",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "theme": {
+            "enum": [
+              "light",
+              "dark",
+              "system"
+            ]
+          }
+        },
+        "required": [
+          "theme"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPreferences"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "clientPreferences.language",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "enum": [
+              "en",
+              "ru",
+              "system"
+            ]
+          }
+        },
+        "required": [
+          "language"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GPreferences"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "cache.status",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GCache"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    },
+    {
+      "id": "cache.clear",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7GCache"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Native API state/action; no product UI or account mutation."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "compose.fullscreen",
+      "title": "Полноэкранный редактор запроса",
+      "usefulness": 7,
+      "operations": [
+        "composer.editor.set",
+        "composer.editor.get"
+      ]
+    },
+    {
+      "featureId": "tools.email_draft",
+      "title": "Подготовка письма в ответе",
+      "usefulness": 7,
+      "operations": [
+        "emailDraft.set",
+        "emailDraft.get",
+        "emailDraft.prepare"
+      ]
+    },
+    {
+      "featureId": "tools.translate_language",
+      "title": "Языки перевода",
+      "usefulness": 7,
+      "operations": [
+        "translation.languages",
+        "translation.configure",
+        "translation.swapLanguages"
+      ]
+    },
+    {
+      "featureId": "tools.translate_share",
+      "title": "Копирование и передача перевода",
+      "usefulness": 7,
+      "operations": [
+        "translation.copy",
+        "translation.share"
+      ]
+    },
+    {
+      "featureId": "audio.dictation_streaming",
+      "title": "Промежуточный текст диктовки",
+      "usefulness": 7,
+      "operations": [
+        "dictation.stream.start",
+        "dictation.stream.stop",
+        "dictation.stream.cancel",
+        "dictation.stream.status",
+        "dictation.stream.visibility"
+      ]
+    },
+    {
+      "featureId": "audio.playback_controls",
+      "title": "Управление воспроизведением",
+      "usefulness": 7,
+      "operations": [
+        "playback.start",
+        "playback.pause",
+        "playback.resume",
+        "playback.retry",
+        "playback.stop",
+        "playback.status",
+        "playback.rate"
+      ]
+    },
+    {
+      "featureId": "images.save_share",
+      "title": "Сохранить и отправить изображения",
+      "usefulness": 7,
+      "operations": [
+        "images.export"
+      ]
+    },
+    {
+      "featureId": "integration.url_routes",
+      "title": "Открытие приложения по ссылке",
+      "usefulness": 7,
+      "operations": [
+        "routes.resolve"
+      ]
+    },
+    {
+      "featureId": "preferences.appearance",
+      "title": "Тема оформления",
+      "usefulness": 7,
+      "operations": [
+        "clientPreferences.get",
+        "clientPreferences.theme"
+      ]
+    },
+    {
+      "featureId": "preferences.language",
+      "title": "Язык приложения",
+      "usefulness": 7,
+      "operations": [
+        "clientPreferences.get",
+        "clientPreferences.language"
+      ]
+    },
+    {
+      "featureId": "preferences.cache_storage",
+      "title": "Место на устройстве и очистка кэша",
+      "usefulness": 7,
+      "operations": [
+        "cache.status",
+        "cache.clear"
+      ]
+    }
+  ]
+}

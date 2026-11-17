@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "manifestSHA256": "c81e9dfb8e21632845f1e0594e97bf4ad8868befcb4cf2feb6b23080bfa17875",
+  "inputSHA256": "6a41fc75ca7726094426be5d3ab24fee543a6b94c3ca2e426bddea22a4670444",
+  "files": 3753,
+  "nativeImages": 17,
+  "privateExperimentOnly": true
+}

@@ -1,0 +1,1687 @@
+{
+  "schemaVersion": 1,
+  "types": {
+    "API5EBlock": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "days": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 7
+        },
+        "start_time": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5
+        },
+        "end_time": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5
+        }
+      },
+      "required": [
+        "id",
+        "days",
+        "start_time",
+        "end_time"
+      ],
+      "additionalProperties": false
+    },
+    "API5ESchedule": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5EBlock"
+          },
+          "minItems": 0,
+          "maxItems": 12
+        }
+      },
+      "required": [
+        "enabled",
+        "blocks"
+      ],
+      "additionalProperties": false
+    },
+    "API5EReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "acknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "resourceId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 320
+        }
+      },
+      "required": [
+        "operationId",
+        "acknowledged",
+        "verified",
+        "resourceId"
+      ],
+      "additionalProperties": false
+    },
+    "API5EFamily": {
+      "type": "object",
+      "properties": {
+        "linked": {
+          "type": "boolean"
+        },
+        "role": {
+          "enum": [
+            "parent",
+            "teen",
+            "child",
+            null
+          ]
+        }
+      },
+      "required": [
+        "linked",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    "API5EMember": {
+      "type": "object",
+      "properties": {
+        "memberId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "name": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 256
+        },
+        "identifier": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 320
+        },
+        "role": {
+          "enum": [
+            "parent",
+            "teen",
+            "child"
+          ]
+        },
+        "status": {
+          "enum": [
+            "invited",
+            "accepted"
+          ]
+        },
+        "isSelf": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "memberId",
+        "name",
+        "identifier",
+        "role",
+        "status",
+        "isSelf"
+      ],
+      "additionalProperties": false
+    },
+    "API5EInvite": {
+      "type": "object",
+      "properties": {
+        "inviteId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "inviter": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 320
+        },
+        "role": {
+          "enum": [
+            "parent",
+            "teen",
+            "child"
+          ]
+        }
+      },
+      "required": [
+        "inviteId",
+        "inviter",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    "API5EItem": {
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "kind": {
+          "enum": [
+            "boolean",
+            "multi_select",
+            "permission",
+            "quiet_hours",
+            "study_hours"
+          ]
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "minItems": 0,
+          "maxItems": 16
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "selected": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "locked": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "itemId",
+        "kind",
+        "features",
+        "options",
+        "enabled",
+        "selected",
+        "locked"
+      ],
+      "additionalProperties": false
+    },
+    "API5ESettings": {
+      "type": "object",
+      "properties": {
+        "memberId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5EItem"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "memberId",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API5EHours": {
+      "type": "object",
+      "properties": {
+        "memberId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "loaded",
+            "unsupported",
+            "unavailable"
+          ]
+        },
+        "locked": {
+          "type": "boolean"
+        },
+        "schedule": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "blocks": {
+              "type": "array",
+              "items": {
+                "$ref": "#/types/API5EBlock"
+              },
+              "minItems": 0,
+              "maxItems": 12
+            }
+          },
+          "required": [
+            "enabled",
+            "blocks"
+          ],
+          "additionalProperties": false
+        },
+        "mode": {
+          "enum": [
+            "disabled",
+            "scheduled",
+            "always",
+            "unavailable"
+          ]
+        },
+        "newChats": {
+          "type": "boolean"
+        },
+        "activeState": {
+          "enum": [
+            "active",
+            "inactive",
+            "unavailable"
+          ]
+        },
+        "activeBlockIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "minItems": 0,
+          "maxItems": 12
+        },
+        "timeZone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "unlocksAt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 4102444800
+        }
+      },
+      "required": [
+        "memberId",
+        "state",
+        "locked",
+        "schedule",
+        "mode",
+        "newChats",
+        "activeState",
+        "activeBlockIds",
+        "timeZone",
+        "unlocksAt"
+      ],
+      "additionalProperties": false
+    },
+    "API5EAge": {
+      "type": "object",
+      "properties": {
+        "ageGroup": {
+          "enum": [
+            "teen",
+            "adult",
+            "unsure"
+          ]
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "canVerifyAge": {
+          "type": "boolean"
+        },
+        "settingsDestination": {
+          "enum": [
+            "account",
+            "parental-controls"
+          ]
+        }
+      },
+      "required": [
+        "ageGroup",
+        "verified",
+        "canVerifyAge",
+        "settingsDestination"
+      ],
+      "additionalProperties": false
+    },
+    "API5EVerification": {
+      "type": "object",
+      "properties": {
+        "verificationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "prepared",
+            "completed"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "age"
+          ]
+        }
+      },
+      "required": [
+        "verificationId",
+        "state",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "API5ENotice": {
+      "type": "object",
+      "properties": {
+        "noticeId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "recipient": {
+          "enum": [
+            "teen",
+            "parent"
+          ]
+        },
+        "teenName": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 256
+        }
+      },
+      "required": [
+        "noticeId",
+        "recipient",
+        "teenName"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "family.current",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EFamily"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.family_link"
+    },
+    {
+      "id": "family.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "role": {
+            "enum": [
+              "parent",
+              "teen"
+            ]
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "role",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_link"
+    },
+    {
+      "id": "family.invites.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        },
+        "required": [
+          "cursor"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/API5EInvite"
+            },
+            "minItems": 0,
+            "maxItems": 20
+          },
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        },
+        "required": [
+          "items",
+          "cursor"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.family_invites"
+    },
+    {
+      "id": "family.invites.send",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "kind": {
+            "enum": [
+              "email",
+              "phone"
+            ]
+          },
+          "identifier": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 320
+          },
+          "role": {
+            "enum": [
+              "parent",
+              "teen"
+            ]
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "kind",
+          "identifier",
+          "role",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_invites"
+    },
+    {
+      "id": "family.invites.cancel",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_invites"
+    },
+    {
+      "id": "family.invites.resend",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_invites"
+    },
+    {
+      "id": "family.invites.respond",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "inviteId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "choice": {
+            "enum": [
+              "accept",
+              "reject"
+            ]
+          },
+          "consentAccepted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "inviteId",
+          "choice",
+          "consentAccepted"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_link"
+    },
+    {
+      "id": "family.invites.acknowledge",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "responseOperationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "responseOperationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_link"
+    },
+    {
+      "id": "family.members.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/API5EMember"
+            },
+            "minItems": 0,
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.family_members"
+    },
+    {
+      "id": "family.member.settings.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "memberId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "memberId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5ESettings"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.family_members"
+    },
+    {
+      "id": "family.member.setting.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "itemId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "feature": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "itemId",
+          "feature",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_members"
+    },
+    {
+      "id": "family.member.selection.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "itemId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "minItems": 0,
+            "maxItems": 64
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "itemId",
+          "values"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_members"
+    },
+    {
+      "id": "family.member.permission.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "itemId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "itemId",
+          "enabled",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_members"
+    },
+    {
+      "id": "family.unlink",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.family_unlink"
+    },
+    {
+      "id": "safety.quiet_hours.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "memberId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EHours"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.quiet_hours"
+    },
+    {
+      "id": "safety.quiet_hours.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "schedule": {
+            "$ref": "#/types/API5ESchedule"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "schedule"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.quiet_hours"
+    },
+    {
+      "id": "safety.quiet_hours.enabled.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.quiet_hours"
+    },
+    {
+      "id": "safety.quiet_hours.block.add",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "block": {
+            "$ref": "#/types/API5EBlock"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "block"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.quiet_hours"
+    },
+    {
+      "id": "safety.quiet_hours.block.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "block": {
+            "$ref": "#/types/API5EBlock"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "block"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.quiet_hours"
+    },
+    {
+      "id": "safety.quiet_hours.block.remove",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "blockId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "blockId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.quiet_hours"
+    },
+    {
+      "id": "safety.study_hours.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "memberId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EHours"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.study_hours"
+    },
+    {
+      "id": "safety.study_hours.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "schedule": {
+            "$ref": "#/types/API5ESchedule"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "schedule"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.study_hours"
+    },
+    {
+      "id": "safety.study_hours.enabled.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "enabled"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.study_hours"
+    },
+    {
+      "id": "safety.study_hours.block.add",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "block": {
+            "$ref": "#/types/API5EBlock"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "block"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.study_hours"
+    },
+    {
+      "id": "safety.study_hours.block.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "block": {
+            "$ref": "#/types/API5EBlock"
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "block"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.study_hours"
+    },
+    {
+      "id": "safety.study_hours.block.remove",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "blockId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId",
+          "blockId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.study_hours"
+    },
+    {
+      "id": "safety.study_hours.new_chat",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "chatId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "chatId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "chatId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "eligible": {
+            "type": "boolean"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "hints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "minItems": 0,
+            "maxItems": 16
+          }
+        },
+        "required": [
+          "chatId",
+          "eligible",
+          "active",
+          "hints"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.study_hours"
+    },
+    {
+      "id": "safety.study_hours.always.set",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "memberId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "memberId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.study_hours"
+    },
+    {
+      "id": "safety.age.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EAge"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.age_graduation"
+    },
+    {
+      "id": "safety.age.verification.prepare",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EVerification"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.age_graduation"
+    },
+    {
+      "id": "safety.age.verification.refresh",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "verificationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "verificationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.age_graduation"
+    },
+    {
+      "id": "safety.graduation.notices.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/types/API5ENotice"
+            },
+            "minItems": 0,
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.age_graduation"
+    },
+    {
+      "id": "safety.graduation.notices.dismiss",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "noticeIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "minItems": 1,
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "operationId",
+          "noticeIds"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": true,
+      "capability": "api5e.safety.age_graduation"
+    },
+    {
+      "id": "family.operation.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5EReceipt"
+      },
+      "events": [],
+      "mutation": false,
+      "capability": "api5e.safety.family_link"
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "safety.family_link",
+      "operations": [
+        "family.current",
+        "family.create",
+        "family.invites.respond",
+        "family.invites.acknowledge",
+        "family.operation.reconcile"
+      ]
+    },
+    {
+      "featureId": "safety.family_invites",
+      "operations": [
+        "family.invites.list",
+        "family.invites.send",
+        "family.invites.cancel",
+        "family.invites.resend"
+      ]
+    },
+    {
+      "featureId": "safety.family_members",
+      "operations": [
+        "family.members.list",
+        "family.member.settings.get",
+        "family.member.setting.set",
+        "family.member.selection.set",
+        "family.member.permission.set"
+      ]
+    },
+    {
+      "featureId": "safety.family_unlink",
+      "operations": [
+        "family.unlink"
+      ]
+    },
+    {
+      "featureId": "safety.quiet_hours",
+      "operations": [
+        "safety.quiet_hours.get",
+        "safety.quiet_hours.set",
+        "safety.quiet_hours.enabled.set",
+        "safety.quiet_hours.block.add",
+        "safety.quiet_hours.block.update",
+        "safety.quiet_hours.block.remove"
+      ]
+    },
+    {
+      "featureId": "safety.study_hours",
+      "operations": [
+        "safety.study_hours.get",
+        "safety.study_hours.set",
+        "safety.study_hours.enabled.set",
+        "safety.study_hours.block.add",
+        "safety.study_hours.block.update",
+        "safety.study_hours.block.remove",
+        "safety.study_hours.new_chat",
+        "safety.study_hours.always.set"
+      ]
+    },
+    {
+      "featureId": "safety.age_graduation",
+      "operations": [
+        "safety.age.get",
+        "safety.age.verification.prepare",
+        "safety.age.verification.refresh",
+        "safety.graduation.notices.list",
+        "safety.graduation.notices.dismiss"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4251 @@
+{
+ "schema": 1,
+ "reference": "ChatGPT for iOS 1.2026.300",
+ "groups": {
+  "chat": "Chats, history and messaging",
+  "compose": "Message input",
+  "tools": "Models, Work and tools",
+  "search": "Search and places",
+  "tasks": "Tasks and schedules",
+  "projects": "Projects",
+  "library": "Library, Spaces and Sites",
+  "gpts": "GPTs",
+  "voice": "Voice conversations",
+  "audio": "Dictation and read aloud",
+  "media": "Files, camera and documents",
+  "images": "Images and creativity",
+  "integration": "System integrations",
+  "accessibility": "Accessibility",
+  "account": "Sign-in, sessions and security",
+  "workspace": "Workspaces",
+  "subscription": "Subscriptions and limits",
+  "onboarding": "Getting started",
+  "preferences": "Settings and personalization",
+  "memory": "Memory",
+  "privacy": "Privacy and data controls",
+  "safety": "Family, age and support",
+  "shopping": "Shopping, business and ads",
+  "companion": "Orbit / dot",
+  "codex": "Codex and remote work",
+  "health": "Health",
+  "finance": "Finances"
+ },
+ "features": [
+  {
+   "id": "chat.new",
+   "group": "chat",
+   "title": "New chat",
+   "scenario": "Start a new conversation with ChatGPT.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.history",
+   "group": "chat",
+   "title": "Chat history",
+   "scenario": "Pick a saved conversation from the sidebar and continue it.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.rename",
+   "group": "chat",
+   "title": "Rename a conversation",
+   "scenario": "Change the name of an existing conversation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.archive",
+   "group": "chat",
+   "title": "Archive a chat",
+   "scenario": "Remove a conversation from the main list and keep it in the archive.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.unarchive",
+   "group": "chat",
+   "title": "Restore from archive",
+   "scenario": "Open the archive and return a conversation to the main list.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.delete",
+   "group": "chat",
+   "title": "Delete a chat",
+   "scenario": "Delete the selected conversation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.pin",
+   "group": "chat",
+   "title": "Pin conversations",
+   "scenario": "Pin or unpin a conversation in navigation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.temporary",
+   "group": "chat",
+   "title": "Temporary chat",
+   "scenario": "Start a conversation that does not appear in regular history.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.branch",
+   "group": "chat",
+   "title": "Branch a conversation",
+   "scenario": "Continue from a selected message in a new chat.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.edit_message",
+   "group": "chat",
+   "title": "Edit a sent message",
+   "scenario": "Change your already sent text and continue from it.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.retry",
+   "group": "chat",
+   "title": "Retry a failed request",
+   "scenario": "Resend a message after an error, including as a new message.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.copy_text",
+   "group": "chat",
+   "title": "Copy a response",
+   "scenario": "Copy the response text to the clipboard.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.select_text",
+   "group": "chat",
+   "title": "Select part of a response",
+   "scenario": "Select part of a message's text for further actions.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.copy_markdown",
+   "group": "chat",
+   "title": "Copy Markdown",
+   "scenario": "Get the response text with Markdown formatting.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.copy_code",
+   "group": "chat",
+   "title": "Copy a code block",
+   "scenario": "Copy code from a single code block in a response.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.feedback",
+   "group": "chat",
+   "title": "Rate a response",
+   "scenario": "Mark a response as good or bad and send detailed feedback.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.stream",
+   "group": "chat",
+   "title": "Live response streaming",
+   "scenario": "Read the response while it is still arriving from the server.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.stop",
+   "group": "chat",
+   "title": "Stop generating",
+   "scenario": "Stop the current response.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.continue",
+   "group": "chat",
+   "title": "Continue an unfinished response",
+   "scenario": "Ask the server to continue an interrupted generation.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "chat.rich_text",
+   "group": "chat",
+   "title": "Formatted response text",
+   "scenario": "Read Markdown, links and code blocks in messages.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "chat.sources",
+   "group": "chat",
+   "title": "Response sources and citations",
+   "scenario": "Open the list of sources a response cites.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.share_link",
+   "group": "chat",
+   "title": "Share a conversation link",
+   "scenario": "Create a link that opens a published conversation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.shared_view",
+   "group": "chat",
+   "title": "View a shared conversation",
+   "scenario": "Open a conversation available by link in read-only mode.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.shared_link_delete",
+   "group": "chat",
+   "title": "Delete a shared link",
+   "scenario": "Stop access through a previously created link.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.group_create",
+   "group": "chat",
+   "title": "Group conversation",
+   "scenario": "Create a group chat or turn a personal conversation into a group.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.group_invite",
+   "group": "chat",
+   "title": "Invite to a group by link",
+   "scenario": "Send an invite link and join a group through it.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.group_members",
+   "group": "chat",
+   "title": "Group members",
+   "scenario": "See the members and invite people to a group conversation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.group_leave",
+   "group": "chat",
+   "title": "Leave a group conversation",
+   "scenario": "Leave a group or remove it from your list.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.group_instructions",
+   "group": "chat",
+   "title": "Group instructions",
+   "scenario": "Set shared ChatGPT instructions separate from personal instructions.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.group_memory",
+   "group": "chat",
+   "title": "Shared group context",
+   "scenario": "Use shared group context kept separate from personal memory.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.group_pin",
+   "group": "chat",
+   "title": "Pin groups",
+   "scenario": "Pin a group chat, within the pin limit.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.dm_inbox",
+   "group": "chat",
+   "title": "Direct messages",
+   "scenario": "Open the direct messages list and continue a conversation with a person.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.dm_requests",
+   "group": "chat",
+   "title": "Message requests",
+   "scenario": "View incoming requests, accept them and send invitations.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.dm_delivery",
+   "group": "chat",
+   "title": "Message delivery status",
+   "scenario": "See sending, delivered, seen and error states of a message.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.dm_ask_chatgpt",
+   "group": "chat",
+   "title": "ChatGPT in conversations",
+   "scenario": "Ask ChatGPT to respond using the context of a direct or group conversation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.dm_threads",
+   "group": "chat",
+   "title": "Message reply threads",
+   "scenario": "Open replies to a message and the related conversation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.dm_block",
+   "group": "chat",
+   "title": "Block a contact",
+   "scenario": "Block and unblock a user, limiting invitations and profile search.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.profile",
+   "group": "chat",
+   "title": "Chat profile",
+   "scenario": "Edit your name, bio and details visible to other participants.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.regenerate",
+   "group": "chat",
+   "title": "Regenerate a response",
+   "scenario": "Request another version of the response to the same prompt.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.message_reaction",
+   "group": "chat",
+   "title": "React to a message",
+   "scenario": "Add a reaction to a message in a conversation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.report",
+   "group": "chat",
+   "title": "Report a conversation",
+   "scenario": "Report conversation content, with a warning about the context shared.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.group_rename",
+   "group": "chat",
+   "title": "Rename a group",
+   "scenario": "Change the display name of a group conversation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.dm_reply",
+   "group": "chat",
+   "title": "Reply to a message",
+   "scenario": "Reply to a selected message in a conversation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.dm_delete_message",
+   "group": "chat",
+   "title": "Delete a message",
+   "scenario": "Delete the selected message after confirmation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "chat.lock",
+   "group": "chat",
+   "title": "Lock a conversation",
+   "scenario": "Move a conversation to Locked chats, hiding it from recents and search.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.locked_list",
+   "group": "chat",
+   "title": "Open locked conversations",
+   "scenario": "Open the Locked chats list after access verification.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.unlock",
+   "group": "chat",
+   "title": "Unlock a conversation",
+   "scenario": "Return a locked conversation to normal access.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "chat.locked_memory",
+   "group": "chat",
+   "title": "Locked chats and memory",
+   "scenario": "Do not update shared memory from a locked chat; after unlocking, normal settings apply.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "compose.suggestions",
+   "group": "compose",
+   "title": "Conversation starters",
+   "scenario": "Pick a suggested topic or ready-made starter prompt.",
+   "status": "hidden",
+   "statusLabel": "Written, not exposed"
+  },
+  {
+   "id": "compose.autocomplete",
+   "group": "compose",
+   "title": "Input autocomplete",
+   "scenario": "Pick a suggested continuation of the text you are typing.",
+   "status": "hidden",
+   "statusLabel": "Written, not exposed"
+  },
+  {
+   "id": "compose.fullscreen",
+   "group": "compose",
+   "title": "Full-screen prompt editor",
+   "scenario": "Expand the input field for long text.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "compose.mentions",
+   "group": "compose",
+   "title": "Mention apps and sources",
+   "scenario": "Find a connected tool or source by mentioning it in a prompt.",
+   "status": "hidden",
+   "statusLabel": "Written, not exposed"
+  },
+  {
+   "id": "compose.work_prediction",
+   "group": "compose",
+   "title": "Next prompt prediction in Work",
+   "scenario": "Accept a suggested continuation of a Work prompt.",
+   "status": "hidden",
+   "statusLabel": "Written, not exposed"
+  },
+  {
+   "id": "compose.send",
+   "group": "compose",
+   "title": "Send a text message",
+   "scenario": "Send the typed prompt and get a response in the current conversation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "compose.clarifications",
+   "group": "compose",
+   "title": "Answer clarifying questions",
+   "scenario": "Choose one or more options, type your own answer and move between the model's questions.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "tools.model_picker",
+   "group": "tools",
+   "title": "Choose a model and mode",
+   "scenario": "Choose an available model or work mode for the conversation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.reasoning_effort",
+   "group": "tools",
+   "title": "Reasoning effort",
+   "scenario": "Choose the available depth or duration of the model's reasoning.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.reasoning_status",
+   "group": "tools",
+   "title": "Model progress",
+   "scenario": "View the status and history of the steps in a request.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.deep_research",
+   "group": "tools",
+   "title": "Deep research",
+   "scenario": "Start a research request and follow the asynchronous work.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "tools.research_export",
+   "group": "tools",
+   "title": "Download research results",
+   "scenario": "Save the generated research document.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "tools.data_analysis",
+   "group": "tools",
+   "title": "Data analysis and calculations",
+   "scenario": "Get a calculated result and visualizations inside a response.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "tools.code_execution",
+   "group": "tools",
+   "title": "Sandboxed code execution",
+   "scenario": "Open the view of code execution and its result.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.canvas",
+   "group": "tools",
+   "title": "Canvas",
+   "scenario": "Open a separate Canvas document or artifact from a response.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.study",
+   "group": "tools",
+   "title": "Study mode",
+   "scenario": "Start a learning dialogue in Study and Learn mode.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.flashcards_study",
+   "group": "tools",
+   "title": "Review flashcards",
+   "scenario": "Study a deck, flip cards, mark what you know and repeat mistakes.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.flashcards_edit",
+   "group": "tools",
+   "title": "Edit flashcards",
+   "scenario": "Create or fix cards and save the deck.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.flashcards_grid",
+   "group": "tools",
+   "title": "Browse the whole deck",
+   "scenario": "Open a card grid with filters for learned, missed and unreviewed cards.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.shared_quiz",
+   "group": "tools",
+   "title": "Shared quizzes",
+   "scenario": "Open or share an interactive quiz from a conversation.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "tools.apps_catalog",
+   "group": "tools",
+   "title": "Apps and plugins catalog",
+   "scenario": "Browse, search and open cards of connectable apps.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.app_install",
+   "group": "tools",
+   "title": "Install and enable an app",
+   "scenario": "Install a plugin, enable it and try it in chat.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.app_remove",
+   "group": "tools",
+   "title": "Remove a connected app",
+   "scenario": "Disable an installed plugin after confirmation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.connector_auth",
+   "group": "tools",
+   "title": "Sign in to a connected service",
+   "scenario": "Authorize with an external provider and return access to the app.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.connector_reconnect",
+   "group": "tools",
+   "title": "Reconnect a service",
+   "scenario": "Sign in again when the service's required permissions have changed.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.connector_disconnect",
+   "group": "tools",
+   "title": "Disconnect a service account",
+   "scenario": "Unlink a connected external provider account.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.connector_settings",
+   "group": "tools",
+   "title": "Sync settings and status",
+   "scenario": "Configure a connection and view its status or admin restrictions.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.action_approval",
+   "group": "tools",
+   "title": "Approve external actions",
+   "scenario": "Allow a specific tool action after reviewing its parameters.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "tools.skills",
+   "group": "tools",
+   "title": "Skills catalog",
+   "scenario": "Open skill details and add or remove a skill for use in chat.",
+   "status": "hidden",
+   "statusLabel": "Written, not exposed"
+  },
+  {
+   "id": "tools.app_blocks",
+   "group": "tools",
+   "title": "Interactive app blocks",
+   "scenario": "Open an app's embedded interface inside a response.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.cloud_browser_live",
+   "group": "tools",
+   "title": "View the cloud browser",
+   "scenario": "Open a live view of a browser running remotely.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "tools.cloud_browser_takeover",
+   "group": "tools",
+   "title": "Control the cloud browser",
+   "scenario": "Temporarily take control, type text, navigate and hand execution back.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "tools.cloud_browser_layout",
+   "group": "tools",
+   "title": "Cloud browser display mode",
+   "scenario": "Switch between desktop and mobile views and open the snapshot gallery.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "tools.browser_login",
+   "group": "tools",
+   "title": "Site sign-in for tasks",
+   "scenario": "Sign in to a site when a running conversation requests it.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "tools.work_mode",
+   "group": "tools",
+   "title": "Work mode",
+   "scenario": "Enter Work mode to work with tools and materials.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.work_handoff",
+   "group": "tools",
+   "title": "Continue a response in Work",
+   "scenario": "Switch from a regular response to Work mode.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.writing_editor",
+   "group": "tools",
+   "title": "Text editor for responses",
+   "scenario": "Edit prepared text and request changes.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.email_draft",
+   "group": "tools",
+   "title": "Email draft in a response",
+   "scenario": "Edit the sender, recipients and copies of a prepared email.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.email_send",
+   "group": "tools",
+   "title": "Send a prepared email",
+   "scenario": "Send the email through a connected provider or open it in a mail client; undo sending where supported.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.college_plan",
+   "group": "tools",
+   "title": "College application plan",
+   "scenario": "Create a college application plan and view its overview.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.college_schools",
+   "group": "tools",
+   "title": "List of schools",
+   "scenario": "Add and remove schools, and open descriptions, costs and deadlines.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.college_tasks",
+   "group": "tools",
+   "title": "Application tasks",
+   "scenario": "Add and edit tasks with dates, mark them done and see progress.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.college_timeline",
+   "group": "tools",
+   "title": "Application timeline",
+   "scenario": "View deadlines and upcoming application stages.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.college_updates",
+   "group": "tools",
+   "title": "Regular plan updates",
+   "scenario": "Schedule updates and continue discussing the plan in chat.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.model_version",
+   "group": "tools",
+   "title": "Model version",
+   "scenario": "Choose an available version of a model family.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.model_auto_switch",
+   "group": "tools",
+   "title": "Automatic deeper reasoning",
+   "scenario": "Allow automatic switching to deeper reasoning for a hard question.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.college_delete",
+   "group": "tools",
+   "title": "Delete a college plan",
+   "scenario": "Delete the whole plan with its chats, schools and tasks; materials saved in Library stay there.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.translate",
+   "group": "tools",
+   "title": "Text translation",
+   "scenario": "Type or paste text and get a translation in a separate block or screen.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.translate_language",
+   "group": "tools",
+   "title": "Translation languages",
+   "scenario": "Choose the target language and swap languages.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.translate_share",
+   "group": "tools",
+   "title": "Copy and share a translation",
+   "scenario": "Copy or share the translated text.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tools.translate_feedback",
+   "group": "tools",
+   "title": "Rate a translation",
+   "scenario": "Send positive or negative feedback on a translation, or turn this block off for yourself.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.language_block",
+   "group": "tools",
+   "title": "Language learning block",
+   "scenario": "See a phrase's translation and pronunciation in a special response block.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tools.language_flashcards",
+   "group": "tools",
+   "title": "Add a phrase to flashcards",
+   "scenario": "Save a phrase from the language block to flashcards and open the deck.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "search.history",
+   "group": "search",
+   "title": "Search chat history",
+   "scenario": "Find a conversation in saved history.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "search.global",
+   "group": "search",
+   "title": "Global content search",
+   "scenario": "Search available chats, projects and other items in the app.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "search.web",
+   "group": "search",
+   "title": "Web search",
+   "scenario": "Run a web search from a conversation and get a response with sources found.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "search.places",
+   "group": "search",
+   "title": "Place cards and bookings",
+   "scenario": "Open a found place's card and go to booking if offered.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "search.explore_feed",
+   "group": "search",
+   "title": "Explore feed",
+   "scenario": "Open the Explore Feed and pick an item to discuss further.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "search.places_map",
+   "group": "search",
+   "title": "Map of found places",
+   "scenario": "Open a full-screen map of results, center it and apply filters.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "search.places_followup",
+   "group": "search",
+   "title": "Follow-up about a place",
+   "scenario": "Send a follow-up question about a specific point on the map.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tasks.list",
+   "group": "tasks",
+   "title": "Scheduled tasks list",
+   "scenario": "View active, completed and paused tasks.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tasks.create",
+   "group": "tasks",
+   "title": "Create a task",
+   "scenario": "Create a scheduled task with a name and instructions.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tasks.edit",
+   "group": "tasks",
+   "title": "Edit a task",
+   "scenario": "Change the name, prompt and settings of an existing task.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tasks.schedule",
+   "group": "tasks",
+   "title": "Set a schedule",
+   "scenario": "Choose date, time, flexible time of day and repeats: hours, days, weeks, months, years.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tasks.pause_resume",
+   "group": "tasks",
+   "title": "Pause and resume",
+   "scenario": "Pause a task or turn its execution back on.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tasks.run_now",
+   "group": "tasks",
+   "title": "Run a task now",
+   "scenario": "Run a scheduled task immediately.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tasks.delete",
+   "group": "tasks",
+   "title": "Delete a task",
+   "scenario": "Delete a scheduled task.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "tasks.notify",
+   "group": "tasks",
+   "title": "Completion notification",
+   "scenario": "Choose a notification for when a task finishes.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tasks.webhook",
+   "group": "tasks",
+   "title": "Event-triggered task",
+   "scenario": "Set up an event or webhook trigger and manually process accumulated events.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "tasks.goals",
+   "group": "tasks",
+   "title": "Goals and routines",
+   "scenario": "Create a goal and view progress, instructions and related files.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tasks.routines",
+   "group": "tasks",
+   "title": "Routines on the home screen",
+   "scenario": "Open an overview of recurring tasks and goals.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tasks.plan",
+   "group": "tasks",
+   "title": "Task plan and steps",
+   "scenario": "View the plan with completed, current and pending steps, and open the result chat.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "tasks.share_import",
+   "group": "tasks",
+   "title": "Share tasks by link",
+   "scenario": "Share a task, or save and enable an imported task.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "projects.list",
+   "group": "projects",
+   "title": "Projects list and search",
+   "scenario": "Open projects, search by name and pick a project.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "projects.create",
+   "group": "projects",
+   "title": "Create a project",
+   "scenario": "Create a project for conversations and shared sources.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "projects.edit",
+   "group": "projects",
+   "title": "Project name and appearance",
+   "scenario": "Change the name and appearance of an existing project.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "projects.delete",
+   "group": "projects",
+   "title": "Delete a project",
+   "scenario": "Delete a project with its contents, after warning about losing chats and files.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "projects.instructions",
+   "group": "projects",
+   "title": "Project instructions",
+   "scenario": "Set the style and topical context for all of a project's conversations.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "projects.chat",
+   "group": "projects",
+   "title": "New chat in a project",
+   "scenario": "Start a conversation with the selected project's context.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "projects.move_chat",
+   "group": "projects",
+   "title": "Move a chat to a project",
+   "scenario": "Add an existing conversation to a project or remove it from one.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "projects.memory",
+   "group": "projects",
+   "title": "Project memory",
+   "scenario": "Choose default or isolated project memory, if the server allows.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "projects.files",
+   "group": "projects",
+   "title": "Project sources",
+   "scenario": "View, add or remove files used by all of a project's chats.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "projects.source_links",
+   "group": "projects",
+   "title": "Linked project sources",
+   "scenario": "Add materials from Library, a Space or connected apps.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "projects.text_source",
+   "group": "projects",
+   "title": "Create a text source",
+   "scenario": "Create text material directly as a project source.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "projects.share",
+   "group": "projects",
+   "title": "Share a project",
+   "scenario": "Share a project and manage participant access.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "projects.share_warnings",
+   "group": "projects",
+   "title": "Sharing source warnings",
+   "scenario": "Before sharing, show which linked sources participants will receive.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "projects.join",
+   "group": "projects",
+   "title": "Join a shared project",
+   "scenario": "Accept an invitation and open a project you were given access to.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "projects.leave",
+   "group": "projects",
+   "title": "Leave a shared project",
+   "scenario": "Leave a shared project and optionally keep a copy of your chats.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "library.browse",
+   "group": "library",
+   "title": "Browse Library files",
+   "scenario": "Open the shared library and browse files and saved materials.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "library.filter_sort_layout",
+   "group": "library",
+   "title": "Library filters and layout",
+   "scenario": "Filter contents and choose list or grid view.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "library.search",
+   "group": "library",
+   "title": "Search the library",
+   "scenario": "Find a file or material in Library.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "library.attach",
+   "group": "library",
+   "title": "Add materials to a prompt",
+   "scenario": "Choose library files or a folder as conversation context.",
+   "status": "hidden",
+   "statusLabel": "Written, not exposed"
+  },
+  {
+   "id": "library.folders",
+   "group": "library",
+   "title": "Create folders",
+   "scenario": "Create a folder for library materials.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "library.move",
+   "group": "library",
+   "title": "Move materials",
+   "scenario": "Move selected files or folders to another folder.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "library.rename",
+   "group": "library",
+   "title": "Rename files and folders",
+   "scenario": "Change the name of a material or folder.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "library.delete",
+   "group": "library",
+   "title": "Library trash",
+   "scenario": "Move a material to recently deleted, with a warning about project links.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "library.restore",
+   "group": "library",
+   "title": "Restore from trash",
+   "scenario": "Bring back a previously deleted file.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "library.delete_forever",
+   "group": "library",
+   "title": "Delete permanently and empty trash",
+   "scenario": "Permanently delete a selected material or everything in the trash.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "library.note",
+   "group": "library",
+   "title": "Create and edit a note",
+   "scenario": "Create a note and edit its Markdown content.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "library.versions",
+   "group": "library",
+   "title": "Version history",
+   "scenario": "Open earlier versions and restore a selected one.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "library.conversation_files",
+   "group": "library",
+   "title": "Files in a conversation",
+   "scenario": "Open a separate list of files linked to a chat.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "library.favorite",
+   "group": "library",
+   "title": "Save items to favorites",
+   "scenario": "Save responses, places, products and other items and find them by type.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "library.favorite_folders",
+   "group": "library",
+   "title": "Favorites folders",
+   "scenario": "Create a favorites folder, add material and move it between folders.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "library.share",
+   "group": "library",
+   "title": "Share library materials",
+   "scenario": "Grant access to a material, choose a role and remove your own access.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "library.auto_context",
+   "group": "library",
+   "title": "Automatic Library search",
+   "scenario": "Allow the model to find library materials for a response.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "library.mounted_sources",
+   "group": "library",
+   "title": "Connected storage files",
+   "scenario": "Browse materials from a connected provider, including Google Drive.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "library.spaces_browse",
+   "group": "library",
+   "title": "Spaces and pages",
+   "scenario": "Browse spaces, pages and subpages.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.spaces_edit",
+   "group": "library",
+   "title": "Edit a page",
+   "scenario": "Change the content and formatting of a document or page.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.spaces_chat",
+   "group": "library",
+   "title": "Discuss a page or slides",
+   "scenario": "Send a prompt with the context of the current page or a single slide.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.spaces_sharing",
+   "group": "library",
+   "title": "Page roles and inherited access",
+   "scenario": "Grant view, comment or edit rights, accounting for access via a parent page or space.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "library.spaces_request_access",
+   "group": "library",
+   "title": "Request page access",
+   "scenario": "Ask for access and check the result; the owner can review the request.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "library.spaces_activity",
+   "group": "library",
+   "title": "Spaces activity and mentions",
+   "scenario": "View updates and mentions in pages, filter unread and mark all as read.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "library.sites_create",
+   "group": "library",
+   "title": "Create a site",
+   "scenario": "Create a site from a text description in the app.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.sites_preview",
+   "group": "library",
+   "title": "Site preview",
+   "scenario": "Open an interactive view of the site being created.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.sites_edit",
+   "group": "library",
+   "title": "Edit a site via chat",
+   "scenario": "Ask to change the site or a specific project file.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.sites_access",
+   "group": "library",
+   "title": "Site sharing",
+   "scenario": "See who can access a site and choose private, group, workspace or public access.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.sites_analytics",
+   "group": "library",
+   "title": "Site visit statistics",
+   "scenario": "Open page views and visitor counts for a chosen period.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.sites_publish",
+   "group": "library",
+   "title": "Publish a site",
+   "scenario": "Publish a site and see publishing, preparing or paused states.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.sites_domain",
+   "group": "library",
+   "title": "Custom site domain",
+   "scenario": "Open domain settings, DNS records and connection status.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "library.sites_environment",
+   "group": "library",
+   "title": "Site variables and secrets",
+   "scenario": "Configure environment variables and secrets for a site project.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "gpts.explore",
+   "group": "gpts",
+   "title": "GPT catalog",
+   "scenario": "Browse collections and categories of public GPTs.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "gpts.search",
+   "group": "gpts",
+   "title": "Search GPTs",
+   "scenario": "Find a public GPT by query.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "gpts.detail",
+   "group": "gpts",
+   "title": "GPT details",
+   "scenario": "Read the description and open a conversation with the selected GPT.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "gpts.personal",
+   "group": "gpts",
+   "title": "My GPTs",
+   "scenario": "Open the list of GPTs owned by the account.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "gpts.action_accounts",
+   "group": "gpts",
+   "title": "GPT action accounts",
+   "scenario": "View and connect accounts required by a GPT's actions.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "gpts.action_permissions",
+   "group": "gpts",
+   "title": "GPT action settings",
+   "scenario": "Open the integration action settings of a specific GPT.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "voice.conversation",
+   "group": "voice",
+   "title": "Voice conversation",
+   "scenario": "Start a two-way voice conversation from a regular chat.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "voice.interrupt",
+   "group": "voice",
+   "title": "Interrupt a voice response",
+   "scenario": "Stop a spoken response with a tap; the interface also describes natural interruptions.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "voice.mute",
+   "group": "voice",
+   "title": "Microphone and sound controls",
+   "scenario": "Mute and unmute the microphone; separately mute ChatGPT's audio.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "voice.end",
+   "group": "voice",
+   "title": "End a call",
+   "scenario": "End the current voice conversation and return to chat.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "voice.resume",
+   "group": "voice",
+   "title": "Resume a voice conversation",
+   "scenario": "Call resumption is tracked in the code; the exact user trigger and guarantees are not established.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "voice.choose_voice",
+   "group": "voice",
+   "title": "Choose a voice",
+   "scenario": "Preview and choose an available voice in onboarding and call settings.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "voice.choose_model",
+   "group": "voice",
+   "title": "Choose a voice mode or model",
+   "scenario": "Choose Standard, Advanced or Live from the options available in this build.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "voice.model_fallback",
+   "group": "voice",
+   "title": "Voice model for video and screen",
+   "scenario": "Offer the previous voice model if the selected one does not support live video or screen sharing.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "voice.language",
+   "group": "voice",
+   "title": "Voice conversation language",
+   "scenario": "Choose a language or automatic detection during a call.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "voice.transcript",
+   "group": "voice",
+   "title": "Voice conversation transcript",
+   "scenario": "Show and hide the transcript in the voice interface.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "voice.background",
+   "group": "voice",
+   "title": "Voice with the screen locked",
+   "scenario": "Keep talking after the phone locks when background mode is on.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "voice.start_on_open",
+   "group": "voice",
+   "title": "Start Voice automatically",
+   "scenario": "Open Voice when ChatGPT launches, per the user's setting.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "voice.raise_to_ear",
+   "group": "voice",
+   "title": "Raise phone to ear",
+   "scenario": "Start Voice or a dot call by raising the phone to your ear.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "voice.live_camera",
+   "group": "voice",
+   "title": "Camera video during Voice",
+   "scenario": "Share the live camera image in a voice conversation; switch front and back cameras.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "voice.screen_sharing",
+   "group": "voice",
+   "title": "Screen sharing in Voice",
+   "scenario": "Share the screen from a separate broadcast upload extension.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "voice.call_feedback",
+   "group": "voice",
+   "title": "Rate a voice call",
+   "scenario": "After a call, rate quality, intelligence, naturalness, interruptions and connection.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "voice.usage_limits",
+   "group": "voice",
+   "title": "Voice limits and basic model",
+   "scenario": "Show that voice time is used up, when it resets, and offer the basic model or a plan change.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "voice.connection_recovery",
+   "group": "voice",
+   "title": "Voice connection states",
+   "scenario": "Show waiting for connection, poor network and recovery, without presenting them as a ready conversation.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "audio.dictation",
+   "group": "audio",
+   "title": "Dictate a message",
+   "scenario": "Record speech with the microphone and turn it into input text.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "audio.dictation_cancel",
+   "group": "audio",
+   "title": "Stop or cancel dictation",
+   "scenario": "Stop recording for transcription or discard an unfinished dictation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "audio.dictation_streaming",
+   "group": "audio",
+   "title": "Live dictation text",
+   "scenario": "Show or hide text as it is recorded in the streaming dictation variant.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "audio.dictation_retry",
+   "group": "audio",
+   "title": "Transcription failure and retry",
+   "scenario": "Handle a transcription error and the retry or fallback the policy provides.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "audio.dictation_history",
+   "group": "audio",
+   "title": "Dictation history",
+   "scenario": "View recent recordings, copy a transcript and export audio.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "audio.dictation_dictionary",
+   "group": "audio",
+   "title": "Dictation dictionary",
+   "scenario": "Add words and phrases for recognition, and search or delete dictionary entries.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "audio.local_transcription",
+   "group": "audio",
+   "title": "On-device transcription",
+   "scenario": "An on-device transcription option is provided, with a check of the language and installed language resources.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "audio.dictation_feedback",
+   "group": "audio",
+   "title": "Dictation research feedback",
+   "scenario": "The package has a form to rate dictation and send audio with a transcript to the research team.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "audio.read_aloud",
+   "group": "audio",
+   "title": "Read a response aloud",
+   "scenario": "Read a text response aloud with a network audio player.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "audio.playback_controls",
+   "group": "audio",
+   "title": "Playback controls",
+   "scenario": "Pause audio, retry after a failure and change speed.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "audio.pronunciation",
+   "group": "audio",
+   "title": "Pronunciation and learning audio",
+   "scenario": "Play pronunciation and change speed in language blocks and flashcards.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.camera_photo",
+   "group": "media",
+   "title": "Take a photo for a message",
+   "scenario": "Take a photo with the built-in camera and attach it to a message.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "media.photo_picker",
+   "group": "media",
+   "title": "Photos from the library",
+   "scenario": "Choose one or more photos from the photo library and attach them to a chat.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "media.recent_photo",
+   "group": "media",
+   "title": "Recent photo by the input field",
+   "scenario": "Attach a suggested recent photo; separately request access to recent photos.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.annotate_photo",
+   "group": "media",
+   "title": "Annotate a photo",
+   "scenario": "Draw notes on a picture before using it further.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.capture_video",
+   "group": "media",
+   "title": "Record video",
+   "scenario": "Hold the camera button to record video and attach the result.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.preview_video",
+   "group": "media",
+   "title": "Preview and save video",
+   "scenario": "Play a video, scrub through it and save it to Photos.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.record_audio_attachment",
+   "group": "media",
+   "title": "Audio attachment from a recording",
+   "scenario": "Record an audio attachment in the input field; it differs from dictation to text.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.audio_attachment_playback",
+   "group": "media",
+   "title": "Play an audio attachment",
+   "scenario": "Listen to recorded or received audio and remove the attachment before sending.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.file_upload",
+   "group": "media",
+   "title": "Upload files",
+   "scenario": "Attach a file; track upload and processing, and see an error or limit.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "media.attachment_remove_replace",
+   "group": "media",
+   "title": "Remove or replace an attachment",
+   "scenario": "Remove a selected item or confirm replacing the current attachment.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "media.attachment_constraints",
+   "group": "media",
+   "title": "Attachment limits",
+   "scenario": "Show that the current model blocks uploads, attachments are used up, or the daily quota is reached.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "media.file_expiry",
+   "group": "media",
+   "title": "Unavailable or expired file",
+   "scenario": "Explain that availability has expired and offer to upload the file again.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "media.download_file",
+   "group": "media",
+   "title": "Download a result",
+   "scenario": "Download a file from a response and handle a network failure.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "media.document_scan",
+   "group": "media",
+   "title": "Scan pages with the camera",
+   "scenario": "Capture a sequence of pages and finish scanning into a document.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.scan_page_edit",
+   "group": "media",
+   "title": "Edit scanned pages",
+   "scenario": "View, retake, rotate, delete and reorder individual pages.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.scan_pdf_export",
+   "group": "media",
+   "title": "PDF from a scan",
+   "scenario": "Assemble a scan into a PDF, respect the maximum size and keep pages if export fails.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "media.scan_discard",
+   "group": "media",
+   "title": "Discard an unfinished scan",
+   "scenario": "Warn about losing captured pages when leaving without saving.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "images.create",
+   "group": "images",
+   "title": "Create an image",
+   "scenario": "Request image generation and see its progress in the conversation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "images.batch",
+   "group": "images",
+   "title": "Multiple images",
+   "scenario": "Show generation of several images at once and their progress.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.library",
+   "group": "images",
+   "title": "Created images library",
+   "scenario": "Open a grid of previously created images and go to the viewer.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "images.gallery",
+   "group": "images",
+   "title": "Full-screen image viewer",
+   "scenario": "Open an image in a lightbox or gallery with zoom and source.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "images.save_share",
+   "group": "images",
+   "title": "Save and share images",
+   "scenario": "Download one or all images to Photos and open system sharing.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "images.download_without_logo",
+   "group": "images",
+   "title": "Download without logo",
+   "scenario": "A separate download-without-logo option is provided, with an offer to change plan.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.edit_general",
+   "group": "images",
+   "title": "Edit an image by prompt",
+   "scenario": "Describe general changes for the selected image.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.edit_precise_notes",
+   "group": "images",
+   "title": "Precise image notes",
+   "scenario": "Place notes on specific points or areas and remove all notes.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.remove_area",
+   "group": "images",
+   "title": "Remove an image area",
+   "scenario": "Paint over an area that should be removed.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.resize",
+   "group": "images",
+   "title": "Resize an image",
+   "scenario": "Choose the Resize action in the image viewer.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.sketch",
+   "group": "images",
+   "title": "Sketch as input",
+   "scenario": "Draw a sketch with a pen or eraser, and choose a color and shapes.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.templates",
+   "group": "images",
+   "title": "Generation templates and styles",
+   "scenario": "Start from a template, change the illustration style and the subject source: description or attached photos.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.suggestions",
+   "group": "images",
+   "title": "Image ideas and trends",
+   "scenario": "Open suggested image ideas, including the Trending tab.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.reference_save",
+   "group": "images",
+   "title": "Save a reference",
+   "scenario": "Save a selected photo as a named, selectable reference for future images.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.reference_manage",
+   "group": "images",
+   "title": "Manage references",
+   "scenario": "Open the references list; add, edit, replace and delete.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.reference_recreate",
+   "group": "images",
+   "title": "Recreate an image with a reference",
+   "scenario": "Recreate an image with a selected reference and show its attribution.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.likeness",
+   "group": "images",
+   "title": "Personal face and full-body photos",
+   "scenario": "Add, replace or delete face and full-body photos for results that look like you.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.prompt_share",
+   "group": "images",
+   "title": "Share an image prompt template",
+   "scenario": "Prepare a publicly available prompt template, edit its title and text, and pass the publishing eligibility check.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.gif_generation",
+   "group": "images",
+   "title": "Create a GIF",
+   "scenario": "The package provides states for generating one or several GIFs.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.gif_viewer",
+   "group": "images",
+   "title": "GIF and frames viewer",
+   "scenario": "Play or pause a GIF, change speed, and see the timeline and frame sheet.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.gif_save_share",
+   "group": "images",
+   "title": "Save and link a GIF",
+   "scenario": "Download a GIF or send a link, with a warning that anyone with the link can view it.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.video_generation_candidate",
+   "group": "images",
+   "title": "Create a video (candidate)",
+   "scenario": "The catalog has Create video, with separate free and paid allowances and video credits.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.deferred_generation",
+   "group": "images",
+   "title": "Deferred image or GIF generation",
+   "scenario": "At a limit, queue generation for later and see queued, running, success, expired or error states.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.generation_notifications",
+   "group": "images",
+   "title": "Ready and limit reset notification",
+   "scenario": "Subscribe to a notification when generation finishes or the image limit resets.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "images.waiting_game",
+   "group": "images",
+   "title": "Game while generating",
+   "scenario": "Play the provided animation or snake game while an image is created.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.sticker_create",
+   "group": "images",
+   "title": "Create stickers",
+   "scenario": "Choose up to eight emoji and a custom style to generate stickers.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.sticker_save",
+   "group": "images",
+   "title": "Save stickers",
+   "scenario": "Select several stickers and save them to Photos.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "images.sticker_whatsapp",
+   "group": "images",
+   "title": "WhatsApp sticker pack",
+   "scenario": "Name a pack and export it to WhatsApp, with a minimum count limit.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "integration.siri_ask",
+   "group": "integration",
+   "title": "Siri and Shortcuts: ask",
+   "scenario": "Send a prompt through AskIntent, get a response and optionally continue the same conversation.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.siri_start_chat",
+   "group": "integration",
+   "title": "Shortcuts: new chat and dictation",
+   "scenario": "Open a new or temporary conversation with an initial action, including dictation or search.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.siri_voice",
+   "group": "integration",
+   "title": "Siri and Shortcuts: Voice",
+   "scenario": "Start a voice conversation through the declared OpenVoiceModeIntent.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.siri_images",
+   "group": "integration",
+   "title": "Shortcuts: image and prompt",
+   "scenario": "Pass an image to choose an action, or an image together with a prompt.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.siri_project",
+   "group": "integration",
+   "title": "Shortcuts: open a project or chat",
+   "scenario": "Open a specific project and start a new chat in it from a system command.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.siri_dot",
+   "group": "integration",
+   "title": "Shortcuts: open dot or message it",
+   "scenario": "Choose a dot or mode and send content through the declared dot intents.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.siri_codex_work",
+   "group": "integration",
+   "title": "Shortcuts: Codex, Remote and Work",
+   "scenario": "Intents are provided for opening Codex or a task, plus hidden launch actions for Work and Remote Voice.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.home_quick_actions",
+   "group": "integration",
+   "title": "App icon quick actions",
+   "scenario": "The build highlights Home Screen shortcuts for quick access to chat, dictation or voice.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.widgets_shortcuts",
+   "group": "integration",
+   "title": "ChatGPT shortcut buttons widget",
+   "scenario": "Set up four quick buttons and labels for ChatGPT, Work and Remote.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.widgets_chat_voice",
+   "group": "integration",
+   "title": "New chat and Voice widgets",
+   "scenario": "Quickly open a regular or temporary chat, dictation or Voice from a modern widget.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.widgets_dot",
+   "group": "integration",
+   "title": "dot widget",
+   "scenario": "Show dot, unread messages and text, dictation and call buttons.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.widgets_codex",
+   "group": "integration",
+   "title": "Codex and usage widgets",
+   "scenario": "Show recent tasks for chosen hosts and remaining usage and reset time.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.live_activity_voice",
+   "group": "integration",
+   "title": "Voice call Live Activity",
+   "scenario": "Show Voice status on a system live surface and pass control commands.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.live_activity_work_dot",
+   "group": "integration",
+   "title": "Work and dot Live Activity",
+   "scenario": "Show task progress and dot call status on a system live surface.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.carplay_voice",
+   "group": "integration",
+   "title": "CarPlay: voice conversation",
+   "scenario": "Start Voice and control sound and connection state through a CarPlay scene.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.carplay_navigation",
+   "group": "integration",
+   "title": "CarPlay: chats, projects, remote and dot",
+   "scenario": "Show pinned and recent chats, projects, Remote connections and Work, Codex and dot entry points.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.carplay_preferences",
+   "group": "integration",
+   "title": "CarPlay settings",
+   "scenario": "Start Voice automatically in CarPlay and hide recent conversations and projects.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.share_extension",
+   "group": "integration",
+   "title": "Receive from the Share menu",
+   "scenario": "Accept material from another app and open it in ChatGPT.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.action_extension",
+   "group": "integration",
+   "title": "Ask ChatGPT action in other content",
+   "scenario": "Run an action on selected material or a single photo for touch-up from the system action extension.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.imessage_stickers",
+   "group": "integration",
+   "title": "ChatGPT stickers in iMessage",
+   "scenario": "Add created stickers to iMessage and send them through the Messages extension.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.safari_search",
+   "group": "integration",
+   "title": "ChatGPT Search from Safari",
+   "scenario": "An extension redirects a Safari or Google search query to ChatGPT Search.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.safari_google_escape",
+   "group": "integration",
+   "title": "Exclude a query from Safari redirect",
+   "scenario": "The !g prefix keeps a query in Google; the normalized query is remembered in the exclusion set.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.url_routes",
+   "group": "integration",
+   "title": "Open the app by link",
+   "scenario": "Accept the chatgpt, openai, com.openai.chat and codex schemes and go to the supported destinations.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "integration.handoff",
+   "group": "integration",
+   "title": "Hand off a conversation between devices",
+   "scenario": "A conversation user activity type and handoff manager exist; the exact handoff of drafts and state needs separate review.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.project_spotlight",
+   "group": "integration",
+   "title": "Find projects in system search",
+   "scenario": "The code indexes projects and handles a selected system result.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.push_notifications",
+   "group": "integration",
+   "title": "Push notifications and tap-through",
+   "scenario": "Register for notifications, set the badge count and open messages or results from them.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "integration.rich_notifications",
+   "group": "integration",
+   "title": "Rich push handling",
+   "scenario": "Process messages and media attachments in the notification service extension.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "integration.local_completion_notifications",
+   "group": "integration",
+   "title": "Local response-ready notification",
+   "scenario": "The code provides local notifications for conversations and waits the user left unfinished.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "integration.calendar_read",
+   "group": "integration",
+   "title": "Read Apple Calendar",
+   "scenario": "On request, get device events and upcoming meetings with a separate read permission.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "integration.calendar_create",
+   "group": "integration",
+   "title": "Create an Apple Calendar event",
+   "scenario": "Create an event on the device and open it in Calendar; read and create are permitted separately.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "integration.reminders_read",
+   "group": "integration",
+   "title": "Read Apple Reminders",
+   "scenario": "Get the device's reminder lists and upcoming or today's reminders.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "integration.reminders_create",
+   "group": "integration",
+   "title": "Create reminders and lists",
+   "scenario": "Create one or more reminders or a list and open Reminders.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "integration.contacts_read",
+   "group": "integration",
+   "title": "Search Apple Contacts",
+   "scenario": "Find a person and contact details with address book read permission.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "integration.contacts_mutate",
+   "group": "integration",
+   "title": "Add, change and delete contacts",
+   "scenario": "Create, change or delete contacts through approved actions and open the card.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "integration.location",
+   "group": "integration",
+   "title": "Location for responses",
+   "scenario": "With permission, share location for more relevant responses, show when it is unavailable and manage accuracy.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "accessibility.voiceover_messages",
+   "group": "accessibility",
+   "title": "Accessible response text and links",
+   "scenario": "Markdown blocks, links and tables have separate accessibility elements and announcements.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "accessibility.controls",
+   "group": "accessibility",
+   "title": "Accessible media and drawing actions",
+   "scenario": "Announce loading states, pages, recording and game controls through accessibility labels and actions.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "accessibility.large_text",
+   "group": "accessibility",
+   "title": "Large text support",
+   "scenario": "Reflection fields have Dynamic Type and accessibility-size variants; full support is not proven.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.login.email_password",
+   "group": "account",
+   "title": "Sign in with email and password",
+   "scenario": "Enter email and password, show or hide the password and continue signing in.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.login.google",
+   "group": "account",
+   "title": "Sign in with Google",
+   "scenario": "Choose Google and complete the external sign-in provider.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.login.apple",
+   "group": "account",
+   "title": "Sign in with Apple",
+   "scenario": "Choose Apple as the sign-in provider.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "account.login.phone",
+   "group": "account",
+   "title": "Phone sign-in or sign-up",
+   "scenario": "Choose phone, country and a verification code.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.login.email_code",
+   "group": "account",
+   "title": "Sign in with an emailed code",
+   "scenario": "Choose code sign-in and request the email again, with a countdown, if needed.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.login.password_reset",
+   "group": "account",
+   "title": "Password recovery",
+   "scenario": "Request a reset and set a new password.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.signup",
+   "group": "account",
+   "title": "Create an account",
+   "scenario": "Register an account and fill in name and date of birth or age.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.guest",
+   "group": "account",
+   "title": "Continue without an account",
+   "scenario": "Skip sign-in and use the limited guest interface.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "account.login.passkey",
+   "group": "account",
+   "title": "Sign in with a passkey",
+   "scenario": "Choose a passkey, including sign-in without entering a name first.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "account.mfa.authenticator",
+   "group": "account",
+   "title": "Authenticator app code",
+   "scenario": "After the first factor, enter the current six-digit code.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.mfa.push_approval",
+   "group": "account",
+   "title": "Approve sign-in on another device",
+   "scenario": "Wait for approval in another ChatGPT instance, match the number, resend the request or choose email.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.mfa.recovery_code",
+   "group": "account",
+   "title": "Sign in with a recovery code",
+   "scenario": "Use a saved recovery code as a way to verify.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.mfa.passkey",
+   "group": "account",
+   "title": "Passkey as second factor",
+   "scenario": "Confirm the second factor with an available passkey.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "account.login.cancel_retry",
+   "group": "account",
+   "title": "Cancel and retry sign-in",
+   "scenario": "Close a started sign-in or start over after it expires or is rejected.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.switch.add",
+   "group": "account",
+   "title": "Add another account",
+   "scenario": "Add an account without mixing its state with the current one.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "account.switch.select",
+   "group": "account",
+   "title": "Switch accounts",
+   "scenario": "Choose another saved account.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "account.logout",
+   "group": "account",
+   "title": "Sign out",
+   "scenario": "Confirm signing out and clearing the related local context.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.session.restore",
+   "group": "account",
+   "title": "Restore session at launch",
+   "scenario": "Load saved credentials and restore the selected user; if impossible, offer a new sign-in.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.session.renew",
+   "group": "account",
+   "title": "Renew credentials",
+   "scenario": "Refresh authorization data and handle session expiry.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.deactivated",
+   "group": "account",
+   "title": "Deactivated account screen",
+   "scenario": "Show that the account is unavailable and the next steps available.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "account.link_external",
+   "group": "account",
+   "title": "Link ChatGPT to an external context",
+   "scenario": "Confirm linking a ChatGPT account through a separate linking sheet.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "account.security.reauth",
+   "group": "account",
+   "title": "Re-confirm before changes",
+   "scenario": "Sign in again for a sensitive settings change.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.security.password_change",
+   "group": "account",
+   "title": "Change password",
+   "scenario": "Set and confirm a new account password.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.security.email_change",
+   "group": "account",
+   "title": "Change email",
+   "scenario": "Update the account's email address.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.security.mfa_setup",
+   "group": "account",
+   "title": "Add or remove authenticator MFA",
+   "scenario": "Set up an app via QR or secret and verify the code; remove a factor or turn MFA off.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "account.security.mfa_sms",
+   "group": "account",
+   "title": "Add SMS MFA and backup phone",
+   "scenario": "Verify a number and enable SMS, including as a backup for the authenticator app.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "account.security.passkey_add",
+   "group": "account",
+   "title": "Create a passkey or security key",
+   "scenario": "Add a new phishing-resistant way to sign in.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "account.security.passkey_manage",
+   "group": "account",
+   "title": "List and delete passkeys",
+   "scenario": "View active keys and creation dates and delete a selected one.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "account.security.advanced",
+   "group": "account",
+   "title": "Advanced account protection",
+   "scenario": "View status and go to Advanced Account Security management.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "account.security.history",
+   "group": "account",
+   "title": "Security activity log",
+   "scenario": "View sign-ins, factor changes, and event times and locations.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "account.security.recommendations",
+   "group": "account",
+   "title": "Security recommendations",
+   "scenario": "See suggestions to add email, passkey or SMS and review sessions.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "account.sessions.list",
+   "group": "account",
+   "title": "Sessions and trusted devices",
+   "scenario": "View active devices and tell the current session from a trusted device.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.sessions.revoke",
+   "group": "account",
+   "title": "Sign out a selected device",
+   "scenario": "Revoke a selected session or remove a trusted device along with its push-approval right.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.sessions.revoke_all",
+   "group": "account",
+   "title": "Sign out on all devices",
+   "scenario": "Confirm revoking all sessions, including the current one.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "account.security.incoming_approval",
+   "group": "account",
+   "title": "Approve a sign-in request",
+   "scenario": "Approve or deny an incoming ChatGPT sign-in request.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "account.login.microsoft",
+   "group": "account",
+   "title": "Microsoft and Intune sign-in",
+   "scenario": "Complete Microsoft sign-in; in a managed Intune context, handle the single-allowed-provider requirement.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "account.security.push_factor",
+   "group": "account",
+   "title": "Push as a verification method",
+   "scenario": "Manage sign-in requests on already signed-in trusted devices.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "account.security.recovery",
+   "group": "account",
+   "title": "Recover access after losing MFA",
+   "scenario": "Go to an account recovery option when the second factor is unavailable.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "account.security.mfa_policy",
+   "group": "account",
+   "title": "MFA settings unavailable under Advanced Security",
+   "scenario": "Show that regular MFA settings depend on enhanced protection.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "workspace.select",
+   "group": "workspace",
+   "title": "Choose a workspace",
+   "scenario": "After sign-in, choose a workspace and switch later in settings.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "workspace.personal_create",
+   "group": "workspace",
+   "title": "Create a personal workspace",
+   "scenario": "Create a free personal space for this email.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "workspace.sso",
+   "group": "workspace",
+   "title": "Corporate SSO",
+   "scenario": "Sign in again through the required SSO to access a workspace and handle a provider mismatch.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "workspace.manage",
+   "group": "workspace",
+   "title": "Workspace members and management",
+   "scenario": "Open workspace management and the member list.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "workspace.policy_restrictions",
+   "group": "workspace",
+   "title": "Admin restrictions and workspace disabled",
+   "scenario": "Show features disabled by the admin, deactivation and switching to another workspace.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "subscription.plans",
+   "group": "subscription",
+   "title": "View and compare plans",
+   "scenario": "Show Free, Go, Plus and Pro and the differences in offered features.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "subscription.apple_purchase",
+   "group": "subscription",
+   "title": "Buy or upgrade via Apple",
+   "scenario": "Choose a subscription and complete payment through the offered Apple checkout.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "subscription.web_purchase",
+   "group": "subscription",
+   "title": "Buy or upgrade on the web",
+   "scenario": "Open the offered web checkout or go to the website to change a plan.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "subscription.restore",
+   "group": "subscription",
+   "title": "Restore purchases",
+   "scenario": "Restore an already paid entitlement and handle an Apple ID linked to another ChatGPT account.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "subscription.manage_cancel",
+   "group": "subscription",
+   "title": "Manage or cancel a subscription",
+   "scenario": "Go to where it was purchased; warn that a subscription from another platform can't be changed in the app.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "subscription.billing_failure",
+   "group": "subscription",
+   "title": "Payment errors and keeping access",
+   "scenario": "Show a charge failure, a prompt to update the payment method and the workspace restriction deadline.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "subscription.trials_offers",
+   "group": "subscription",
+   "title": "Trials and personal offers",
+   "scenario": "Show limited Plus access, time remaining, what happens after it ends and an available offer.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "subscription.student_offer",
+   "group": "subscription",
+   "title": "Student offer",
+   "scenario": "Open the special student offer and its intro screen.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "subscription.credits_balance_purchase",
+   "group": "subscription",
+   "title": "Credits and extra access",
+   "scenario": "Show the credit balance and offer a purchase for extended use.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "subscription.usage_reset",
+   "group": "subscription",
+   "title": "One-time limit reset",
+   "scenario": "Use an available reset for the 5-hour, weekly or overall limit, with confirmation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "onboarding.paid_features",
+   "group": "onboarding",
+   "title": "Tour after getting a plan",
+   "scenario": "Walk through Plus, Pro, trial or student features, then open the relevant flow.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "onboarding.guided_conversation",
+   "group": "onboarding",
+   "title": "Personalized starting conversation",
+   "scenario": "Offer initial questions about goals and starter prompts.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "onboarding.theme_voice",
+   "group": "onboarding",
+   "title": "Choose theme and voice in onboarding",
+   "scenario": "Choose color, light or dark mode and voice in a step-by-step tour.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "onboarding.teen",
+   "group": "onboarding",
+   "title": "Teen introduction to features",
+   "scenario": "Show teen safeguards, starter learning and visual scenarios and the age verification path.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "preferences.instructions",
+   "group": "preferences",
+   "title": "Custom instructions",
+   "scenario": "Edit notes about you and how ChatGPT should behave; apply them to later chats.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "preferences.profile",
+   "group": "preferences",
+   "title": "Personalization profile",
+   "scenario": "Set nickname, occupation, and interests or values for responses.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "preferences.personality",
+   "group": "preferences",
+   "title": "Base style and tone",
+   "scenario": "Choose a personality and base response style.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "preferences.characteristics",
+   "group": "preferences",
+   "title": "Response characteristics",
+   "scenario": "Adjust characteristics and reset them to defaults.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "preferences.visual_answers",
+   "group": "preferences",
+   "title": "Visual answers and simple view",
+   "scenario": "Choose how visual answers are shown and a simplified layout.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "preferences.auto_web_search",
+   "group": "preferences",
+   "title": "Automatic web search",
+   "scenario": "Configure the use of web search.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "preferences.image_creation",
+   "group": "preferences",
+   "title": "Image generation setting",
+   "scenario": "Open the user's Image generation setting.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "preferences.appearance",
+   "group": "preferences",
+   "title": "Appearance theme",
+   "scenario": "Choose a light, dark or system interface.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "preferences.accent",
+   "group": "preferences",
+   "title": "Accent color",
+   "scenario": "Choose the appearance color.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "preferences.language",
+   "group": "preferences",
+   "title": "App language",
+   "scenario": "Choose the interface language independently of the voice language.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "preferences.haptics",
+   "group": "preferences",
+   "title": "Haptic feedback",
+   "scenario": "Turn feedback on actions on or off.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "preferences.start_screen",
+   "group": "preferences",
+   "title": "Start screen",
+   "scenario": "Choose the screen shown when ChatGPT opens.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "preferences.spelling",
+   "group": "preferences",
+   "title": "Text autocorrect",
+   "scenario": "Manage autocorrection while typing.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "preferences.notifications",
+   "group": "preferences",
+   "title": "Notification categories",
+   "scenario": "Open notification settings and available categories.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "preferences.cache_storage",
+   "group": "preferences",
+   "title": "Device storage and clearing cache",
+   "scenario": "See the size of cached images and previews and clear temporary data, keeping chats and Library files.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "preferences.help_about",
+   "group": "preferences",
+   "title": "Help and about",
+   "scenario": "Open Help Center and FAQ, terms, privacy policy and the version number.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "memory.enable",
+   "group": "memory",
+   "title": "Saved memory",
+   "scenario": "Allow ChatGPT to save and use memories.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "memory.history_reference",
+   "group": "memory",
+   "title": "Reference chat history",
+   "scenario": "Separately allow referring to past chats when preparing responses.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "memory.browser_reference",
+   "group": "memory",
+   "title": "Browser memory",
+   "scenario": "Configure the use of browser memories.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "memory.legacy_list_search",
+   "group": "memory",
+   "title": "List and search saved memories",
+   "scenario": "Open saved memories, search and filter entries.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "memory.delete_one",
+   "group": "memory",
+   "title": "Delete a memory",
+   "scenario": "Delete a selected memory entry.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "memory.delete_all",
+   "group": "memory",
+   "title": "Delete all memories",
+   "scenario": "Clear the whole saved memories list after confirmation.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "memory.priority",
+   "group": "memory",
+   "title": "Priority and automatic management",
+   "scenario": "Mark important memories and choose automatic memory management.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "memory.capacity",
+   "group": "memory",
+   "title": "Memory capacity status",
+   "scenario": "Show that memory is full and offer to delete entries or extend access.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "memory.summary",
+   "group": "memory",
+   "title": "Memory summary",
+   "scenario": "Open the automatically maintained memory summary, with a note that the list may be incomplete.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "memory.summary_refresh",
+   "group": "memory",
+   "title": "Refresh the memory summary",
+   "scenario": "Request an update or regeneration of the summary.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "memory.summary_correct",
+   "group": "memory",
+   "title": "Correct the memory summary",
+   "scenario": "Select part of the summary or send a text correction.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "memory.summary_clear_disable",
+   "group": "memory",
+   "title": "Delete and turn off new memory",
+   "scenario": "Delete memory and turn off further remembering in one action, handling partial success.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "memory.experience_switch",
+   "group": "memory",
+   "title": "Switch between new and old memory",
+   "scenario": "Try the improved memory or return to legacy saved memories.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "memory.citations",
+   "group": "memory",
+   "title": "Memory sources in a response",
+   "scenario": "Understand which memory, past chat or custom instructions influenced a response.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "memory.citation_feedback",
+   "group": "memory",
+   "title": "Feedback on memory used",
+   "scenario": "Mark relevance, make a correction or ask to stop mentioning a fact.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "privacy.center",
+   "group": "privacy",
+   "title": "Privacy center",
+   "scenario": "Open explanations and links for managing data, memory and account protection.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "privacy.training.text",
+   "group": "privacy",
+   "title": "Use chats to improve models",
+   "scenario": "Turn sharing of future conversations to improve models on or off.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "privacy.training.audio_video",
+   "group": "privacy",
+   "title": "Audio and video training",
+   "scenario": "Manage separate consent to use Voice recordings for training.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "privacy.export",
+   "group": "privacy",
+   "title": "Export account data",
+   "scenario": "Request an archive of history and other data and get a link when ready.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "privacy.delete_account",
+   "group": "privacy",
+   "title": "Delete account",
+   "scenario": "Confirm irreversible account deletion, noting that in-app purchases are cancelled separately.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "privacy.requests_help",
+   "group": "privacy",
+   "title": "Privacy Portal and data requests",
+   "scenario": "Go to the privacy policy, Privacy Portal or data help.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "privacy.location_controls",
+   "group": "privacy",
+   "title": "Precise location controls",
+   "scenario": "Open Location Services in Data Controls and learn when precise location is used.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "privacy.apps_access",
+   "group": "privacy",
+   "title": "Apps with contact info access",
+   "scenario": "See apps allowed to access contact information and revoke permission.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "privacy.apps_permissions",
+   "group": "privacy",
+   "title": "Connected app read and action permissions",
+   "scenario": "Choose always ask, allow reading, low-risk or all actions; restore the default.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "privacy.cloud_browser_permissions",
+   "group": "privacy",
+   "title": "Cloud browser access rules",
+   "scenario": "Set a general confirmation mode and per-site overrides, including blocking.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "privacy.cloud_browser_email_codes",
+   "group": "privacy",
+   "title": "Cloud browser verification codes",
+   "scenario": "Choose whether to be asked before a code from connected email is filled in.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "privacy.cloud_browser_cookies",
+   "group": "privacy",
+   "title": "Clear cloud browser cookies",
+   "scenario": "View sites with cookies and delete one site or all cloud browser cookies.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "privacy.lockdown",
+   "group": "privacy",
+   "title": "Lockdown mode",
+   "scenario": "Restrict external connections: browser, connectors, Deep Research, shopping, downloads and some code; allow a per-chat exception.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "privacy.locked_pin_create",
+   "group": "privacy",
+   "title": "Account PIN for locked chats",
+   "scenario": "Create a four-digit PIN and confirm it.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "privacy.locked_pin_change",
+   "group": "privacy",
+   "title": "Change Account PIN",
+   "scenario": "Enter the current PIN and set a new one.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "privacy.locked_pin_reset",
+   "group": "privacy",
+   "title": "Reset PIN and delete locked chats",
+   "scenario": "Confirm losing everything protected by the old PIN when resetting.",
+   "status": "web",
+   "statusLabel": "Opens the website"
+  },
+  {
+   "id": "privacy.locked_biometrics",
+   "group": "privacy",
+   "title": "Biometric access to locked chats",
+   "scenario": "Allow Face ID or Touch ID instead of the Account PIN.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "privacy.locked_retry_limits",
+   "group": "privacy",
+   "title": "Lockout after PIN errors",
+   "scenario": "Show the retry delay, no network or temporary PIN unavailability.",
+   "status": "done",
+   "statusLabel": "Native"
+  },
+  {
+   "id": "privacy.ads_personalization",
+   "group": "privacy",
+   "title": "Ad personalization",
+   "scenario": "Manage the use of activity and preferences for personalized ads.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "privacy.ads_history",
+   "group": "privacy",
+   "title": "Ad history and topics",
+   "scenario": "View ad history and topics formed from activity.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "privacy.ads_delete",
+   "group": "privacy",
+   "title": "Delete ad data",
+   "scenario": "Clear ad history and topics without deleting regular chats.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "privacy.work_network",
+   "group": "privacy",
+   "title": "Work network access",
+   "scenario": "Allow the public internet for Work commands or limit it to required domains, separately from Search, apps and browser.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "privacy.work_reset",
+   "group": "privacy",
+   "title": "Reset the ChatGPT Work environment",
+   "scenario": "Delete files and local data of the current remote environment; files already placed in Library are kept.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "safety.age_status",
+   "group": "safety",
+   "title": "Age status and extra restrictions",
+   "scenario": "View the age group and an explanation of the teen safeguards applied.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "safety.age_verify",
+   "group": "safety",
+   "title": "Age verification",
+   "scenario": "Go to a separate web flow for age verification.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "safety.apple_age_signal",
+   "group": "safety",
+   "title": "Apple age signal",
+   "scenario": "Use a separate collector for the age signal from the system.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "safety.sensitive_content",
+   "group": "safety",
+   "title": "Extra sensitive content limits",
+   "scenario": "Manage Reduce sensitive content, taking age and parental policy into account.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "safety.family_link",
+   "group": "safety",
+   "title": "Parent and teen link",
+   "scenario": "Invite a family member and accept a parent or guardian link request with consent.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.family_invites",
+   "group": "safety",
+   "title": "Manage family invitations",
+   "scenario": "Choose phone or email and cancel a pending invitation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.family_members",
+   "group": "safety",
+   "title": "Family members and managed settings",
+   "scenario": "View linked accounts and the settings a parent manages.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.family_unlink",
+   "group": "safety",
+   "title": "Unlink a family connection",
+   "scenario": "Remove the parent or guardian link and show the effect on restrictions.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.quiet_hours",
+   "group": "safety",
+   "title": "Quiet Hours and repeating blocks",
+   "scenario": "Set days and intervals when use is blocked, add or delete a block and show the lock screen.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.study_hours",
+   "group": "safety",
+   "title": "Study Mode schedule",
+   "scenario": "Turn Study Mode on always or on chosen days and intervals for suitable new chats.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.parent_alerts",
+   "group": "safety",
+   "title": "Parent alerts for serious risk",
+   "scenario": "Show limited safety notices and support, without presenting it as regular parent access to conversations.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "safety.age_graduation",
+   "group": "safety",
+   "title": "Move to adult mode",
+   "scenario": "Explain removal of teen protections and parental controls, open settings or declare an age under 18.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.trusted_contact_invite",
+   "group": "safety",
+   "title": "Trusted contact for support",
+   "scenario": "Designate a contact with explicit consent and send an invitation.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.trusted_contact_respond",
+   "group": "safety",
+   "title": "Respond to a trusted contact invite",
+   "scenario": "Accept or decline participation, taking the deadline and age into account.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.trusted_contact_manage",
+   "group": "safety",
+   "title": "Trusted contact status and removal",
+   "scenario": "See pending or active status, cancel an invitation, and remove or replace a contact.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "safety.trusted_contact_note",
+   "group": "safety",
+   "title": "Personal note to a trusted contact",
+   "scenario": "Open a prepared personal note about the invitation.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "safety.trusted_contact_alert",
+   "group": "safety",
+   "title": "Trusted contact risk alert",
+   "scenario": "Show a notice that a loved one may need support, with help resources.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "shopping.home",
+   "group": "shopping",
+   "title": "Shopping home",
+   "scenario": "Open a dedicated product collection and continue searching.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "shopping.products",
+   "group": "shopping",
+   "title": "Product cards and offers",
+   "scenario": "View a product, price, options and offers from several sellers.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "shopping.visual_search",
+   "group": "shopping",
+   "title": "Search products by image",
+   "scenario": "Use a look or image from the chat to find similar products.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "shopping.virtual_try_on",
+   "group": "shopping",
+   "title": "Virtual try-on",
+   "scenario": "Choose a product, upload a selfie or full-length photo and generate a try-on.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "shopping.cart",
+   "group": "shopping",
+   "title": "Shopping cart",
+   "scenario": "Add a product to the cart and view its contents.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "shopping.checkout",
+   "group": "shopping",
+   "title": "Checkout",
+   "scenario": "Go from a product to checkout and confirmation.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "shopping.shipping",
+   "group": "shopping",
+   "title": "Shipping address",
+   "scenario": "Add or change the shipping address for a purchase.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "shopping.payment",
+   "group": "shopping",
+   "title": "Order payment",
+   "scenario": "Choose a saved payment method or add a card at checkout.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "shopping.phone_verification",
+   "group": "shopping",
+   "title": "Phone verification at checkout",
+   "scenario": "Complete phone verification during checkout.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "shopping.orders",
+   "group": "shopping",
+   "title": "Orders list and details",
+   "scenario": "View purchase history and order contents.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "shopping.business_profile",
+   "group": "shopping",
+   "title": "Seller or business profile",
+   "scenario": "View site, note, shipping, returns and the business verification badge.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "shopping.business_chat",
+   "group": "shopping",
+   "title": "Chat with a business agent",
+   "scenario": "Start a conversation with a business after an explanation of data sharing and the agent's purpose.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "shopping.business_feedback",
+   "group": "shopping",
+   "title": "Report a business profile",
+   "scenario": "Report a profile or suggest a correction.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "shopping.ads",
+   "group": "shopping",
+   "title": "Ad cards in responses",
+   "scenario": "View ad offers, go to the advertiser and tell ad labeling apart.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "shopping.ad_hide",
+   "group": "shopping",
+   "title": "Hide an ad",
+   "scenario": "Open controls for a hidden ad.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "shopping.ad_transparency",
+   "group": "shopping",
+   "title": "Why you see an ad",
+   "scenario": "View ad details and an explanation of why it was shown.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.onboarding",
+   "group": "companion",
+   "title": "Meet and create dot",
+   "scenario": "Open the introduction to the personal assistant, create it or see a plan or capacity limit.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.avatar",
+   "group": "companion",
+   "title": "dot and pet appearance",
+   "scenario": "Choose a character or pet, color, shape, eyes, glasses and extra details.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.conversation",
+   "group": "companion",
+   "title": "Chat with dot",
+   "scenario": "Open a standalone conversation with the assistant and send it messages.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.call",
+   "group": "companion",
+   "title": "Call dot",
+   "scenario": "Call the assistant, mute the microphone, choose the speaker and end the call.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.call_transcript",
+   "group": "companion",
+   "title": "dot call transcript",
+   "scenario": "Open the text record of a call with the assistant.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.incoming_call",
+   "group": "companion",
+   "title": "Incoming call from dot",
+   "scenario": "The build has launching and ringing of incoming dot calls and an answer state.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.notifications",
+   "group": "companion",
+   "title": "dot updates and replies via notifications",
+   "scenario": "Get assistant updates; the code also has a reply sender from a notification.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.profile",
+   "group": "companion",
+   "title": "dot profile and account details",
+   "scenario": "Open a profile with name, email and phone from the current ChatGPT account and capability statuses.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.apps",
+   "group": "companion",
+   "title": "dot connected apps",
+   "scenario": "Connect or reconnect an app and see the assistant's integration status.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.app_elicitation",
+   "group": "companion",
+   "title": "dot questions and action approvals",
+   "scenario": "Answer clarifications and forms, confirm permissions or plugin connection and see an expired or unconfirmed result.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.proactive",
+   "group": "companion",
+   "title": "Suggestions from connected apps",
+   "scenario": "The assistant is described as proactively offering help based on connected information.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.browser",
+   "group": "companion",
+   "title": "Assistant browser",
+   "scenario": "A browser is provided that visits sites and acts on the user's behalf.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.browser_email_otp",
+   "group": "companion",
+   "title": "Email code autofill permission",
+   "scenario": "Grant permission to use a code from connected email in the assistant's browser, once or for sites.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.passwords_list",
+   "group": "companion",
+   "title": "Assistant browser saved passwords",
+   "scenario": "Open saved accounts and usernames and how they are shared with ChatGPT Work.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.passwords_delete",
+   "group": "companion",
+   "title": "Delete an assistant saved password",
+   "scenario": "Confirm irreversible deletion of a saved password.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.computer",
+   "group": "companion",
+   "title": "Assistant computer and connected computers",
+   "scenario": "View the cloud computer and connected computers and their statuses; a new connection suggests the desktop app.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.computer_revoke",
+   "group": "companion",
+   "title": "Revoke dot computer access",
+   "scenario": "Disconnect the assistant's computer access, with later permission through the desktop app.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.email_address",
+   "group": "companion",
+   "title": "Assistant email address",
+   "scenario": "View the assistant's email; first issuing of the address is offered through desktop ChatGPT.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.slack_teams",
+   "group": "companion",
+   "title": "Reach dot via Slack or Teams",
+   "scenario": "The profile has messenger connections; initial setup is offered on desktop.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.phone_pairing",
+   "group": "companion",
+   "title": "Pair a phone for dot messages",
+   "scenario": "Add a phone, accept consent, confirm the code, finish pairing with a first message and open Messages.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.phone_remove",
+   "group": "companion",
+   "title": "Remove a paired dot phone",
+   "scenario": "Remove the number used for texting; reconnecting will require verification.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.contact_card",
+   "group": "companion",
+   "title": "dot contact card",
+   "scenario": "Save or update the assistant's contact for Contacts and Messages.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.memory",
+   "group": "companion",
+   "title": "Assistant memory",
+   "scenario": "View and search notes about the user, saved context and working notes.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.library",
+   "group": "companion",
+   "title": "Files exchanged with dot",
+   "scenario": "Open the assistant's library, upload files and show temporary unavailability.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.activity_outputs",
+   "group": "companion",
+   "title": "dot results and activity",
+   "scenario": "View links to created or updated resources and the available activity history.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.schedule_details",
+   "group": "companion",
+   "title": "dot scheduled tasks",
+   "scenario": "Open task settings: frequency, date and time, where it runs and the next run.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.schedule_actions",
+   "group": "companion",
+   "title": "Manage a dot scheduled task",
+   "scenario": "Run now, pause, resume or delete a task.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.pause_resume",
+   "group": "companion",
+   "title": "Pause and resume dot",
+   "scenario": "Stop the assistant's current work and messages, then resume it.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.custom_rules",
+   "group": "companion",
+   "title": "dot custom action rules",
+   "scenario": "Add, edit and delete rules; account for admin disabling and a conflicting change made elsewhere.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.wallet",
+   "group": "companion",
+   "title": "Wallet in the dot profile",
+   "scenario": "Open the assistant's wallet with cards, addresses and enrollment status.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "companion.delete",
+   "group": "companion",
+   "title": "Delete dot",
+   "scenario": "Confirm deleting the assistant with all conversations, memory and tasks, handling an unconfirmed outcome.",
+   "status": "api",
+   "statusLabel": "Client API only, no screen"
+  },
+  {
+   "id": "companion.feedback",
+   "group": "companion",
+   "title": "Rate a dot result",
+   "scenario": "Feedback categories are provided: good or bad result, error, research or safety check.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.home",
+   "group": "codex",
+   "title": "Codex section",
+   "scenario": "Open the Codex task list and choose a remote or cloud context.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.pair",
+   "group": "codex",
+   "title": "Pair by QR or code",
+   "scenario": "Connect Codex Desktop by entering a pairing code or scanning a QR.",
+   "status": "partial",
+   "statusLabel": "Partial"
+  },
+  {
+   "id": "codex.ssh",
+   "group": "codex",
+   "title": "Manual SSH connection",
+   "scenario": "Set host, port, user and authentication method for remote Codex.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.connections",
+   "group": "codex",
+   "title": "Manage connections",
+   "scenario": "View online and offline hosts, rename them and enable or disable a connection.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.cloud",
+   "group": "codex",
+   "title": "Cloud environments",
+   "scenario": "Choose a saved cloud environment for a task; the hint suggests creating one in Desktop.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.computers",
+   "group": "codex",
+   "title": "Cloud task computers",
+   "scenario": "Choose registered computers and refresh the list of available devices.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.new-task",
+   "group": "codex",
+   "title": "New task",
+   "scenario": "Create a remote task and send a prompt to the selected project or directory.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.task-list",
+   "group": "codex",
+   "title": "Task list, filters and sorting",
+   "scenario": "Browse tasks by host, project, chronology and priority.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.transcript",
+   "group": "codex",
+   "title": "Task history and reconnection",
+   "scenario": "Open a saved transcript, load older messages and see reconnection errors.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.rename",
+   "group": "codex",
+   "title": "Rename a task",
+   "scenario": "Rename the selected task.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.archive",
+   "group": "codex",
+   "title": "Task archive",
+   "scenario": "Archive a task, find it in the archive and restore it.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.fork",
+   "group": "codex",
+   "title": "Fork a task",
+   "scenario": "The transcript marks a fork from another conversation; the exact launch mechanism is not reconstructed.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.model",
+   "group": "codex",
+   "title": "Model, reasoning and speed",
+   "scenario": "Set the model, reasoning effort and speed for a task.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.personality",
+   "group": "codex",
+   "title": "Codex response personality",
+   "scenario": "Choose a personality available on the host.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.plan",
+   "group": "codex",
+   "title": "Plan mode",
+   "scenario": "Ask for a plan, open it in full, accept implementation or request revisions.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.goals",
+   "group": "codex",
+   "title": "Task goal and budget",
+   "scenario": "Edit the goal, watch usage and status, pause, resume and delete it.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.approvals",
+   "group": "codex",
+   "title": "Approve actions",
+   "scenario": "Allow or deny a command, a file change and a request for extra permissions.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.approval-policy",
+   "group": "codex",
+   "title": "Permission policy",
+   "scenario": "Choose available permission or auto-review modes, within host configuration limits.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.network-approval",
+   "group": "codex",
+   "title": "Network approval",
+   "scenario": "Review a request for network access or access to a specific host.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.commands",
+   "group": "codex",
+   "title": "Commands and terminals",
+   "scenario": "View command progress, output and exit code, and a list of running commands with Stop.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.file-changes",
+   "group": "codex",
+   "title": "File changes in the transcript",
+   "scenario": "See file creation, editing and deletion and the action result.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.files",
+   "group": "codex",
+   "title": "Remote file browser",
+   "scenario": "Search files, open directories, preview and reference a file from a task.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.workspace",
+   "group": "codex",
+   "title": "Working project directory",
+   "scenario": "Choose a remote directory and create a folder in the file picker.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.diff",
+   "group": "codex",
+   "title": "View diff",
+   "scenario": "Compare branch, staged, unstaged or last-turn changes, expand changes and wrap lines.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.review",
+   "group": "codex",
+   "title": "Code review and comments",
+   "scenario": "Run a review of current changes or a branch, attach comments and go through findings.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.worktree",
+   "group": "codex",
+   "title": "Worktree and Git setup",
+   "scenario": "The package includes checkout and worktree state UI and a draft Git module; the full Git command set is not reconstructed.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.attachments",
+   "group": "codex",
+   "title": "Photos and attachments in a task",
+   "scenario": "Add images from the camera or gallery and check cloud input limits.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.voice",
+   "group": "codex",
+   "title": "Codex voice control",
+   "scenario": "Start realtime voice, control the microphone and direct the task by voice.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.desktop",
+   "group": "codex",
+   "title": "Remote desktop",
+   "scenario": "Open the desktop of a supported cloud environment.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.subagents",
+   "group": "codex",
+   "title": "Subagent tasks",
+   "scenario": "See the roster and status and open a subagent's read-only transcript.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.collaboration",
+   "group": "codex",
+   "title": "Collaboration and input requests",
+   "scenario": "See collaboration events and requests for the user's reply in a task.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.mcp",
+   "group": "codex",
+   "title": "MCP and external tools",
+   "scenario": "Show MCP launch and result, resource blocks and permission request approval.",
+   "status": "done",
+   "statusLabel": "Native, when the account allows"
+  },
+  {
+   "id": "codex.hooks",
+   "group": "codex",
+   "title": "Hooks summary",
+   "scenario": "View events, errors and blocks of hooks run on the host.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.rich-output",
+   "group": "codex",
+   "title": "Rich task output",
+   "scenario": "Display embedded media, visualizations and writing blocks.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.feedback",
+   "group": "codex",
+   "title": "Rate and report a problem",
+   "scenario": "Rate Codex's work and send feedback; the cloud flow has a separate warning about included logs.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.profile",
+   "group": "codex",
+   "title": "Codex profile and stats",
+   "scenario": "View activity and token charts, streaks, tasks, skills and plugins, and share a profile card.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "codex.local-lock",
+   "group": "codex",
+   "title": "Codex local lock",
+   "scenario": "Unlock Codex through system local authentication.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "codex.secure-setup",
+   "group": "codex",
+   "title": "Codex device check",
+   "scenario": "Complete secure device setup; the package has a refusal for devices without the required secure key.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "health.entry",
+   "group": "health",
+   "title": "Health section",
+   "scenario": "Open Health Home, Chats, Accounts, Connections and Records.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "health.eligibility",
+   "group": "health",
+   "title": "Health eligibility and age",
+   "scenario": "Show unavailability to an account and a separate age verification path.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "health.onboarding",
+   "group": "health",
+   "title": "Health consent and connection",
+   "scenario": "Go through Health onboarding with explanations of data, connection management and medical limits.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "health.chat",
+   "group": "health",
+   "title": "Health conversation",
+   "scenario": "Create separate Health chats and use starter prompts.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "health.records",
+   "group": "health",
+   "title": "Medical records and sources",
+   "scenario": "Connect medical records, then browse Records and Connections.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "health.summary",
+   "group": "health",
+   "title": "Health summary",
+   "scenario": "View active conditions, current medications and family history.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "health.healthkit",
+   "group": "health",
+   "title": "Connect Apple Health",
+   "scenario": "Grant Apple Health read permissions, restore access and add new categories.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "health.sync",
+   "group": "health",
+   "title": "Health history and incremental sync",
+   "scenario": "Sync history, check for new data and show pause, error or retry.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "health.access",
+   "group": "health",
+   "title": "Apple Health access management",
+   "scenario": "Show status and instructions for managing categories in Settings.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  },
+  {
+   "id": "health.diagnostics",
+   "group": "health",
+   "title": "Health sync diagnostics",
+   "scenario": "The package has a detailed diagnostic UI for anchors, retry, progress and eligibility; public availability is not established.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "health.memory",
+   "group": "health",
+   "title": "Health memory",
+   "scenario": "The UI has a separate Health memory with an empty state; its exact actions are not reconstructed.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "health.disable",
+   "group": "health",
+   "title": "Turn off Health and data",
+   "scenario": "Turn off Health: the UI warns that sources are disconnected and synced data deleted, while chats are kept.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.entry",
+   "group": "finance",
+   "title": "Finances section",
+   "scenario": "Open finance Home, Dashboard, Accounts, Transactions and Chats.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.chat",
+   "group": "finance",
+   "title": "Finance conversations",
+   "scenario": "Create separate chats with linked financial context and starter prompts.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.connect",
+   "group": "finance",
+   "title": "Connect financial accounts",
+   "scenario": "Add financial accounts through the offered connection flow.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.accounts",
+   "group": "finance",
+   "title": "Accounts and asset categories",
+   "scenario": "View cash, cards, investments, loans, payroll and real estate, and the share of assets and liabilities.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.sync",
+   "group": "finance",
+   "title": "Connection status and repair",
+   "scenario": "Show sync status, refresh failure and repair, and offer to reconnect an account.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.remove",
+   "group": "finance",
+   "title": "Remove an account connection",
+   "scenario": "The UI has a Removing state; the exact confirmation and its consequences are not reconstructed.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.transactions",
+   "group": "finance",
+   "title": "Transactions and categories",
+   "scenario": "View financial transactions and change or choose a category in the detail view.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.dashboard",
+   "group": "finance",
+   "title": "Customize the finance dashboard",
+   "scenario": "Show or hide widgets and reset personal settings.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.sensitive-values",
+   "group": "finance",
+   "title": "Hide amounts",
+   "scenario": "Hide and show sensitive financial values again.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.credit",
+   "group": "finance",
+   "title": "Credit score and factors",
+   "scenario": "Open credit score or account details and ask a follow-up about the score or a factor.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.identity",
+   "group": "finance",
+   "title": "Financial identity verification",
+   "scenario": "The package loads a credit verification provider and separate Experian SDK code; exact UX and requirements are not reconstructed.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.memory",
+   "group": "finance",
+   "title": "Finance memory",
+   "scenario": "Open, search and delete saved financial memories.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.watchlist",
+   "group": "finance",
+   "title": "Market watchlist",
+   "scenario": "The text offers to save a watchlist in Finances; the watchlist UI and API need verification.",
+   "status": "open",
+   "statusLabel": "Not implemented"
+  },
+  {
+   "id": "finance.wallet",
+   "group": "finance",
+   "title": "Apple Wallet data via FinanceKit",
+   "scenario": "PlaidFinanceKitSync and a separate background delivery extension are included.",
+   "status": "blocked",
+   "statusLabel": "Not possible on iOS 6"
+  }
+ ]
+}

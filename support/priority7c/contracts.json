@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API7CItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "fileId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "mediaType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1099511627776
+        },
+        "state": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "access": {
+          "enum": [
+            "owned",
+            "shared",
+            "mounted",
+            "unknown"
+          ]
+        },
+        "artifactType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "canAttach": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "fileId",
+        "name",
+        "mediaType",
+        "bytes",
+        "state",
+        "access",
+        "artifactType",
+        "canAttach"
+      ],
+      "additionalProperties": false
+    },
+    "API7CPage": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API7CItem"
+          },
+          "minItems": 0,
+          "maxItems": 50
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "items",
+        "nextPageToken"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "library.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "pageToken",
+          "limit"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7CPage"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library",
+        "method": "POST"
+      },
+      "notes": "Read-only POST, ready files. Opaque pagination bound to command/query/limit/context; no account mutations or telemetry."
+    },
+    {
+      "id": "library.search",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        },
+        "required": [
+          "pageToken",
+          "limit",
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7CPage"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library",
+        "method": "POST"
+      },
+      "notes": "Native Library q search, not global/mounted provider search. Same bounded projection as list."
+    },
+    {
+      "id": "library.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "libraryId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "libraryId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7CItem"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{libraryId}[/node]",
+        "method": "GET"
+      },
+      "notes": "Exact native ID. Encrypted IDs use /node directly; no speculative retry or materialization fallback."
+    },
+    {
+      "id": "library.conversationFiles",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "pageToken",
+          "limit",
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7CPage"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/conversations/{conversationId}/files",
+        "method": "GET"
+      },
+      "notes": "Paged server-associated files, independent of current branch; no automatic full-account crawl."
+    },
+    {
+      "id": "library.attach",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "libraryId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "replaceAssetId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "libraryId",
+          "draftId",
+          "replaceAssetId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Draft"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/files/library/files/{libraryId}[/node]",
+        "method": "GET"
+      },
+      "notes": "Fresh read before local attachment. Ready owned native document only, <=8MiB, max4 per draft. Actual API8 asset resolver reaches generation request metadata."
+    },
+    {
+      "id": "library.detach",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "assetId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "assetId",
+          "draftId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "assetId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "detached": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "draftId",
+          "assetId",
+          "detached"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "pathTemplate": null,
+        "method": null
+      },
+      "notes": "Detach a Library handle from the existing draft only. Never delete the remote file."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "library.browse",
+      "title": "Library: обзор файлов и материалов",
+      "usefulness": 7,
+      "operations": [
+        "library.list",
+        "library.get"
+      ]
+    },
+    {
+      "featureId": "library.search",
+      "title": "Поиск по библиотеке",
+      "usefulness": 7,
+      "operations": [
+        "library.search"
+      ]
+    },
+    {
+      "featureId": "library.attach",
+      "title": "Добавление материалов в запрос",
+      "usefulness": 7,
+      "operations": [
+        "library.attach",
+        "library.detach"
+      ]
+    },
+    {
+      "featureId": "library.conversation_files",
+      "title": "Файлы конкретного разговора",
+      "usefulness": 7,
+      "operations": [
+        "library.conversationFiles"
+      ]
+    }
+  ]
+}

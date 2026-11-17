@@ -1,0 +1,987 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API6AReason": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "parentId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "hasDetails": {
+          "type": "boolean"
+        },
+        "additionalFields": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "type": {
+                "enum": [
+                  "single_line_text",
+                  "multi_line_text",
+                  "int",
+                  "email",
+                  "url"
+                ]
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "placeholder": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1024
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "required",
+              "placeholder"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "linkURL": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2048
+        },
+        "canSubmit": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "parentId",
+        "label",
+        "hasDetails",
+        "additionalFields",
+        "linkURL",
+        "canSubmit"
+      ],
+      "additionalProperties": false
+    },
+    "API6AReasons": {
+      "type": "object",
+      "properties": {
+        "catalogId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "items": {
+          "type": "array",
+          "maxItems": 64,
+          "items": {
+            "$ref": "#/types/API6AReason"
+          }
+        }
+      },
+      "required": [
+        "catalogId",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API6AStatus": {
+      "type": "object",
+      "properties": {
+        "hasPIN": {
+          "type": "boolean"
+        },
+        "projectId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "resetStatus": {
+          "enum": [
+            null,
+            "in_progress",
+            "failed",
+            "unknown"
+          ]
+        },
+        "retryAfterSeconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 31536000
+        }
+      },
+      "required": [
+        "hasPIN",
+        "projectId",
+        "resetStatus",
+        "retryAfterSeconds"
+      ],
+      "additionalProperties": false
+    },
+    "API6AReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "serverAcknowledged",
+        "verified",
+        "completed"
+      ],
+      "additionalProperties": false
+    },
+    "API6AAccess": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "status": {
+          "$ref": "#/types/API6AStatus"
+        },
+        "accessGranted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "status",
+        "accessGranted"
+      ],
+      "additionalProperties": false
+    },
+    "API6ASummary": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "id",
+        "title"
+      ],
+      "additionalProperties": false
+    },
+    "API6ABranch": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "conversation": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 36,
+              "maxLength": 36
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "currentMessageId": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 36,
+              "maxLength": 36
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "currentMessageId"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "operationId",
+        "conversation"
+      ],
+      "additionalProperties": false
+    },
+    "API6ALockedPage": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API6ASummary"
+          },
+          "maxItems": 50
+        },
+        "nextCursor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1024
+        }
+      },
+      "required": [
+        "items",
+        "nextCursor"
+      ],
+      "additionalProperties": false
+    },
+    "API6AMemory": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 128
+        },
+        "locked": {
+          "enum": [
+            true
+          ]
+        },
+        "newMessagesContributeToMemory": {
+          "enum": [
+            false
+          ]
+        }
+      },
+      "required": [
+        "projectId",
+        "locked",
+        "newMessagesContributeToMemory"
+      ],
+      "additionalProperties": false
+    },
+    "API6AResetAuthorization": {
+      "type": "object",
+      "properties": {
+        "authorizationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "returnURL": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "browserRequired": {
+          "enum": [
+            true
+          ]
+        },
+        "completed": {
+          "enum": [
+            false
+          ]
+        }
+      },
+      "required": [
+        "authorizationId",
+        "returnURL",
+        "browserRequired",
+        "completed"
+      ],
+      "additionalProperties": false
+    },
+    "API6AClear": {
+      "type": "object",
+      "properties": {
+        "accessGranted": {
+          "enum": [
+            false
+          ]
+        }
+      },
+      "required": [
+        "accessGranted"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "conversations.branch",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "messageId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6ABranch"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation/new_branch"
+      },
+      "notes": "One-shot server branch. Public bounded metadata only; no title/messages in journal."
+    },
+    {
+      "id": "conversations.reportReasons",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AReasons"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/report_flow/reasons/conversation"
+      },
+      "notes": "Decode bounded hierarchical server reasons and additional fields. No fabricated categories."
+    },
+    {
+      "id": "conversations.report",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "catalogId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "reasonId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "details": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 4000
+          },
+          "additionalFields": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 4000
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "consentToSendConversation": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "catalogId",
+          "reasonId",
+          "details",
+          "additionalFields",
+          "consentToSendConversation"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/report_flow/report"
+      },
+      "notes": "Recovered report content service; explicit consent to send conversation context. No automatic retries."
+    },
+    {
+      "id": "locked.status",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AStatus"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/locked_chats/status"
+      },
+      "notes": "Authoritative server PIN/reset/lockout status. Never infer remaining attempt counts or retry a PIN."
+    },
+    {
+      "id": "locked.pin.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AAccess"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/locked_chats/unlock"
+      },
+      "notes": "Private one-use 4 ASCII digit PIN binding, no public PIN or durable PIN hash. Fresh status preflight; one server attempt. Server project_id establishes private in-memory access."
+    },
+    {
+      "id": "locked.pin.verify",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AAccess"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/locked_chats/unlock"
+      },
+      "notes": "Private one-use 4 ASCII digit PIN binding, no public PIN or durable PIN hash. Fresh status preflight; one server attempt. Server project_id establishes private in-memory access."
+    },
+    {
+      "id": "locked.pin.change",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AAccess"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/locked_chats/pin/change"
+      },
+      "notes": "Private one-use 4 ASCII digit PIN binding, no public PIN or durable PIN hash. Fresh status preflight; one server attempt. PIN change clears private access."
+    },
+    {
+      "id": "locked.pin.resetChallenge",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AResetAuthorization"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/locked_chats/pin/reset/challenge"
+      },
+      "notes": "Stores private challenge in memory and returns opaque authorization plus exact stateful browser return URL, completed:false. Browser must force_challenge reauthenticate; private adapter validates fresh pwd_auth_time and exact owner/account/state within 10min."
+    },
+    {
+      "id": "locked.pin.reset",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "authorizationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "confirmDeleteLockedChats": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "authorizationId",
+          "confirmDeleteLockedChats"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AStatus"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/locked_chats/pin/reset"
+      },
+      "notes": "Consumes verified private challenge once; Prefer:respond-async. Reset deletion may be in_progress or failed. Read-only status reconciliation, never replay the destructive write."
+    },
+    {
+      "id": "locked.conversations.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          },
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 1024
+          }
+        },
+        "required": [
+          "projectId",
+          "limit",
+          "cursor"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6ALockedPage"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/gizmos/{project_id}/conversations?limit={limit}&owned_only=true&cursor={cursor}"
+      },
+      "notes": "Requires current private PIN grant matching server-issued project; bounded 8 pages and returned cursors only."
+    },
+    {
+      "id": "locked.conversations.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "projectId",
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Conversation"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversation/{conversation_id}"
+      },
+      "notes": "Private project-scoped PIN header; ordinary existing conversation decoder. No persistent protected cache."
+    },
+    {
+      "id": "locked.conversations.lock",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "projectId",
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation/{conversation_id}/lock"
+      },
+      "notes": "Actual server ownership/protection transition; explicit current private PIN grant and source chatgpt-project-id. Never local hide/PIN simulation."
+    },
+    {
+      "id": "locked.conversations.unlock",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "projectId",
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation/{conversation_id}/unlock_permanently"
+      },
+      "notes": "Actual server ownership/protection transition; explicit current private PIN grant and source chatgpt-project-id. Never local hide/PIN simulation."
+    },
+    {
+      "id": "locked.memory",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "projectId",
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AMemory"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/{conversation/{conversation_id},gizmos/{project_id}?include_file_limits=true}"
+      },
+      "notes": "Verify conversation project membership, then server locked_chats project classification; source policy says new messages in locked chats do not contribute to memory. Does not delete earlier memories."
+    },
+    {
+      "id": "locked.access.clear",
+      "requestSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AClear"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "LOCAL",
+        "pathTemplate": null
+      },
+      "notes": "Clear private PIN grant and cancel protected requests; native notifications expire access after 60s background. Not a server unlock or PIN change."
+    },
+    {
+      "id": "locked.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API6AReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/{locked_chats/status,conversation/{conversation_id}}"
+      },
+      "notes": "Read-only postcondition reconciliation for create/reset/lock/unlock. No retry or attempt-consuming PIN revalidation; unverifiable change/report/branch remains uncertain."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "chat.branch",
+      "title": "Ветвление разговора",
+      "usefulness": 6,
+      "operations": [
+        "conversations.branch"
+      ]
+    },
+    {
+      "featureId": "chat.report",
+      "title": "Жалоба на разговор",
+      "usefulness": 6,
+      "operations": [
+        "conversations.reportReasons",
+        "conversations.report"
+      ]
+    },
+    {
+      "featureId": "chat.lock",
+      "title": "Скрытие и блокировка разговора",
+      "usefulness": 6,
+      "operations": [
+        "locked.conversations.lock",
+        "locked.reconcile"
+      ]
+    },
+    {
+      "featureId": "chat.locked_list",
+      "title": "Доступ к защищённым разговорам",
+      "usefulness": 6,
+      "operations": [
+        "locked.pin.verify",
+        "locked.conversations.list",
+        "locked.conversations.get",
+        "locked.access.clear"
+      ]
+    },
+    {
+      "featureId": "chat.unlock",
+      "title": "Снятие блокировки с разговора",
+      "usefulness": 6,
+      "operations": [
+        "locked.conversations.unlock",
+        "locked.reconcile"
+      ]
+    },
+    {
+      "featureId": "chat.locked_memory",
+      "title": "Отделение заблокированного чата от памяти",
+      "usefulness": 6,
+      "operations": [
+        "locked.memory"
+      ]
+    },
+    {
+      "featureId": "privacy.locked_pin_create",
+      "title": "Account PIN для закрытых чатов",
+      "usefulness": 6,
+      "operations": [
+        "locked.status",
+        "locked.pin.create"
+      ]
+    },
+    {
+      "featureId": "privacy.locked_pin_change",
+      "title": "Смена Account PIN",
+      "usefulness": 6,
+      "operations": [
+        "locked.status",
+        "locked.pin.change"
+      ]
+    },
+    {
+      "featureId": "privacy.locked_pin_reset",
+      "title": "Сброс PIN с удалением закрытых чатов",
+      "usefulness": 6,
+      "operations": [
+        "locked.pin.resetChallenge",
+        "locked.pin.reset",
+        "locked.status",
+        "locked.reconcile"
+      ]
+    },
+    {
+      "featureId": "privacy.locked_retry_limits",
+      "title": "Блокировка доступа после ошибок PIN",
+      "usefulness": 6,
+      "operations": [
+        "locked.status",
+        "locked.pin.verify"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1128 @@
+{
+  "schemaVersion": 1,
+  "types": {
+    "API5BReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "command": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "targetId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "command",
+        "targetId",
+        "serverAcknowledged",
+        "verified"
+      ],
+      "additionalProperties": false
+    },
+    "API5BSource": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "kind": {
+          "enum": [
+            "library",
+            "space",
+            "connector",
+            "text"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "API5BSources": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5BSource"
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "projectId",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "API5BNote": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "markdown": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 262144
+        },
+        "versionNumber": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "markdown",
+        "versionNumber"
+      ],
+      "additionalProperties": false
+    },
+    "API5BVersion": {
+      "type": "object",
+      "properties": {
+        "versionNumber": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "isCurrent": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        },
+        "createdAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "artifactType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "versionNumber",
+        "isCurrent",
+        "name",
+        "createdAt",
+        "artifactType"
+      ],
+      "additionalProperties": false
+    },
+    "API5BVersions": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5BVersion"
+          },
+          "maxItems": 20
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        }
+      },
+      "required": [
+        "id",
+        "items",
+        "nextPageToken"
+      ],
+      "additionalProperties": false
+    },
+    "API5BSharing": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "kind": {
+          "enum": [
+            "file",
+            "folder"
+          ]
+        },
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "viewerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "viewerRole": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "canInvite": {
+          "type": "boolean"
+        },
+        "canManage": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "ownerId",
+        "viewerId",
+        "viewerRole",
+        "canInvite",
+        "canManage"
+      ],
+      "additionalProperties": false
+    },
+    "API5BShare": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "principalType": {
+          "enum": [
+            "user",
+            "group",
+            "email"
+          ]
+        },
+        "principalId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 320
+        },
+        "role": {
+          "enum": [
+            "viewer",
+            "commenter",
+            "editor"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "id",
+        "principalType",
+        "principalId",
+        "role",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "API5BShares": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API5BShare"
+          },
+          "maxItems": 100
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        }
+      },
+      "required": [
+        "id",
+        "items",
+        "nextPageToken"
+      ],
+      "additionalProperties": false
+    },
+    "API5BPreview": {
+      "type": "object",
+      "properties": {
+        "referenceId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "targetId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "principalType": {
+          "enum": [
+            "user",
+            "group"
+          ]
+        },
+        "principalId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "desiredRole": {
+          "enum": [
+            "viewer",
+            "commenter",
+            "editor",
+            "none"
+          ]
+        }
+      },
+      "required": [
+        "referenceId",
+        "targetId",
+        "principalType",
+        "principalId",
+        "desiredRole"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "projects.sources.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "projectId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BSources"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/gizmos/{project_id}; /backend-api/projects/{project_id}/connector_scopes"
+      }
+    },
+    {
+      "id": "projects.sources.add",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "sourceReference": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "projectId",
+          "sourceReference"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/projects/{project_id}/{files|connector_scopes}"
+      }
+    },
+    {
+      "id": "projects.sources.remove",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "sourceId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "projectId",
+          "sourceId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/projects/{project_id}/{files|connector_scopes}/{source_id}"
+      }
+    },
+    {
+      "id": "projects.textSource.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 262144
+          }
+        },
+        "required": [
+          "operationId",
+          "projectId",
+          "name",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/files; signed PUT; /backend-api/files/process_upload_stream; /backend-api/projects/{project_id}/files"
+      }
+    },
+    {
+      "id": "library.note.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "parentId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "markdown": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 262144
+          }
+        },
+        "required": [
+          "operationId",
+          "parentId",
+          "name",
+          "markdown"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/files/library/files/inline-content"
+      }
+    },
+    {
+      "id": "library.note.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BNote"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/files/library/files/{id}/content_url"
+      }
+    },
+    {
+      "id": "library.note.update",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "markdown": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 262144
+          },
+          "expectedVersion": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          }
+        },
+        "required": [
+          "operationId",
+          "id",
+          "markdown",
+          "expectedVersion"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "PATCH",
+        "pathTemplate": "/backend-api/files/library/files/{id}"
+      }
+    },
+    {
+      "id": "library.note.delete",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/files/library/files/{id}?soft_delete=true"
+      }
+    },
+    {
+      "id": "library.versions.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "id",
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BVersions"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/files/library/files/{id}/versions"
+      }
+    },
+    {
+      "id": "library.version.restore",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "versionNumber": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "expectedCurrentVersion": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          }
+        },
+        "required": [
+          "operationId",
+          "id",
+          "versionNumber",
+          "expectedCurrentVersion"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/files/library/files/{id}/versions/{versionNumber}/restore"
+      }
+    },
+    {
+      "id": "library.sharing.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "folder"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BSharing"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/files/library/{files|directories}/{id}/sharing-state"
+      }
+    },
+    {
+      "id": "library.shares.list",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "folder"
+            ]
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "pageToken"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BShares"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/files/library/{files|directories}/{id}/shares"
+      }
+    },
+    {
+      "id": "library.share.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "folder"
+            ]
+          },
+          "principalType": {
+            "enum": [
+              "user",
+              "group",
+              "email"
+            ]
+          },
+          "principalId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "role": {
+            "enum": [
+              "viewer",
+              "commenter",
+              "editor"
+            ]
+          },
+          "expectedInvitationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "id",
+          "kind",
+          "principalType",
+          "principalId",
+          "role",
+          "expectedInvitationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/files/library/{files|directories}/{id}/shares"
+      }
+    },
+    {
+      "id": "library.share.remove",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "folder"
+            ]
+          },
+          "shareId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "id",
+          "kind",
+          "shareId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/files/library/{files|directories}/{id}/shares/{shareId}"
+      }
+    },
+    {
+      "id": "library.access.preview",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "folder"
+            ]
+          },
+          "principalType": {
+            "enum": [
+              "user",
+              "group"
+            ]
+          },
+          "principalId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "desiredRole": {
+            "enum": [
+              "viewer",
+              "commenter",
+              "editor",
+              "none"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "principalType",
+          "principalId",
+          "desiredRole"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BPreview"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/files/library/{files|directories}/{id}/access-change/preview"
+      }
+    },
+    {
+      "id": "library.access.apply",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "referenceId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "referenceId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/files/library/{files|directories}/{id}/access-change/apply"
+      }
+    },
+    {
+      "id": "library.access.revokeOwn",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "folder"
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "id",
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/files/library/{files|directories}/{id}/shares/{direct_share_id}"
+      }
+    },
+    {
+      "id": "api5b.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API5BReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "read-only-original-scope"
+      }
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "projects.source_links",
+      "title": "Подключённые источники проекта",
+      "usefulness": 5,
+      "operations": [
+        "projects.sources.list",
+        "projects.sources.add",
+        "projects.sources.remove"
+      ]
+    },
+    {
+      "featureId": "projects.text_source",
+      "title": "Создание текстового источника",
+      "usefulness": 5,
+      "operations": [
+        "projects.textSource.create"
+      ]
+    },
+    {
+      "featureId": "library.note",
+      "title": "Создание и редактирование заметки",
+      "usefulness": 5,
+      "operations": [
+        "library.note.create",
+        "library.note.get",
+        "library.note.update",
+        "library.note.delete",
+        "api5b.reconcile"
+      ]
+    },
+    {
+      "featureId": "library.versions",
+      "title": "История версий материала",
+      "usefulness": 5,
+      "operations": [
+        "library.versions.list",
+        "library.version.restore"
+      ]
+    },
+    {
+      "featureId": "library.share",
+      "title": "Доступ к материалам библиотеки",
+      "usefulness": 5,
+      "operations": [
+        "library.sharing.get",
+        "library.shares.list",
+        "library.share.create",
+        "library.share.remove",
+        "library.access.preview",
+        "library.access.apply",
+        "library.access.revokeOwn"
+      ]
+    }
+  ]
+}

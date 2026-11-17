@@ -1,0 +1,12 @@
+#import "OR6Rev5ASR.h"
+static NSDictionary *Obj(NSDictionary*p){return @{@"type":@"object",@"properties":p,@"required":p.allKeys,@"additionalProperties":@NO};}
+NSDictionary *OR6Rev5ASROperations(void){return @{@"audio.localTranscription.transcribe":Obj(@{@"assetId":@{@"type":@"string",@"minLength":@1,@"maxLength":@128},@"language":@{@"enum":@[@"en-US"]}})};}
+NSDictionary *OR6Rev5ASRTiers(void){return @{@"audio.localTranscription.transcribe":@"local"};}
+BOOL OR6Rev5ASRMutation(NSString*op){(void)op;return NO;}
+NSDictionary *OR6Rev5ASRRegistry(NSDictionary*base,NSError**error){
+ if(![base isKindOfClass:NSDictionary.class]||![base[@"operations"]isKindOfClass:NSArray.class]||![base[@"featureMap"]isKindOfClass:NSArray.class]||![base[@"types"]isKindOfClass:NSDictionary.class]){if(error)*error=OR6APIError(@"invalid_request",@"none");return nil;}
+ NSMutableSet*ids=[NSMutableSet set];for(id row in base[@"operations"]){if(![row isKindOfClass:NSDictionary.class]||![row[@"id"]isKindOfClass:NSString.class]||[ids containsObject:row[@"id"]]){if(error)*error=OR6APIError(@"invalid_request",@"none");return nil;}[ids addObject:row[@"id"]];}
+ NSString*op=@"audio.localTranscription.transcribe";if([ids containsObject:op]){if(error)*error=OR6APIError(@"conflict",@"none");return nil;}
+ NSDictionary*response=Obj(@{@"assetId":@{@"type":@"string",@"minLength":@1,@"maxLength":@128},@"text":@{@"type":@"string",@"maxLength":@4096},@"language":@{@"enum":@[@"en-US"]},@"speechDetected":@{@"type":@"boolean"},@"duration":@{@"type":@"number",@"minimum":@0,@"maximum":@30},@"engine":@{@"enum":@[@"pocketsphinx-5.0.4"]},@"offline":@{@"enum":@[@YES]}});
+ NSMutableArray*ops=[[base[@"operations"]mutableCopy]autorelease];[ops addObject:@{@"id":op,@"requestSchema":OR6Rev5ASROperations()[op],@"responseSchema":response,@"events":@[]}];NSMutableArray*map=[NSMutableArray array];for(id row in base[@"featureMap"]){if(![row isKindOfClass:NSDictionary.class]||![row[@"featureId"]isKindOfClass:NSString.class]||![row[@"operations"]isKindOfClass:NSArray.class]){if(error)*error=OR6APIError(@"invalid_request",@"none");return nil;}if(![row[@"featureId"]isEqual:@"audio.local_transcription"])[map addObject:row];}[map addObject:@{@"featureId":@"audio.local_transcription",@"operations":@[op]}];NSMutableDictionary*r=[[base mutableCopy]autorelease];r[@"operations"]=ops;r[@"featureMap"]=map;return OR6APIJSONSnapshot(r,4*1024*1024);
+}

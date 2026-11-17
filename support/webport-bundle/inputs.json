@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "target": {
+    "ProductType": "iPhone5,2",
+    "ProductVersion": "6.1.4",
+    "BuildVersion": "10B350"
+  },
+  "packages": [
+    {
+      "id": "me.lululab.wk",
+      "version": "1.0.0",
+      "url": "https://lululab.net/debs/me.lululab.wk_1.0.0_iphoneos-arm.deb",
+      "size": 24307824,
+      "sha256": "ce23f24d898f22cddc5364ccef1864472158560de83a2721eee855cb56b24063"
+    },
+    {
+      "id": "me.lululab.stbridge",
+      "version": "1.0.0",
+      "url": "https://lululab.net/debs/me.lululab.stbridge_1.0.0_iphoneos-arm.deb",
+      "size": 29994,
+      "sha256": "4bf1c9986abbbb30bdf0a1cfd1dce5ed025a6b997ae6d02db72d2d226dae5d82"
+    },
+    {
+      "id": "me.lululab.libvlc",
+      "version": "4.0.0",
+      "url": "https://lululab.net/debs/me.lululab.libvlc_4.0.0_iphoneos-arm.deb",
+      "size": 3991570,
+      "sha256": "f36260ae6ea3ac09e8cdbed858c8b31751b67a61f3c6c53332b5a512df3eab21"
+    },
+    {
+      "id": "libssl3",
+      "version": "3.5.8",
+      "url": "https://lululab.net/debs/libssl3_3.5.8_iphoneos-arm.deb",
+      "size": 1442092,
+      "sha256": "c1beaf0864d1039b859ee611f280ff728c0cd829b45b036eee9a71f1dc637fce"
+    }
+  ],
+  "platformPrerequisites": [
+    "iPhone5,2 / iOS6.1.4 jailbreak",
+    "MobileSubstrate runtime (platform hooking API), not WebPort packages"
+  ],
+  "privateExperimentOnly": true
+}

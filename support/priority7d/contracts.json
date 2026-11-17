@@ -1,0 +1,755 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API7DProject": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "memoryScope": {
+          "enum": [
+            "project-only",
+            "default",
+            "unknown"
+          ]
+        },
+        "shared": {
+          "type": "boolean"
+        },
+        "canWrite": {
+          "type": "boolean"
+        },
+        "fileCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2000
+        }
+      },
+      "required": [
+        "projectId",
+        "name",
+        "memoryScope",
+        "shared",
+        "canWrite",
+        "fileCount"
+      ],
+      "additionalProperties": false
+    },
+    "API7DFile": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "libraryFileId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "mediaType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1099511627776
+        },
+        "responseType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "fileId",
+        "libraryFileId",
+        "name",
+        "mediaType",
+        "bytes",
+        "responseType"
+      ],
+      "additionalProperties": false
+    },
+    "API7DFiles": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API7DFile"
+          },
+          "maxItems": 50
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "projectId",
+        "items",
+        "nextPageToken"
+      ],
+      "additionalProperties": false
+    },
+    "API7DConversations": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "conversationId": {
+                "type": "string",
+                "minLength": 36,
+                "maxLength": 36
+              },
+              "title": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 2000
+              }
+            },
+            "required": [
+              "conversationId",
+              "title"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 50
+        },
+        "nextPageToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "projectId",
+        "items",
+        "nextPageToken"
+      ],
+      "additionalProperties": false
+    },
+    "API7DReceipt": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "projectId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "kind": {
+          "enum": [
+            "move",
+            "memory",
+            "files-add",
+            "files-remove"
+          ]
+        },
+        "serverAcknowledged": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "projectId",
+        "kind",
+        "serverAcknowledged",
+        "verified"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "projects.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "projectId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7DProject"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/gizmos/{project_id}?include_file_limits=true",
+        "method": "GET"
+      },
+      "notes": "Fresh bounded exact project response; private/internal state never leaves provider."
+    },
+    {
+      "id": "projects.conversations",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "projectId",
+          "pageToken",
+          "limit"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7DConversations"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/gizmos/{project_id}/conversations",
+        "method": "GET"
+      },
+      "notes": "Owned-only project conversations; opaque cursor bound to operation/project/limit/context, max128 pages."
+    },
+    {
+      "id": "projects.newDraft",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "projectId",
+          "draftId",
+          "modelId",
+          "parentMessageId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/Draft"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "pathTemplate": null,
+        "method": null
+      },
+      "notes": "Fresh project admission, create ordinary non-temporary draft, bind project to exact draft and context."
+    },
+    {
+      "id": "projects.send",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "draftId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "projectId",
+          "operationId",
+          "draftId",
+          "modelId",
+          "parentMessageId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/OperationReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/f/conversation",
+        "method": "POST"
+      },
+      "notes": "New project chat only. Fresh project read, trusted native generation, gizmo_id and gizmo_interaction mode; no temporary conversation or cross-project reuse."
+    },
+    {
+      "id": "projects.moveConversation",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "projectId",
+          "operationId",
+          "conversationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7DReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/conversation/{conversation_id}",
+        "method": "PATCH"
+      },
+      "notes": "Nullable destination: null removes membership with the source-proven empty gizmo_id string. Fresh owner/source-project preflight; non-null destination requires valid ordinary private project. No work/task/read-only/temporary/source-restricted conversation. Journal before PATCH; fresh GET verifies destination or absence."
+    },
+    {
+      "id": "projects.memoryGet",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "projectId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7DProject"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/gizmos/{project_id}?include_file_limits=true",
+        "method": "GET"
+      },
+      "notes": "Read project memory scope; unknown values are explicit and never normalized to a writable default."
+    },
+    {
+      "id": "projects.memoryUpdate",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "memoryScope": {
+            "enum": [
+              "project-only"
+            ]
+          }
+        },
+        "required": [
+          "projectId",
+          "operationId",
+          "memoryScope"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7DReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/projects/{project_id}",
+        "method": "PATCH"
+      },
+      "notes": "Only source-proven project_v2 transition, owner/private only; preserve fresh name/instructions/emoji/theme. Existing project-only is a verified no-op. No invented reset value."
+    },
+    {
+      "id": "projects.filesList",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "pageToken": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "projectId",
+          "pageToken",
+          "limit"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7DFiles"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/gizmos/{project_id}?include_file_limits=true",
+        "method": "GET"
+      },
+      "notes": "Bounded projection of project sources. Local opaque pagination over immutable fresh snapshot, max2000 files and no source URLs."
+    },
+    {
+      "id": "projects.filesAdd",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "fileId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "libraryFileId": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 128
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 240
+                },
+                "mediaType": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 8388608
+                },
+                "lastModified": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "fileId",
+                "libraryFileId",
+                "name",
+                "mediaType",
+                "bytes",
+                "lastModified"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 4
+          }
+        },
+        "required": [
+          "projectId",
+          "operationId",
+          "files"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7DReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/projects/{project_id}/files",
+        "method": "POST"
+      },
+      "notes": "Associate already-uploaded native file metadata bound by trusted host to this exact context; does not upload bytes. Exact fs file record from source, membership verified after mutation; duplicate names/IDs rejected before write."
+    },
+    {
+      "id": "projects.filesRemove",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "fileId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "projectId",
+          "operationId",
+          "fileId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7DReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "pathTemplate": "/backend-api/projects/{project_id}/files/{file_id}",
+        "method": "DELETE"
+      },
+      "notes": "Remove membership only; never deletes Library backing material. Fresh project membership, journal, verify absence."
+    },
+    {
+      "id": "projects.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7DReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "pathTemplate": null,
+        "method": null
+      },
+      "notes": "Read-only reconciliation by exact durable scope-bound record. Never repeats an uncertain mutation; project send uses existing messages.reconcile receipt flow."
+    },
+    {
+      "id": "projects.reconcileChat",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/OperationReceipt"
+      },
+      "events": [],
+      "wire": {
+        "status": "local",
+        "pathTemplate": null,
+        "method": null
+      },
+      "notes": "Reconcile existing project send through the native provider readback only; never replay Send."
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "projects.chat",
+      "title": "Новый чат в проекте",
+      "usefulness": 7,
+      "operations": [
+        "projects.get",
+        "projects.conversations",
+        "projects.newDraft",
+        "projects.send",
+        "projects.reconcileChat"
+      ]
+    },
+    {
+      "featureId": "projects.move_chat",
+      "title": "Перенос разговора в проект",
+      "usefulness": 7,
+      "operations": [
+        "projects.moveConversation",
+        "projects.reconcile"
+      ]
+    },
+    {
+      "featureId": "projects.memory",
+      "title": "Память проекта",
+      "usefulness": 7,
+      "operations": [
+        "projects.memoryGet",
+        "projects.memoryUpdate"
+      ]
+    },
+    {
+      "featureId": "projects.files",
+      "title": "Источники проекта",
+      "usefulness": 7,
+      "operations": [
+        "projects.filesList",
+        "projects.filesAdd",
+        "projects.filesRemove"
+      ]
+    }
+  ]
+}

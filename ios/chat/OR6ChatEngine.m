@@ -1,0 +1,4 @@
+#import "../auth/OR6AuthEngine.h"
+#include <mach-o/dyld.h>
+#include <string.h>
+NSDictionary*OR6AuthEngine(void){Class runtime=NSClassFromString(@"OR6WebPortRuntime");if([runtime respondsToSelector:@selector(diagnostics)]){NSDictionary*d=[runtime performSelector:@selector(diagnostics)];BOOL ready=[d[@"ready"]boolValue];return @{@"modernJSC":@(ready),@"modernWebKit":@(ready),@"secureBridge":@(ready),@"webPortAvailable":@(ready),@"source":d[@"source"]?:@"none",@"bootstrap":d};}BOOL j=NO,w=NO,t=NO,i=NO;for(uint32_t n=0;n<_dyld_image_count();n++){const char*p=_dyld_get_image_name(n);if(!p)continue;if(strstr(p,"/var/wkd/")&&strstr(p,"JavaScriptCore.framework"))j=YES;if(strstr(p,"/var/wkd/")&&strstr(p,"WebKitLegacy.framework"))w=YES;if(strstr(p,"/STBridge.dylib"))t=YES;if(strstr(p,"/WK26.dylib"))i=YES;}return @{@"modernJSC":@(j),@"modernWebKit":@(w),@"secureBridge":@(t),@"webPortAvailable":@(i||(j&&w))};}

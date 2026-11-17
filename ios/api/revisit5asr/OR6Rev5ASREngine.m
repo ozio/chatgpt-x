@@ -1,0 +1,34 @@
+#import "OR6Rev5ASREngine.h"
+#import "../OR6APISchema.h"
+#import "OR6Rev5ASRModelHashes.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import <CommonCrypto/CommonDigest.h>
+#import <pocketsphinx.h>
+#import <sys/stat.h>
+#import <math.h>
+static BOOL Fail(NSError**e,NSString*c){if(e)*e=OR6APIError(c,@"none");return NO;}
+static BOOL Models(NSString*root,BOOL(^cancelled)(void),NSError**error){
+ struct stat st;if(lstat(root.fileSystemRepresentation,&st)||!S_ISDIR(st.st_mode)||S_ISLNK(st.st_mode))return Fail(error,@"unavailable");
+ NSDictionary*expected=OR6Rev5ASRExpectedFiles();NSString*manifest=[root stringByAppendingPathComponent:@"manifest.json"];if(lstat(manifest.fileSystemRepresentation,&st)||!S_ISREG(st.st_mode)||S_ISLNK(st.st_mode)||st.st_size<=0||st.st_size>16384)return Fail(error,@"unavailable");NSData*raw=[NSData dataWithContentsOfFile:manifest];NSDictionary*m=raw.length<=16384?[NSJSONSerialization JSONObjectWithData:raw options:0 error:NULL]:nil;if(![m isKindOfClass:NSDictionary.class]||![m[@"version"]isEqual:@"pocketsphinx-5.0.4-en-US"]||![m[@"commit"]isEqual:@"a9ec4b881de75771d8e6b8ded2823266589cbd5d"]||![m[@"files"]isEqual:expected])return Fail(error,@"unavailable");
+ for(NSString*rel in expected){if(cancelled())return Fail(error,@"cancelled");NSString*p=[root stringByAppendingPathComponent:rel];struct stat parent;if(lstat(p.fileSystemRepresentation,&st)||!S_ISREG(st.st_mode)||S_ISLNK(st.st_mode)||st.st_size<0||st.st_size>32*1024*1024)return Fail(error,@"unavailable");NSString*dir=p.stringByDeletingLastPathComponent;if(lstat(dir.fileSystemRepresentation,&parent)||!S_ISDIR(parent.st_mode)||S_ISLNK(parent.st_mode))return Fail(error,@"unavailable");FILE*f=fopen(p.fileSystemRepresentation,"rb");if(!f)return Fail(error,@"unavailable");CC_SHA256_CTX hash;CC_SHA256_Init(&hash);unsigned char buffer[32768];size_t count;BOOL stopped=NO;while(!feof(f)&&!ferror(f)){count=fread(buffer,1,sizeof(buffer),f);if(count)CC_SHA256_Update(&hash,buffer,(CC_LONG)count);if(cancelled()){stopped=YES;break;}if(!count)break;}BOOL failed=ferror(f)!=0;fclose(f);unsigned char digest[32];CC_SHA256_Final(digest,&hash);NSMutableString*actual=[NSMutableString string];for(int i=0;i<32;i++)[actual appendFormat:@"%02x",digest[i]];if(stopped)return Fail(error,@"cancelled");if(failed||![actual isEqual:expected[rel]])return Fail(error,@"unavailable");}
+ return YES;
+}
+static OSStatus Read(void*client,SInt64 pos,UInt32 count,void*buffer,UInt32*actual){NSData*d=(NSData*)client;if(pos<0||(unsigned long long)pos>d.length){*actual=0;return kAudioFilePositionError;}*actual=(UInt32)MIN((NSUInteger)count,d.length-(NSUInteger)pos);memcpy(buffer,(const char*)d.bytes+pos,*actual);return noErr;}
+static SInt64 FileSize(void*client){return[(NSData*)client length];}
+NSDictionary *OR6Rev5ASRDecode(NSData*encoded,NSString*models,BOOL(^cancelled)(void),NSError**error){
+ if(error)*error=nil;if(cancelled())return Fail(error,@"cancelled"),nil;if(!encoded.length||encoded.length>8*1024*1024)return Fail(error,@"unsupported_media"),nil;
+ const unsigned char*b=encoded.bytes;AudioFileTypeID hint=0;if(encoded.length>=12&&!memcmp(b,"RIFF",4)&&!memcmp(b+8,"WAVE",4))hint=kAudioFileWAVEType;else if(encoded.length>=12&&!memcmp(b+4,"ftyp",4)&&!memcmp(b+8,"M4A ",4))hint=kAudioFileM4AType;else return Fail(error,@"unsupported_media"),nil;
+ AudioFileID file=NULL;ExtAudioFileRef ext=NULL;OSStatus status=AudioFileOpenWithCallbacks(encoded,Read,NULL,FileSize,NULL,hint,&file);if(status||!file)return Fail(error,@"unsupported_media"),nil;
+ status=ExtAudioFileWrapAudioFileID(file,false,&ext);if(status||!ext){AudioFileClose(file);return Fail(error,@"unsupported_media"),nil;}
+ AudioStreamBasicDescription source;UInt32 n=sizeof(source);SInt64 length=0;UInt32 ln=sizeof(length);status=ExtAudioFileGetProperty(ext,kExtAudioFileProperty_FileDataFormat,&n,&source);if(!status)status=ExtAudioFileGetProperty(ext,kExtAudioFileProperty_FileLengthFrames,&ln,&length);
+ BOOL valid=!status&&isfinite(source.mSampleRate)&&source.mSampleRate>=8000&&source.mSampleRate<=96000&&source.mChannelsPerFrame>=1&&source.mChannelsPerFrame<=2&&length>0&&((double)length/source.mSampleRate)<=30.0&&(source.mFormatID==kAudioFormatLinearPCM||source.mFormatID==kAudioFormatMPEG4AAC);
+ AudioStreamBasicDescription target;memset(&target,0,sizeof(target));target.mSampleRate=16000;target.mFormatID=kAudioFormatLinearPCM;target.mFormatFlags=kAudioFormatFlagIsSignedInteger|kAudioFormatFlagIsPacked|kAudioFormatFlagsNativeEndian;target.mBytesPerPacket=2;target.mFramesPerPacket=1;target.mBytesPerFrame=2;target.mChannelsPerFrame=1;target.mBitsPerChannel=16;
+ if(valid)valid=ExtAudioFileSetProperty(ext,kExtAudioFileProperty_ClientDataFormat,sizeof(target),&target)==noErr;
+ NSMutableData*pcm=[NSMutableData data];int16_t samples[2048];while(valid){if(cancelled()){valid=NO;Fail(error,@"cancelled");break;}UInt32 frames=2048;AudioBufferList list;list.mNumberBuffers=1;list.mBuffers[0].mNumberChannels=1;list.mBuffers[0].mDataByteSize=sizeof(samples);list.mBuffers[0].mData=samples;status=ExtAudioFileRead(ext,&frames,&list);if(status||pcm.length+(NSUInteger)frames*2>16000*30*2){valid=NO;break;}if(!frames)break;[pcm appendBytes:samples length:frames*2];}
+ ExtAudioFileDispose(ext);AudioFileClose(file);if(!valid||!pcm.length){if(error&&!*error)Fail(error,@"unsupported_media");return nil;}if(!Models(models,cancelled,error))return nil;
+ ps_config_t*config=ps_config_init(NULL);if(!config)return Fail(error,@"unavailable"),nil;ps_config_set_str(config,"hmm",[models stringByAppendingPathComponent:@"en-us"].fileSystemRepresentation);ps_config_set_str(config,"dict",[models stringByAppendingPathComponent:@"cmudict-en-us.dict"].fileSystemRepresentation);ps_config_set_str(config,"lm",[models stringByAppendingPathComponent:@"en-us.lm.bin"].fileSystemRepresentation);ps_config_set_float(config,"samprate",16000);ps_config_set_str(config,"loglevel","ERROR");ps_config_set_bool(config,"mmap",1);
+ ps_decoder_t*decoder=cancelled()?NULL:ps_init(config);ps_config_free(config);if(!decoder)return Fail(error,cancelled()?@"cancelled":@"unavailable"),nil;
+ BOOL okay=ps_start_utt(decoder)==0;const int16_t*input=pcm.bytes;NSUInteger count=pcm.length/2;for(NSUInteger i=0;okay&&i<count;i+=2048){if(cancelled()){okay=NO;Fail(error,@"cancelled");break;}okay=ps_process_raw(decoder,input+i,MIN((NSUInteger)2048,count-i),FALSE,FALSE)>=0;}
+ if(okay)okay=ps_end_utt(decoder)==0;const char*h=okay?ps_get_hyp(decoder,NULL):NULL;NSString*text=h?[NSString stringWithUTF8String:h]:@"";if(!text||text.length>4096)okay=NO;
+ NSDictionary*result=okay?@{@"text":text,@"language":@"en-US",@"speechDetected":text.length?@YES:@NO,@"duration":@((double)count/16000.0),@"engine":@"pocketsphinx-5.0.4",@"offline":@YES}:nil;ps_free(decoder);if(cancelled())return Fail(error,@"cancelled"),nil;if(!result&&error&&!*error)Fail(error,@"invalid_response");return result;
+}

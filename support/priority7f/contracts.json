@@ -1,0 +1,1459 @@
+{
+  "schemaVersion": 1,
+  "featureSourceSHA256": "c8670096b8c364dc75ac802a8dac36aef208a3d7f196b8b53c2043502f578a6b",
+  "types": {
+    "API7FResult": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "completed",
+            "uncertain",
+            "background",
+            "rejected",
+            "cancelled"
+          ]
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "userMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "assistantMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "persisted": {
+          "type": "boolean"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 262144
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fileId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "width": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100000
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100000
+              }
+            },
+            "required": [
+              "fileId",
+              "width",
+              "height"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 16
+        }
+      },
+      "required": [
+        "operationId",
+        "state",
+        "conversationId",
+        "userMessageId",
+        "assistantMessageId",
+        "persisted",
+        "text",
+        "images"
+      ],
+      "additionalProperties": false
+    },
+    "API7FAnalysisVisualization": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "image",
+            "chart"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 240
+        },
+        "artifactId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "data": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 262144
+        },
+        "mediaType": {
+          "enum": [
+            "image/png",
+            null
+          ]
+        },
+        "width": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100000
+        },
+        "height": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100000
+        },
+        "available": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "title",
+        "artifactId",
+        "data",
+        "mediaType",
+        "width",
+        "height",
+        "available"
+      ],
+      "additionalProperties": false
+    },
+    "API7FAnalysisExecution": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "code": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 16000
+        },
+        "status": {
+          "enum": [
+            "running",
+            "completed",
+            "error",
+            "paused"
+          ]
+        },
+        "output": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "stdout",
+                  "stderr",
+                  "result",
+                  "error"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 16000
+              }
+            },
+            "required": [
+              "kind",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 32
+        },
+        "visualizations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API7FAnalysisVisualization"
+          },
+          "maxItems": 16
+        }
+      },
+      "required": [
+        "id",
+        "code",
+        "status",
+        "output",
+        "visualizations"
+      ],
+      "additionalProperties": false
+    },
+    "API7FAnalysisResult": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "conversationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "userMessageId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "assistantMessageId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "observed": {
+          "type": "boolean"
+        },
+        "state": {
+          "enum": [
+            "unobserved",
+            "running",
+            "completed",
+            "error",
+            "paused"
+          ]
+        },
+        "executions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API7FAnalysisExecution"
+          },
+          "maxItems": 16
+        }
+      },
+      "required": [
+        "operationId",
+        "conversationId",
+        "userMessageId",
+        "assistantMessageId",
+        "observed",
+        "state",
+        "executions"
+      ],
+      "additionalProperties": false
+    },
+    "API7FTask": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "conversationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "status": {
+          "enum": [
+            "running",
+            "complete",
+            "failed",
+            "unavailable"
+          ]
+        },
+        "pollsRemaining": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 6
+        },
+        "nextPollAfterSeconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        }
+      },
+      "required": [
+        "operationId",
+        "conversationId",
+        "status",
+        "pollsRemaining",
+        "nextPollAfterSeconds"
+      ],
+      "additionalProperties": false
+    },
+    "API7FQuestion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "description": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 4000
+              }
+            },
+            "required": [
+              "label",
+              "description"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 20
+        },
+        "allowFreeText": {
+          "type": "boolean"
+        },
+        "multiple": {
+          "type": "boolean"
+        },
+        "allowSkip": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "question",
+        "options",
+        "allowFreeText",
+        "multiple",
+        "allowSkip"
+      ],
+      "additionalProperties": false
+    },
+    "API7FClarifications": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "challengeId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/types/API7FQuestion"
+          },
+          "maxItems": 20
+        }
+      },
+      "required": [
+        "conversationId",
+        "messageId",
+        "challengeId",
+        "questions"
+      ],
+      "additionalProperties": false
+    },
+    "API7FApproval": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "challengeId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 36
+        },
+        "title": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 4000
+        },
+        "description": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 8000
+        },
+        "recipient": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 256
+        },
+        "canAllow": {
+          "type": "boolean"
+        },
+        "canDeny": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "conversationId",
+        "messageId",
+        "challengeId",
+        "title",
+        "description",
+        "recipient",
+        "canAllow",
+        "canDeny"
+      ],
+      "additionalProperties": false
+    },
+    "API7FState": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "state": {
+          "enum": [
+            "draft",
+            "dispatching",
+            "streaming",
+            "stop_requested",
+            "reconciling",
+            "completed",
+            "rejected",
+            "cancelled",
+            "uncertain"
+          ]
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "userMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "assistantMessageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "persisted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "state",
+        "conversationId",
+        "userMessageId",
+        "assistantMessageId",
+        "persisted"
+      ],
+      "additionalProperties": false
+    },
+    "API7FMessageSnapshot": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "conversationId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "messageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 128
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 262144
+        },
+        "finished": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operationId",
+        "sequence",
+        "conversationId",
+        "messageId",
+        "text",
+        "finished"
+      ],
+      "additionalProperties": false
+    },
+    "API7FGenerationStatus": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "phase": {
+          "enum": [
+            "queued",
+            "preparing",
+            "thinking",
+            "searching",
+            "writing",
+            "complete",
+            "interrupted",
+            "failed",
+            "unknown"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 240
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "operationId",
+        "phase",
+        "label",
+        "sequence"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "operations": [
+    {
+      "id": "chat.continue",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "assistantMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "assistantMessageId",
+          "modelId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API7FState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API7FMessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API7FGenerationStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      },
+      "notes": "continue action, no new user message; readback binds original branch user and unfinished assistant"
+    },
+    {
+      "id": "chat.sharedLink.delete",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "shareId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "shareId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "shareId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "deleted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "shareId",
+          "deleted"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "DELETE",
+        "pathTemplate": "/backend-api/share/{shareId}"
+      },
+      "notes": ""
+    },
+    {
+      "id": "tools.deepResearch",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "parentMessageId",
+          "modelId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API7FState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API7FMessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API7FGenerationStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      },
+      "notes": "Real OR6API8Generation native plan. Data analysis is model-directed computation, no invented force-tool flag."
+    },
+    {
+      "id": "tools.dataAnalysis",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "parentMessageId",
+          "modelId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API7FState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API7FMessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API7FGenerationStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      },
+      "notes": "Real OR6API8Generation native plan. Data analysis is model-directed computation, no invented force-tool flag."
+    },
+    {
+      "id": "tools.study",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "parentMessageId",
+          "modelId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API7FState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API7FMessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API7FGenerationStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      },
+      "notes": "Real OR6API8Generation native plan. Data analysis is model-directed computation, no invented force-tool flag."
+    },
+    {
+      "id": "images.create",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "conversationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 36
+          },
+          "parentMessageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "modelId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          }
+        },
+        "required": [
+          "operationId",
+          "conversationId",
+          "parentMessageId",
+          "modelId",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API7FState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API7FMessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API7FGenerationStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      },
+      "notes": "Real OR6API8Generation native plan. Data analysis is model-directed computation, no invented force-tool flag."
+    },
+    {
+      "id": "tools.deepResearch.status",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FTask"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversation/{conversationId}/stream_status"
+      },
+      "notes": "Explicit checks only: five-second durable pace, six slots per thirty-second window. Immutable source binding supports terminal-only report reads after the twenty-four-hour write window; no generation retry."
+    },
+    {
+      "id": "tools.deepResearch.cancel",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "taskOperationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId",
+          "taskOperationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "taskOperationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "stopRequested": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "operationId",
+          "taskOperationId",
+          "stopRequested"
+        ],
+        "additionalProperties": false
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/stop_conversation"
+      },
+      "notes": "Stop acknowledgement is not proof of task cancellation"
+    },
+    {
+      "id": "compose.clarifications.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "conversationId",
+          "messageId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FClarifications"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversation/{conversationId}"
+      },
+      "notes": "Fresh private read; opaque context-bound challenge exposes no raw metadata"
+    },
+    {
+      "id": "tools.actionApproval.get",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "messageId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "conversationId",
+          "messageId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FApproval"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversation/{conversationId}"
+      },
+      "notes": "Fresh private read; opaque context-bound challenge exposes no raw metadata"
+    },
+    {
+      "id": "compose.clarifications.respond",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "challengeId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "questionId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 512
+                },
+                "selectedOptions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                  },
+                  "maxItems": 20
+                },
+                "freeText": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 8000
+                }
+              },
+              "required": [
+                "questionId",
+                "selectedOptions",
+                "freeText"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 20
+          }
+        },
+        "required": [
+          "operationId",
+          "challengeId",
+          "answers"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API7FState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API7FMessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API7FGenerationStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      },
+      "notes": "Choice labels/free text validated against exact question snapshot; one-use challenge"
+    },
+    {
+      "id": "tools.actionApproval.respond",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "challengeId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "action": {
+            "enum": [
+              "allow",
+              "deny"
+            ]
+          }
+        },
+        "required": [
+          "operationId",
+          "challengeId",
+          "action"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API7FState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API7FMessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API7FGenerationStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "source_candidate",
+        "method": "POST",
+        "pathTemplate": "/backend-api/conversation"
+      },
+      "notes": "Exact action target/recipient/context, one-use; no always-allow/global permission"
+    },
+    {
+      "id": "tools.dataAnalysis.result",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FAnalysisResult"
+      },
+      "events": [],
+      "wire": {
+        "status": "source_candidate",
+        "method": "GET",
+        "pathTemplate": "/backend-api/conversation/{conversationId}"
+      },
+      "notes": "Fresh visible Python execution/results/plots, bound to durable original user/hash/parent/assistant anchor. Generation completion alone never implies computation."
+    },
+    {
+      "id": "tools.operation.reconcile",
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "minLength": 36,
+            "maxLength": 36
+          }
+        },
+        "required": [
+          "operationId"
+        ],
+        "additionalProperties": false
+      },
+      "responseSchema": {
+        "$ref": "#/types/API7FResult"
+      },
+      "events": [
+        {
+          "name": "state",
+          "schema": {
+            "$ref": "#/types/API7FState"
+          }
+        },
+        {
+          "name": "message",
+          "schema": {
+            "$ref": "#/types/API7FMessageSnapshot"
+          }
+        },
+        {
+          "name": "status",
+          "schema": {
+            "$ref": "#/types/API7FGenerationStatus"
+          }
+        }
+      ],
+      "wire": {
+        "status": "local",
+        "method": null,
+        "pathTemplate": null
+      },
+      "notes": "Readback or completed journal only; no mutation replay"
+    }
+  ],
+  "featureMap": [
+    {
+      "featureId": "chat.continue",
+      "title": "Продолжение незаконченного ответа",
+      "usefulness": 7,
+      "operations": [
+        "chat.continue"
+      ]
+    },
+    {
+      "featureId": "chat.shared_link_delete",
+      "title": "Удаление опубликованной ссылки",
+      "usefulness": 7,
+      "operations": [
+        "chat.sharedLink.delete"
+      ]
+    },
+    {
+      "featureId": "compose.clarifications",
+      "title": "Ответы на уточняющие вопросы",
+      "usefulness": 7,
+      "operations": [
+        "compose.clarifications.get",
+        "compose.clarifications.respond"
+      ]
+    },
+    {
+      "featureId": "tools.deep_research",
+      "title": "Глубокое исследование",
+      "usefulness": 7,
+      "operations": [
+        "tools.deepResearch",
+        "tools.deepResearch.status",
+        "tools.deepResearch.cancel"
+      ]
+    },
+    {
+      "featureId": "tools.data_analysis",
+      "title": "Анализ данных и вычисления",
+      "usefulness": 7,
+      "operations": [
+        "tools.dataAnalysis",
+        "tools.dataAnalysis.result"
+      ]
+    },
+    {
+      "featureId": "tools.study",
+      "title": "Режим обучения",
+      "usefulness": 7,
+      "operations": [
+        "tools.study"
+      ]
+    },
+    {
+      "featureId": "tools.action_approval",
+      "title": "Подтверждение внешних действий",
+      "usefulness": 7,
+      "operations": [
+        "tools.actionApproval.get",
+        "tools.actionApproval.respond"
+      ]
+    },
+    {
+      "featureId": "images.create",
+      "title": "Создание изображения",
+      "usefulness": 7,
+      "operations": [
+        "images.create"
+      ]
+    }
+  ]
+}
