@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/ozio/chatgpt-x/releases/latest"><b>⬇︎ Download the .ipa</b></a>
-  &nbsp;·&nbsp; version 1.0
+  &nbsp;·&nbsp; version 1.0.1
 </p>
 
 > [!IMPORTANT]
@@ -77,6 +77,7 @@ official iOS app and shows which ones ChatGPT X covers.
 | | |
 |---|---|
 | **Tested on** | iPhone 5 (GSM, `iPhone5,2`), iOS 6.1.4 (10B350), English and Russian interface |
+| **Launches on** | iPhone 4 (GSM, `iPhone3,1`), iOS 6.1.3 (10B329). The app starts; the rest is not tested yet. |
 | **Should work** | Other armv7 iPhones and iPod touch on iOS 6.0–6.1.6. Not tested. |
 
 ## Installing
@@ -84,7 +85,7 @@ official iOS app and shows which ones ChatGPT X covers.
 ChatGPT X is not signed by Apple, so a stock iPhone can't install it. Prepare the
 phone first:
 
-1. **Jailbreak the iPhone.** On an iPhone 5 with iOS 6.1.3 or 6.1.4, the usual
+1. **Jailbreak the iPhone.** On an iPhone 4 or iPhone 5 with iOS 6.1.3 or 6.1.4, the usual
    untethered tool is [p0sixspwn](https://theapplewiki.com/wiki/P0sixspwn).
 2. **Install AppSync Unified** from Cydia. Add Karen's repo
    `https://cydia.akemi.ai/`. AppSync lets iOS install IPA files that are not
@@ -92,10 +93,10 @@ phone first:
 
 Then get the app in one of two ways.
 
-**A. Download the release.** Get `ChatGPTX-1.0.ipa` from
+**A. Download the release.** Get `ChatGPTX-1.0.1.ipa` from
 [Releases](https://github.com/ozio/chatgpt-x/releases/latest) and install it with
 `appinst` (it comes with AppSync Unified), Filza or any IPA installer, for example
-`appinst ChatGPTX-1.0.ipa` over SSH. The IPA bundles the third-party components
+`appinst ChatGPTX-1.0.1.ipa` over SSH. The IPA bundles the third-party components
 listed in [THIRD_PARTY.md](THIRD_PARTY.md), including Web Port and the Sentinel
 modules that chatgpt.com serves to every browser.
 

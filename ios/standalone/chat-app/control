@@ -1,6 +1,6 @@
 Package: io.ozio.chatgptx
 Name: ChatGPT X
-Version: 1.0
+Version: 1.0.1
 Architecture: iphoneos-arm
 Description: Unofficial fan-made ChatGPT client for iOS 6
 Maintainer: ozio
